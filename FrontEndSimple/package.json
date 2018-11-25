@@ -1,0 +1,32 @@
+{
+  "name": "akuminastarterproject",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --display-error-details --config webpack.config.js",
+    "package": "akumina-widget-builder package",
+    "clean": "akumina-widget-builder clean packages",
+    "stub": "akumina-widget-builder stub",
+    "config": "akumina-widget-builder config",
+    "deploy": "node ./deploy.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/jquery": "^3.3.22",
+    "@types/node": "^9.6.35",
+    "fs": "0.0.1-security",
+    "path": "^0.12.7",
+    "ts-loader": "^3.5.0",
+    "typescript": "^2.9.2",
+    "uglifyjs-webpack-plugin": "^0.4.6",
+    "webpack": "^3.12.0"
+  },
+  "dependencies": {
+    "akumina-core": "^1.1.7",
+    "akumina-widget-builder": "^1.7.9",
+    "exe": "^1.0.2"
+  }
+}

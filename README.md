@@ -2,15 +2,14 @@
 
 #### ChangeList
   
+### 11.25.18
+- Added FrontEndSimple location - this will house a simple project example for building widgets
+
 ### 10.10.18
-- Added SiteDeployer location where developers can get the latest and greatest SiteDeployer exe (used in front end)
+- Added SiteDeployer location - this is where developers can get the latest and greatest SiteDeployer exe (used in front end)
 
 
 #### Pending bits
-
-* FrontEndSimple
-
-This will house a simple project example for building widgets
 
 * FrontEndFull
 

@@ -11,18 +11,17 @@ https://github.com/akumina/AkuminaTraining/wiki/Site-Deployer:-Continuous-Site-P
 
 #### ChangeList
   
-### [4.1.1809.1925] - 10.10.18
-- Initial Load
-
-### [4.1.1810.1501] - 10.15.18
-- Bug 10527 - 4.1 Site Deployer error with Add Widget Packages - ApproveListItems does not have an implementation  
+### [4.1.1811.1501] - 11.15.18
+- Removed args output as password was exposed
 
 ### [4.1.1810.2601] - 10.26.18
 - Added support for Group assignment for contenttype import (contenttype.xml) 
 
-### [4.1.1811.1501] - 11.15.18
-- Removed args output as password was exposed
+### [4.1.1810.1501] - 10.15.18
+- Bug 10527 - 4.1 Site Deployer error with Add Widget Packages - ApproveListItems does not have an implementation  
 
+### [4.1.1809.1925] - 10.10.18
+- Initial Load
 
 #### Install  
 
