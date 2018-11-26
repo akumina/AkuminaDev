@@ -1,6 +1,6 @@
 ### Akumina sample project - FrontEndSimple
 
-This front end simple was meant to be the bare minimum to get up and running with the Akumina Widget Builder and Site Deployer.
+This front end simple was meant to be the bare minimum to get up and running with the Akumina Widget Builder and Site Deployer. The Akumina team is actively working on a yeoman template for easier install and setup...
 
 [Akumina Widget Builder quick start](https://github.com/akumina/AkuminaDev/wiki/Akumina-Widget-Builder)
 
@@ -117,4 +117,33 @@ npm run package
 
 ```bash
 npm run deploy
+```
+
+---
+
+Dont want to use 'MyClient'? You will need to change this in a few places  
+* ./webpack.config.js
+
+```javascript
+var jsClientName = "MyClient"; 
+```
+
+* ./akumina.config.js
+
+```javascript
+"WidgetPackageDestinationPath": "build\\sitedefinitions\\MyClient\\widgetpackages"
+```
+
+* ./deploy.js
+
+```javascript
+ "assetdirectory": "MyClient"
+```
+
+
+* config.json within your widget directory (if you created the sub already)
+```javascript
+ "Definition": {
+        "Name": "MyWidget",
+        "Class": "MyClient.MyWidget",
 ```
