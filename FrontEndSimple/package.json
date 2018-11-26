@@ -16,7 +16,7 @@
   "license": "ISC",
   "devDependencies": {
     "@types/jquery": "^3.3.22",
-    "@types/node": "^9.6.35",
+    "@types/node": "^9.6.39",
     "fs": "0.0.1-security",
     "path": "^0.12.7",
     "ts-loader": "^3.5.0",
@@ -25,8 +25,8 @@
     "webpack": "^3.12.0"
   },
   "dependencies": {
-    "akumina-core": "^1.1.7",
-    "akumina-widget-builder": "^1.7.9",
+    "akumina-core": "^4.1.1",
+    "akumina-widget-builder": "^1.8.2",
     "exe": "^1.0.2"
   }
 }
