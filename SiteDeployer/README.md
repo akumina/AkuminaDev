@@ -10,6 +10,9 @@ https://github.com/akumina/AkuminaTraining/wiki/Site-Deployer:-Continuous-Site-P
 
 
 #### ChangeList
+
+### [4.1.1812.0601] - 12.06.18
+- clientid clientsecret args added - use with spUrl
   
 ### [4.1.1811.1501] - 11.15.18
 - Removed args output as password was exposed
@@ -26,6 +29,33 @@ https://github.com/akumina/AkuminaTraining/wiki/Site-Deployer:-Continuous-Site-P
 #### Install  
 
 npm install  
+
+
+Command line parameters
+
+| argument | description | example
+| ------- | ----------- | ------- |
+| `version` | Shows the Site deployer version | |
+| `envdir` | Path to location that contains SiteDefinitions directory - should have trailing slash | C:\TEMP\\ |
+| `assetdirectory` | Directory name in SiteDefinitions directory | MyClient (Looks in **envdir**\SiteDefinitions\MyClient) |
+| `options` | Comma deliminted list of options - see below | js,widgets |
+| `ml` | Populate AkId,AkLanguageId,AkLanguageCode columns | true or false |
+| `langid` | Language Id | 1033 |
+| `spdirectory` | Folder in Sharepoint Style Library where bits gets deployed | DigitalWorkplace |
+| `spUrl` | Sharepoint site collection | https://tenant.sharepoint.com/sites/mysitecollection |
+| `spUser` | Sharepoint username | myusername@tenant.onmicrosoft.com |
+| `spPassword` | Sharepoint password | 12345 |
+| `clientid` | Sharepoint app client id | guid |
+| `clientsecret` | Sharepoint app client secret |  | 
+
+#### Minimum usage with username|password
+
+Akumina.SiteDeployer.exe options "js" spUser "myusername@tenant.onmicrosoft.com" spPassword "@kumina603..." spUrl "https://tenant.sharepoint.com/sites/mysitecollection" envdir "M:\TEMP\\" assetdirectory "MyClient" spdirectory "DigitalWorkplace"
+
+
+#### Minimum usage with clientid|clientsecret
+Akumina.SiteDeployer.exe options "js" spUrl "https://tenant.sharepoint.com/sites/mysitecollection" clientid "myclientid" clientsecret "myclientsecret" envdir "M:\TEMP\\" assetdirectory "MyClient" spdirectory "DigitalWorkplace"
+
 
 
 #### <a id="usage"></a>Usage
@@ -52,6 +82,7 @@ Check deploy.js for proper flags:
 | `fonts` | Deploys contents of **envdir**/sitedefinitions/**assetdirectory**/branding/fonts |
 | `addwiki` | N/A  |
 | `modern` | **In PROGRESS** Not Supported  |
+
 
 
 
