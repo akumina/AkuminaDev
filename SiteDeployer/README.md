@@ -50,7 +50,7 @@ Command line parameters
 
 #### Minimum usage with username|password
 
-Akumina.SiteDeployer.exe options "js" spUser "myusername@tenant.onmicrosoft.com" spPassword "@kumina603..." spUrl "https://tenant.sharepoint.com/sites/mysitecollection" envdir "M:\TEMP\\" assetdirectory "MyClient" spdirectory "DigitalWorkplace"
+Akumina.SiteDeployer.exe options "js" spUser "myusername@tenant.onmicrosoft.com" spPassword "mypassword" spUrl "https://tenant.sharepoint.com/sites/mysitecollection" envdir "M:\TEMP\\" assetdirectory "MyClient" spdirectory "DigitalWorkplace"
 
 
 #### Minimum usage with clientid|clientsecret
