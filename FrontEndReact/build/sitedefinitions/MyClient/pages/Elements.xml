@@ -1,0 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<pages>
+  <page name="sandbox.aspx" layout="sandboxlayout.aspx" title="React Sandbox"/>
+</pages>

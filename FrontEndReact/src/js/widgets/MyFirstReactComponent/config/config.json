@@ -1,0 +1,58 @@
+{
+    "Definition": {
+        "Name": "MyFirstReactComponent",
+        "Class": "MyClient.Widgets.MyFirstReactComponent",
+        "ContentTypes": [],
+        "Version": "",
+        "Dependencies": [],
+        "Properties": [
+            {
+                "name": "widgetframework",
+                "friendlyname": "widgetframework",
+                "value": "react",
+                "type": "string"
+            },
+            {
+                "name": "mycustomprop",
+                "friendlyname": "mycustomprop",
+                "value": "testvalue",
+                "type": "string"
+            }
+        ],
+        "Views": [
+            {
+                "Name": "default",
+                "Path": "/Style%20Library/DigitalWorkPlace/Content/Templates/MyFirstReactComponent/default.html",
+                "Id": "63db9f69-b64b-5af2-63b2-638864839723"
+            }
+        ],
+        "JS": {
+            "Default": "/Style%20Library/DigitalWorkPlace/JS/widgets/myfirstreactcomponent.js"
+        }
+    },
+    "Instances": [
+        {
+            "Name": "MyFirstReactComponent instance",
+            "Description": "MyFirstReactComponent instance description",
+            "Icon": "/Images/widget-icons/GenericList.png",
+            "Id": "745560f4-2a1c-e5e6-8915-36047a8cf645",
+            "Properties": [
+                {
+                    "name": "widgetframework",
+                    "value": "react"
+                },
+                {
+                    "name": "mycustomprop",
+                    "value": "testvalue"
+                }
+            ],
+            "SelectedView": "default",
+            "AvailableViews": [],
+            "HiddenFields": []
+        }
+    ],
+    "Options": {
+        "IsPartialDefinition": false,
+        "IsDashboardWidget": false
+    }
+}
