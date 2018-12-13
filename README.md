@@ -1,7 +1,10 @@
 # AkuminaDev
 
 #### ChangeList
-  
+
+### 12.13.18
+- Added FrontEndReact location - this will house an example of how to use React components as widgets (typescript enabled)
+
 ### 11.25.18
 - Added FrontEndSimple location - this will house a simple project example for building widgets
 
