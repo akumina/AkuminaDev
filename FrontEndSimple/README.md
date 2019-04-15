@@ -23,8 +23,8 @@ Update the ./deploy.js with your client/local machine settings
 ```javascript
 var args = {
     "options": options.toString(),
-    "envdir": "C:\\Projects\\Akumina\\FrontEndSimple\\build\\", //make this path is correct - relative path supported
-    "assetdirectory": "MyClient", //be sure the follow path exists {{envdir}}\\sitedefinitions\\MyClient
+    "envdir": "C:\\Projects\\Akumina\\FrontEndSimple\\build\\", //make sure this path is correct - relative paths are supported
+    "assetdirectory": "MyClient", //be sure the following path exists {{envdir}}\\sitedefinitions\\MyClient
     "spdirectory": "DigitalWorkplace", //deploys to the following folder in Style Library/{spdirectory}
     "spurl": "", //full site collection url https://myclient.sharepoint.com/sites/intranet
     "spuser": "", //user@myclient.onmicrosoft.com
@@ -128,7 +128,7 @@ Dont want to use 'MyClient'? You will need to change this in a few places
 var jsClientName = "MyClient"; 
 ```
 
-* ./akumina.config.js
+* ./akumina.config.json
 
 ```javascript
 "WidgetPackageDestinationPath": "build\\sitedefinitions\\MyClient\\widgetpackages"
@@ -141,7 +141,7 @@ var jsClientName = "MyClient";
 ```
 
 
-* config.json within your widget directory (if you created the sub already)
+* config.json within your widget directory (if you created the stub already)
 ```javascript
  "Definition": {
         "Name": "MyWidget",
