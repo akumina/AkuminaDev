@@ -11,6 +11,12 @@ https://github.com/akumina/AkuminaTraining/wiki/Site-Deployer:-Continuous-Site-P
 
 #### ChangeList
 
+### [4.1.1904.1501] - 04.15.19
+- sleep,exportlists,uploadfiles,webpartgallery,groups,siteproperties options added
+- azurestorageassets arg added (Azure CDN deployment support)
+- addmastertoroot arg added
+- added support to 'lists' option to update items based on id rather than title (for large lists)
+
 ### [4.1.1812.0601] - 12.06.18
 - clientid clientsecret args added - use with spUrl
   
@@ -47,6 +53,12 @@ Command line parameters
 | `spPassword` | Sharepoint password | 12345 |
 | `clientid` | Sharepoint app client id | guid |
 | `clientsecret` | Sharepoint app client secret |  | 
+| `azurestorageaccountname ` | Azure Storage account name  |  | 
+| `azurestoragecontainer` | Azure Storage blob container name  |  | 
+| `azurestorageaccountkey` | Azure Storage account key  |  | 
+| `cdnprefix ` | replaces {{CDNPrefix}} token in Master page with this value  |  | 
+
+ 
 
 #### Minimum usage with username|password
 
@@ -82,8 +94,9 @@ Check deploy.js for proper flags:
 | `fonts` | Deploys contents of **envdir**/sitedefinitions/**assetdirectory**/branding/fonts |
 | `addwiki` | N/A  |
 | `modern` | **In PROGRESS** Not Supported  |
-
-
-
-
-
+| `sleep` | The deployer will sleep for 15 seconds |
+| `exportlists` | Reads 'exportLists' key from app.config - will export configured lists  |
+| `uploadfiles` | Deploys contents of **envdir**/sitedefinitions/**assetdirectory**/UploadFiles |
+| `webpartgallery` |  |
+| `groups` | Deploys Sharepoint Security Groups from **envdir**/sitedefinitions/**assetdirectory**/SecurityGroups/groups.xml |
+| `siteproperties` | Deploys Site Properties from **envdir**/sitedefinitions/**assetdirectory**/SiteProperties/properties.xml |
