@@ -1,0 +1,7 @@
+{
+  "docs": {
+    "Akumina 4.5": ["ak-frame45", "ak-sitecontext", "ak-performance", "ak-performance-measuring"],
+    "akumina-widget-builder": ["ak-widget-builder", "yo-akumina", "ak-widget-builder-skipping-instances", "ak-widget-builder-token-replacement"],
+    "General API": ["api"]
+  }
+}
