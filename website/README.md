@@ -1,54 +1,45 @@
 This website was created with [Docusaurus](https://docusaurus.io/).
 
-# What's In This Document
+This read me is for documentation contributors who want to add/edit content and deploy the website
 
-* [Get Started in 5 Minutes](#get-started-in-5-minutes)
-* [Directory Structure](#directory-structure)
-* [Editing Content](#editing-content)
-* [Adding Content](#adding-content)
-* [Full Documentation](#full-documentation)
+# Installation/tooling
 
-# Get Started in 5 Minutes
+You will need node and git
 
-1. Make sure all the dependencies for the website are installed:
+1. Clone the AkuminaDev git repo
+```sh
+# Install dependencies
+$ git clone https://github.com/akumina/AkuminaDev.git
+$ cd AkuminaDev/website
+```
+
+2. Make sure all the dependencies for the website are installed with yarn or npm:
 
 ```sh
 # Install dependencies
-$ yarn
+$ yarn install
 ```
-2. Run your dev server:
+3. After editing content, run the dev server to preview changes:
 
 ```sh
 # Start the site
 $ yarn start
 ```
 
-## Directory Structure
+5. Build static website 
 
-Your project file structure should look something like this
+```sh
+# Build the static site
+$ yarn build
+```
 
-```
-my-docusaurus/
-  docs/
-    doc-1.md
-    doc-2.md
-    doc-3.md
-  website/
-    blog/
-      2016-3-11-oldest-post.md
-      2017-10-24-newest-post.md
-    core/
-    node_modules/
-    pages/
-    static/
-      css/
-      img/
-    package.json
-    sidebar.json
-    siteConfig.js
-```
+5. Copy built files to hosting repo and commit
 
 # Editing Content
+
+## Editing markdown directly on GitHub
+
+Markdown docs in the docs folder can be edited directly on GitHub. The manual deployment process outlined above will have to be enacted before changes are displayed on the site.
 
 ## Editing an existing docs page
 

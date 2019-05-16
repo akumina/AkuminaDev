@@ -19,3 +19,28 @@
     background-color: #78bc1f;
     color: #40395f;
 }
+
+a {
+    text-decoration: underline;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+header a, header a:hover {
+    text-decoration: none;
+}
+
+footer a, footer a:hover {
+    text-decoration: none;
+}
+
+a.navItem {
+    text-decoration: none;
+}
+
+a.navItem:hover {
+    text-decoration: underline;
+    font-weight: bold;
+}
