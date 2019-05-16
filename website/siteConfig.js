@@ -22,7 +22,7 @@ const users = [
 
 const siteConfig = {
   title: 'Akumina Developer Documentation', // Title for your website.
-  tagline: 'A website for developer documentation of Akumina OS framework',
+  tagline: 'A website for developer documentation of Akumina framework',
   url: 'https://akumina.github.io', // Your website URL
   baseUrl: '/Akumina/', // Base URL for your project */
   // For github.io type URLs, you would set the url and baseUrl like:

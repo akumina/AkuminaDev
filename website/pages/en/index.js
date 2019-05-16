@@ -198,7 +198,7 @@ class Index extends React.Component {
           {
             content:
               'We are working on improving our developer experience. ' +
-              'Please check back regularly for updates and additionall materials',
+              'Please check back regularly for updates and additional materials',
             image: `${baseUrl}img/undraw_youtube_tutorial_2gn3.svg`,
             imageAlign: 'left',
             title: 'More tutorials and enhancements to come!',
