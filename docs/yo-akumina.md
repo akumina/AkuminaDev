@@ -11,11 +11,11 @@ This yeoman template enables developers to get up and running with a vanilla or 
 
 ## Install
 
-Make sure to have NODE 8.9.1++ [Download Node](https://nodejs.org/en/download/) - Choose the LTS version
+Make sure to have NODE 8.9.1++ or the LTS version: [Download Node](https://nodejs.org/en/download/) - Choose the LTS version
 
-Install [Yeoman](http://yeoman.io) and generator-akumina.
+### Install Locally
 
-(**You’ll need to have Node 8.9.1++ on your machine** [node.js](https://nodejs.org/en/download/)). Choose the LTS version
+Install [Yeoman](http://yeoman.io) and generator-akumina locally.
 
 ```bash
 npm install yo
@@ -28,6 +28,23 @@ Then generate your new project:
 mkdir project-name
 cd project-name
 npx yo generator-akumina
+```
+
+### Install Globally
+
+Install [Yeoman](http://yeoman.io) and generator-akumina globally.
+
+```bash
+npm install -g yo
+npm install -g generator-akumina
+```
+
+Then generate your new project:
+
+```bash
+mkdir project-name
+cd project-name
+yo generator-akumina
 ```
 
 Choose between React and simple vanilla widget stubs, then see the wiki or the generated README.md for more information.
