@@ -1,6 +1,6 @@
 ---
 id: yo-react
-title: Yo React
+title: React sample project
 ---
 
 ### Akumina sample project - FrontEndReact (with Typescript)
