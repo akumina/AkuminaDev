@@ -1,0 +1,14 @@
+{
+  "name": "akuminasitedeployer",
+  "version": "4.5.0",
+  "description": "Used to deploy assets to sharepoint online",
+  "main": "deploy.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "exe": "^1.0.2"
+  }
+}
