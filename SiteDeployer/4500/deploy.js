@@ -1,38 +1,18 @@
 var exeCute = require('exe');
+const dotenv = require('dotenv');
+const siteDeployerConfig = require('./akumina.siteDeployer.config.json');
+dotenv.config();
 
+/*-----------------------------------------------------------------
+Whereas this file was previously edited, it is no longer
+necessary to do so. One can just edit .env and siteDeployer.config.json
+-----------------------------------------------------------------*/
 
-var options = [];
-//options.push("masterpage");
-//options.push("js");
-//options.push("css");
-//options.push("lists");
-//options.push("layouts");
-//options.push("pages");
-//options.push("pagewidgets");
-//options.push("addtermsets");
-//options.push("controls");
-options.push("widgets");
-//options.push("contentfiles");
-//options.push("imagefiles");
-//options.push("updatelists");
-//options.push("homepage");
-//options.push("fonts");
-//options.push("addwiki");
+const options = Object.entries(siteDeployerConfig.Options)
+    .filter(([k, v]) => v == true).map(([k, v]) => k).toString()
 
+const envParams = Object.entries(process.env).filter(([key, value]) =>
+    siteDeployerConfig.Args.includes(key) && value != '').map(o =>
+        `${o[0]} ${o[1]}`).join(' ')
 
-var spUrlDev = "";
-var spUserDev = "";
-var spPassDev = "";
-
-
-var args = {
-    "options": options.toString(),
-    "envdir": "", // e.g. "C:\\Akumina-Products\\DigitalWorkplaceWidgets\\Releases\\4.1.0.0\\Src",
-    "assetdirectory": "DigitalWorkplaceCore",
-    "spdirectory": "DigitalWorkplace",
-    "spurl": spUrlDev,
-    "spuser": spUserDev,
-    "sppassword": spPassDev
-};
-
-exeCute('.\\tools\\Akumina.SiteDeployer.exe options ' + args.options + ' envdir ' + args.envdir + ' assetdirectory ' + args.assetdirectory + ' spdirectory ' + args.spdirectory + ' spurl ' + args.spurl + ' spuser ' + args.spuser + ' sppassword ' + args.sppassword);
+exeCute('.\\tools\\Akumina.SiteDeployer.exe options ' + options + ' ' + envParams);
