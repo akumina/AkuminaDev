@@ -1,5 +1,5 @@
 ---
-id: ak-widget-builder
+id: Akumina-Widget-Builder
 title: Akumina Widget Builder
 ---
 

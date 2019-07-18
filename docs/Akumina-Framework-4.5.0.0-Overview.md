@@ -1,10 +1,10 @@
 ---
-id: ak-frame45
-title: Akumina Framework 4.5.0.0
+id: Akumina-Framework-4-5-0-0-Overview
+title: Akumina Framework 4.5.0.0 Overview
 ---
 
 ## New Features - Anchor Items
-This doc is meant to be catered towards developers, end user documentation can be found on the [learning center](https://content.akumina.com/learningcenter/Content/Home.htm)
+This doc is meant to be catered twords developers, end user documentation can be found on the [learning center](https://content.akumina.com/learningcenter/Content/Home.htm)
 
 ### Page (Experience) Builder
 Added more functionality around building pages through the use of the VirtualPageWidget

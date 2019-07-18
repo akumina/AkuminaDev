@@ -1,11 +1,6 @@
 ---
-id: Akumina-Widget-Builder---Token-replacement-for-widget-properties
-title: Akumina Widget Builder   Token replacement for widget properties
----
-
----
-id: Akumina-Widget-Builder---Token-replacement-for-widget-properties
-title: Akumina Widget Builder   Token replacement for widget properties
+id: Akumina-Widget-Builder-Token-replacement-for-widget-properties
+title: Token replacement for widget properties
 ---
 
 # Token replacement for widget properties

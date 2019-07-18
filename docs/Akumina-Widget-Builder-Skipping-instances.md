@@ -1,11 +1,6 @@
 ---
-id: Akumina-Widget-Builder---Skipping-instances
-title: Akumina Widget Builder   Skipping instances
----
-
----
-id: Akumina-Widget-Builder---Skipping-instances
-title: Akumina Widget Builder   Skipping instances
+id: Akumina-Widget-Builder-Skipping-instances
+title: Skipping instances
 ---
 
 # Skipping Instances in package generation

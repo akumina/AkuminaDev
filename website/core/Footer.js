@@ -37,14 +37,17 @@ class Footer extends React.Component {
           </a>
           <div>
             <h5>Docs</h5>
-            <a href={this.docUrl('ak-frame45.html', this.props.language)}>
+            <a href={this.docUrl('Akumina-Framework-4-5-0-0-Overview.html', this.props.language)}>
               Akumina Framework 4.5
             </a>
-            <a href={this.docUrl('ak-widget-builder.html', this.props.language)}>
+            <a href={this.docUrl('Akumina-Widget-Builder.html', this.props.language)}>
               Akumina Widget Builder
             </a>
-            <a href={this.docUrl('doc3.html', this.props.language)}>
-              Typescript API Reference
+            <a href={this.docUrl('Yo-Akumina.html', this.props.language)}>
+              Akumina Yeoman Generator
+            </a>
+            <a href={this.docUrl('Site-Deployer-Continuous-Site-Package-Deployment-via-a-console-app.html', this.props.language)}>
+              Site Deployer
             </a>
           </div>
           <div>

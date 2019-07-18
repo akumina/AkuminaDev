@@ -1,6 +1,6 @@
 ---
-id: ak-performance-measuring
-title: Measuring performance with mark and measure
+id: Measuring-Performance-With-Mark-and-Measure
+title: Measuring Performance With Mark and Measure
 ---
 
 ## Applies to

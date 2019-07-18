@@ -1,6 +1,6 @@
 ---
-id: yo-simple
-title: Simple Akumina sample project
+id: Yo-Akumina-Simple-template
+title: Simple template
 ---
 
 ### Akumina sample project - FrontEndSimple

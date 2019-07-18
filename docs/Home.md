@@ -1,6 +1,6 @@
 ---
-id: home
-title: Akumina Developer Docs
+id: Home
+title: Home
 ---
 
 Welcome to the AkuminaDev wiki!  

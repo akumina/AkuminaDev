@@ -1,3 +1,8 @@
+---
+id: Akumina-AddIn-Logger
+title: Akumina.AddIn.Logger
+---
+
 # Applies to
 Akumina 3.4 Framework and above
 

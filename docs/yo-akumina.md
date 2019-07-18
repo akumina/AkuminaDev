@@ -1,5 +1,5 @@
 ---
-id: yo-akumina
+id: Yo-Akumina
 title: Yo Akumina
 ---
 
@@ -27,7 +27,7 @@ Then generate your new project:
 ```bash
 mkdir project-name
 cd project-name
-npx yo generator-akumina
+npx yo akumina
 ```
 
 ### Install Globally
@@ -44,7 +44,7 @@ Then generate your new project:
 ```bash
 mkdir project-name
 cd project-name
-yo generator-akumina
+yo akumina
 ```
 
 Choose between React and simple vanilla widget stubs, then see the wiki or the generated README.md for more information.

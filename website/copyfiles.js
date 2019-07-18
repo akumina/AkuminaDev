@@ -20,12 +20,18 @@ const listDir = (dir, fileList = []) => {
             let src = path.join(dir, file);
             let newSrc = path.join(dir, name);
             let oldContent = fs.readFileSync(src, 'utf-8');
-            let newTitle = title.replace(/-/g, ' ')
+            let newTitle;
+            if (file.includes(':')) {
+                newTitle = file.split(':-')[1].split('.md')[0].replace(/-/g, ' ')
+            }
+            else {
+                newTitle = title.replace(/-/g, ' ');
+            }
             fileList.push({
                 oldSrc: src,
                 newSrc: newSrc,
                 oldContent: oldContent,
-                newContent: `---\r\nid: ${title}\r\ntitle: ${newTitle}\r\n---\r\n\r\n`,
+                newContent: `---\r\nid: ${title.replace(/\./g, '-')}\r\ntitle: ${newTitle}\r\n---\r\n\r\n`,
             });
 
         }

@@ -1,11 +1,6 @@
 ---
-id: Akumina-SiteContext---Forcing-latest-widget-javascript-updates-to-be-fetched
-title: Akumina SiteContext   Forcing latest widget javascript updates to be fetched
----
-
----
-id: Akumina-SiteContext---Forcing-latest-widget-javascript-updates-to-be-fetched
-title: Akumina SiteContext   Forcing latest widget javascript updates to be fetched
+id: Akumina-SiteContext-Forcing-latest-widget-javascript-updates-to-be-fetched
+title: Forcing latest widget javascript updates to be fetched
 ---
 
 ## Applies to
