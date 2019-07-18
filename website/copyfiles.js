@@ -2,8 +2,6 @@
 //Ref: http://nephewapps.com/2018/09/09/programmatically-edit-any-file-in-nodejs/
 'use strict';
 
-'use strict';
-
 const path = require('path');
 const fs = require('fs');
 
