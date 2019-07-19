@@ -179,6 +179,21 @@ class Index extends React.Component {
       );
     };
 
+    const CommunityBrand = () => (
+      <Block>
+        {[
+          {
+            content:
+              'Startup life! We currently have a small team on-site working on developer experience. And, this sight will be our primary conduit to provide authoritative support on this aspect of our product. '+
+              'Please visit the [**Akumina Community Site**](https://community.akumina.com/) for detailed information and interactive discussion about the product from a truly product perspective.',
+            image: `${baseUrl}img/undraw_startup_life_2du2.svg`,
+            imageAlign: 'left',
+            title: 'Welcome to the Akumina Documentation for developers!',
+          },
+        ]}
+      </Block>
+    );
+
     const Landing = () => (
       <Block background="light">
         {[
@@ -188,7 +203,7 @@ class Index extends React.Component {
               'Please visit [**AkuminaTraining**](https://github.com/akumina/AkuminaTraining/wiki) for documentation not yet moved here',
             image: `${baseUrl}img/undraw_online_page_cq94.svg`,
             imageAlign: 'right',
-            title: 'Welcome to the Akumina Documentation for developers!',
+            title: 'Check back for regular updates to the blog and docs!',
           },
         ]}
       </Block>
@@ -221,6 +236,7 @@ class Index extends React.Component {
           <Description />
           <Showcase />*/}
         </div>
+        <CommunityBrand />
         <Landing />
         <Akx />
       </div>
