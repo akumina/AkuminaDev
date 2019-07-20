@@ -68,7 +68,6 @@ class HomeSplash extends React.Component {
             <Button href={docUrl('Akumina-Widget-Builder.html')}>Akumina Widget Builder</Button>
             <Button href={docUrl('yo-akumina.html')}>Yo Akumina</Button>
             <Button href={docUrl('Site-Deployer-Continuous-Site-Package-Deployment-via-a-console-app.html')}>Site Deployer</Button>
-            <Button href={docUrl('AppManager-Enabling-Load-Balancing.html')}>App Manager</Button>
           </PromoSection>
         </div>
       </SplashContainer>
