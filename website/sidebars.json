@@ -3,7 +3,6 @@
     "Akumina 4.5": ["Akumina-Framework-4-5-0-0-Overview", "Akumina-Framework-Performance-Considerations", "Akumina-SiteContext-Forcing-latest-widget-javascript-updates-to-be-fetched", "Akumina-AddIn-Logger", "Measuring-Performance-With-Mark-and-Measure", "Wrapping-GenericListControl-with-Custom-ViewModel-Functionality", "Production-Settings-Disabling-debug-mode"],
     "AK Widget Builder": ["Akumina-Widget-Builder", "Akumina-Widget-Builder-Skipping-instances", "Akumina-Widget-Builder-Token-replacement-for-widget-properties"],
     "Yo Akumina": ["Yo-Akumina", "Yo-Akumina-React", "Yo-Akumina-Simple-template"],
-    "Site Deployer": ["Site-Deployer-4-1", "Site-Deployer-4-5"],
     "Deployment Manager": ["Deployment-Manager-Overview", "Deployment-Manager-Adding-A-Custom-Site-Definition", "Deployment-Manager-Core-Step-Classes", "Deployment-Manager-Custom-Site-Definition-Components", "Deployment-Manager-Custom-Site-Definition-XML", "Deployment-Manager-Custom-Subsite-Definitions", "Deployment-Manager-Sample-Step-Code", "Deployment-Manager-Supported-Tokens"],
     "Azure DevOps": ["Azure-DevOps-Setting-up-a-build-to-deploy-a-site-package", "Azure-DevOps-Setting-up-a-build-to-deploy-file-to-App-Manager-hosted-in-an-app-service"],
     "Configuration": ["Configuration-Edit-the-Redis-cache-timeout", "Configuration-Using-a-key-vault-for-the-client-id-and-client-secret"]
