@@ -1,0 +1,45 @@
+{
+  "version-4.5.1-docs": {
+    "Akumina 4.5": [
+      "version-4.5.1-Akumina-Framework-4-5-0-0-Overview",
+      "version-4.5.1-Akumina-Framework-Performance-Considerations",
+      "version-4.5.1-Akumina-SiteContext-Forcing-latest-widget-javascript-updates-to-be-fetched",
+      "version-4.5.1-Akumina-AddIn-Logger",
+      "version-4.5.1-Measuring-Performance-With-Mark-and-Measure",
+      "version-4.5.1-Wrapping-GenericListControl-with-Custom-ViewModel-Functionality",
+      "version-4.5.1-Production-Settings-Disabling-debug-mode"
+    ],
+    "AK Widget Builder": [
+      "version-4.5.1-Akumina-Widget-Builder",
+      "version-4.5.1-Akumina-Widget-Builder-Skipping-instances",
+      "version-4.5.1-Akumina-Widget-Builder-Token-replacement-for-widget-properties"
+    ],
+    "Yo Akumina": [
+      "version-4.5.1-Yo-Akumina",
+      "version-4.5.1-Yo-Akumina-React",
+      "version-4.5.1-Yo-Akumina-Simple-template"
+    ],
+    "Site Deployer": [
+      "version-4.5.1-Site-Deployer-Version-4-1",
+      "version-4.5.1-Site-Deployer-Version-4-5"
+    ],
+    "Deployment Manager": [
+      "version-4.5.1-Deployment-Manager-Overview",
+      "version-4.5.1-Deployment-Manager-Adding-A-Custom-Site-Definition",
+      "version-4.5.1-Deployment-Manager-Core-Step-Classes",
+      "version-4.5.1-Deployment-Manager-Custom-Site-Definition-Components",
+      "version-4.5.1-Deployment-Manager-Custom-Site-Definition-XML",
+      "version-4.5.1-Deployment-Manager-Custom-Subsite-Definitions",
+      "version-4.5.1-Deployment-Manager-Sample-Step-Code",
+      "version-4.5.1-Deployment-Manager-Supported-Tokens"
+    ],
+    "Azure DevOps": [
+      "version-4.5.1-Azure-DevOps-Setting-up-a-build-to-deploy-a-site-package",
+      "version-4.5.1-Azure-DevOps-Setting-up-a-build-to-deploy-file-to-App-Manager-hosted-in-an-app-service"
+    ],
+    "Configuration": [
+      "version-4.5.1-Configuration-Edit-the-Redis-cache-timeout",
+      "version-4.5.1-Configuration-Using-a-key-vault-for-the-client-id-and-client-secret"
+    ]
+  }
+}
