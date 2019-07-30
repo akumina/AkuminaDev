@@ -1,22 +1,12 @@
 # Site Deployer 4.5
 This is a console app used for deploying Akumina bits into Sharepoint online. It can be used for local developer workstations or within VSTS / automated CI tooling. The same site package used within Site Creator can be used with the Site deployer, or vice versa. [Supported steps are below](#usage)
 >**NOTE** - DONOT use with Akumina 4.0 Site Collections - there is a seperate Site Deployer for 4.0 versions
-
+git status
 #### Helpful links
 Site Package overview:  
 https://github.com/akumina/AkuminaDev/wiki/Site-Package-Overview 
 Continuos Intergration flow:  
 https://github.com/akumina/AkuminaDev/wiki/Site-Deployer:-Continuous-Site-Package-Deployment-via-a-console-app
-
-#### ChangeList
-
-### [4.5.1907.2901] - 07.29.19
-- Added support for 'layoutfolder' attribute when adding classic pages with a layout in a folder different than AssetDirectory -JA
-- SetSiteProperties step added 'siteproperties' - SK
-- ReferenceListId updates - SK
-- OfficeDevPnP.Core.dll updated to 3.6.1902.0 - JA
- 
-
 
 #### Install  
 
@@ -75,8 +65,6 @@ Set options to true/false in akumina.sitedeployer.config.json:
 | `uploadfiles` | Deploys contents of **envdir**/sitedefinitions/**assetdirectory**/UploadFiles |
 | `webpartgallery` |  |
 | `groups` | Deploys Sharepoint Security Groups from **envdir**/sitedefinitions/**assetdirectory**/SecurityGroups/groups.xml |
-| `siteproperties` | Deploys contents of **envdir**/sitedefinitions/**assetdirectory**/SiteProperties/properties.xml |
 | `virtualpages` |  |
-
 
 >**NOTE** - deploy.js process from 4.1 is compatible with 4.5, just swap out the 4.5 deploy.js with 4.1
