@@ -48,7 +48,8 @@ The format of the file is listed below with default naming convention:
                 ]
             }
         ]
-    }
+    },
+    "IsLegacyMode": false
 }
 ```
 
@@ -80,7 +81,7 @@ The <name> parameter is optional and, if used, will generate a skeleton JSON fil
 ![](https://akuminadownloads.blob.core.windows.net/wiki/AkuminaDev/virtualpageterminalout.PNG)
 
 
-## Page Properties
+## JSON File Properties
 
 There is currently a limitation on certain properties tied to the Widgets object defined in the Virtual Page JSON file. This limitation is between [WidgetInstanceId] and [Properties] on the Widget object. It's important to note the purpose of these properties and why this limitation is being set:
 
@@ -88,17 +89,20 @@ WidgetInstanceId is used to make a connection between the Widget placed on the p
 
 The limitation is that both of these properties can neither be populated nor empty at the same time. One of these properties must be defined while the other remains empty. The reason for this is because of page properties. The declaration of these properties denotes that a Page Property is being defined or a pre-existing widget instance is being referenced. It is not allowed to use page properties and a widget instance at the same time
 
-### What is a page property? 
+### What is a page specific widget property? 
 
-A page property can be imagined as an instance of a widget that is defined on the page and stored on the page, not in App Manager. The possible use-cases for this would be one-off scenarios in which you need to define a widget for a single purpose on a single page that is not going to be used multiple times throughout multiple pages
+A page specific widget property can be imagined as an instance of a widget that is defined on the page and stored on the page, not in App Manager. The possible use-cases for this would be one-off scenarios in which you need to define a widget for a single purpose on a single page that is not going to be used multiple times throughout multiple pages.
+Another good way to think of widget instances is to imagine them as being global variables. By definition, global variables are available to all underlying functions, whether those functions need them or not, and are ever-present. It would be far more efficient to allocate resources to a variable when/if it's needed instead of using those resources to simply be around at all times.
 
 Example: 
 I, as a developer, need to define a calendar to show events on the Sharepoint site. I have several subsites which also need to display a calendar widget to display events for those individual departments. For this purpose, I would create an instance of the Calendar Widget in App Manager to be re-used across the multiple pages on which this Calendar needs to be displayed.
 
 Another Example:
-I, as a developer, need to define a calendar to show events on my events page. There is currently no plan to show this calendar on any other page and this is the only area/department which needs to display a calendar of events. For this purpose, I would create a page with a calendar widget and define the properties on the page. Since this would be the only page this particular widget is used on, there is no need to create and persist an instance in App Manager
+I, as a developer, need to define a calendar to show events on my events page. There is currently no plan to show this calendar on any other page and this is the only area/department which needs to display a calendar of events. For this purpose, I would create a page with a calendar widget and define the widget properties on the page. Since this would be the only page this particular widget is used on, there is no need to create and persist an instance in Sharepoint.
 
-Please note that creating an instance in App Manager means that instance is stored in a Sharepoint List and managed through App Manager, which does increase work load for App Manager. For efficiency reasons, it is a good idea to be mindful of how much processing App Manager needs to do whenever a widget needs to be managed through the back-end UI. Additionally, if working with a code repository, each instance is stored in the config.json file of the associated widget. This file can grow and, when deployed, needs to be processed and pushed to the Sharepoint API. Large config files holding a large number of instances can increase deploy time.
+Please note that creating a widget instance means that instance is stored in a Sharepoint List and managed through App Manager, which does increase work load for App Manager. For efficiency reasons, it is a good idea to be mindful of how much processing App Manager needs to do whenever a widget needs to be managed through the back-end UI. Additionally, if working with a code repository, each instance is stored in the config.json file of the associated widget. This file can grow and, when deployed, needs to be processed and pushed to the Sharepoint API. Large config files holding a large number of instances can increase deploy time.
+
+**Please Note:** We will be documenting how to go about page specific properties at a later date.
 
 
 ## Manual Data Entry
@@ -120,7 +124,10 @@ With the current implementation, certain properties have to be entered in manual
 ]
 ```
 * Widget Instance ID
-
+* IsLegacyMode
+    * IsLegacyMode denotes that you are deploying to an Akumina Sharepoint site of version 4.5.0.0 or earlier. There are certain List Columns that are not present in earlier versions that will break the deploy process if an attempt is made to populate non-existant columns.
+    * In the user experience, there is no prompt to choose whether the flag is set or not. The user must manually make this change.
+    * The default value for this property is false.
 
 ## Other Features
 
