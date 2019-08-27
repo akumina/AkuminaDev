@@ -44,3 +44,20 @@ a.navItem:hover {
     text-decoration: underline;
     font-weight: bold;
 }
+
+.button-new {
+    position: relative;
+    display: inline-block;
+}
+
+.button-new img {
+    width: 40px;
+    position: absolute;
+    left: 2px;
+    top: 0px;
+}
+
+.button-new p {
+    margin-bottom: 0px;
+    padding-left: 7px;
+}

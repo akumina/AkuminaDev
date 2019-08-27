@@ -1,6 +1,6 @@
 ---
 id: AK-Virtual-Page-Builder
-title: AK Virtual Page Builder
+title: Akumina Virtual Page Builder
 ---
 
 ## Overview
