@@ -49,7 +49,7 @@ The format of the file is listed below with default naming convention:
             }
         ]
     },
-    "IsLegacyMode": false
+    "IsLegacyMode": false //Denotes whether site is 4.1 or 4.5, more information below
 }
 ```
 
@@ -75,6 +75,11 @@ As previously stated, the Virtual Page Generator is similar to the Widget Builde
 ```bash
 npm run vpstub <name>
 ```
+**Note**: If the above does not work, please make sure the following line is included in your package.json file under the "scripts" node:
+
+```json
+"vpstub": "akumina-virtualpage-builder stub"
+```
 
 The <name> parameter is optional and, if used, will generate a skeleton JSON file with some default properties initialized as can be seen above. If the <name> parameter is omitted, the user will go through the normal virtual page generator experience and be guided through the creation of a (mostly) complete virtual page file. An example user experience is displayed below:
 
@@ -91,14 +96,14 @@ The limitation is that both of these properties can neither be populated nor emp
 
 ### What is a page specific widget property? 
 
-A page specific widget property can be imagined as an instance of a widget that is defined on the page and stored on the page, not in App Manager. The possible use-cases for this would be one-off scenarios in which you need to define a widget for a single purpose on a single page that is not going to be used multiple times throughout multiple pages.
+A page-specific widget property can be imagined as an instance of a widget that is defined on the page and stored on the page definition, not globally in a sharepoint list. The possible use-cases for this would be one-off scenarios in which you need to define a widget for a single purpose on a single page that is not going to be used multiple times throughout multiple pages.
 Another good way to think of widget instances is to imagine them as being global variables. By definition, global variables are available to all underlying functions, whether those functions need them or not, and are ever-present. It would be far more efficient to allocate resources to a variable when/if it's needed instead of using those resources to simply be around at all times.
 
 Example: 
-I, as a developer, need to define a calendar to show events on the Sharepoint site. I have several subsites which also need to display a calendar widget to display events for those individual departments. For this purpose, I would create an instance of the Calendar Widget in App Manager to be re-used across the multiple pages on which this Calendar needs to be displayed.
+I, as a developer, need to define a calendar to show events on the Sharepoint site. I have several subsites which also need to display a calendar widget to display events for those individual departments. For this purpose, I would create an instance of the Calendar Widget in App Manager, to be stored in sharepoint, to be re-used across the multiple pages upon which this Calendar needs to be displayed.
 
 Another Example:
-I, as a developer, need to define a calendar to show events on my events page. There is currently no plan to show this calendar on any other page and this is the only area/department which needs to display a calendar of events. For this purpose, I would create a page with a calendar widget and define the widget properties on the page. Since this would be the only page this particular widget is used on, there is no need to create and persist an instance in Sharepoint.
+I, as a developer, need to define a calendar to show events on my events page. There is currently no plan to show this calendar on any other page and this is the only area/department which needs to display a calendar of events. For this purpose, I would create a page with a calendar widget and define the widget properties on the page. Since this would be the only page this particular widget is used on, there is no need to create a widget instance.
 
 Please note that creating a widget instance means that instance is stored in a Sharepoint List and managed through App Manager, which does increase work load for App Manager. For efficiency reasons, it is a good idea to be mindful of how much processing App Manager needs to do whenever a widget needs to be managed through the back-end UI. Additionally, if working with a code repository, each instance is stored in the config.json file of the associated widget. This file can grow and, when deployed, needs to be processed and pushed to the Sharepoint API. Large config files holding a large number of instances can increase deploy time.
 
