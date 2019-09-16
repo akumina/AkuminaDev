@@ -58,13 +58,11 @@ For every widget instance located on the page, the following information is disp
 * Widget Properties
 
 The widgets on page screen displays every widget on the page, whether they're finished rendering or not. This can be handy to figure out if a specific widget is on the page or not, as well as being able to see the complete definition of every widget on the page.
-Additionally, this screen is also useful for debugging certain problems. An example would be a widget not displaying on the page despite no errors being displayed in the console. This is usually a problem with the reference to the Widget Instance but does not produce an error message:
-
-![](picture of missing widget goes here)
+Additionally, this screen is also useful for debugging certain problems. An example would be a widget not displaying on the page despite no errors being displayed in the console. This is usually a problem with the reference to the Widget Instance but does not produce an error message.
 
 When you view the Widgets on Page screen, the widget is registered on the page but the framework is unable to identify which widget it is, only that something is registered:
 
-![](picture of widgets on page screen goes here)
+![](https://akuminadownloads.blob.core.windows.net/wiki/AkuminaDev/akdebugging_missingwidget.PNG)
 
 The Widget ID is still displayed, which is helpful in determining whether the ID was mis-copied or is not available on the site currently. This could be due to lack of deployment, a bad deployment, or simply copying the ID from a non-widget object.
 
