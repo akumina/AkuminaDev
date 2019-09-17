@@ -1,6 +1,6 @@
 ---
-id: Site-Deployer-4-1
-title: 4.1
+id: Site-Deployer-Version-4-1
+title: Version 4.1
 ---
 
 # Site Deployer 4.1

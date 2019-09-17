@@ -7,7 +7,7 @@ title: Yo Akumina
 
 This yeoman template enables developers to get up and running with a vanilla or react js or ts Akumina Widget. The Akumina team is actively working on creating a better developer experience for the whole widget lifecycle...
 
-[Akumina Widget Builder quick start](https://github.com/akumina/AkuminaDev/wiki/Akumina-Widget-Builder)
+[Akumina Widget Builder quick start](Akumina-Widget-Builder.md)
 
 ## Install
 
