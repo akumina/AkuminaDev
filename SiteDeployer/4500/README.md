@@ -81,7 +81,7 @@ Set options to true/false in akumina.sitedeployer.config.json:
 | `webpartgallery` |  |
 | `groups` | Deploys Sharepoint Security Groups from **envdir**/sitedefinitions/**assetdirectory**/SecurityGroups/groups.xml |
 | `siteproperties` | Deploys contents of **envdir**/sitedefinitions/**assetdirectory**/SiteProperties/properties.xml |
-| `virtualpages` |  |
+| `virtualpages` | Deploys contents of **envdir**/sitedefinitions/**assetdirectory**/VirtualPages - see https://akumina.github.io/docs/AK-Virtual-Page-Builder.html  |
 
 
 >**NOTE** - deploy.js process from 4.1 is compatible with 4.5, just swap out the 4.5 deploy.js with 4.1
