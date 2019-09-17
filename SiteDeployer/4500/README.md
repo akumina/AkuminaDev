@@ -11,7 +11,7 @@ https://github.com/akumina/AkuminaDev/wiki/Site-Deployer:-Continuous-Site-Packag
 #### ChangeList
 
 ### [4.5.1909.1301] - 09.17.19
-- Added support for view 'akumina-virtualpage-builder' and the new virtual page .JSON format  
+- Added support for the new 'akumina-virtualpage-builder' and the new virtual page .JSON format  
 https://akumina.github.io/docs/AK-Virtual-Page-Builder.html 
 
 
