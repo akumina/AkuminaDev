@@ -1,6 +1,6 @@
 {
   "docs": {
-    "Akumina 4.5": ["Akumina-Framework-4-5-0-0-Overview", "Akumina-Framework-Performance-Considerations", "Akumina-SiteContext-Forcing-latest-widget-javascript-updates-to-be-fetched", "Akumina-AddIn-Logger", "Measuring-Performance-With-Mark-and-Measure", "Wrapping-GenericListControl-with-Custom-ViewModel-Functionality", "Production-Settings-Disabling-debug-mode", "Akumina-Widget-Scoping", "Ak-Lazy-Load-View-Binding"],
+    "Akumina 4.5": ["Akumina-Framework-4-5-0-0-Overview", "Akumina-Framework-Performance-Considerations", "Akumina-SiteContext-Forcing-latest-widget-javascript-updates-to-be-fetched", "Akumina-AddIn-Logger", "Measuring-Performance-With-Mark-and-Measure", "Wrapping-GenericListControl-with-Custom-ViewModel-Functionality", "Production-Settings-Disabling-debug-mode", "Akumina-Widget-Scoping", "Ak-Lazy-Load-View-Binding", "AK-Personas-Code-Examples"],
     "AK Widget Builder": ["Akumina-Widget-Builder", "Akumina-Widget-Builder-Skipping-instances", "Akumina-Widget-Builder-Token-replacement-for-widget-properties"],
     "AK Virtual Page Builder": ["AK-Virtual-Page-Builder", "AK-Virtual-Page-Layout-Builder"],
     "Yo Akumina": ["getting-started-yeoman", "Yo-Akumina", "Yo-Akumina-React", "Yo-Akumina-Simple-template"],
