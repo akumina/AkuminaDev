@@ -12,7 +12,7 @@ The purpose of this page will be to discuss and illustrate some of the features 
 
 ## Personas
 
-Personas can be thought of as a bucket of users. It is important to make the distinction that they are not similar to groups or user groups. Another way to imagine Personas is to think of them as a collection of users. The users under a persona have similarities, such as Department, and these similarities are used to assign Personas to users.
+Personas can be thought of as a bucket of users. It is important to make the distinction that they are not similar to enforce access or permissioning. Another way to imagine Personas is to think of them as a collection of users. The users under a persona have similarities, such as Department, and these similarities are used to assign Personas to users.
 
 Personas take a moderately more programmatic approach to this ideal while also retaining flexibility and extensibility. Furthermore, Personas allow admins to tailor experiences towards users sharing common traits. An example use-case would be News widgets. Let’s say there is a generic News widget that shows News Articles. However, being the wonderful administrator you are, you’d like to tailor this news experience to be more relevant to each user. To this end, you would create Personas based on City and/or State to show only the news that is relevant to the current user’s location. The wonderful part of all of this is that it can be done with a single widget instance.
 
