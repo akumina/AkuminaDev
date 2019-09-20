@@ -15,6 +15,10 @@ https://github.com/akumina/AkuminaDev/wiki/Site-Deployer:-Continuous-Site-Packag
 
 #### ChangeList
 
+### [4.5.1909.1301] - 09.17.19
+- Added support for the new 'akumina-virtualpage-builder' and the new virtual page .JSON format
+- https://akumina.github.io/docs/AK-Virtual-Page-Builder.html
+
 ### [4.5.1907.2901] - 07.29.19
 - Added support for 'layoutfolder' attribute when adding classic pages with a layout in a folder different than AssetDirectory -JA
 - SetSiteProperties step added 'siteproperties' - SK
@@ -81,7 +85,7 @@ Set options to true/false in akumina.sitedeployer.config.json:
 | `webpartgallery` |  |
 | `groups` | Deploys Sharepoint Security Groups from **envdir**/sitedefinitions/**assetdirectory**/SecurityGroups/groups.xml |
 | `siteproperties` | Deploys contents of **envdir**/sitedefinitions/**assetdirectory**/SiteProperties/properties.xml |
-| `virtualpages` |  |
+| `virtualpages` | Deploys contents of envdir/sitedefinitions/assetdirectory/VirtualPages - see https://akumina.github.io/docs/AK-Virtual-Page-Builder.html |
 
 
 >**NOTE** - deploy.js process from 4.1 is compatible with 4.5, just swap out the 4.5 deploy.js with 4.1
