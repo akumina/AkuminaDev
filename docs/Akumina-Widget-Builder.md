@@ -144,8 +144,16 @@ This values can be used in the "type" field value
 | bool |
 | choice |
 | json |
-| listselector |
+| listselector¹ |
+| itemselector² |
 | groupselector |
+
+Figure 1 (listselector)
+![](https://akuminadownloads.blob.core.windows.net/wiki/AkuminaDev/ListSelector.PNG)
+
+Figure 2 (itemselector)
+![](https://akuminadownloads.blob.core.windows.net/wiki/AkuminaDev/ItemSelector.PNG)
+
 
 ## The "Instance" property
 ```javascript
