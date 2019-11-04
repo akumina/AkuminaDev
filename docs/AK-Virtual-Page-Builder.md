@@ -59,14 +59,34 @@ There are certain properties that must conform to a standard. Below lists these 
 
 * LayoutID - Possible values:
 ```json
-{ "1 Column" },
-{ "2 Column" },
-{ "3 Column" },
-{ "4 Column" },
-{ "2 Container 2 Column" },
-{ "3 Container 3 Column" },
-{ "4 Container 4 Column" }
+[1] { "1 Column" },
+[2] { "2 Column" },
+[3] { "2 Column Large Right" },
+[4] { "2 Column Large Left" },
+[5] { "2 Column Medium Right" },
+[6] { "2 Column Medium Left" },
+[7] { "3 Column" },
+[8] { "3 Column Medium Middle" },
+[9] { "3 Column Large Middle" },
+[10] { "3 Column Medium Right" },
+[11] { "3 Column Medium Left" },
+[12] { "3 Column Large Right" },
+[13] { "3 Column Large Left" },
+[14] { "4 Column" },
+[15] { "4 Column Large Right" },
+[16] { "4 Column Large Left" },
+[17] { "6 Column" }
 ```
+
+Below is an image denoting the Layout Alias and their visual representation:
+
+![](https://akuminadownloads.blob.core.windows.net/wiki/AkuminaDev/vp_layout.PNG)
+
+It's important to pay special attention to the terminology being used for the virtual page layout. The JSON file uses the terms Container and Zones. These equate to Rows and Columns, respectively. For instance, a page that has 1 Container and 3 Zones would effectively have 1 Row and 3 Columns. Below is an illustration for the more visually inclined:
+
+![](https://akuminadownloads.blob.core.windows.net/wiki/AkuminaDev/containerzoneexample.PNG)
+
+The widgets are all contained in the same Container/Row. The Container/Row has 2 Zones/Columns. In the above example, Important Dates and Quick Links Widgets are contained in the only Container/Row and in the 2nd Zone/Column. The News Widget is contained in the only ContainerRow and in the 1st Zone/Column
 
 ## Generator Process
 
