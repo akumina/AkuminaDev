@@ -16,7 +16,7 @@ We have created an easy script that will get all of the infrastructure set up fo
     > You will need a code editor (i.e. VSCode) and console (e.g. GitBash, CMD, Powershell)
 
 1.  Open the terminal and follow the generator [installation steps](yo-akumina.md) either globally or locally:
-    
+
     > Install [Yeoman](http://yeoman.io) and generator-akumina globally.
 
     ```bash
@@ -49,7 +49,7 @@ We have created an easy script that will get all of the infrastructure set up fo
     ```JavaScript
     yo akumina
     ? Project name: my-project //your solution folder
-    ? Client namespace: MyCompany //namespace where your widgets live 
+    ? Client namespace: MyCompany //namespace where your widgets live
     ? Akumina version: 4.5.0.0 //Should match your version of Akumina product
     ? Use React?: no
     ? Widget source path: src/js/widgets //probably just leave this
@@ -61,7 +61,7 @@ We have created an easy script that will get all of the infrastructure set up fo
     ```JavaScript
     npm run stub
     ? Whats the name of your Widget? MyWidget
-    ? Whats the name of your Widget Namespace? MyCompany.Widgets //should match yo akumina namespace prompt + '.Widgets' 
+    ? Whats the name of your Widget Namespace? MyCompany.Widgets //should match yo akumina namespace prompt + '.Widgets'
     ? Which type of stub you want to start with? (more stubs coming soon) Hello World
     ? What directory should we generate the folder stub in? src/js/widgets
     ? Do you want this stub to be used for an instance only? (used for deploying instances only) No
@@ -75,18 +75,54 @@ We have created an easy script that will get all of the infrastructure set up fo
     ```JavaScript
     yo akumina
     ? Project name: my-project //your solution folder
-    ? Client namespace: MyCompany //namespace where your widgets live 
+    ? Client namespace: MyCompany //namespace where your widgets live
     ? Akumina version: 4.5.0.0 //Should match your version of Akumina product
     ? Use React?: yes
     ? Widget name: MyWidget
     ```
 
-1.  Deploy your widget
+## Deployment
+
+1.  Configure your widget for deployment
+
+    There are a few configuration files that are modified for the purposes of deploying assets to the SharePoint Site Collections
+
+    > Configure what assets you want to deploy in akumina.sitedeployer.config.json. For this simple example, we will only need to deploy the widget javascript assets, so widgets is set true:
+
+    ```JavaScript
+    {
+    "Options": {
+      "masterpage": false,
+      "js": false,
+      //etc...
+      "widgets": true
+      //etc...
+    }
+    ```
 
     > Add required parameters to .env (parameters can also be added as environment variables for cross project use):
-
+    
     ```Bash
-    spurl=https://mycompany.sharepoint.com/sites/appid4848484/
-    spuser=me@company.com
-    sppassword=!s0me%Pass
+      spurl=https://mycompany.sharepoint.com/sites/appid4848484/
+      spuser=me@company.com
+      sppassword=!s0me%Pass
     ```
+
+1.  Manage your project/deployment with the npm scripts
+
+    > As with most node-based projects, there are a number of npm scripts in the package.json file that can be run such as ```npm run all```. That command will clean your solution as well as build, package, and deploy all of the widgets. It is a combination of four separate npm scripts run synchronously:
+
+    ```npm run clean && npm run build && npm run package && npm run deploy```
+
+1.  Deploy a virtual page with [akumina-virtualpage-builder](AK-Virtual-Page-Builder.md)
+
+    Another example of deploying static assets to a site collection
+
+    > After ```npm run vpstub```, set virtualpages to true in akumina.sitedeployer.config.json:
+
+    ```JavaScript
+    {
+    "Options": {
+      //etc...
+      "virtualpages": true
+    }
