@@ -114,7 +114,7 @@ We have created an easy script that will get all of the infrastructure set up fo
 
     ```npm run clean && npm run build && npm run package && npm run deploy```
 
-1.  Deploy a virtual page with [akumina-virtualpage-builder](AK-Virtual-Page-Builder.md)
+1.  Deploy a virtual page with [akumina-virtualpage-builder](AK-Virtual-Page-Builder)
 
     Another example of deploying static assets to a site collection
 
