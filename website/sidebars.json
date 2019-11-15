@@ -10,7 +10,8 @@
       "Production-Settings-Disabling-debug-mode",
       "Akumina-Widget-Scoping",
       "Ak-Lazy-Load-View-Binding",
-      "AK-Personas-Code-Examples"
+      "AK-Personas-Code-Examples",
+      "AK-Configuration-Context"
     ],
     "AK Widget Builder": [
       "Akumina-Widget-Builder",
