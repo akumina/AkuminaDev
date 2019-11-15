@@ -10,8 +10,7 @@
       "Production-Settings-Disabling-debug-mode",
       "Akumina-Widget-Scoping",
       "Ak-Lazy-Load-View-Binding",
-      "AK-Personas-Code-Examples",
-      "AK-Configuration-Context"
+      "AK-Personas-Code-Examples"
     ],
     "AK Widget Builder": [
       "Akumina-Widget-Builder",
@@ -49,7 +48,8 @@
     ],
     "Configuration": [
       "Configuration-Edit-the-Redis-cache-timeout",
-      "Configuration-Using-a-key-vault-for-the-client-id-and-client-secret"
+      "Configuration-Using-a-key-vault-for-the-client-id-and-client-secret",
+      "AK-Configuration-Context"
     ],
     "Debugging": ["Ak-Debugging"]
   },
