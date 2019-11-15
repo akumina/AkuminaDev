@@ -26,19 +26,78 @@ The ConfigurationContext object is cached in App Manager. The cache is only upda
 
 ## Methods of Adding to ConfigurationContext
 
+# Manual List Update
 
 The primary method of adding to the ConfigurationContext object is to save your settings in the DigispaceConfigurationIDS_AK list. The values in the list are saved in a Key-Value-Pair (hereby referred to as KVP) format for easy readability and accessability. For example, let's say you wanted to add a default name for users who do not have a display name set on their account. To accomplish this, you would need to navigate to your site and open Site Contents. From there, open up the DigispaceConfigurationIDS_AK list. This list is automatically provisioned by App Manager on initial load.
 Once in the list, simply add a new row with the [Title] property being the name of your custom property, so DefaultDisplayName in our example, and the value as appropriate, which would be 'Mystery User' for us. Save the entry, regenerate the Configuration Cache, and your new property should be accessible.
 
 ![](https://akuminadownloads.blob.core.windows.net/wiki/AkuminaDev/configcontext-addnewrow.PNG)
 
-To verify this, simply open the browser debug window (F12 in Chrome) from any page running the Akumina Framework and type in the following:
+# Akumina Project Deployment
+
+The alternative method for editing this list is to use the Akumina Project structure to deploy your changes. For this example, I'll be using Visual Studio Code as the IDE of choice. Your Akumina Project directory should have the following structure:
+
+/projectDir/build/sitedefinitions/<namespace>/ListDefinitions/Update.xml
+
+This file holds a structure of items to be updated to the specified list. An example is shown below:
+
+```xml
+<lists>
+  <list name="DigispaceConfigurationIDS_AK" noCrawl="TRUE">
+    <Data>
+      <Rows>
+        <Row>
+          <Field Name="Title">SiteLogoURL</Field>
+          <Field Name="Value">www.myurl.com/images/logo.png</Field>
+        </Row>
+      </Rows>
+    </Data>
+  </list>
+</lists>
+```
+
+The purpose of this file is to hold data that will "update" the specified list. Using the Akumina Deployer is a reliable way to make sure your Akumina-specific data is deployed in the proper format. Keeping your edits and additions in your Akumina Project, and maintained by source control, will help synchronize data and changes across individuals, teams, or even departments in your company.
+
+Following the structure of the file, we'll add a new entry with our intended update:
+
+```xml
+<lists>
+  <list name="DigispaceConfigurationIDS_AK" noCrawl="TRUE">
+    <Data>
+      <Rows>
+        <Row>
+          <Field Name="Title">SiteLogoURL</Field>
+          <Field Name="Value">www.myurl.com/images/logo.png</Field>
+        </Row>
+        <Row>
+            <Field Name="Title">DefaultDisplayName</Field>
+            <Field Name="Value">Mystery User</FIeld>
+        </Row>
+      </Rows>
+    </Data>
+  </list>
+</lists>
+```
+
+Once you've added the new entry, save the file and navigate over to your "akumina.sitedeployer.config.json" file. This file holds the options for what is deployed when you run the deploy command. Make sure all options are set to FALSE except for the "updatelists" option. This option will tell the deployer to scan your Site Definitions folder for the Update.xml file and push those changes to the Sharepoint site. Once you've set your options, save your changes, make sure your connection and login info in your ".env" file is accurate, and open the Terminal (CTRL+~ by default). Type in the following command:
+
+```
+npm run deploy
+```
+
+You will get some updates on what stage of the deploy process the deployer is currently running. When the process is finished, you should see your cursor blinking on a new terminal line. If there were errors, you will see the log output and some red text denoting exactly what went wrong. Example:
+
+![](https://akuminadownloads.blob.core.windows.net/wiki/AkuminaDev/configcontext-psoutput.PNG)
+
+To verify this, simply navigate to the Sharepoint site's Site Contents and open the DigispaceConfigurationIDS_AK list to view your changes. Additionally, you can open the browser debug window (F12 in Chrome) from any page running the Akumina Framework and type in the following:
 
 ```javascript
 Akumina.Digispace.ConfigurationContext.DefaultDisplayName;
 ```
 
 ![](https://akuminadownloads.blob.core.windows.net/wiki/AkuminaDev/configcontext-verifylistaddition.PNG)
+
+# Through Javascript
 
 You can also assign a value to the ConfigurationContext object like most Javascript objects:
 
