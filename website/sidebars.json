@@ -47,9 +47,9 @@
       "Azure-DevOps-Setting-up-a-build-to-deploy-file-to-App-Manager-hosted-in-an-app-service"
     ],
     "Configuration": [
+      "AK-Configuration-Context",
       "Configuration-Edit-the-Redis-cache-timeout",
-      "Configuration-Using-a-key-vault-for-the-client-id-and-client-secret",
-      "AK-Configuration-Context"
+      "Configuration-Using-a-key-vault-for-the-client-id-and-client-secret"
     ],
     "Debugging": ["Ak-Debugging"]
   },
