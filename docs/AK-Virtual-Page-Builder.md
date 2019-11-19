@@ -9,6 +9,87 @@ The Akumina Virtual Page Builder was created to alleviate the burden of a develo
 
 The Akumina Virtual Page Builder is integrated into the project and is available via NPM, similar to the Akumina Widget Builder. Please keep in mind that this page is currently under construction and any and all information is subject to change. 
 
+## Virtual Page Deployment
+
+There are three steps required to successfully deploy a Virtual Page to your Sharepoint Classic Site. This section assumes a fully configured Akumina Sharepoint Site is already set up. These steps include:
+
+1. Generation of the Virtual Page File (explained in below sections)
+2. Deployment of Virtual Page File
+3. Deployment of Sharepoint ASPX Page
+
+In your Akumina Project Directory, ensure your Virtual Page JSON file is located in the appropriate location. The file should be in the [/SiteDefinitions/<client namespace>/VirtualPages] directory. This file is deployed to the Sharepoint Site using the "virtualpages" deployment option in your akumina.sitedeployer.config.json file. Simply set the "virtualpages" option to true and run the following command to deploy the Virtual Page file:
+
+```bash
+npm run deploy
+```
+
+A physical ASPX page is also required to hold your Virtual Page. The reason for this is because the Virtual Page JSON file is simply the definition of the page and its contents. However, in Sharepoint Classic, there is no way to display this definition without a container. The Virtual Page Definition is read and displayed via the Virtual Page Widget. As one might expect, a widget must be housed on a page in order to be displayed. This dependency-chain illustrates the necessity for this extra step.
+
+Under [/SiteDefinitions/<client namespace>/Pages], create a file named "Elements.xml" if it does not already exist. The basic structure of the file should mimic the following:
+
+```xml
+<?xml version="1.0" encoding="utf-8" ?>
+<pages>
+</pages>
+```
+
+Pages/Elements.xml holds the definition for the ASPX page we want to deploy. It's defined as a XML node with the following properties:
+
+* layoutfolder
+* name
+* layout
+* title
+
+"layoutfolder" is an attribute that defines the Folder containing the Layout files being referenced. By default, this value should be set to "AkuminaFoundation" unless custom layouts are being used. The folder should be contained in Site Contents -> Site Settings -> Master Pages and Page Layouts.
+Create a new page node similar to the following:
+
+```xml
+<?xml version="1.0" encoding="utf-8" ?>
+<pages>
+<page layoutfolder="AkuminaFoundation" name="mycustompage.aspx" layout="DigitalWorkspaceDepartment1ColPageLayout.aspx" title="Akumina Rocks!"/>
+</pages>
+```
+
+Once we've defined the page, we now need to define the contents of the page. Under [/SiteDefinitions/<client namespace>/PageContent], create a new file named "pages.xml" if it does not already exist. This file contains the contents for previously defined pages contained in Pages/Elements.xml. The structure of the file should match the following:
+
+```xml
+<?xml version="1.0" encoding="utf-8" ?>
+<pages xmlns:ak="http://www.w3.org/ak"> 
+</pages>
+```
+
+Similar to the Elements.xml file, we'll create a new page content node with the Virtual Page Widget instance being the only content:
+
+```xml
+<?xml version="1.0" encoding="utf-8" ?>
+<pages xmlns:ak="http://www.w3.org/ak"> 
+    <page name="mycustompage.aspx">
+        <zone name="WebPartZone1">
+            <contenteditor name="ContentEditor [1]">
+                <div  rel="VirtualPageWidget stub instance" class="ak-widget" id="2656b679-1a51-9966-0170-14e8a3584975"></div>
+            </contenteditor>
+        </zone>
+    </page>
+</pages>
+```
+
+Take note that the "name" attribute on the page node must match its corresponding value contained within Pages/Elements.xml. Mismatching these values may produce errors and may prevent your new Virtual Page from displaying. The above Virtual Page Widget Instance ID is the default value shipped with the Akumina Foundation Site Package, however, be sure to double-check the value by comparing with App Manager.
+
+Once both of these files are set up, save them both. Navigate back to akumina.sitedeployer.config.json and set the following options to true:
+
+* pages 
+* controls
+
+The "pages" option will scan the Pages/Elements.xml file and create the corresponding ASPX pages on the Sharepoint site. The "controls" options will scan PageContent/pages.xml and add the page contents to their associated ASPX pages. Once the options are set, save the file and run the following command to deploy the full ASPX page:
+
+```bash
+npm run deploy
+```
+
+Once the page has successfully deployed, navigate to your Sharepoint Classic Site and expand the Site Tray, then jump into App Manager. Once App Manager has loaded, click on "Management Apps" at the top, then "Widget Manager". After the page loads, click on the "Cache Page Objects" button. Lastly, go back to your Sharepoint Classic Site, open Site Contents, open the Pages folder, and click on your newly created page to navigate to it.
+
+Your new Virtual Page, and its contents, should now be displayed on your Sharepoint Classic Site!
+
 ## JSON File Format
 
 The structure of the JSON File is clearly defined and all properties are mandatory. It is possible to generate custom mapping between the JSON File Model and the Sharepoint Model. Please contact an Akumina representative for assistance in custom aliasing.
