@@ -4,6 +4,9 @@ title: Akumina Modern Setup and Installation
 ---
 
 
+### This feature is still in beta testing
+
+
 ## Overview
 
 The purpose of this article is to demonstrate and explain the process of setting up the Akumina Framework on a new Sharepoint Modern Communications site. This article operates under the assumption that you already have an Akumina installation configured and working on a Sharepoint Classic site. This article also assumes the tenant has access to the App Catalog which contains the Akumina Single Page Framework Sharepoint Package (henceforth referred to as "Akumina SPA").
@@ -31,8 +34,8 @@ Once that is finished, we're ready to start deploying. From your Akumina Project
 
 Please note that there is an order of operations in deploying these elements detailed below. If you did this out of order, check the bottom of this article for troubleshooting tips and advice:
 
-1. Taxonomy (taxonomy)
-2. Content Types (contenttypes)
+1. Taxonomy (addtermsets)
+**REMOVE THIS** 2. Content Types (contenttypes)
 3. Lists (lists)
 4. List Content (updatelists)
 
