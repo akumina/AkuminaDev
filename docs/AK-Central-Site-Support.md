@@ -7,6 +7,9 @@ title: Central Site Collection Support
 
 The following configuration allows for rapid re-use of Akumina tooling across many site collections using an 'install once' model. This allows for easy maintenance, upgrades and code deployments.  Deploy once and affect all sites configured to use it. 
 
+
+![](https://akuminadownloads.blob.core.windows.net/wiki/AkuminaDev/Akumina-Central-Site-Collection-Architecture.jpg)
+
 * Central Site - site collection where the following Akumina specific components reside - this is where 'developers' will primarily being deploying too
     * Widgets
     * Widget Views
@@ -44,7 +47,7 @@ The classic Sharepoint master page should contain the following references
 
 Copy Paste:
 ````
-TODO
+TODO 2
 
 ````
 
