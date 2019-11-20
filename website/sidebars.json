@@ -51,10 +51,8 @@
       "Configuration-Edit-the-Redis-cache-timeout",
       "Configuration-Using-a-key-vault-for-the-client-id-and-client-secret"
     ],
-    "Debugging": [
-      "AK-Advanced-Concepts",
-      "Ak-Debugging"
-    ]
+    "Debugging": ["Ak-Debugging"],
+    "Advanced": ["AK-Central-Site-Support"]
   },
   "api": {
     "Modules": [

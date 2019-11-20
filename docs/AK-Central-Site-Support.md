@@ -1,6 +1,6 @@
 ---
-id: AK-Advanced-Concepts
-title: Advanced Concepts
+id: AK-Central-Site-Support
+title: Central Site Collection Support
 ---
 
 ### Central Site Collection
