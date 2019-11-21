@@ -27,11 +27,6 @@ For example:
 
 > It is up to your information archecture on how many 'Central Sites' you want to use. Akumina recommends at least 1 central site for the Akumina bits as denoted above.
 
-Central site collection information required for use in the delivery site configuration
-
-**TODO**
-
-
 ### Delivery Site Contents - Classic
 
 #### Master page updates
@@ -45,11 +40,6 @@ The classic Sharepoint master page should contain the following references
 * CSS
     * /sites/**centralsite**/digitalworkplace.min.css
 
-Copy Paste:
-````
-TODO 2
-
-````
 
 #### digitalworkplace.env.js updates
 ````js
@@ -87,3 +77,49 @@ if ((typeof AdditionalSteps.EnvSteps) === 'undefined') {
 }
 
 ````
+
+### Widget Support for Cross site collection data retrieval
+
+There are many widgets which support a hidden property called 'sitecollectionurl' - the code of the widgets are written to understand this property.  If you donot see the property in your installation, you can simply add a new text property to the widget definition.
+
+> name: sitecollectionurl - type: text - value: empty
+
+Widget Definition
+![](https://akuminadownloads.blob.core.windows.net/wiki/AkuminaDev/SiteCollectionUrl-AppManager.PNG)
+
+Current user experience for setting the site collection url
+![](https://akuminadownloads.blob.core.windows.net/wiki/AkuminaDev/SiteCollectionUrl-WidgetManager.PNG)
+
+> Coming soon - site selector when choosing a list
+
+### Using GetList to query across site collections
+
+The GetList method supports a request object allowing you to specify the site collection you want to query, this allows for cross site collection data retrieval.. 
+
+Example to query Central Site:
+
+````js
+
+    var request = {};
+    request.listName = 'FoundationTopNavigation_AK';
+    request.selectFields = 'ID,Title';
+    //set the site collection url here
+    //if contenxtSiteUrl is NOT set, it will query the list in the current site that the widget is rendering in
+    request.contextSiteUrl = 'https://tenant.sharepoint.com/sites/centralsite'
+    var legacyQuery = true;
+    new Akumina.Digispace.Data.DataFactory(legacyQuery).GetList(request).then(function(x) {
+        var listEnumerator = x.response.listItems.getEnumerator();
+        var itemArr = [];
+        while(listEnumerator.moveNext()) {
+             var listItem = listEnumerator.get_current();
+             var id = listItem.get_item('ID');
+            var title = listItem.get_item('Title');
+            itemArr.push({'ID': id, 'Title': title});
+        }
+        console.log(itemArr);
+    });
+    
+````
+
+
+
