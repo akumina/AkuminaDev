@@ -65,16 +65,22 @@ if ((typeof AdditionalSteps.EnvSteps) === 'undefined') {
             return steps;
         },
         SetConfig: function () { 
-            Akumina.Digispace.SiteContext.UniqueId = "<UniqueId>"; //uniqueId from central site collection
+            //uniqueId from central site collection (see below)
+            Akumina.Digispace.SiteContext.UniqueId = "<UniqueId>"; 
             //Configure where views are loaded from
             Akumina.Digispace.ConfigurationContext.TemplateURLPrefix = "<Central Site CollectionUrl>"; //can be CDN as well
-            //Configure where widgets come from
+            //Configure what site the widgets/widget instances come from
             Akumina.Digispace.ConfigurationContext.WidgetInstanceSiteUrl = "<Central Site CollectionUrl>";
 
             Akumina.Digispace.AppPart.Eventing.Publish('/loader/onexecuted/');
         }
     }
 }
+
+#### Getting UniqueId
+
+![](https://akuminadownloads.blob.core.windows.net/wiki/AkuminaDev/GlobalSettings-UniqueId.PNG)
+
 
 ````
 
