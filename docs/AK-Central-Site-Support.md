@@ -7,7 +7,6 @@ title: Central Site Collection Support
 
 The following configuration allows for rapid re-use of Akumina tooling across many site collections using an 'install once' model. This allows for easy maintenance, upgrades and code deployments.  Deploy once and affect all sites configured to use it. 
 
-
 ![](https://akuminadownloads.blob.core.windows.net/wiki/AkuminaDev/Akumina-Central-Site-Collection-Architecture.jpg)
 
 * **Central Site** - site collection where the following Akumina specific components reside - this is where 'developers' will primarily being deploying too
@@ -26,6 +25,13 @@ For example:
     * Specific lists / libraries / data
 
 > It is up to your information archecture on how many 'Central Sites' you want to use. Akumina recommends at least 1 central site for the Akumina bits as denoted above.
+
+**Quick usecases for a Central/Cross site**
+* Maybe you want to share a MENU across multiple sites, allowing a content author to update a menu item in 1 list and have it reflect on all sites sharing using that MENU
+* You may have a GLOBAL ALERT List where content authors can add a new alert in one location and have it show up across all sites
+* You want to have a GLOBAL FOOTER where you dont have to manage the content for the footer in each site
+* You want to roll out a new menu DESIGN / HTML / CSS across all sites without duplicating code or deploying to each site
+
 
 ### Delivery Site Contents - Classic
 
