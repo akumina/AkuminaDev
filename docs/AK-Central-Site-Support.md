@@ -102,7 +102,7 @@ You can think of the single page application spkg as the replacement to the env.
 There are many widgets which support a hidden property called 'sitecollectionurl' - the code of the widgets are written to understand this property.  If you donot see the property in your installation, you can simply add a new text property to the widget definition.
 
 **Widgets that support sitecollectionurl**  
-The plan is to have every widget support this feature in future releases - if a widget is missing this support is easy to apply and support - submit a request on our support form: <https://www.akumina.com/technical-support/>
+The plan is to have every widget support this feature in future releases - if a widget is missing this support it is easy to patch / hotfix - submit a request on our support form: <https://www.akumina.com/technical-support/>
 * BannerWidget
 * CollatedDepartmentNewsWidget
 * ContentBlockWidget
