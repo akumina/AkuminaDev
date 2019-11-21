@@ -10,19 +10,19 @@ The following configuration allows for rapid re-use of Akumina tooling across ma
 
 ![](https://akuminadownloads.blob.core.windows.net/wiki/AkuminaDev/Akumina-Central-Site-Collection-Architecture.jpg)
 
-* Central Site - site collection where the following Akumina specific components reside - this is where 'developers' will primarily being deploying too
+* **Central Site** - site collection where the following Akumina specific components reside - this is where 'developers' will primarily being deploying too
     * Widgets
     * Widget Views
     * Configuration settings (DigispaceConfigurationIDS_AK)
     * Lists that need to be shared across many sites - may be specific to your implementation
-* Delivery Site - site collection that will be configured to point to the 'Central Site' - this is where you will be site specific lists and libraries - especially those that are not going to be shared across other sites.
+* **Delivery Site** - site collection that will be configured to point to the 'Central Site' - this is where you will be site specific lists and libraries - especially those that are not going to be shared across other sites.
 
 Your enterprise environment can also contain MULTIPLE Central Site's - Possibly 1 site collection for where Akumina widgets are installed and 1 site collection where shared lists can reside.  
 
 For example:
-* Central Site (Akumina) - /sites/akuminarepo
+* **Central Site** (Akumina) - /sites/akuminarepo
     * Code / Widget deployment  
-* Central Site (Client Specific) /sites/sharedassets
+* **Central Site** (Client Specific) /sites/sharedassets
     * Specific lists / libraries / data
 
 > It is up to your information archecture on how many 'Central Sites' you want to use. Akumina recommends at least 1 central site for the Akumina bits as denoted above.
