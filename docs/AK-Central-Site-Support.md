@@ -166,6 +166,10 @@ Example to query Central Site:
     });
     
 ````
+### Sample Site Packages for use with Site Deployer
+We can easily share site deployer packages for use with rolling up minimal delivery environments for both classic and modern - the goal is to eventually have these as an option in the Site Creator Management App within App Manager which allows business users to deploy Akumina functionality to any site they wish..  Look for those in upcoming point releases.
 
+* Classic Minimal Site Deployer package (for developers) - Coming soon
+* Modern Minimal Site Deploery package (for developers) - Coming soon
 
 
