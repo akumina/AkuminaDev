@@ -77,17 +77,57 @@ if ((typeof AdditionalSteps.EnvSteps) === 'undefined') {
     }
 }
 
+````
+
+### Delivery Site Contents - Modern
+Modern usage in this mode is very minimal - this mode is refered to as "SPA" - Single Page Application - this means there is only 1 driver page
+
+* App
+   * akumina-single-page-application-client-side-solution.spkg
+* Site Pages
+   * akumina.aspx 
+
+You can think of the single page application spkg as the replacement to the env.js we managed in Classic - it also contains the 'VirtualPageWidget' instance which handles all of the future Akumina page rendering and minipulation
+
+![](https://akuminadownloads.blob.core.windows.net/wiki/AkuminaDev/Modern-SPA.PNG)
+
+
 #### Getting UniqueId
 
 ![](https://akuminadownloads.blob.core.windows.net/wiki/AkuminaDev/GlobalSettings-UniqueId.PNG)
 
 
-````
-
 ### Widget Support for Cross site collection data retrieval
 
 There are many widgets which support a hidden property called 'sitecollectionurl' - the code of the widgets are written to understand this property.  If you donot see the property in your installation, you can simply add a new text property to the widget definition.
 
+**Widgets that support sitecollectionurl**  
+The plan is to have every widget support this feature in future releases - if a widget is missing this support is easy to apply and support - submit a request on our support form: <https://www.akumina.com/technical-support/>
+* BannerWidget
+* CollatedDepartmentNewsWidget
+* ContentBlockWidget
+* DepartmentListWidget
+* DepartmentNewsWidget
+* DepartmentNewsItemWidget
+* DepartmentNewsListWidget
+* EventDetailWidget
+* GenericItemWidget
+* GenericListWidget
+* ImportantDatesWidget
+* LatestMediaWidget
+* MyFormsWidget
+* QuickLinksWidget
+* BlogDetailWidget
+* BlogsWidget
+* BreakingNewsDetailWidget
+* FoundationJobVacanciesWidget
+* MyAnnouncementsWidget
+* NewsCommentWidget
+* NewsDetailWidget
+* RelatedNewsWidget
+* SpecialAnnouncementsDetailWidget
+
+**sitecollectionurl usage**  
 > name: sitecollectionurl - type: text - value: empty
 
 Widget Definition
