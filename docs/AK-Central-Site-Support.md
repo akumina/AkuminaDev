@@ -136,7 +136,9 @@ Widget Definition
 Current user experience for setting the site collection url
 ![](https://akuminadownloads.blob.core.windows.net/wiki/AkuminaDev/SiteCollectionUrl-WidgetManager.PNG)
 
-> Coming soon - site selector when choosing a list
+> Coming soon - site selector when choosing a list - this site picker may exist in the list selector
+
+![](https://akuminadownloads.blob.core.windows.net/wiki/AkuminaDev/SitePicker.png)
 
 ### Using GetList to query across site collections
 
