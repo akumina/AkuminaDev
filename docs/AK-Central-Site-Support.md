@@ -7,26 +7,30 @@ title: Central Site Collection Support
 
 The following configuration allows for rapid re-use of Akumina tooling across many site collections using an 'install once' model. This allows for easy maintenance, upgrades and code deployments.  Deploy once and affect all sites configured to use it. 
 
-* Central Site - site collection where the following Akumina specific components reside - this is where 'developers' will primarily being deploying too
+![](https://akuminadownloads.blob.core.windows.net/wiki/AkuminaDev/Akumina-Central-Site-Collection-Architecture.jpg)
+
+* **Central Site** - site collection where the following Akumina specific components reside - this is where 'developers' will primarily being deploying too
     * Widgets
     * Widget Views
     * Configuration settings (DigispaceConfigurationIDS_AK)
     * Lists that need to be shared across many sites - may be specific to your implementation
-* Delivery Site - site collection that will be configured to point to the 'Central Site' - this is where you will be site specific lists and libraries - especially those that are not going to be shared across other sites.
+* **Delivery Site** - site collection that will be configured to point to the 'Central Site' - this is where you will be site specific lists and libraries - especially those that are not going to be shared across other sites.
 
 Your enterprise environment can also contain MULTIPLE Central Site's - Possibly 1 site collection for where Akumina widgets are installed and 1 site collection where shared lists can reside.  
 
 For example:
-* Central Site (Akumina) - /sites/akuminarepo
+* **Central Site** (Akumina) - /sites/akuminarepo
     * Code / Widget deployment  
-* Central Site (Client Specific) /sites/sharedassets
+* **Central Site** (Client Specific) /sites/sharedassets
     * Specific lists / libraries / data
 
 > It is up to your information archecture on how many 'Central Sites' you want to use. Akumina recommends at least 1 central site for the Akumina bits as denoted above.
 
-Central site collection information required for use in the delivery site configuration
-
-**TODO**
+**Quick usecases for a Central/Cross site**
+* Maybe you want to share a MENU across multiple sites, allowing a content author to update a menu item in 1 list and have it reflect on all sites sharing using that MENU
+* You may have a GLOBAL ALERT List where content authors can add a new alert in one location and have it show up across all sites
+* You want to have a GLOBAL FOOTER where you dont have to manage the content for the footer in each site
+* You want to roll out a new menu DESIGN / HTML / CSS across all sites without duplicating code or deploying to each site
 
 
 ### Delivery Site Contents - Classic
@@ -42,11 +46,6 @@ The classic Sharepoint master page should contain the following references
 * CSS
     * /sites/**centralsite**/digitalworkplace.min.css
 
-Copy Paste:
-````
-TODO
-
-````
 
 #### digitalworkplace.env.js updates
 ````js
@@ -72,10 +71,11 @@ if ((typeof AdditionalSteps.EnvSteps) === 'undefined') {
             return steps;
         },
         SetConfig: function () { 
-            Akumina.Digispace.SiteContext.UniqueId = "<UniqueId>"; //uniqueId from central site collection
+            //uniqueId from central site collection (see below)
+            Akumina.Digispace.SiteContext.UniqueId = "<UniqueId>"; 
             //Configure where views are loaded from
             Akumina.Digispace.ConfigurationContext.TemplateURLPrefix = "<Central Site CollectionUrl>"; //can be CDN as well
-            //Configure where widgets come from
+            //Configure what site the widgets/widget instances come from
             Akumina.Digispace.ConfigurationContext.WidgetInstanceSiteUrl = "<Central Site CollectionUrl>";
 
             Akumina.Digispace.AppPart.Eventing.Publish('/loader/onexecuted/');
@@ -84,3 +84,118 @@ if ((typeof AdditionalSteps.EnvSteps) === 'undefined') {
 }
 
 ````
+
+### Delivery Site Contents - Modern
+Modern usage in this mode is very minimal - this mode is refered to as "SPA" - Single Page Application - this means there is only 1 driver page
+
+* App
+   * akumina-single-page-application-client-side-solution.spkg
+* Site Pages
+   * akumina.aspx 
+
+You can think of the single page application spkg as the replacement to the env.js we managed in Classic - it also contains the 'VirtualPageWidget' instance which handles all of the future Akumina page rendering and minipulation
+
+![](https://akuminadownloads.blob.core.windows.net/wiki/AkuminaDev/Modern-SPA.PNG)
+
+
+#### Getting UniqueId
+
+![](https://akuminadownloads.blob.core.windows.net/wiki/AkuminaDev/GlobalSettings-UniqueId.PNG)
+
+
+### Widget Support for Cross site collection data retrieval
+
+There are many widgets which support a hidden property called 'sitecollectionurl' - the code of the widgets are written to understand this property.  If you donot see the property in your installation, you can simply add a new text property to the widget definition.
+
+**Widgets that support sitecollectionurl**  
+The plan is to have every widget support this feature in future releases - if a widget is missing this support it is easy to patch / hotfix - submit a request on our support form: <https://www.akumina.com/technical-support/>
+* BannerWidget
+* CollatedDepartmentNewsWidget
+* ContentBlockWidget
+* DepartmentListWidget
+* DepartmentNewsWidget
+* DepartmentNewsItemWidget
+* DepartmentNewsListWidget
+* EventDetailWidget
+* GenericItemWidget
+* GenericListWidget
+* ImportantDatesWidget
+* LatestMediaWidget
+* MyFormsWidget
+* QuickLinksWidget
+* BlogDetailWidget
+* BlogsWidget
+* BreakingNewsDetailWidget
+* FoundationJobVacanciesWidget
+* MyAnnouncementsWidget
+* NewsCommentWidget
+* NewsDetailWidget
+* RelatedNewsWidget
+* SpecialAnnouncementsDetailWidget
+
+**sitecollectionurl usage**  
+> name: sitecollectionurl - type: text - value: empty
+
+Widget Definition
+![](https://akuminadownloads.blob.core.windows.net/wiki/AkuminaDev/SiteCollectionUrl-AppManager.PNG)
+
+Current user experience for setting the site collection url
+![](https://akuminadownloads.blob.core.windows.net/wiki/AkuminaDev/SiteCollectionUrl-WidgetManager.PNG)
+
+> Coming soon - site selector when choosing a list - this site picker may exist in the list selector
+
+![](https://akuminadownloads.blob.core.windows.net/wiki/AkuminaDev/SitePicker.png)
+
+### Using GetList to query across site collections
+
+The GetList method supports a request object allowing you to specify the site collection you want to query, this allows for cross site collection data retrieval.. 
+
+Example to query Central Site:
+
+````js
+
+    var request = {};
+    request.listName = 'FoundationTopNavigation_AK';
+    request.selectFields = 'ID,Title';
+    //set the site collection url here
+    //if contenxtSiteUrl is NOT set, it will query the list in the current site that the widget is rendering in
+    request.contextSiteUrl = 'https://tenant.sharepoint.com/sites/centralsite'
+    var legacyQuery = true;
+    new Akumina.Digispace.Data.DataFactory(legacyQuery).GetList(request).then(function(x) {
+        var listEnumerator = x.response.listItems.getEnumerator();
+        var itemArr = [];
+        while(listEnumerator.moveNext()) {
+             var listItem = listEnumerator.get_current();
+             var id = listItem.get_item('ID');
+            var title = listItem.get_item('Title');
+            itemArr.push({'ID': id, 'Title': title});
+        }
+        console.log(itemArr);
+    });
+    
+````
+
+### Deployment scenarios and Packge setup
+With the additional site collections in use, your deployment methodology will change slightly as the information architecture has changed
+Here is an example project setup
+
+* Project for Widgets -  This project will deploy to /sites/akuminarepo
+* Project for Global Lists / Assets - this project will deploy to /sites/sharedassets
+* Project for a Particular Site - this project will deploy to /sites/foundationsite
+
+This allows for different deployment configurations and minimal impact depending on the scenario - IE, I have to deploy a widget change, I only deploy the Widget Project.  If I need to deploy a global update for an asset or list, I dont interfere with the other sites directly or mess around with Akumina bits.
+
+
+### Sample Site Packages for use with Site Deployer
+We can easily share site deployer packages for use with rolling up minimal delivery environments for both classic and modern - the goal is to eventually have these as an option in the Site Creator Management App within App Manager which allows business users to deploy Akumina functionality to any site they wish..  Look for those in upcoming point releases.
+
+* Classic Minimal Site Deployer package (for developers) - Coming soon
+* Modern Minimal Site Deploery package (for developers) - Coming soon
+
+
+
+
+
+
+
+
