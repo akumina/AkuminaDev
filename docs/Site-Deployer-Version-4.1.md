@@ -3,17 +3,6 @@ id: Site-Deployer-Version-4-1
 title: Version 4.1
 ---
 
-# Site Deployer 4.1
-This is a console app used for deploying Akumina bits into Sharepoint online. It can be used for local developer workstations or within VSTS / automated CI tooling. The same site package used within Site Creator can be used with the Site deployer, or vice versa. [Supported steps are below](#usage)
->**NOTE** - DONOT use with Akumina 4.0 Site Collections - there is a seperate Site Deployer for 4.0 versions
-
-#### Helpful links
-Site Package overview:  
-https://github.com/akumina/AkuminaTraining/wiki/Site-Package-Overview  
-Continuos Intergration flow:  
-https://github.com/akumina/AkuminaTraining/wiki/Site-Deployer:-Continuous-Site-Package-Deployment-via-a-console-app
-
-
 #### ChangeList
 
 ### [4.1.1904.1501] - 04.15.19

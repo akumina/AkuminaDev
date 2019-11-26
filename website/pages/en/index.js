@@ -75,9 +75,11 @@ class HomeSplash extends React.Component {
           <PromoSection>
             <Button href={docUrl('Akumina-Framework-4-5-0-0-Overview.html')}>Akumina 4.5</Button>
             <Button href={docUrl('Akumina-Widget-Builder.html')}>Akumina Widget Builder</Button>
-            <NewButton href={docUrl('AK-Virtual-Page-Builder.html')}>Akumina Virtual Page Builder</NewButton>
+            <Button href={docUrl('AK-Virtual-Page-Builder.html')}>Akumina Virtual Page Builder</Button>
             <Button href={docUrl('yo-akumina.html')}>Yo Akumina</Button>
-            <Button href={docUrl('Site-Deployer-Version-4-5.html')}>Site Deployer</Button>
+            <Button href={docUrl('Site-Deployer-Overview.html')}>Site Deployer</Button>
+            <NewButton href={docUrl('Deployment-Manager-Overview.html')}>Site Creator</NewButton>
+            <NewButton href={docUrl('AK-Central-Site-Support.html')}>Central Site Support</NewButton>
           </PromoSection>
         </div>
       </SplashContainer>
