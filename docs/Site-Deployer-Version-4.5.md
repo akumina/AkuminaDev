@@ -3,12 +3,6 @@ id: Site-Deployer-Version-4-5
 title: Version 4.5
 ---
 
-#### Helpful links
-Site Package overview:  
-https://github.com/akumina/AkuminaDev/wiki/Site-Package-Overview 
-Continuos Intergration flow:  
-https://github.com/akumina/AkuminaDev/wiki/Site-Deployer:-Continuous-Site-Package-Deployment-via-a-console-app
-
 #### ChangeList
 
 ### [4.5.1909.1301] - 09.17.19
