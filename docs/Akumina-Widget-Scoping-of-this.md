@@ -9,7 +9,7 @@ All versions of Akumina supporting Typescript
 # Overview
 The purpose of this article is to outline and remedy some of the nuances and problems of scoping when using Typescript widgets. Unlike plain javascript, creating a class-level variable to capture scope is a bit more tricky due to Typescript's strong typing and mandatory referencing of 'this'.
 
-## Getting Started
+## Getting Started 
 
 It's important to note the current implementation of scoping used in widgets written in plain javascript. Typically, upon opening the .js file of any modern widget, you will find something similar:
 
