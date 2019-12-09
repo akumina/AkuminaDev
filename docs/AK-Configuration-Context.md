@@ -92,7 +92,7 @@ You will get some updates on what stage of the deploy process the deployer is cu
 To verify this, simply navigate to the Sharepoint site's Site Contents and open the DigispaceConfigurationIDS_AK list to view your changes. Additionally, you can open the browser debug window (F12 in Chrome) from any page running the Akumina Framework and type in the following:
 
 ```javascript
-Akumina.Digispace.ConfigurationContext.DefaultDisplayName;
+Akumina.Digispace.ConfigurationContext.Settings.DefaultDisplayName;
 ```
 
 ![](https://akuminadownloads.blob.core.windows.net/wiki/AkuminaDev/configcontext-verifylistaddition.PNG)
@@ -142,7 +142,7 @@ The InterchangeURL and InterchangeQueryKey properties are provisioned initially 
 
 ![](https://camo.githubusercontent.com/e9c2d6105e9cc00ff592333e9d9075a8198305b1/68747470733a2f2f616b756d696e612e617a757265656467652e6e65742f77696b692f747261696e696e672f696d616765732f342e302e302e302f696e7465726368616e676575726c5f656469742e706e67)
 
-To use the ConfigurationContext, simply access the following object from any code executing within the scope of the Akumina Framework. It's note mentioning, however, that the ConfigurationContext object itself is an object and will output a function when called directly. You will need to use the browser debug console's intellisense to browse through available properties.
+To use the ConfigurationContext, simply access the following object from any code executing within the scope of the Akumina Framework. It's worth mentioning, however, that the ConfigurationContext object itself is not an object and will output a function when called directly. You will need to use the browser debug console's intellisense to browse through available properties.
 
 ```javascript
 Akumina.Digispace.ConfigurationContext
@@ -157,3 +157,30 @@ As with any Javascript object, you can view a specific property by specifying th
 ```javascript
 Akumina.Digispace.ConfigurationContext.ActiveLanguages
 ```
+## A note of ConfigurationContent vs ConfigurationContext.Settings
+
+As you may have noticed above, there are two main methods of adding a custom object to the ConfigurationContext and, depending on the method, two different ways of accessing objects through the ConfigurationContext. The differences are detailed below.
+
+# Via javascript
+
+Typically through the custom.js file or the env.js file, you're able to explicitly define the shape of your object contained within Configuration Context. If your definition is the following
+
+```javascript
+Akumina.Digispace.ConfigurationContext.Example = 'Akumina rocks!'
+```
+
+Then you will reference it in the same manner:
+
+```javascript
+Akumina.Digispace.ConfigurationContext.Example
+```
+
+# Via DigispaceConfigurationIDS_AK
+
+The values from this list are provisioned and cached through App Manager. Given our example above, we created a new entry with a key of [DefaultDisplayName] and a value of [Mystery User]. To access this object through the Configuration Context, we must reference it a little differently:
+
+```javascript
+Akumina.Digispace.ConfigurationContext.Settings.DefaultDisplayName
+```
+
+Custom values are added to the Settings property under Configuration Context instead of the main object. 
