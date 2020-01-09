@@ -28,7 +28,8 @@
       "Yo-Akumina-Simple-template"
     ],
     "Akumina Widgets": [
-
+      "Akumina-Widgets-Overview",
+      "Akumina-React-Widgets"
     ],
     "Site Deployer": [
       "Site-Deployer-Overview", 
