@@ -10,7 +10,7 @@ Sample project showing how to use React with Akumina framework.
 [See MyFirstReactComponent .tsx code](https://github.com/akumina/AkuminaDev/tree/master/FrontEndReact/src/js/widgets/MyFirstReactComponent/js/widgets/MyFirstReactComponent.tsx)
 
 
-[Akumina Widget Builder quick start](https://github.com/akumina/AkuminaDev/wiki/Akumina-Widget-Builder)
+[Akumina Widget Builder quick start](/docs/Akumina-Widget-Builder)
 
 #### Step 1
 
