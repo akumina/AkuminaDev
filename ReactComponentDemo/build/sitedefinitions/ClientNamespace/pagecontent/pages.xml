@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<pages xmlns:ak="http://www.w3.org/ak">
+  <page name="sandbox.aspx">
+    <zone name="WebPartZone1">
+      <contenteditor>
+        <!-- place contents in digitalworkplace.vendor.min.js -->
+        <script src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+        <script src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+        <H1>React Sandbox!</H1>
+        <div id="745560f4-2a1c-e5e6-8915-36047a8cf645" class="ak-widget"></div>
+      </contenteditor>
+    </zone>
+  </page>
+</pages>
