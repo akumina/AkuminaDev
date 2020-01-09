@@ -41,6 +41,7 @@ Command line parameters are set in .env
 | `azurestoragecontainer` | Azure Storage blob container name  |  | 
 | `azurestorageaccountkey` | Azure Storage account key  |  | 
 | `cdnprefix ` | replaces {{CDNPrefix}} token in Master page with this value  |  | 
+| `multideployment` | Deploys the currently selected option to each site defined in inventory.sites.json | |
 
 #### Minimum usage with username|password
 
@@ -79,3 +80,24 @@ Set options to true/false in akumina.sitedeployer.config.json:
 
 
 >**NOTE** - deploy.js process from 4.1 is compatible with 4.5, just swap out the 4.5 deploy.js with 4.1
+
+
+### Nuances
+
+## Multideployment
+
+As mentioned, the multideployment option in the .env will run 'npm run deploy' for each site listed in the inventory.sites.json file.
+
+inventory.sites.json is located in the MultiDeployments folder under SiteDefinitions: 
+
+root\build\SiteDefinitions\ClientNamespace\MultiDeployment\inventory.sites.json
+```json
+[
+    {
+        "url": "https://tenant.sharepoint.com/sites/1"
+    },
+    {
+        "url": "https://tenant.sharepoint.com/sites/2"
+    }
+]
+```
