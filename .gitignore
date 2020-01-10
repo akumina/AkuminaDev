@@ -13,3 +13,5 @@ node_modules/
 **/website/node_modules
 **/website/i18n/*
 
+
+ReactComponentDemo/.vscode/

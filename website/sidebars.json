@@ -29,13 +29,15 @@
     ],
     "Akumina Widgets": [
       "Akumina-Widgets-Overview",
+      "Akumina-Widget-Structure",
       "Akumina-React-Widgets"
     ],
     "Site Deployer": [
       "Site-Deployer-Overview", 
       "Site-Deployer-Version-4-1",
       "Site-Deployer-Version-4-5",
-      "Site-Deployer-List-Attributes"
+      "Site-Deployer-List-Attributes",
+      "Akumina-Npm-Commands"
     ],
     "Site Creator": [
       "Deployment-Manager-Overview",
