@@ -13,6 +13,7 @@
       "AK-Personas-Code-Examples"
     ],
     "AK Widget Builder": [
+      "Akumina-Widget-Structure",
       "Akumina-Widget-Builder",
       "Akumina-Widget-Builder-Skipping-instances",
       "Akumina-Widget-Builder-Token-replacement-for-widget-properties"
@@ -29,7 +30,6 @@
     ],
     "Akumina Widgets": [
       "Akumina-Widgets-Overview",
-      "Akumina-Widget-Structure",
       "Akumina-React-Widgets"
     ],
     "Site Deployer": [

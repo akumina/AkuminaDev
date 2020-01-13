@@ -1,6 +1,6 @@
 ---
 id: Akumina-Widget-Structure
-title: Akumina Widget Structure
+title: Widget Builder Structure
 ---
 
 
