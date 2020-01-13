@@ -2,6 +2,12 @@
 
 #### ChangeList
 
+### 01.13.20
+- Site Deployer 4.5 and all future versions have been moved to https://github.com/akumina/SiteDeployer
+
+### 01.09.20
+- Added ReactComponentDemo - a great React example for those of you new to React
+
 ### 12.13.18
 - Added FrontEndReact location - this will house an example of how to use React components as widgets (typescript enabled)
 

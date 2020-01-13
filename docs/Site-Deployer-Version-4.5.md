@@ -3,11 +3,22 @@ id: Site-Deployer-Version-4-5
 title: Version 4.5
 ---
 
+## Download
+
+Please see the [release section](https://github.com/akumina/SiteDeployer/releases) for downloading the Site Deployer assets
+
+
 #### ChangeList
 
+### [4.5.2001.0801] - 01.13.20
+- Added multideployment option - deploy steps to multiple site collections with 1 command
+- Added support for setting custom welcome page URL
+- Custom layouts are settable via virtualpage step
+- Support ONPREM u/p authentication formats
+
 ### [4.5.1909.1301] - 09.17.19
-- Added support for the new 'akumina-virtualpage-builder' and the new virtual page .JSON format
-- https://akumina.github.io/docs/AK-Virtual-Page-Builder.html
+- Added support for the new 'akumina-virtualpage-builder' and the new virtual page .JSON format  
+https://akumina.github.io/docs/AK-Virtual-Page-Builder.html 
 
 ### [4.5.1907.2901] - 07.29.19
 - Added support for 'layoutfolder' attribute when adding classic pages with a layout in a folder different than AssetDirectory -JA
@@ -51,7 +62,7 @@ Akumina.SiteDeployer.exe options "js" spUser "myusername@tenant.onmicrosoft.com"
 Akumina.SiteDeployer.exe options "js" spUrl "https://tenant.sharepoint.com/sites/mysitecollection" clientid "myclientid" clientsecret "myclientsecret" envdir "C:\TEMP\\\\" assetdirectory "MyClient" spdirectory "DigitalWorkplace"
 
 #### <a id="usage"></a>Usage
-node ./deploy.js 
+node ./deploy.js OR npm run deploy
 
 Set options to true/false in akumina.sitedeployer.config.json:
 
@@ -69,14 +80,14 @@ Set options to true/false in akumina.sitedeployer.config.json:
 | `contentfiles` | Deploys contents of **envdir**/sitedefinitions/**assetdirectory**/branding/content |
 | `imagefiles` | Deploys contents of **envdir**/sitedefinitions/**assetdirectory**/branding/img|images  |
 | `updatelists` |  Deploys list content based on **envdir**/sitedefinitions/**assetdirectory**/ListDefinitions/Update.xml |
-| `homepage` | Sets default home page for the site collection to Pages/home.aspx |
+| `homepage` | Sets default home page for the site collection to Pages/home.aspx unless **envdir**/sitedefinitions/**assetdirectory**/homepage/Elements.json exists |
 | `fonts` | Deploys contents of **envdir**/sitedefinitions/**assetdirectory**/branding/fonts |
 | `exportlists` | Reads 'exportLists' key from app.config - will export configured lists  |
 | `uploadfiles` | Deploys contents of **envdir**/sitedefinitions/**assetdirectory**/UploadFiles |
 | `webpartgallery` |  |
 | `groups` | Deploys Sharepoint Security Groups from **envdir**/sitedefinitions/**assetdirectory**/SecurityGroups/groups.xml |
 | `siteproperties` | Deploys contents of **envdir**/sitedefinitions/**assetdirectory**/SiteProperties/properties.xml |
-| `virtualpages` | Deploys contents of envdir/sitedefinitions/assetdirectory/VirtualPages - see https://akumina.github.io/docs/AK-Virtual-Page-Builder.html |
+| `virtualpages` | Deploys contents of **envdir**/sitedefinitions/**assetdirectory**/VirtualPages - see https://akumina.github.io/docs/AK-Virtual-Page-Builder.html  |
 
 
 >**NOTE** - deploy.js process from 4.1 is compatible with 4.5, just swap out the 4.5 deploy.js with 4.1
