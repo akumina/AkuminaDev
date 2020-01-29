@@ -8,7 +8,7 @@ title: Widget Picker
 
 This article will be used to elaborate and illustrate the usage, configuration, installation, and implementation of the Akumina Widget Picker in a Sharepoint Modern environment. The installation assumes the following requirements are satisfied:
 
-* Central Site with Akumina Framework Version 4.5 or higher ([More](/docs/AK-Central-Site-Support))
+* Central Site with Akumina Framework Version 4.8 or higher ([More](/docs/AK-Central-Site-Support))
 * Delivery Site created in Sharepoint Modern
 
 ***Pros***:
@@ -19,8 +19,12 @@ This article will be used to elaborate and illustrate the usage, configuration, 
 * Limited design functionality
 * Limited page layout functionality
 
+# Downloads
 
-## Glossary
+[akumina-widget-picker-client-side-solution.spkg](#) (Coming Soon!)
+
+
+## Glossary of Terms
 
 |Name|Definition|
 |---|---|

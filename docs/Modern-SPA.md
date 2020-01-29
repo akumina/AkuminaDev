@@ -7,7 +7,7 @@ title: Single Page Application
 
 The purpose of this article will be to elaborate upon and illustrate the usage, configuration, and implementation of the Akumina Modern Single Page Application. The installation assumes the following assets are provisioned:
 
-* Central Site with Akumina Framework Version 4.5 or higher ([More](/docs/AK-Central-Site-Support))
+* Central Site with Akumina Framework Version 4.8 or higher ([More](/docs/AK-Central-Site-Support))
 * Delivery Site created in Sharepoint Modern
 * Project Structure is created
 
@@ -21,6 +21,8 @@ The purpose of this article will be to elaborate upon and illustrate the usage, 
 ***Cons***:
 * Inability to use Modern Web Parts in conjunction with the SPA (See [Akumina Widget Picker](/docs/Modern-AWP) for alternatives)
 
+# Downloads
+[akumina-single-page-application-client-side-solution.spkg](#) (Coming Soon!)
 
 ## Glossary of Terms
 
@@ -151,7 +153,7 @@ Since **akumina.aspx** is the only physical page required on the site, where doe
 
 ## SPA Configuration
 
-Once the pre-requisites are on the site and the SPA has been added from the app catalog, we're ready to start configuring the application. Navigate to the akumina.aspx page and click on the Edit button in the upper Right. You'll see the following settings:
+Once the pre-requisites are on the site and the SPA has been added from the app catalog, we're ready to start configuring the application. Navigate to the akumina.aspx page. By default, the SPA will hide certain Sharepoint Modern elements to provide a fuly customizable look and feel, however, we will need to enable a specific element. Click on the Akumina System Tray on the bottom and open the Debug Panel. From the Debug Panel, click on the **Modern** tab and enable the **Toggle Command Bar** option. Close the Debug Panel and click on the Edit button in the upper Right. You'll see the following settings:
 
 ![](https://akuminadownloads.blob.core.windows.net/wiki/AkuminaDev/modern_spasettings1.PNG)
 ![](https://akuminadownloads.blob.core.windows.net/wiki/AkuminaDev/modern_spasettings2.PNG)
