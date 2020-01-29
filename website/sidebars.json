@@ -12,6 +12,10 @@
       "Ak-Lazy-Load-View-Binding",
       "AK-Personas-Code-Examples"
     ],
+    "Modern": [
+      "Modern-SPA",
+      "Modern-AWP"
+    ],
     "AK Widget Builder": [
       "Akumina-Widget-Structure",
       "Akumina-Widget-Builder",
@@ -23,8 +27,8 @@
       "AK-Virtual-Page-Layout-Builder"
     ],
     "Yo Akumina": [
-      "getting-started-yeoman",
       "Yo-Akumina",
+      "getting-started-yeoman",
       "Yo-Akumina-React",
       "Yo-Akumina-Simple-template"
     ],
