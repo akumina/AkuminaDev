@@ -15,7 +15,7 @@ The purpose of this article will be to elaborate upon and illustrate the usage, 
 * Single Page Application routing experience
 * Increased performance
 * Full page design
-* Master Page Flexability
+* Master Page Flexability (Virtual Master Page)
 * Akumina Page Management
 
 ***Cons***:
@@ -110,7 +110,7 @@ Finally, deploy your Virtual Page file to the new Modern site. Once finished, yo
 
 ## Implementation Changes
 
-# Central Site
+# Virtual Master Page
 
 It's important to note that Sharepoint Modern *does not* support the Master Page templating feature of Sharepoint Classic. In its stead, Akumina deigned it prudent to provide this functionality. The **Akumina Virtual Master** Page is a JSON file stored on the Central Site that defines the Master Page of the Delivery Site. Within this master page, the contents of each page are then injected:
 
