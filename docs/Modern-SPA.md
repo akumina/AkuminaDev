@@ -158,7 +158,6 @@ Once the pre-requisites are on the site and the SPA has been added from the app 
 
 An explanation of these settings follows:
 
-**TURN THIS INTO A TABLE SETTING:DESCRIPTION**
 |Setting|Description|
 |---|---|
 |Akumina SiteCollection URL|This is the URL of the Central Site from which most assets are retrieved from.|
