@@ -136,6 +136,8 @@ It's important to note that Sharepoint Modern *does not* support the Master Page
 
 This page must be configured in the Central Site in order to be read and used on the Delivery Site. The **DigispaceConfigurationIDS_AK** list must have a key named [VirtualMasterTemplate] with the name of the Virtual Master Page Template file. The SPA will look in the above location for the file. For more information, please visit the [Configuration Context Overview](/docs/AK-Configuration-Context) page.
 
+![](https://akuminadownloads.blob.core.windows.net/wiki/AkuminaDev/modern_spavmp.png)
+
 # Delivery Site
 
 To continue with the changes made in Sharepoint Modern, the Delivery Site does not use the Style Library document folder. This is due to increased security being placed on the system folder. To work around this, a new asset library has been created named **Akumina Library**. Effectively, Akumina Library is the Modern Style Library. All Akumina Assets will be placed within this folder.
