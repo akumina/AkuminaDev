@@ -22,7 +22,7 @@ The purpose of this article will be to elaborate upon and illustrate the usage, 
 * Inability to use Modern Web Parts in conjunction with the SPA (See [Akumina Widget Picker](/docs/Modern-AWP) for alternatives)
 
 # Downloads
-[akumina-single-page-application-client-side-solution.spkg](#) (Coming Soon!)
+[akumina-single-page-application.spkg](#) (Coming Soon!)
 
 ## Glossary of Terms
 

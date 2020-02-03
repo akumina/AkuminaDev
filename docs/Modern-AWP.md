@@ -21,7 +21,7 @@ This article will be used to elaborate and illustrate the usage, configuration, 
 
 # Downloads
 
-[akumina-widget-picker-client-side-solution.spkg](#) (Coming Soon!)
+[akumina-widget-picker.spkg](#) (Coming Soon!)
 
 
 ## Glossary of Terms
