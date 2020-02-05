@@ -61,3 +61,7 @@ a.navItem:hover {
     margin-bottom: 0px;
     padding-left: 7px;
 }
+
+.projectLogo img {
+    padding-left: 10px;
+}
