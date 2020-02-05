@@ -55,18 +55,21 @@ digitalworkplace.env.js
 ```javascript
 if ((typeof AkuminaModernConfiguration) === 'undefined') {
 	AkuminaModernConfiguration = {
-		CentralSiteCollectionUrl: "", // Central Site from which assets are provisioned
-		WidgetPicker: { 
-			ExtraJSFiles: "", // Comma delimited list of global/custom JS files
-			ExtraCSSFiles: "", // Comma delimited list of CSS files
-			AssetLibraryName: "Style Library" // Name of Document Library holding widget assets
+		CentralSiteCollectionUrl: "https://akuminadev02.sharepoint.com/sites/1209-1213-DEV", // Central Site from which assets are provisioned
+		WidgetPicker: { // Akumina Widget Picker Settings
+			ExtraJSFiles: "", // Comma delimited list of JS files to download from the central site
+			ExtraCSSFiles: "", // Comma delimited list of CSS files to download from the central site
+			AssetLibraryName: "" // Name of the local asset library
 		},
-		ApplicationExtension: {
-			HideSiteHeader: true, // Boolean flag to hide/show the site header
-			HideCommandBar: true // Boolean flag to hide/show the edit button
+		ApplicationExtension: { // Application Extension Settings
+			ExtraCSSFiles: "", // Comma delimited list of CSS files to download from the central site
+			HideSiteHeader: false, // Boolean value determining whether the modern header should be hidden
+			HideCommandBar: false, // Boolean value determining whether the modern command bar should be hidden
+			ShowOnlyOnSitePages: true, // Boolean value determining whether only SitePage navigation should be enabled
+			AssetLibraryName: "" // Name of the local asset library
 		}
 	}
-}  
+} 
 ```
 
 With the digitalworkplace.env.js file created and the app installed on the site, we're ready to start creating pages. For this example, we'll create a new page and walk through the process of adding a single widget to it. 

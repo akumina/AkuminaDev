@@ -40,7 +40,29 @@ Pictured: Sharepoint Modern Page with the AWP and Application Extension (Header/
 
 ## Installation & Setup
 
-The Application Extension is a fairly lightweight package. First, ensure that the app is available via the App Catalog or through the Site's Local Apps for Sharepoint Library and add it to the Delivery Site Collection. After the Application Extension SPKG has been added to the site, you've finished the installation for the Delivery Site.
+The Application Extension is a fairly lightweight package. First, ensure that the app is available via the App Catalog or through the Site's Local Apps for Sharepoint Library and add it to the Delivery Site Collection. Next, you will need to configure the **digitalworkplace.env.js** file. The env.js file should be located under **SiteRoot/Akumina Private Library/digitalworplace.env.js**. If the file does not exist, please create one with the following contents with values modified to your needs:
+
+```javascript
+if ((typeof AkuminaModernConfiguration) === 'undefined') {
+	AkuminaModernConfiguration = {
+		CentralSiteCollectionUrl: "https://akuminadev02.sharepoint.com/sites/1209-1213-DEV", // Central Site from which assets are provisioned
+		WidgetPicker: { // Akumina Widget Picker Settings
+			ExtraJSFiles: "", // Comma delimited list of JS files to download from the central site
+			ExtraCSSFiles: "", // Comma delimited list of CSS files to download from the central site
+			AssetLibraryName: "" // Name of the local asset library
+		},
+		ApplicationExtension: { // Application Extension Settings
+			ExtraCSSFiles: "", // Comma delimited list of CSS files to download from the central site
+			HideSiteHeader: false, // Boolean value determining whether the modern header should be hidden
+			HideCommandBar: false, // Boolean value determining whether the modern command bar should be hidden
+			ShowOnlyOnSitePages: true, // Boolean value determining whether only SitePage navigation should be enabled
+			AssetLibraryName: "" // Name of the local asset library
+		}
+	}
+} 
+```
+
+After the Application Extension SPKG has been added to the site and your env.js settings have been configured, you've finished the installation for the Delivery Site.
 
 On the Central Site, there are two views you will be configuring: **header.html** and **footer.html**. Both of these views are found on the Central Site under the following directory: **siteroot/DigitalWorkplace/Content/Templates/ApplicationExtension**. You may freely edit these files with the contents of the header and footer you desire. Examples:
 
