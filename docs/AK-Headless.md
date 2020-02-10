@@ -51,9 +51,11 @@ To download the project solution and source code, please contact your account ad
 1.	Open the solution as administrator mode
 2.	In the root of the project, open appsettings.json 
 ![](https://akuminadownloads.blob.core.windows.net/wiki/AkuminaDev/headless_3.png)
-3.	Edit the following properties
+3.  Install the latest NuGet Akumina.FrontEnd.Core
+![](https://akuminadownloads.blob.core.windows.net/wiki/AkuminaDev/headless_10.png)
+4.	Edit the following properties
 ![](https://akuminadownloads.blob.core.windows.net/wiki/AkuminaDev/headless_4.png)
-4.	In the folder Akumina.Frontend.Web\wwwroot\Style Library\DigitalWorkplace\js\ open DIgitalworkplace.env.js and edit the following keys
+5.	In the folder Akumina.Frontend.Web\wwwroot\Style Library\DigitalWorkplace\js\ open DIgitalworkplace.env.js and edit the following keys
 ![](https://akuminadownloads.blob.core.windows.net/wiki/AkuminaDev/headless_5.png)
  
 •	Set Akumina.Digispace.ConfigurationContext.InterchangeURL to interchange URL
