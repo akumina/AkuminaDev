@@ -199,7 +199,7 @@ class Index extends React.Component {
         {[
           {
             content:
-              'Startup life! We currently have a small team on-site working on developer experience. And, this sight will be our primary conduit to provide authoritative support on this aspect of our product. '+
+              'Startup life! We currently have a small team on-site working on developer experience. And, this site will be our primary conduit to provide authoritative support on this aspect of our product. '+
               'Please visit the [**Akumina Community Site**](https://community.akumina.com/) for detailed information and interactive discussion about the product from a truly product perspective.',
             image: `${baseUrl}img/undraw_startup_life_2du2.svg`,
             imageAlign: 'left',
