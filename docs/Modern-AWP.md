@@ -11,14 +11,6 @@ This article will be used to elaborate and illustrate the usage, configuration, 
 * Central Site with Akumina Framework Version 4.8 or higher ([More](/docs/AK-Central-Site-Support))
 * Delivery Site created in Sharepoint Modern
 
-***Pros***:
-* Akumina Assets used alongside Sharepoint Modern Web Parts
-* Lightweight installation and optional usage
-
-***Cons***:
-* Limited design functionality
-* Limited page layout functionality
-
 # Downloads
 
 [akumina-widget-picker.spkg](#) (Coming Soon!)

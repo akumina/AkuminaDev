@@ -12,10 +12,6 @@ The purpose of this article will be to illustrate and explain the purpose of the
 * Central Site with Akumina Framework V4.8 or higher ([More](/docs/AK-Central-Site-Support))
 * Application Extension SPKG available via App Catalog or Local Apps for Sharepoint Library
 
-
-***Pros***:
-* Customization of site header/footer
-
 # Downloads
 [akumina-application-extension.spkg](#) (Coming Soon!)
 

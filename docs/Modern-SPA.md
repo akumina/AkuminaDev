@@ -11,16 +11,6 @@ The purpose of this article will be to elaborate upon and illustrate the usage, 
 * Delivery Site created in Sharepoint Modern
 * Project Structure is created
 
-***Pros***:
-* Single Page Application routing experience
-* Increased performance
-* Full page design
-* Master Page Flexability (Virtual Master Page)
-* Akumina Page Management
-
-***Cons***:
-* Inability to use Modern Web Parts in conjunction with the SPA (See [Akumina Widget Picker](/docs/Modern-AWP) for alternatives)
-
 # Downloads
 [akumina-single-page-application.spkg](#) (Coming Soon!)
 
