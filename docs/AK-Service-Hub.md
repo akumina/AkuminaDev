@@ -237,8 +237,8 @@ Build the solution again; you should receive no errors.
 
 In our service we have 2 methods that show us how to determine login state and also access data from the Akumina APIs:
 
-- IsUserLoggedIn â€“ determines if the user is currently logged into the AppManager
-- GetCurrent â€“ If logged in, then it will return info about the current user
+- IsUserLoggedIn - determines if the user is currently logged into the AppManager
+- GetCurrent - If logged in, then it will return info about the current user
 
 In both, note the call to the Akumina ObjectFactory, in this case the IUserService:
 
@@ -293,14 +293,14 @@ namespace Sample.Web.Api.Controllers
 
                 // response.Items = etc......
 
-                response.Message("User logged in: " + userLogin);
-                response.Code(200);
+                response.Message = "User logged in: " + userLogin;
+                response.Code = "200";
             }
 
             else
             {
-                response.Message("User not logged in");
-                response.Code(401);
+                response.Message = "User not logged in";
+                response.Code = "401";
             }
 
             return Request.CreateResponse(HttpStatusCode.OK, response);
