@@ -332,3 +332,14 @@ As shown here:
 Try logging out and then hit the API again:
 
  ![](https://akuminadownloads.blob.core.windows.net/wiki/AkuminaDev/servicehub_url3.png)
+
+## Akumina Widget
+
+To make use of the Endpoint data you would use an Akumina widget. This widget is actually quite simple – you would use the same pattern you would call a third party RESTFUL API to obtain data.
+Several examples are below:
+
+Building A Custom Widget: Flickr Image Library
+https://github.com/akumina/AkuminaTraining/wiki/Building-A-Custom-Widget:-Flickr-Image-Library
+
+Building A Custom Widget: Stock Ticker Widget
+https://github.com/akumina/AkuminaTraining/wiki/Building-A-Custom-Widget:-Stock-Ticker-Widget
