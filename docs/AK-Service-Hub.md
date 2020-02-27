@@ -1,5 +1,5 @@
 ---
-title: Service Hub
+title: Quickstart
 id: AK-Service-Hub
 ---
 
