@@ -18,13 +18,13 @@
       "Modern-AWP",
       "Modern-App-Extension"
     ],
-    "AK Widget Builder": [
+    "Widget Builder": [
       "Akumina-Widget-Structure",
       "Akumina-Widget-Builder",
       "Akumina-Widget-Builder-Skipping-instances",
       "Akumina-Widget-Builder-Token-replacement-for-widget-properties"
     ],
-    "AK Virtual Page Builder": [
+    "Virtual Page Builder": [
       "AK-Virtual-Page-Builder",
       "AK-Virtual-Page-Layout-Builder"
     ],
