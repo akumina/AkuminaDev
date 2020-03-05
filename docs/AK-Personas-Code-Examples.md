@@ -35,6 +35,8 @@ The account I'm testing with is set to Human Resources. Therefore, the only news
 
 List-Specific data is defined on the list itself and handled via the framework. A list can be enabled to allow Persona filtering by adding the AkuminaPersona content type to the list. This will add the Persona field to the list. If the List has an associated Content App through App Manager, it will be placed on the list of Persona Enabled Lists. Being on this list will automatically handle persona filtering without the need for the [enforcePersonaFiltering] flag detailed below. 
 
+If a List has an associated Content App, Persona Filtering can be enabled by enabling Personas on the Content App itself through App Manager. From within App Manager, this can be verified by checking the Settings of the Content App. Towards the bottom, there is a toggle for Enabling and Requiring Personas.
+
 It is worth noting that both of these are automatically handled by the framework and do not require any developer intervention. 
 However… what if it could?
 
