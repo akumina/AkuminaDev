@@ -185,7 +185,7 @@ If using the deployer, navigate to Site Contents and expand the ellipses on the 
 
 The common reason for this error is the Page Cache not being updated. Open App Manager in the environment that the Virtual Page is stored in, so either from Classic or Modern, then click on Management Apps, then Widget Manager, and click on the Cache Page Objects button. Once the process finishes, go back to the Virtual Page producing the error, open the Debug Console to refresh the cache, and reload the page.
 
-If that doesn't solve your problem, we'll have to dig a little deeper. First, navigate to Site Conents and open the following two lists: GenericPages_AK and PageUrls_AK. Both lists have a "PageUrl" field. Make sure these two fields are matching for the given page and use this as an opportunity to verify the URL you're navigating to. Additionally, the PageId values should also match between the entries in the two lists.
+If that doesn't solve your problem, we'll have to dig a little deeper. First, navigate to Site Contents and open the following two lists: GenericPages_AK and PageUrls_AK. Both lists have a "PageUrl" field. Make sure these two fields are matching for the given page and use this as an opportunity to verify the URL you're navigating to. Additionally, the PageId values should also match between the entries in the two lists.
 
 Lastly, verify the source of the Virtual Page and whether Delivery Mode is enabled in the Akumina Modern SPA settings. On any Site Page, open up the Debug Console, navigate to the Modern tab, and check the box for "Toggle Command Bar". Close the Debug Console and click on the "Edit" button that appears in the upper right corner of the page. Halfway down the settings pane, you'll see the "Delivery Mode" checkbox.
 
