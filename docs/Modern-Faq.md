@@ -59,3 +59,11 @@ See https://community.akumina.com/knowledge-base/modern-search/
 When items need to be searched via the Office 365 Modern search, then there is some configuration that needs to occur. Our solution leverages the capability of SharePoint search to adjust the URL for the search items.
 
 ![](https://community.akumina.com/wp-content/uploads/2019/10/Picture1.png)
+
+## Are there Akumina widget equivalents to the Modern web parts? 
+
+Yes – there is generally a comparable Akumina widget to the web parts for Modern listed here: https://support.office.com/en-us/article/using-web-parts-on-sharepoint-pages-336e8e92-3e2d-4298-ae01-d404bbe751e0#bkmk_availableparts
+
+## How is the site deployer tooling affected for Modern? 
+
+See Site-Deployer-Version-4-5#multideployment 

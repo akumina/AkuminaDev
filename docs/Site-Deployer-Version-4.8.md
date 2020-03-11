@@ -4,4 +4,13 @@ id: Site-Deployer-Version-4-8
 ---
 
 
-# Coming Soon!
+## Download
+
+Please see the [release section](https://github.com/akumina/SiteDeployer/releases) for downloading the Site Deployer assets
+
+
+### Nuances
+
+## Modern deployment
+
+TBD
