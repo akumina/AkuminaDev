@@ -1,6 +1,7 @@
 {
   "docs": {
-    "Akumina 4.5": [
+    "Akumina": [
+      "Akumina-Framework-4.8.0.0-Overview",
       "Akumina-Framework-4-5-0-0-Overview",
       "Akumina-Framework-Performance-Considerations",
       "Akumina-SiteContext-Forcing-latest-widget-javascript-updates-to-be-fetched",
@@ -44,6 +45,7 @@
       "Site-Deployer-Overview", 
       "Site-Deployer-Version-4-1",
       "Site-Deployer-Version-4-5",
+      "Site-Deployer-Version-4-8",
       "Site-Deployer-List-Attributes",
       "Akumina-Npm-Commands"
     ],
