@@ -86,3 +86,20 @@ You can edit these files using a text editor or IDE of your choice or you can us
 
 ![](https://akuminadownloads.blob.core.windows.net/wiki/AkuminaDev/modern_appext_appmanager.PNG)
 
+
+## Toggling the Modern Options
+
+The **Site Header** and **Command Bar** can be toggled via the Akumina Debugger panel&#39;s **Modern** tab, as shown below:
+
+![](https://akuminadownloads.blob.core.windows.net/wiki/AkuminaDev/modern_appext_dialog.PNG)
+
+### Toggle Site Header
+
+The **Site Header** toggle will show or hide the following section inside the site:
+
+![](https://akuminadownloads.blob.core.windows.net/wiki/AkuminaDev/modern_appext_site_header_on.PNG)
+
+### Toggle Command Bar
+
+The **Command Bar** toggle will show or hide the following section inside the site: 
+![](https://akuminadownloads.blob.core.windows.net/wiki/AkuminaDev/modern_appext_command_bar.PNG)
