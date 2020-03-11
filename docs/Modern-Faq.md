@@ -40,7 +40,7 @@ Pictured: Sharepoint Modern Page with the AWP and Application Extension (Header/
 
 ## How can a developer add additional CSS and JS files to the site?
 
-This can be done easily using either SPA or the Application Extension/Widget Picker, see:
+While Modern does allow you to add additonal CSS and JS files, the process to do so requires effort in steps and configuration. With Akumina, this can be done easily using either SPA or the Application Extension/Widget Picker, see:
 * SPA - https://akumina.github.io/docs/Modern-SPA#spa-configuration
 * Application Extension/Widget Picker - https://akumina.github.io/docs/Modern-AWP#setup-installation
 
@@ -51,3 +51,11 @@ No – they do not require additional permissions.
 ## Do all the Akumina widgets work in either modern experience (SPA or widget selector)? 
 
 Yes – there is feature parity and the widgets are the same in either experience. 
+
+## The Office365 suite bar has the Microsoft Search experience turned on by default – what is the best way to search an Akumina site? 
+
+See https://community.akumina.com/knowledge-base/modern-search/ 
+
+When items need to be searched via the Office 365 Modern search, then there is some configuration that needs to occur. Our solution leverages the capability of SharePoint search to adjust the URL for the search items.
+
+![](https://community.akumina.com/wp-content/uploads/2019/10/Picture1.png)
