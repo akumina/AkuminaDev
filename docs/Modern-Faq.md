@@ -66,4 +66,4 @@ Yes – there is generally a comparable Akumina widget to the web parts for Mode
 
 ## How is the site deployer tooling affected for Modern? 
 
-See Site-Deployer-Version-4-5#multideployment 
+See [Site-Deployer-Version-4-5 - Modern Deployment ](https://akumina.github.io/docs/Site-Deployer-Version-4-8#modern-deployment)
