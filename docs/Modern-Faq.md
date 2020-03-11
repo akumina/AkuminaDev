@@ -71,3 +71,6 @@ See [Site-Deployer-Version-4-5 - Modern Deployment ](https://akumina.github.io/d
 ## Can I still use a CDN with the Akumina Framework in Modern? 
 
 Yes, in fact Akumina’s Modern implementation uses a CDN by default.
+
+## How do I author news articles in a Single Page Application experience?
+See https://akumina.github.io/docs/Modern-SPA#faqs

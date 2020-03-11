@@ -215,3 +215,10 @@ This problem is caused for one of two reasons:
 For #1, you need to make your widget code configurable and, optimally, read from global settings such as the ConfigurationContext object. Avoid hard-coding as much as possible.
 
 For #2, this is also dependent on widget code to a certain extent. However, try as we might to future-proof as much as possible, we do not expect our clients or customers to write code for the unknown future. It is possible to alter your widget code to pull from the Central Site instead of the Delivery Site. Alternatively, simply migrate the list to the Delivery Site.
+
+
+## FAQs
+
+### How do I author news articles in a Single Page Application experience?
+
+The same as before - The news articles are authored via the content app in App Manager. The SPA uses a URL paramter to determine the page to show.
