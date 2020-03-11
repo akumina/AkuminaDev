@@ -1,3 +1,9 @@
+---
+id: Modern-Faq
+title: FAQ
+---
+
+
 # Frequently Asked Questions
 ---
 ## Where are the Assets stored?
