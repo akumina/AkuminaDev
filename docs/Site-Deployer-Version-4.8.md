@@ -75,5 +75,15 @@ Set options to true/false in akumina.sitedeployer.config.json:
 ### Nuances
 
 ## Modern deployment
+Due to differences in how Modern works vs Classic, some steps in the site creator have no relevance. The table below is a list of site deployer steps, and their classic vs modern mapping.  
 
-TBD
+| Step | Classic | Modern | Comments
+| ------- | ----------- | ------- | ------- |
+| `masterpage` | Yes | Yes | |
+| `js` | Yes | Yes | |
+| `css` | Yes | Yes | |
+| `lists` | Yes | Yes | |
+| `layouts` | Yes | No | |
+| `pages` | Yes | No | |
+| `virtualpages` | Yes | Yes | |
+| `controls` | Yes | No | |
