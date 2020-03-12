@@ -97,4 +97,4 @@ Yes, in fact Akumina’s Modern implementation uses a CDN by default for its Fra
 
 ## How do I author news articles in a Single Page Application experience?
 
-See https://akumina.github.io/docs/Modern-SPA#faqs
+The same as before - The news articles are authored via the content app in App Manager. The SPA uses a page route to determine the page to show. See https://akumina.github.io/docs/Modern-SPA#faqs
