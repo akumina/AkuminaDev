@@ -42,6 +42,10 @@ The 4.8 version of the site deployer provides a *centralspurl* argument that can
 
 Yes - each will require its own package, see https://akumina.github.io/docs/AK-Central-Site-Support#deployment-scenarios-and-packge-setup
 
+## How do I have widgets pull data from a site other than the current?
+
+See [Central Site Collection Support - Widget Support for Cross site collection data retrieval](https://akumina.github.io/docs/AK-Central-Site-Support.html#widget-support-for-cross-site-collection-data-retrieval)
+
 ## Where do I get the download the Modern packages? 
 
 The downloads are available in the Akumina Developer site, on the respective pages for the package type: 
