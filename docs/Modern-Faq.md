@@ -12,9 +12,11 @@ When using the Akumina page editing experience, Modern web parts cannot be added
 When using the SharePoint page editing experience, both Modern Web Parts and Akumina widgets can be used. 
 
 ## Where are the Assets stored?
+
 Since Modern restricts the use of the Style Library, the asset files are stored in another library, usually named Akumina Library. In addition, the assets can be in either the central site collection or in a CDN, depending on type. The digitalworkplace.env.js file (when used) is placed in the Akumina Private Library; see https://akumina.github.io/docs/Modern-AWP#setup-installation.
 
 ## How do I update my widget packages to use a different library name?
+
 We have introduced a new token {AssetLibraryName} in the config.json file that will allow it to work in both modern and classic, as shown below:
 
     "Views": [
@@ -25,18 +27,23 @@ We have introduced a new token {AssetLibraryName} in the config.json file that w
     }
 
 ## Is a central site required? 
+
 A central site is not required. However, for a production deployment it is preferred, but when using a development site the Akumina framework and related items can be in the same site collection. 
 
 ## Does the central site need to be classic? 
+
 The central site can be either Modern or Classic 
 
 ## How do I deploy widgets into a central/delivery site configuration? 
+
 The 4.8 version of the site deployer provides a *centralspurl* argument that can be used to deploy widgets to the central site, see https://akumina.github.io/docs/Site-Deployer-Version-4-8#install
 
 ## Deploying assets into both central site and delivery sites, will I require separate packages? 
+
 Yes - each will require its own package, see https://akumina.github.io/docs/AK-Central-Site-Support#deployment-scenarios-and-packge-setup
 
 ## Where do I get the download the Modern packages? 
+
 The downloads are available in the Akumina Developer site, on the respective pages for the package type: 
 * Single Page Application - https://akumina.github.io/docs/Modern-SPA#downloads 
 * Widget Picker - https://akumina.github.io/docs/Modern-AWP#downloads 
@@ -86,7 +93,8 @@ See [Site-Deployer-Version-4-8 - Modern Deployment ](https://akumina.github.io/d
 
 ## Can I still use a CDN with the Akumina Framework in Modern? 
 
-Yes, in fact Akumina’s Modern implementation uses a CDN by default.
+Yes, in fact Akumina’s Modern implementation uses a CDN by default for its Framework files
 
 ## How do I author news articles in a Single Page Application experience?
+
 See https://akumina.github.io/docs/Modern-SPA#faqs
