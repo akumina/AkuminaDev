@@ -3,7 +3,7 @@ id: Modern-WebPartLibrary
 title: Modern Web Part Library
 ---
 
-### Modern web part library (as of 3/10/2019)
+### Modern web part library (as of 3/10/2020)
 
 The following is a list of a web parts you can use on a page, along with links to more information for each web part.
 
