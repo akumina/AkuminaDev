@@ -7,51 +7,53 @@ id: Modern-Faq
 
 ## Can I use the Akumina Widgets and SPFx/Modern Web Parts together?
 
-When using the Akumina page editing experience in the Single Page Application (SPA), SPFx/Modern web parts cannot be added to pages, only Akumina widgets. 
+When using the Akumina page editing experience in the **Single Page Application** (SPA), SPFx/Modern web parts cannot be added to pages, only Akumina widgets. 
 
-When using the SharePoint page editing experience with the Akumina widget picker and/or the application extension, both Modern Web Parts and Akumina widgets can be used.
+When using the SharePoint page editing experience with the **Akumina Widget Picker** and/or the **Application Extension**, both Modern Web Parts and Akumina widgets can be used.
 
 ## Where are the Assets stored?
 
-Since Modern restricts the use of the Style Library, the asset files are stored in another library, named *Akumina Library* by default. In addition, the assets can be also be in a central site collection - see https://akumina.github.io/docs/AK-Central-Site-Support.html. The digitalworkplace.env.js file (when used) is placed in the Akumina Private Library; see https://akumina.github.io/docs/Modern-AWP#setup-installation.
+Since Modern restricts the use of the **Style Library**, the asset files are stored in another library, named **Akumina Library** by default. In addition, the assets can be also be in a central site collection - see [More](https://akumina.github.io/docs/AK-Central-Site-Support.html). The **digitalworkplace.env.js** file, when used, is placed in the Akumina Private Library; see [More](https://akumina.github.io/docs/Modern-AWP#setup-installation).
 
 ## How do I update my widget packages to use a different library name?
 
-We have introduced a new token {AssetLibraryName} in the config.json file in Akumina release 4.8 that will allow it to work in both modern and classic, as shown below:
+We have introduced a new token {AssetLibraryName} in the **config.json** file in Akumina Release Version 4.8 that will allow it to work in both modern and classic, as shown below:
 
+```json
     "Views": [
     {
         "Name": "default",
         Path": "/{AssetLibraryName}/DigitalWorkPlace/Content/Templates/CompanyNewsItemWidget/NewsItem.html", 
         "Id": "fd4d32ac-a205-4d76-b43f-6dc534b7daf1"
     }
+```
 
 ## Is a central site required to utilize Akumina with a Modern site?
 
-A central site is not required. However, for a production deployment it is preferred, but when using a development site the Akumina framework and related items can be in the same site collection. Also see https://akumina.github.io/docs/AK-Central-Site-Support.html
+A central site is not required. However, for a production deployment, it is preferred. Please note that when using a development site, the Akumina framework and related items can be in the same site collection. Also, see [Central Site Support](https://akumina.github.io/docs/AK-Central-Site-Support.html).
 
 ## Does the central site need to be classic? 
 
-The central site can be either Modern or Classic since a separate asset library, and not the Style Library, can be used.
+The central site can be either Modern or Classic since a separate asset library, not the Style Library, can be used.
 
 ## How do I deploy widgets into a central/delivery site configuration? 
 
-The 4.8 version of the site deployer provides a *centralspurl* argument that can be used to deploy widgets to the central site, see https://akumina.github.io/docs/Site-Deployer-Version-4-8#install
+The 4.8 version of the site deployer provides a **centralspurl** argument that can be used to deploy widgets to the central site, see [Site Deployer V4.8](/docs/Site-Deployer-Version-4-8#install).
 
-## Deploying assets into both central site and delivery sites, will I require separate packages? 
+## I'm deploying assets into both central site and delivery sites, will I require separate packages? 
 
-Yes - each will require its own package, see https://akumina.github.io/docs/AK-Central-Site-Support#deployment-scenarios-and-packge-setup
+Yes - each will require its own package, see [Central Site Support](/docs/AK-Central-Site-Support#deployment-scenarios-and-packge-setup).
 
 ## How do I have widgets pull data from a site other than the current?
 
-See [Central Site Collection Support - Widget Support for Cross site collection data retrieval](https://akumina.github.io/docs/AK-Central-Site-Support.html#widget-support-for-cross-site-collection-data-retrieval)
+See [Central Site Collection Support - Widget Support for Cross site collection data retrieval](/docs/AK-Central-Site-Support.html#widget-support-for-cross-site-collection-data-retrieval).
 
 ## Where do I get the download for the Modern packages? 
 
 The downloads are available in the Akumina Developer site, on the respective pages for the package type: 
-* Single Page Application - https://akumina.github.io/docs/Modern-SPA#downloads 
-* Widget Picker - https://akumina.github.io/docs/Modern-AWP#downloads 
-* Application Extension - https://akumina.github.io/docs/Modern-App-Extension#downloads 
+* [Single Page Application](/docs/Modern-SPA#downloads)
+* [Widget Picker](/docs/Modern-AWP#downloads)
+* [Application Extension](/docs/Modern-App-Extension#downloads)
 
 ## In what version did it become available? 
 The Modern support is available in Akumina version 4.8 and above. 
@@ -68,8 +70,8 @@ Pictured: Sharepoint Modern Page with the AWP and Application Extension (Header/
 ## How can a developer add additional CSS and JS files to the site?
 
 While Modern does allow you to add additonal CSS and JS files, the process to do so requires effort in steps and configuration. With Akumina, this can be done easily using either SPA or the Application Extension/Widget Picker, see:
-* SPA - https://akumina.github.io/docs/Modern-SPA#spa-configuration
-* Application Extension/Widget Picker - https://akumina.github.io/docs/Modern-AWP#setup-installation
+* [SPA](/docs/Modern-SPA#spa-configuration)
+* [Application Extension/Widget Picker](/docs/Modern-AWP#setup-installation)
 
 ## Do the app permissions required for the three different SP apps (SPA, SP Extension, Widget Selector) differ from the App Manager app? 
 
@@ -81,9 +83,9 @@ Yes – there is feature parity and the widgets are the same in either experienc
 
 ## The Office365 suite bar has the Microsoft Search experience turned on by default – what is the best way to search an Akumina site? 
 
-See https://community.akumina.com/knowledge-base/modern-search/ 
+See [Modern Search](https://community.akumina.com/knowledge-base/modern-search/).
 
-When items need to be searched via the Office 365 Modern search, then there is some configuration that needs to occur. Our solution leverages the capability of SharePoint search to adjust the URL for the search items.
+Some configuration needs to occur when items need to be searched via the Office 365 Modern search. Our solution leverages the capability of SharePoint search to adjust the URL for the search items.
 
 ![](https://community.akumina.com/wp-content/uploads/2019/10/Picture1.png)
 
@@ -93,12 +95,12 @@ Yes – there is generally a comparable Akumina widget to the web parts for Mode
 
 ## How is the site deployer tooling affected for Modern? 
 
-See [Site-Deployer-Version-4-8 - Modern Deployment ](https://akumina.github.io/docs/Site-Deployer-Version-4-8#modern-deployment)
+See [Site-Deployer-Version-4-8 - Modern Deployment](https://akumina.github.io/docs/Site-Deployer-Version-4-8#modern-deployment).
 
 ## Can I still use a CDN with the Akumina Framework in Modern? 
 
-Yes, in fact Akumina’s Modern implementation uses a CDN by default for its Framework files
+Yes, in fact Akumina’s Modern implementation uses a CDN by default for its Framework files.
 
 ## How do I author news articles in a Single Page Application experience?
 
-See https://akumina.github.io/docs/Modern-SPA#faqs
+See [Modern SPA](/docs/Modern-SPA#faqs).
