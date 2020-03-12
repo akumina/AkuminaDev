@@ -7,17 +7,17 @@ id: Modern-Faq
 
 ## Can I use the Akumina Widgets and SPFx/Modern Web Parts together?
 
-When using the Akumina page editing experience, Modern web parts cannot be added to pages, only Akumina widgets. 
+When using the Akumina page editing experience in the Single Page Application (SPA), SPFx/Modern web parts cannot be added to pages, only Akumina widgets. 
 
-When using the SharePoint page editing experience, both Modern Web Parts and Akumina widgets can be used. 
+When using the SharePoint page editing experience with the Akumina widget picker and/or the application extension, both Modern Web Parts and Akumina widgets can be used.
 
 ## Where are the Assets stored?
 
-Since Modern restricts the use of the Style Library, the asset files are stored in another library, usually named Akumina Library. In addition, the assets can be in either the central site collection or in a CDN, depending on type. The digitalworkplace.env.js file (when used) is placed in the Akumina Private Library; see https://akumina.github.io/docs/Modern-AWP#setup-installation.
+Since Modern restricts the use of the Style Library, the asset files are stored in another library, named *Akumina Library* by default. In addition, the assets can be also be in a central site collection - see https://akumina.github.io/docs/AK-Central-Site-Support.html. The digitalworkplace.env.js file (when used) is placed in the Akumina Private Library; see https://akumina.github.io/docs/Modern-AWP#setup-installation.
 
 ## How do I update my widget packages to use a different library name?
 
-We have introduced a new token {AssetLibraryName} in the config.json file that will allow it to work in both modern and classic, as shown below:
+We have introduced a new token {AssetLibraryName} in the config.json file in Akumina release 4.8 that will allow it to work in both modern and classic, as shown below:
 
     "Views": [
     {
@@ -26,13 +26,13 @@ We have introduced a new token {AssetLibraryName} in the config.json file that w
         "Id": "fd4d32ac-a205-4d76-b43f-6dc534b7daf1"
     }
 
-## Is a central site required? 
+## Is a central site required to utilize Akumina with a Modern site?
 
-A central site is not required. However, for a production deployment it is preferred, but when using a development site the Akumina framework and related items can be in the same site collection. 
+A central site is not required. However, for a production deployment it is preferred, but when using a development site the Akumina framework and related items can be in the same site collection. Also see https://akumina.github.io/docs/AK-Central-Site-Support.html
 
 ## Does the central site need to be classic? 
 
-The central site can be either Modern or Classic 
+The central site can be either Modern or Classic since a separate asset library, and not the Style Library, can be used.
 
 ## How do I deploy widgets into a central/delivery site configuration? 
 
@@ -46,7 +46,7 @@ Yes - each will require its own package, see https://akumina.github.io/docs/AK-C
 
 See [Central Site Collection Support - Widget Support for Cross site collection data retrieval](https://akumina.github.io/docs/AK-Central-Site-Support.html#widget-support-for-cross-site-collection-data-retrieval)
 
-## Where do I get the download the Modern packages? 
+## Where do I get the download for the Modern packages? 
 
 The downloads are available in the Akumina Developer site, on the respective pages for the package type: 
 * Single Page Application - https://akumina.github.io/docs/Modern-SPA#downloads 
