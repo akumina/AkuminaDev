@@ -30,6 +30,12 @@ A central site is not required. However, for a production deployment it is prefe
 ## Does the central site need to be classic? 
 The central site can be either Modern or Classic 
 
+## How do I deploy widgets into a central/delivery site configuration? 
+The 4.8 version of the site deployer provides a *centralspurl* argument that can be used to deploy widgets to the central site, see https://akumina.github.io/docs/Site-Deployer-Version-4-8#install
+
+## Deploying assets into both central site and delivery sites, will I require separate packages? 
+Yes - each will require its own package, see https://akumina.github.io/docs/AK-Central-Site-Support#deployment-scenarios-and-packge-setup
+
 ## Where do I get the download the Modern packages? 
 The downloads are available in the Akumina Developer site, on the respective pages for the package type: 
 * Single Page Application - https://akumina.github.io/docs/Modern-SPA#downloads 
