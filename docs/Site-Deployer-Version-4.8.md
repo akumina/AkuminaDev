@@ -72,6 +72,7 @@ Set options to true/false in akumina.sitedeployer.config.json:
 | `virtualpages` | Deploys contents of **envdir**/sitedefinitions/**assetdirectory**/VirtualPages - see https://akumina.github.io/docs/AK-Virtual-Page-Builder.html  |
 | `cdnassets` | Deploys assets to the Azure Storage |
 | `sleep` | Sleeps for 15 seconds  |
+| `spusersearch` | Gets the count of users in the search |
 | `webpartgallery` | Adds .dwp files to the web part gallery |
 | `virtuallayout` | Add Virtual Page Layouts |
 | `updatepagecache` | Updated the page cache for the site |
@@ -83,7 +84,7 @@ Due to differences in how Modern works vs Classic, some steps in the site creato
 
 | **Site Deployer Steps** | **Classic** | **Modern** | **Comments** |
 | --- | --- | --- | --- |
-| `masterpage` | Yes | No |   |
+| `masterpage` | Yes | **No** |   |
 | `js` | Yes | Yes |   |
 | `css` | Yes | Yes |   |
 | `lists` | Yes | Yes |   |
@@ -102,7 +103,7 @@ Due to differences in how Modern works vs Classic, some steps in the site creato
 | `sleep` | Yes | Yes |   |
 | `exportlists` | Yes | Yes |  |
 | `uploadfiles` | Yes | Yes |   |
-| `spusersearch` | Gets the count of users in the search |
+| `spusersearch` | Yes | Yes |  |
 | `webpartgallery` | Yes | **No** | |
 | `groups` | Yes | Yes |  |
 | `siteproperties` | Yes | Yes |  |
