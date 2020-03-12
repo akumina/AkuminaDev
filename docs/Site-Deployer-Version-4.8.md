@@ -70,20 +70,42 @@ Set options to true/false in akumina.sitedeployer.config.json:
 | `groups` | Deploys Sharepoint Security Groups from **envdir**/sitedefinitions/**assetdirectory**/SecurityGroups/groups.xml |
 | `siteproperties` | Deploys contents of **envdir**/sitedefinitions/**assetdirectory**/SiteProperties/properties.xml |
 | `virtualpages` | Deploys contents of **envdir**/sitedefinitions/**assetdirectory**/VirtualPages - see https://akumina.github.io/docs/AK-Virtual-Page-Builder.html  |
-
+| `cdnassets` | Deploys assets to the Azure Storage |
+| `sleep` | Sleeps for 15 seconds  |
+| `webpartgallery` | Adds .dwp files to the web part gallery |
+| `virtuallayout` | Add Virtual Page Layouts |
+| `updatepagecache` | Updated the page cache for the site |
 
 ### Nuances
 
 ## Modern deployment
 Due to differences in how Modern works vs Classic, some steps in the site creator have no relevance. The table below is a list of site deployer steps, and their classic vs modern mapping.  
 
-| Step | Classic | Modern | Comments
-| ------- | ----------- | ------- | ------- |
-| `masterpage` | Yes | Yes | |
-| `js` | Yes | Yes | |
-| `css` | Yes | Yes | |
-| `lists` | Yes | Yes | |
-| `layouts` | Yes | No | |
-| `pages` | Yes | No | |
-| `virtualpages` | Yes | Yes | |
-| `controls` | Yes | No | |
+| **Site Deployer Steps** | **Classic** | **Modern** | **Comments** |
+| --- | --- | --- | --- |
+| `masterpage` | Yes | Yes |   |
+| `js` | Yes | Yes |   |
+| `css` | Yes | Yes |   |
+| `lists` | Yes | Yes |   |
+| `layouts` | Yes | **No** |   |
+| `pages` | Yes | **No** |   |
+| `virtualpages` | Yes | Yes | ** ** |
+| `controls` | Yes | **No** |   |
+| `widgets` | Yes | Yes | **Central - Widget Data, Delivery - Content and Instance Data** |
+| `contentfiles` | Yes | Yes |   |
+| `imagefiles` | Yes | Yes |   |
+| `homepage` | Yes | **No** |   |
+| `fonts` | Yes | Yes |   |
+| `updatelists` | Yes | Yes |   |
+| `addtermsets` | Yes | Yes |   |
+| `cdnassets` | Yes | Yes |   |
+| `sleep` | Yes | Yes |   |
+| `exportlists` | Yes | Yes |  |
+| `uploadfiles` | Yes | Yes |   |
+| `spusersearch` | Gets the count of users in the search |
+| `webpartgallery` | Yes | **No** | |
+| `groups` | Yes | Yes |  |
+| `siteproperties` | Yes | Yes |  |
+| `spusersearch` | Yes | Yes |  |
+| `virtuallayout` | Yes | Yes |  |
+| `updatepagecache` | Yes| Yes |  |
