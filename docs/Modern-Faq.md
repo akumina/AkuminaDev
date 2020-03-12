@@ -14,6 +14,16 @@ When using the SharePoint page editing experience, both Modern Web Parts and Aku
 ## Where are the Assets stored?
 Since Modern restricts the use of the Style Library, the asset files are stored in another library, usually named Akumina Library. In addition, the assets can be in either the central site collection or in a CDN, depending on type. The digitalworkplace.env.js file (when used) is placed in the Akumina Private Library; see https://akumina.github.io/docs/Modern-AWP#setup-installation.
 
+## How do I update my widget packages to use a different library name?
+We have introduced a new token {AssetLibraryName} in the config.json file that will allow it to work in both modern and classic, as shown below:
+
+    "Views": [
+    {
+        "Name": "default",
+        Path": "/{AssetLibraryName}/DigitalWorkPlace/Content/Templates/CompanyNewsItemWidget/NewsItem.html", 
+        "Id": "fd4d32ac-a205-4d76-b43f-6dc534b7daf1"
+    }
+
 ## Is a central site required? 
 A central site is not required. However, for a production deployment it is preferred, but when using a development site the Akumina framework and related items can be in the same site collection. 
 
