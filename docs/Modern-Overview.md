@@ -25,7 +25,7 @@ There are two experiences that Akumina Modern supports that determine how pages 
 
 ## Akumina Page Experience 
 
-In this model, the Akumina Virtual Page Builder is used to construct pages. Visually, the page is similar to its classic site counterpart, yet only Akumina widgets are allowed to be in the pages.
+In this model, the Akumina Virtual Page Builder is used to construct pages. Visually, the page is like its classic site counterpart, yet only Akumina widgets can be in the pages.
 
 ![](https://akuminadownloads.blob.core.windows.net/wiki/AkuminaDev/modern_spa.png )
 
