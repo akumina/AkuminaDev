@@ -83,13 +83,13 @@ Due to differences in how Modern works vs Classic, some steps in the site creato
 
 | **Site Deployer Steps** | **Classic** | **Modern** | **Comments** |
 | --- | --- | --- | --- |
-| `masterpage` | Yes | Yes |   |
+| `masterpage` | Yes | No |   |
 | `js` | Yes | Yes |   |
 | `css` | Yes | Yes |   |
 | `lists` | Yes | Yes |   |
 | `layouts` | Yes | **No** |   |
 | `pages` | Yes | **No** |   |
-| `virtualpages` | Yes | Yes | ** ** |
+| `virtualpages` | Yes | Yes | |
 | `controls` | Yes | **No** |   |
 | `widgets` | Yes | Yes | **Central - Widget Data, Delivery - Content and Instance Data** |
 | `contentfiles` | Yes | Yes |   |
