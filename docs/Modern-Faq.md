@@ -82,7 +82,7 @@ Yes – there is generally a comparable Akumina widget to the web parts for Mode
 
 ## How is the site deployer tooling affected for Modern? 
 
-See [Site-Deployer-Version-4-5 - Modern Deployment ](https://akumina.github.io/docs/Site-Deployer-Version-4-8#modern-deployment)
+See [Site-Deployer-Version-4-8 - Modern Deployment ](https://akumina.github.io/docs/Site-Deployer-Version-4-8#modern-deployment)
 
 ## Can I still use a CDN with the Akumina Framework in Modern? 
 
