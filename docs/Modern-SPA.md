@@ -221,4 +221,4 @@ For #2, this is also dependent on widget code to a certain extent. However, try 
 
 ### How do I author news articles in a Single Page Application experience?
 
-The same as before - The news articles are authored via the content app in App Manager. The SPA uses a URL parameter to determine the page to show.
+The same as before - The news articles are authored via the content app in App Manager. The SPA uses a page route to determine the page to show.
