@@ -19,6 +19,23 @@ Modern Pages and SPFx are not about new ways to manage content, they are about n
 
 Akumina’s support of both Microsoft page rendering models is not about creating a ‘new Akumina way of doing things’, rather, it is about adapting the Akumina widget technology to be delivered to an end user through either model – with complete feature parity – following Akumina’s ‘use the right tool for the right job’ deployment approach.
 
+## 2 experiences 
+
+There are two experiences that Akumina Modern supports that determine how pages are authored and how widgets are added. 
+
+## Akumina Page Experience 
+
+In this model, the Akumina Virtual Page Builder is used to construct pages. Visually, the page is similar to its classic site counterpart: 
+
+![](https://akuminadownloads.blob.core.windows.net/wiki/AkuminaDev/modern_spa.png )
+
+## Modern Page Experience 
+
+In this model, Akumina widgets are delivered in the page, and the Modern editing flow is used – this allows both Akumina widgets and Modern Web Parts to be in the page together.  
+
+![](https://akuminadownloads.blob.core.windows.net/wiki/AkuminaDev/modern_sharepoint_experience.png)
+
+
 ## All the Akumina Benefits in a Modern Page
 With the ease of adding Akumina into SPFx driven pages also comes many of the benefits as well.
 ![](https://community.akumina.com/wp-content/uploads/2019/06/SPFxoutput_789x718.png)
