@@ -31,7 +31,7 @@ The [Button web part](https://support.office.com/en-us/article/use-the-button-we
 
 The [Document Library web part](https://support.office.com/en-us/article/use-the-document-library-web-part-a9dfecc3-2050-4528-9f00-2c5afc5731b0) displays a document library and customize it with your own title, view, and even size. Users with appropriate permissions can view or edit files directly from the web part, or can go to the full document library by clicking  **See all**.
 
-> See Akumina&#39;s Document Experience
+> See [Akumina Document Experience](#akumina-document-experience)
 
 ## Embed
 
@@ -43,33 +43,33 @@ The [Embed web part](https://support.office.com/en-us/article/add-content-to-you
 
 The [Events web part](https://support.office.com/en-us/article/use-the-events-web-part-5fe4da93-5fa9-4695-b1ee-b0ae4c981909) allows you to add and display upcoming events on your page. You can even include a map with location, online meeting information, and more.
 
-> See  Akumina Calendar/Events Experience
+> See [Akumina Calendar/Events Experience](#akumina-calendarevent-experience)
 
 
 ## Group calendar
 
 The [Group calendar web part](https://support.office.com/en-us/article/use-the-group-calendar-web-part-eaf3c04d-5699-48cb-8b5e-3caa887d51ce) puts an Office 365 [group calendar](https://support.office.com/en-us/article/schedule-a-meeting-on-a-group-calendar-in-outlook-0cf1ad68-1034-4306-b367-d75e9818376a) right on your page so that it is easily visible to your readers.
 
-> See  Akumina Calendar/Events Experience
+> See [Akumina Calendar/Events Experience](#akumina-calendarevent-experience)
 
 
 ## Hero
 
 The [Hero web part](https://support.office.com/en-us/article/use-the-hero-web-part-d57f449b-19a0-4b0d-8ce3-be5866430645) is a great way to bring focus and visual interest to your page. You can display up to five items in the Hero web part and use compelling images, text, and links to draw attention to each. The Hero web part is included by default on Communication sites, but you can also add the Hero web part to other pages.
 
-> See AKUMINA HERO EXPERIENCE
+> See [Akumina Hero Experience](#akumina-hero-experience)
 
 ## Image
 
 The [Image web part on a page](https://support.office.com/en-us/article/use-the-image-web-part-a63b335b-ad0a-4954-a65d-33c6af68beb2) inserts an image on the page, either from your site, your OneDrive, or your hard drive.
 
-> See Akumina Image Experience
+> See [Akumina Image Experience](#akumina-image-experience)
 
 ## Image gallery
 
 The [Image Gallery web part](https://support.office.com/en-us/article/use-the-image-gallery-web-part-bbcbe560-14a7-4369-8ef5-3255845e3bfd) shares collections of pictures on a page. Simply select your images with the file picker or drag them onto the web part. Once you&#39;ve created your collection, you can drag and drop the images to reorder them as needed.
 
-> See Akumina Image Experience
+> See [Akumina Image Experience](#akumina-image-experience)
 
 ## **Link**
 
@@ -92,20 +92,20 @@ The [Microsoft Forms web part](https://support.office.com/en-us/article/use-the-
 
 The [News web part](https://support.office.com/en-us/article/use-the-news-web-part-on-a-sharepoint-page-c2dcee50-f5d7-434b-8cb9-a7feefd9f165) keeps your team in the loop as well as engages them with important or interesting stories. You can quickly create eye-catching posts like announcements, people news, status updates, and more that can include graphics and rich formatting.
 
-> See Akumina&#39;s News Experience
+> See [Akumina News Experience](#akumina-news-experience)
 
 
 ## **People**
 
 The [People web part](https://support.office.com/en-us/article/show-people-profiles-on-your-page-with-the-people-web-part-7e52c5f6-2d72-48fa-a9d3-d2750765fa05) displays a selected group of people and their profiles on your page. It can be used for contact information, team information, presenters, and more.
 
-> See **AKUMINA People EXPERIENCE**
+> See [Akumina People Experience](#akumina-people-experience)
 
 ## Quick links
 
 The [Quick Links web part](https://support.office.com/en-us/article/use-the-quick-links-web-part-e1df7561-209d-4362-96d4-469f85ab2a82) &quot;pins&quot; items to your page for easy access.
 
-See **AKUMINA Menu EXPERIENCE**
+See [Akumina Menu Experience](#akumina-menu-experience)
 
 ## Recent documents
 
@@ -113,8 +113,7 @@ The [Recent documents web part](https://support.office.com/en-us/article/use-the
 
 **Note:**  The Recent documents web part is not available in SharePoint Server 2019.
 
-> See **AKUMINA DOCUMENT EXPERIENCE**
-
+> See [Akumina Document Experience](#akumina-document-experience)
 
 ## Stream
 
