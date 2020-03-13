@@ -59,7 +59,11 @@ Lastly, the Akumina SPA supports the ability to inject any custom JS file locate
 
 To begin the Modern setup, create a new Communication Sharepoint site from the Office 365 Sharepoint landing page. Once the site is created, navigate to Site Contents and keep the tab/window open. You will need it for later. From the Site Contents page, add a new app. Choose the Akumina Interchange app and wait for it to install on the site. This can take up to a few minutes to complete. 
 Once Interchange is installed on the site, open it up to launch App Manager. The initial load for App Manager can take up to several minutes as it creates necessary lists, document libraries, and assets for first time use. You'll know when it's done as you will arrive on the App Manager landing page.
-Next, you will need to verify the SPA SPKG is available to the site collection. This may require assistance from your Sharepoint Administrator. The SPA SPKG should be available from the App Catalog available to your site. If your site collection uses a local catalog, you will need to enable the "**Apps for Sharepoint**" Library, upload the spkg to the site, and trust it before continuing. You can easily check this by adding a new App to your site collection from the Site Contents page:
+Next, you will need to verify the SPA SPKG is available to the site collection. This may require assistance from your Sharepoint Administrator. 
+
+> For information on how to add to the app catalog, see [https://docs.microsoft.com/en-us/sharepoint/administration/manage-the-app-catalog#add-apps-to-the-app-catalog](https://docs.microsoft.com/en-us/sharepoint/administration/manage-the-app-catalog#add-apps-to-the-app-catalog)
+
+The SPA SPKG should be available from the App Catalog available to your site. If your site collection uses a local catalog, you will need to enable the "**Apps for Sharepoint**" Library, upload the spkg to the site, and trust it before continuing. You can easily check this by adding a new App to your site collection from the Site Contents page:
 
 From App Catalog
 ![](https://akuminadownloads.blob.core.windows.net/wiki/AkuminaDev/modern_spkgappcatalog.PNG)
@@ -90,12 +94,13 @@ This step will add the **akumina.aspx** page to the Sharepoint site. While this 
 
 3. uploadfiles
 
-This step is very important. In your Akumina Project structure, you should have the following path: [<projectname>\build\sitedefinitions\\\<namespace>\UploadFiles\Style Library\DigitalWorkPlace\Content\Templates\Core]. In addition to this, there should be a file there named something along the lines of **VirtualMasterPage.html**. Running the deployer with the uploadfiles option set will deploy this file. However, be sure the pagedeliveryurl parameter is set your classic site.
+This step is very important. In your Akumina Project structure, you should have the following path: [<projectname>\build\sitedefinitions\\\<namespace>\UploadFiles\Style Library\DigitalWorkPlace\Content\Templates\Core]. In addition to this, there should be a file there named something along the lines of **VirtualMasterPage.html**. Running the deployer with the uploadfiles option set will deploy this file. However, be sure the *Akumina.Digispace.ConfigurationContext.PageDeliveryUrl* parameter is set your classic site.
+
 Once the deployer finishes, navigate to your classic site. Go to Site Contents and open the **DigispaceConfigurationIDS_AK** list. You should see an entry named "VirtualMasterTemplate". If you do not see that entry, just create one. Set the value of the "**VirtualMasterTemplate**" key to the name of the Virtual Master Page HTML file you just deployed. You will need to refresh the [Configuration Cache](/docs/AK-Configuration-Context) for these changes to take effect.
 
 ![](https://akuminadownloads.blob.core.windows.net/wiki/AkuminaDev/modern_digispaceconfig.PNG)
 
-Finally, deploy your Virtual Page file to the new Modern site. Once finished, you can verify the path to the page under PageUrls_AK:
+Finally, deploy your Virtual Page file to the new Modern site (using the *virtualpages* step of the site deployer). Once finished, you can verify the path to the page under PageUrls_AK:
 
 ![](https://akuminadownloads.blob.core.windows.net/wiki/AkuminaDev/modern_pageurls.PNG)
 
@@ -145,7 +150,7 @@ Since **akumina.aspx** is the only physical page required on the site, where doe
 
 ## SPA Configuration
 
-Once the pre-requisites are on the site and the SPA has been added from the app catalog, we're ready to start configuring the application. Navigate to the akumina.aspx page. By default, the SPA will hide certain Sharepoint Modern elements to provide a fuly customizable look and feel, however, we will need to enable a specific element. Click on the Akumina System Tray on the bottom and open the Debug Panel. From the Debug Panel, click on the **Modern** tab and enable the **Toggle Command Bar** option. Close the Debug Panel and click on the Edit button in the upper Right. You'll see the following settings:
+Once the pre-requisites are on the site and the SPA has been added from the app catalog, we're ready to start configuring the application. Navigate to the akumina.aspx page. By default, the SPA will hide certain Sharepoint Modern elements to provide a fully customizable look and feel, however, we will need to enable a specific element. Click on the Akumina System Tray on the bottom and open the Debug Panel. From the Debug Panel, click on the **Modern** tab and enable the **Toggle Command Bar** option. Close the Debug Panel and click on the Edit button in the upper Right. You'll see the following settings:
 
 ![](https://akuminadownloads.blob.core.windows.net/wiki/AkuminaDev/modern_spasettings1.PNG)
 ![](https://akuminadownloads.blob.core.windows.net/wiki/AkuminaDev/modern_spasettings2.PNG)
@@ -155,7 +160,7 @@ An explanation of these settings follows:
 |Setting|Description|
 |---|---|
 |Akumina SiteCollection URL|This is the URL of the Central Site from which most assets are retrieved from.|
-|Akumina Service Hub URL|This is the URL of App Manager on the Central Site. This value is a property that can be found on the Debug Console under ConfigContext as "**InterchangeURL".|**
+|Akumina Service Hub URL|This is the URL of App Manager on the Central Site. This value is a property that can be found on the Debug Console under ConfigContext as "**InterchangeURL**".|
 |Akumina Service Hub QueryKey|This key is required for App Manager endpoints. This is also found on the Debug Console under ConfigContext as "**InterchangeQueryKey**".|
 |Delivery Mode|True = Assets will be provisioned from the current site (the Delivery site). False = Assets will be provisioned from the Central site.|
 |Download env.js from current site|If this option is checked, the SPA will read the contents of **digitalworkplace.env.js** from the current site.|
@@ -167,7 +172,7 @@ An explanation of these settings follows:
 |Comma delimited list of CSS files to load|This is the same as the previous option except for CSS files. There is no guarantee on when the CSS file is loaded.|
 
 
-Once your options are set, click Save to persist your changes. If you have a Virtual Page deployed with a PageUrl set to home.aspx and have generated the Page Cache, you should see your page load with the defined Virtual Master Page and the contents of the home.aspx Virtual Page within it.
+Once your options are set, click Save to persist your changes. If you have a Virtual Page deployed with a PageUrl set to home.aspx and have generated the Page Cache (please regenerate the cache if you have not done so), you should see your page load with the defined Virtual Master Page and the contents of the home.aspx Virtual Page within it.
 
 
 ## Troubleshooting
