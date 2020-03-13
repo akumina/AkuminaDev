@@ -43,14 +43,14 @@ The [Embed web part](https://support.office.com/en-us/article/add-content-to-you
 
 The [Events web part](https://support.office.com/en-us/article/use-the-events-web-part-5fe4da93-5fa9-4695-b1ee-b0ae4c981909) allows you to add and display upcoming events on your page. You can even include a map with location, online meeting information, and more.
 
-> See [Akumina Calendar/Events Experience](#akumina-calendarevent-experience)
+> See [Akumina Calendar/Events Experience](#akumina-calendar-event-experience)
 
 
 ## Group calendar
 
 The [Group calendar web part](https://support.office.com/en-us/article/use-the-group-calendar-web-part-eaf3c04d-5699-48cb-8b5e-3caa887d51ce) puts an Office 365 [group calendar](https://support.office.com/en-us/article/schedule-a-meeting-on-a-group-calendar-in-outlook-0cf1ad68-1034-4306-b367-d75e9818376a) right on your page so that it is easily visible to your readers.
 
-> See [Akumina Calendar/Events Experience](#akumina-calendarevent-experience)
+> See [Akumina Calendar/Events Experience](#akumina-calendar-event-experience)
 
 
 ## Hero
