@@ -97,6 +97,8 @@ The Site Deployer has been updated with additional functionality. The high-level
 
 To supplement the Akumina Widget Picker application, it is now possible to effectively transpile an Akumina Virtual Page JSON file into a Sharepoint Modern page. This means you can easily configure Sharepoint Modern pages, and its contents, in the Virtual Page JSON format for ease of sharing, storage, and editing.
 
+> See https://akumina.github.io/docs/AK-Virtual-Page-Builder.html#json-file-format
+
 The caveats to the implementation are detailed below:
 
 * Limited Layout functionality
@@ -108,7 +110,7 @@ Unfortunately, Modern Sharepoint's layouts are confined to the following:
 2. Two Column (large left/right)
 3. Three Column
 
-To accomodate this, the Site Deployer will only support up to three columns. If your Virtual Page has more than three columns, an error message will display and the process will be aborted. In the scenarios where you deploy a Virtual Page with two columns using the large/medium options, they will default to the Modern Sharepoint layout of large left/right.
+To accommodate this, the Site Deployer will only support up to three columns. If your Virtual Page has more than three columns, an error message will display and the process will be aborted. In the scenarios where you deploy a Virtual Page with two columns using the large/medium options, they will default to the Modern Sharepoint layout of large left/right.
 
 * Limited Content functionality
 
