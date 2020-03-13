@@ -90,7 +90,7 @@ This step will add the **akumina.aspx** page to the Sharepoint site. While this 
 
 3. uploadfiles
 
-This step is very important. In your Akumina Project structure, you should have the following path: [<projectname>\build\sitedefinitions\\<namespace>\UploadFiles\Style Library\DigitalWorkPlace\Content\Templates\Core]. In addition to this, there should be a file there named something along the lines of **VirtualMasterPage.html**. Running the deployer with the uploadfiles option set will deploy this file. However, be sure the pagedeliveryurl parameter is set your classic site.
+This step is very important. In your Akumina Project structure, you should have the following path: [<projectname>\build\sitedefinitions\\\<namespace>\UploadFiles\Style Library\DigitalWorkPlace\Content\Templates\Core]. In addition to this, there should be a file there named something along the lines of **VirtualMasterPage.html**. Running the deployer with the uploadfiles option set will deploy this file. However, be sure the pagedeliveryurl parameter is set your classic site.
 Once the deployer finishes, navigate to your classic site. Go to Site Contents and open the **DigispaceConfigurationIDS_AK** list. You should see an entry named "VirtualMasterTemplate". If you do not see that entry, just create one. Set the value of the "**VirtualMasterTemplate**" key to the name of the Virtual Master Page HTML file you just deployed. You will need to refresh the [Configuration Cache](/docs/AK-Configuration-Context) for these changes to take effect.
 
 ![](https://akuminadownloads.blob.core.windows.net/wiki/AkuminaDev/modern_digispaceconfig.PNG)
