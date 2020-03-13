@@ -60,7 +60,8 @@ See https://akumina.github.io/docs/Modern-AWP
 
 Utilizing the Akumina Application Extension with SharePoint Modern, gives site creators full control over the site header and footer. This leads to enhanced navigation, through global navigation customizations and navigation tailored to personas.  
 
-The Application Extension on Modern Page Experiences greatly improves usability for end users greatly when headers, footers, and global navigation can be fully customized and are created with their needs in mind. The Application Extension can be used in conjunction with the Akumina Widget Picker (AWP) but cannot be used with the Single Page App (SPA). However the SPA provides similar functionality.
+The Application Extension on Modern Page Experiences greatly improves usability for end users greatly when headers, footers, and global navigation can be fully customized and are created with their needs in mind. The Application Extension can be used in conjunction with the Akumina Widget Picker (AWP) but would not be used with the SPA as the Virtual Masterpage already controls the Header and Footer, Left Rail, Right Rail, and other elements.
+
 
 See https://akumina.github.io/docs/Modern-App-Extension
 
