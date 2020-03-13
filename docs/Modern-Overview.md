@@ -37,7 +37,7 @@ In this model, Akumina widgets are delivered in the page and the Modern editing 
 
 ## Deployment Options
 
-Modern is deployed via one of 3 components, 
+Modern is deployed via 3 components,
 ![](https://akuminadownloads.blob.core.windows.net/wiki/AkuminaDev/modern_deploymentoptions.png)
 
 ## Single Page Application (SPA)
@@ -48,11 +48,11 @@ The enhancements that come with SPA, Virtual pages perform better, pages load fa
 
 See https://akumina.github.io/docs/Modern-SPA
 
-## Widget Picker
+## Widget Picker (AWP)
 
 Akumina widgets can be accessed in a SharePoint Modern environment when the Akumina Widget Picker is installed on a Modern site. 
 
-By provides the availability of Akumina widgets along side Microsoft SPFX Web Parts, lightweight installation with admin control of which sites are enabled, uses standard Akumina widget development patterns, and allows for custom markup and code into Modern runtime, all of which enhance the Modern site experience. 
+This provides the availability of Akumina widgets alongside Microsoft SPFX Web Parts, lightweight installation with admin control of which sites are enabled, uses standard Akumina widget development patterns, and allows for custom markup and code into Modern runtime, all of which enhance the Modern site experience. 
 
 See https://akumina.github.io/docs/Modern-AWP
 
@@ -60,7 +60,7 @@ See https://akumina.github.io/docs/Modern-AWP
 
 Utilizing the Akumina Application Extension with SharePoint Modern, gives site creators full control over the site header and footer. This leads to enhanced navigation, through global navigation customizations and navigation tailored to personas.  
 
-The Application Extension on Modern Page Experiences greatly improves usability for end users greatly when headers, footers, and global navigation can be fully customized and are created with their needs in mind. 
+The Application Extension on Modern Page Experiences greatly improves usability for end users greatly when headers, footers, and global navigation can be fully customized and are created with their needs in mind. The Application Extension can be used in conjunction with the Akumina Widget Picker (AWP) but cannot be used with the Single Page App (SPA).
 
 See https://akumina.github.io/docs/Modern-App-Extension
 
