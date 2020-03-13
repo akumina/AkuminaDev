@@ -19,7 +19,8 @@
       "Modern-Faq",
       "Modern-SPA",
       "Modern-AWP",
-      "Modern-App-Extension"
+      "Modern-App-Extension",
+      "Modern-WebPartLibrary"
     ],
     "Widget Builder": [
       "Akumina-Widget-Structure",
