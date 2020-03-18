@@ -48,7 +48,8 @@
       "Site-Deployer-Version-4-5",
       "Site-Deployer-Version-4-8",
       "Site-Deployer-List-Attributes",
-      "Akumina-Npm-Commands"
+      "Akumina-Npm-Commands",
+      "Site-Deployer-AppOnly"
     ],
     "Site Creator": [
       "Deployment-Manager-Overview",
