@@ -205,4 +205,5 @@ Akumina has a calendar experience that provides event functionaility.
   - **Event Detail Widget** - [https://community.akumina.com/knowledge-base/eventdetail/](https://community.akumina.com/knowledge-base/eventdetail/)
 
 The following control displays a calendar from an Office 365 Group:
-  - **Calendar Widget** - [https://community.akumina.com/knowledge-base/calendarwidget/](https://community.akumina.com/knowledge-base/calendarwidget/)
+  - **Company Calendar Widget** - [https://community.akumina.com/knowledge-base/companycalendarwidget/](https://community.akumina.com/knowledge-base/companycalendarwidget/)
+
