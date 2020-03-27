@@ -64,7 +64,9 @@ To download the project solution and source code, please contact your account ad
 
 •	Set Akumina.Digispace.ConfigurationContext.InterchangeQueryKey to query key
 
-•	Set Akumina.Digispace.ConfigurationContext.ConfigurationSiteUrl to interchange URL
+•	Set Akumina.Digispace.ConfigurationContext.ConfigurationSiteUrl to SiteCollectionUrl
+
+**Note**: For Version 4.5 (or lower) of the Akumina Framework, the VALUE is interchange URL
 
 •	In setConfig function
 
