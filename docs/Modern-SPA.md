@@ -41,10 +41,10 @@ This implementation is natively supported by Sharepoint Classic. The downside of
 Additionally, the SPA changes the implementation of pages in Sharepoint. Previously, there were two options for individual pages: Normal aspx pages and Virtual Pages. Unfortunately, Virtual Pages also relied on physical aspx pages. The reason for this is the VirtualPageWidget needed to be on a physical page and would read the url of the page to determine which Virtual Page it was referencing.
 The SPA, however, disconnects the Virtual Page needing its own physical aspx page by acting as a proxy for *all* Virtual Pages. The **akumina.aspx** page comes loaded with the **VirtualPageWidget** already on it. The custom navigation used for the site allows the widget to read from the URL to determine which page contents to load. This is a noticeable impact on performance, as the master page, the physical page, the framework, and the widget are only loaded once until you navigate away from the site entirely.
 
-Furthermore, the SPA's custom navigation feature also implements its routing functionality on custom code. For example, a normal anchor tag, when clicked, will not emulate the SPA custom routing feature. However, by adding the **ak-spalink** class to your anchor tag, the Framework will detect the presence of SPA-style navigation and begin routing:
+Furthermore, the SPA's custom navigation feature also implements its routing functionality on custom code. For example, a normal anchor tag, when clicked, will not emulate the SPA custom routing feature. However, by adding the **{{IsSPALink}}** placeholder to your anchor tag, the Framework will detect the presence of SPA-style navigation and begin routing:
 
 ```html
-<a href="#/sitepages/news.aspx" target="_self" class="ak-spalink"> <!-- The href value should be set to the custom routing path -->
+<a href="{{AddSPALink}} {{ViewMoreLink}}" target="_self" class="{{IsSPALink}}"> <!-- The href value should be set to the custom routing path -->
     <i class="fa fa-none" aria-hidden="true"></i>
     NEWS
 </a>
@@ -100,9 +100,11 @@ Once the deployer finishes, navigate to your classic site. Go to Site Contents a
 
 ![](https://akuminadownloads.blob.core.windows.net/wiki/AkuminaDev/modern_digispaceconfig.PNG)
 
-Finally, deploy your Virtual Page file to the new Modern site (using the *virtualpages* step of the site deployer). Once finished, you can verify the path to the page under PageUrls_AK:
+Deploy your Virtual Page file to the new Modern site (using the *virtualpages* step of the site deployer). Once finished, you can verify the path to the page under PageUrls_AK:
 
 ![](https://akuminadownloads.blob.core.windows.net/wiki/AkuminaDev/modern_pageurls.PNG)
+
+Depending on how your site(s) are set up and configured, you may opt to serve Akumina Framework files from a shared CDN instead of a custom, remote Sharepoint site. To enable this setting, 
 
 
 ## Implementation Changes
@@ -154,14 +156,24 @@ Once the pre-requisites are on the site and the SPA has been added from the app 
 
 ![](https://akuminadownloads.blob.core.windows.net/wiki/AkuminaDev/modern_spasettings1.PNG)
 ![](https://akuminadownloads.blob.core.windows.net/wiki/AkuminaDev/modern_spasettings2.PNG)
+![](https://akuminadownloads.blob.core.windows.net/wiki/AkuminaDev/modern_spasettings3.PNG)
+
+**Note**: The edit button can also be enabled by typing the following command into the Developer Console:
+
+```javascript
+Akumina.Digispace.Utilities.ToggleModernPageEdit()
+```
 
 An explanation of these settings follows:
 
 |Setting|Description|
 |---|---|
+|Akumina Framework Version (For CDN)|This is the version of the Akumina Framework you'd like to use if you choose to source your Framework files from the CDN.|
 |Akumina SiteCollection URL|This is the URL of the Central Site from which most assets are retrieved from.|
 |Akumina Service Hub URL|This is the URL of App Manager on the Central Site. This value is a property that can be found on the Debug Console under ConfigContext as "**InterchangeURL**".|
 |Akumina Service Hub QueryKey|This key is required for App Manager endpoints. This is also found on the Debug Console under ConfigContext as "**InterchangeQueryKey**".|
+|Enable Azure AD|Enables Azure AD services for the current site.|
+|Enable Development Mode|This will flag the Framework to individually request JS files instead of bundling them together. For performance, we recommend disabling this in production environments.|
 |Delivery Mode|True = Assets will be provisioned from the current site (the Delivery site). False = Assets will be provisioned from the Central site.|
 |Download env.js from current site|If this option is checked, the SPA will read the contents of **digitalworkplace.env.js** from the current site.|
 |Public Library name of Central Site|The library in which assets are stored in the central site. As of writing this, this is easily determined by the version of Sharepoint being used. If classic, **Style Library**. If Modern, **Akumina Library**. Please note that space characters need to be URL encoded as %20.|

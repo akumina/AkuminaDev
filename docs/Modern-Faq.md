@@ -104,3 +104,11 @@ Yes, in fact Akumina’s Modern implementation uses a CDN by default for its Fra
 ## How do I author news articles in a Single Page Application experience?
 
 See [Modern SPA](/docs/Modern-SPA#faqs).
+
+## Something happened during testing/deployment and the debug console is not appearing, how do I enable the Sharepoint Edit button?
+
+In the event that a conflicting setting, CDN issue, or code issue is preventing the Debug Console from appearing, you can open the Developer Console (F12 by default) and type the following command to re-enable the Sharepoint 'Edit' button:
+
+```javascript
+Akumina.Digispace.Utilities.ToggleModernPageEdit()
+```
