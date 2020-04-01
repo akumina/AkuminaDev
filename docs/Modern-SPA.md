@@ -41,17 +41,6 @@ This implementation is natively supported by Sharepoint Classic. The downside of
 Additionally, the SPA changes the implementation of pages in Sharepoint. Previously, there were two options for individual pages: Normal aspx pages and Virtual Pages. Unfortunately, Virtual Pages also relied on physical aspx pages. The reason for this is the VirtualPageWidget needed to be on a physical page and would read the url of the page to determine which Virtual Page it was referencing.
 The SPA, however, disconnects the Virtual Page needing its own physical aspx page by acting as a proxy for *all* Virtual Pages. The **akumina.aspx** page comes loaded with the **VirtualPageWidget** already on it. The custom navigation used for the site allows the widget to read from the URL to determine which page contents to load. This is a noticeable impact on performance, as the master page, the physical page, the framework, and the widget are only loaded once until you navigate away from the site entirely.
 
-Furthermore, the SPA's custom navigation feature also implements its routing functionality on custom code. For example, a normal anchor tag, when clicked, will not emulate the SPA custom routing feature. However, by adding the **{{IsSPALink}}** placeholder to your anchor tag, the Framework will detect the presence of SPA-style navigation and begin routing:
-
-```html
-<a href="{{AddSPALink}} {{ViewMoreLink}}" target="_self" class="{{IsSPALink}}"> <!-- The href value should be set to the custom routing path -->
-    <i class="fa fa-none" aria-hidden="true"></i>
-    NEWS
-</a>
-```
-
-The SPA's custom navigation functionality *does* support the browser's back/forward buttons. This is a common concern in any framework or application featuring SPA-style routing.
-
 Lastly, the Akumina SPA supports the ability to inject any custom JS file located on the Central Site, even if the JS file is not being used by the Central Site. The SPA has a setting to download custom JS files defined as a comma-separated list of values which is detailed below.
 
 
@@ -104,7 +93,11 @@ Deploy your Virtual Page file to the new Modern site (using the *virtualpages* s
 
 ![](https://akuminadownloads.blob.core.windows.net/wiki/AkuminaDev/modern_pageurls.PNG)
 
-Depending on how your site(s) are set up and configured, you may opt to serve Akumina Framework files from a shared CDN instead of a custom, remote Sharepoint site. To enable this setting, 
+Depending on how your site(s) are set up and configured, you may opt to serve Akumina Framework files from a shared CDN instead of a custom, remote Sharepoint site. To enable this setting, set the following variable to 'true' in your **env.js** file:
+
+```javascript
+Akumina.Digispace.ConfigurationContext.UseFrameworkCDN = true;
+```
 
 
 ## Implementation Changes
@@ -232,6 +225,47 @@ This problem is caused for one of two reasons:
 For #1, you need to make your widget code configurable and, optimally, read from global settings such as the ConfigurationContext object. Avoid hard-coding as much as possible.
 
 For #2, this is also dependent on widget code to a certain extent. However, try as we might to future-proof as much as possible, we do not expect our clients or customers to write code for the unknown future. It is possible to alter your widget code to pull from the Central Site instead of the Delivery Site. Alternatively, simply migrate the list to the Delivery Site.
+
+## Routing
+
+The Akumina Modern SPA features two defined methods of handling routing. It is important to understand the pros and cons of each as well as understand the situations in which you would use one over the other.
+
+### SPA Link
+
+The SPA Link method aims to effortlessly leverage the benefits of the Akumina Modern SPA's built-in routing functionality with the ease of implementation. This method can be used on any page that features routing to another page. 
+
+Furthermore, the SPA's custom navigation feature also implements its routing functionality on custom code. For example, a normal anchor tag, when clicked, will not emulate the SPA custom routing feature. However, by adding the **{{IsSPALink}}** placeholder to your anchor tag, the Framework will detect the presence of SPA-style navigation and begin routing:
+
+```html
+<a href="{{AddSPALink}} {{ViewMoreLink}}" target="_self" class="{{IsSPALink}}"> <!-- The href value should be set to the custom routing path -->
+    <i class="fa fa-none" aria-hidden="true"></i>
+    NEWS
+</a>
+```
+
+The SPA's custom navigation functionality *does* support the browser's back/forward buttons. This is a common concern in any framework or application featuring SPA-style routing.
+
+
+### Custom Taxonomy Routes
+
+Custom Taxonomy Routes are a style of routing that assigns an alias to a route. An example of this would be to hide the internal name of a list or structure from normal users or to make it more human readable. Consider the following:
+
+*https://tenant.sharepoint.com/sites/MySite/SitePages/akumina.aspx#/FoundationNews/en-US/MyNewsArticle*
+
+The component, FoundationNews, is indicative of its use and intent, however, it could also be made more user friendly. What if we could assign an alias to that component?
+
+1) Navigate to Site Contents
+2) Open the **TaxonomyPageRoutes_AK** list
+3) Locate the "FoundationNews" row and change the "Title" field to your custom name, we'll name ours CustomRoute:
+
+![](https://akuminadownloads.blob.core.windows.net/wiki/AkuminaDev/modern_spataxonomypageroutes.jpg)
+
+4) Clear the Configuration Cache (See [Config Context Caching](/docs/AK-Configuration-Context#caching) for more info)
+5) Clear browser cache and reload the site
+
+To test this, navigate to the *News* page and open a FoundationNews news article. You can now replace the FoundationNews portion of the URL with your custom alias, 'CustomRoute' in our example. Both URLs will work:
+
+![](https://akuminadownloads.blob.core.windows.net/wiki/AkuminaDev/modern_spataxonomypageroutesarticle.jpg)
 
 
 ## FAQs
