@@ -5,6 +5,10 @@ id: Modern-Faq
 
 ### Frequently Asked Questions
 
+## What type of Modern site collection should be used?
+
+Any Modern site can be used. For a single page application (SPA), the Sharepoint pages are not used so **Blank** is preferred but not required.
+
 ## Can I use the Akumina Widgets and SPFx/Modern Web Parts together?
 
 When using the Akumina page editing experience in the **Single Page Application** (SPA), SPFx/Modern web parts cannot be added to pages, only Akumina widgets. 
