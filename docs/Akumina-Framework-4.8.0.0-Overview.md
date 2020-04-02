@@ -132,3 +132,54 @@ o	Added Additional Support for Headless:
 ## PeopleSyncV2
 
 •	Support for On-Premise using SharePoint User Profile Service
+
+## Project Structure Functionality
+
+Alongside the update to Akumina Framework Version 4.8, the following npm packages have been updated:
+
+* akumina-widget-builder @ 2.0.0
+
+The major change in the update is the use of the **{AssetLibraryName}** token. This token is used to differentiate which asset library name is being used depending on the version. Classic will use **Style Library** whereas Modern will use **Akumina Library**. An example of the change is listed below:
+
+```json
+"Views": [
+    // Version 4.8
+    {
+        "Name": "default",
+        "Path": "/{AssetLibraryName}/DigitalWorkPlace/Content/Templates/GenericListWidget/default.html",
+        "Id": "63db9f69-b64b-5af2-63b2-638864839723"
+    }
+
+    // Version 4.5
+    {
+        "Name": "default",
+        "Path": "/Style%20Library/DigitalWorkPlace/Content/Templates/GenericListWidget/default.html",
+        "Id": "63db9f69-b64b-5af2-63b2-638864839723"
+    }
+]
+```
+
+* generator-akumina @ 2.0.1
+
+The major change in the update is the addition of a new variable in the **akumina.config.json** file. Because the new Site Deployer (bundled with the generator) scans the **widgetpackages** folder for widget folders instead of zip files, the config files need to be updated accordingly. The new **WidgetPackageDistPath** variable is now used to define where packaged widget bundles are being stored whereas the old **WidgetPackageDestinationPath** variable is now used to house the original built zip files.
+Previously, the **WidgetPackageDestinationPath** held the value of the current **WidgetPackageDistPath** but the values have been swapped as a result of the inclusion of the new variable. Example:
+
+```json
+{
+    "WidgetsSourcePath": "src/js/widgets",
+    "WidgetPackageVersion": "4.8.0.0",
+    "WidgetPackageDistPath": "sitedefinitions/MyCustomNamespace/WidgetPackages",
+    "WidgetPackageDestinationPath": "dist/packages",
+    "CDNAssetsPath": "sitedefinitions/MyCustomNamespace/CDNAssets",
+    "Environments": [
+        {
+            "Name": "dev",
+            "AppManagerUrl": "https://[appmanagerurl]",
+            "AppManagerQueryKey": "[appmanagerquerykey]",
+            "SharepointUrl": "https://[tenant].sharepoint.com/sites/dev"
+        }
+    ]
+}
+```
+
+Please ensure you have the appropriate versions of the listed npm packages to facilitate and make use of expanded functionality.
