@@ -132,19 +132,3 @@ o	Added Additional Support for Headless:
 ## PeopleSyncV2
 
 •	Support for On-Premise using SharePoint User Profile Service
-
-## Developer Functionality
-
-•	Lots of nice bells and whistles added for developers 
-•	Additional https://akumina.github.io items:
-o	Project runtime changed to 3.1, project name refactored, binary vs source code delivery required
-o	Chrome V80 support for security model around cookies
-o	Added ability in site deployer to automate the upload of document libraries with metadata
-
-The released files, including Readme, will be located internally here:
- 
-**\\\\fileserver\Releases\InterChange4.8.0.0**
- 
-These files will be posted to the /ProductRelease/Products/Releases/ section of our external FTP site for authorized customers to download.
- 
-Updated documentation is available on the [Akumina Community](https://community.akumina.com) and the [Akumina Github](https://akumina.github.io) Sites.
