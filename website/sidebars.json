@@ -41,7 +41,8 @@
     "Akumina Widgets": [
       "Akumina-Widgets-Overview",
       "Akumina-React-Widgets",
-      "Akumina-Widget-Callbacks"
+      "Akumina-Widget-Callbacks",
+      "Akumina-Widget-RenderChildWidgets"
     ],
     "Site Deployer": [
       "Site-Deployer-Overview", 
