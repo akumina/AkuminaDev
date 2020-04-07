@@ -237,10 +237,7 @@ The SPA Link method aims to effortlessly leverage the benefits of the Akumina Mo
 Furthermore, the SPA's custom navigation feature also implements its routing functionality on custom code. For example, a normal anchor tag, when clicked, will not emulate the SPA custom routing feature. However, by adding the **{{IsSPALink}}** placeholder to your anchor tag, the Framework will detect the presence of SPA-style navigation and begin routing:
 
 ```html
-<a href="{{AddSPALink}} {{ViewMoreLink}}" target="_self" class="{{IsSPALink}}"> <!-- The href value should be set to the custom routing path -->
-    <i class="fa fa-none" aria-hidden="true"></i>
-    NEWS
-</a>
+<a href="{{AddSPALink Url}}" class="{{IsSPALink}}">Click Me</a>
 ```
 
 The SPA's custom navigation functionality *does* support the browser's back/forward buttons. This is a common concern in any framework or application featuring SPA-style routing.
