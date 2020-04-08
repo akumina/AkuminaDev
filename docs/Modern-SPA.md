@@ -165,9 +165,11 @@ An explanation of these settings follows:
 |Akumina SiteCollection URL|This is the URL of the Central Site from which most assets are retrieved from.|
 |Akumina Service Hub URL|This is the URL of App Manager on the Central Site. This value is a property that can be found on the Debug Console under ConfigContext as "**InterchangeURL**".|
 |Akumina Service Hub QueryKey|This key is required for App Manager endpoints. This is also found on the Debug Console under ConfigContext as "**InterchangeQueryKey**".|
+|Akumina App Manager Sharepoint ID|ID of the Sharepoint app associated with the current Delivery site|
+|Implementation Version|Increment this to force the getwidgetjs bundle to refresh for all users, great to use when rolling out updates to your widget code. e.g: 1.0, v1.0, 040120|
 |Enable Azure AD|Enables Azure AD services for the current site.|
 |Enable Development Mode|This will flag the Framework to individually request JS files instead of bundling them together. For performance, we recommend disabling this in production environments.|
-|Delivery Mode|True = Assets will be provisioned from the current site (the Delivery site). False = Assets will be provisioned from the Central site.|
+|Enable Personas|Performance option to disable Persona filtering if the feature is not being used|
 |Download env.js from current site|If this option is checked, the SPA will read the contents of **digitalworkplace.env.js** from the current site.|
 |Public Library name of Central Site|The library in which assets are stored in the central site. As of writing this, this is easily determined by the version of Sharepoint being used. If classic, **Style Library**. If Modern, **Akumina Library**. Please note that space characters need to be URL encoded as %20.|
 |Public Library name of Current Site|Same as above, except for the current (Delivery) site. This feature has not been implemented yet.|
