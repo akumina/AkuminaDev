@@ -162,8 +162,11 @@ The major change in the update is the use of the **{AssetLibraryName}** token. T
 * generator-akumina @ 2.0.1
 
 The major change in the update is the addition of a new variable in the **akumina.config.json** file. Because the new Site Deployer (bundled with the generator) scans the **widgetpackages** folder for widget folders instead of zip files, the config files need to be updated accordingly. The new **WidgetPackageDistPath** variable is now used to define where packaged widget bundles are being stored whereas the old **WidgetPackageDestinationPath** variable is now used to house the original built zip files.
-Previously, the **WidgetPackageDestinationPath** held the value of the current **WidgetPackageDistPath** but the values have been swapped as a result of the inclusion of the new variable. Example:
+Previously, the **WidgetPackageDestinationPath** held the value of the current **WidgetPackageDistPath** but the values have been swapped as a result of the inclusion of the new variable.
 
+**Be sure to make sure the WidgetPackageVersion is set to 4.8.0.0 and that you are also using the new Akumina.SiteDeployer 4.8 version found here: https://github.com/akumina/SiteDeployer/releases**
+
+Example:
 ```json
 {
     "WidgetsSourcePath": "src/js/widgets",

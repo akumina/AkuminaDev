@@ -114,5 +114,9 @@ See [Modern SPA](/docs/Modern-SPA#faqs).
 In the event that a conflicting setting, CDN issue, or code issue is preventing the Debug Console from appearing, you can open the Developer Console (F12 by default) and type the following command to re-enable the Sharepoint 'Edit' button:
 
 ```javascript
-Akumina.Digispace.Utilities.ToggleModernPageEdit()
+Akumina.Digispace.Utilities.ShowModernPageEdit()
 ```
+
+## How do I update my 4.5.0.0 packages to 4.8.0.0?
+
+See [Akumina Framework 4.8 - Project Structure Functionality](/docs/Akumina-Framework-4.8.0.0-Overview#project-structure-functionality).
