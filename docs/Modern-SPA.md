@@ -154,7 +154,7 @@ Once the pre-requisites are on the site and the SPA has been added from the app 
 **Note**: The edit button can also be enabled by typing the following command into the Developer Console:
 
 ```javascript
-Akumina.Digispace.Utilities.ToggleModernPageEdit()
+Akumina.Digispace.Utilities.ShowModernPageEdit()
 ```
 
 An explanation of these settings follows:
