@@ -185,11 +185,11 @@ Here is an example project setup
 
 This allows for different deployment configurations and minimal impact depending on the scenario - IE, I have to deploy a widget change, I only deploy the Widget Project.  If I need to deploy a global update for an asset or list, I dont interfere with the other sites directly or mess around with Akumina bits.
 
-| **Prerequisite** | **akumina-assets** | **customer-shared-assets** | **delivery** |
+|  | **akumina-assets** | **customer-shared-assets** | **delivery** |
 | --- | --- | --- | --- |
-| | Core install | Core Content Types | Core Content Types or Foundation Delivery |
+| `Prerequisite`     | Core install | Core Content Types | Core Content Types or Foundation Delivery |
+|  |  |  |  |
 | **Site Deployer Steps** | **akumina-assets** | **customer-shared-assets** | **delivery** |
-| --- | --- | --- | --- |
 | `masterpage`      |  |  | x |
 | `js`              | x |  |  |
 | `css`             | x |  |  |
