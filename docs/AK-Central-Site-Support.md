@@ -19,9 +19,9 @@ The following configuration allows for rapid re-use of Akumina tooling across ma
 Your enterprise environment can also contain MULTIPLE Central Site's - Possibly 1 site collection for where Akumina widgets are installed and 1 site collection where shared lists can reside.  
 
 For example:
-* **Central Site** (Akumina) - /sites/akuminarepo
+* **Central Site** (Akumina) - /sites/akumina-assets
     * Code / Widget deployment  
-* **Central Site** (Client Specific) /sites/sharedassets
+* **Central Site** (Client Specific) /sites/customer-shared-assets
     * Specific lists / libraries / data
 
 > It is up to your information archecture on how many 'Central Sites' you want to use. Akumina recommends at least 1 central site for the Akumina bits as denoted above.
@@ -175,16 +175,49 @@ Example to query Central Site:
     
 ````
 
-### Deployment scenarios and Packge setup
+### Deployment scenarios and Package setup
 With the additional site collections in use, your deployment methodology will change slightly as the information architecture has changed
 Here is an example project setup
 
-* Project for Widgets -  This project will deploy to /sites/akuminarepo
-* Project for Global Lists / Assets - this project will deploy to /sites/sharedassets
+* Project for Widgets -  This project will deploy to /sites/akumina-assets
+* Project for Global Lists / Assets - this project will deploy to /sites/customer-shared-assets
 * Project for a Particular Site - this project will deploy to /sites/foundationsite
 
 This allows for different deployment configurations and minimal impact depending on the scenario - IE, I have to deploy a widget change, I only deploy the Widget Project.  If I need to deploy a global update for an asset or list, I dont interfere with the other sites directly or mess around with Akumina bits.
 
+| **Prerequisite** | **akumina-assets** | **customer-shared-assets** | **delivery** |
+| --- | --- | --- | --- |
+| | Core install | Core Content Types | Core Content Types or Foundation Delivery |
+| **Site Deployer Steps** | **akumina-assets** | **customer-shared-assets** | **delivery** |
+| --- | --- | --- | --- |
+| `masterpage`      |  |  | x |
+| `js`              | x |  |  |
+| `css`             | x |  |  |
+| `lists`           |  | x | x |
+| `layouts`         |  |  | x |
+| `pages`           |  |  | x |
+| `virtualpages`    |  |  | x |
+| `controls`        |  |  | x |
+| `widgets`         | x |  |  |
+| `contentfiles`    | \* |  |  |
+| `imagefiles`      | x |  |  |
+| `homepage`        |  |  | x |
+| `fonts`           | \* |  |  |
+| `updatelists`     |  | x | x |
+| `addtermsets`     |  | \* | x |
+| `cdnassets`       |  |  |  |
+| `sleep`           |  |  |  |
+| `exportlists`     |  |  |  |
+| `uploadfiles`     |  | \* | x |
+| `spusersearch`    |  |  |  |
+| `webpartgallery`  |  |  | \* |
+| `groups`          | \* | \* | \* |
+| `siteproperties`  |  |  | x |
+| `spusersearch`    |  |  |  |
+| `virtuallayout`   |  |  | x |
+| `updatepagecache` |  |  |  |
+
+\* optional 
 
 ### Sample Site Packages for use with Site Deployer
 We can easily share site deployer packages for use with rolling up minimal delivery environments for both classic and modern - the goal is to eventually have these as an option in the Site Creator Management App within App Manager which allows business users to deploy Akumina functionality to any site they wish..  Look for those in upcoming point releases.
