@@ -52,14 +52,14 @@ if ((typeof AkuminaModernConfiguration) === 'undefined') {
 		WidgetPicker: { // Akumina Widget Picker Settings
 			ExtraJSFiles: "", // Comma delimited list of JS files to download from the central site
 			ExtraCSSFiles: "", // Comma delimited list of CSS files to download from the central site
-			AssetLibraryName: "" // Name of the local asset library
+			AssetLibraryName: "Akumina Library" // Name of the local asset library
 		},
 		ApplicationExtension: { // Application Extension Settings
 			ExtraCSSFiles: "", // Comma delimited list of CSS files to download from the central site
 			HideSiteHeader: false, // Boolean value determining whether the modern header should be hidden
 			HideCommandBar: false, // Boolean value determining whether the modern command bar should be hidden
 			ShowOnlyOnSitePages: true, // Boolean value determining whether only SitePage navigation should be enabled
-			AssetLibraryName: "" // Name of the local asset library
+			AssetLibraryName: "Akumina Library" // Name of the local asset library
 		}
 	}
 } 
