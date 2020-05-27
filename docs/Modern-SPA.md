@@ -181,6 +181,23 @@ An explanation of these settings follows:
 
 Once your options are set, click Save to persist your changes. If you have a Virtual Page deployed with a PageUrl set to home.aspx and have generated the Page Cache (please regenerate the cache if you have not done so), you should see your page load with the defined Virtual Master Page and the contents of the home.aspx Virtual Page within it.
 
+# Env.JS Configuration
+
+The following options are available in the env.js file for you to enable and configure as you please:
+
+* supportSPAMode
+
+The steps detailed in the env.js file will, by default, run as they are loaded and executed. By adding the supportSPAMode property, example below, you are indicating that the steps should only run after the markup in the VirtualMasterPage.html file are loaded onto the page. This ensures that whatever DOM manipulation you need to perform on the page will execute successfully with the necessary DOM elements loaded onto the page.
+
+example
+```javascript
+stepName: "Event Subscription", additionalSteps: [{
+                name: "SetSearchVariablesInContext",
+                callback: window.FoundationSteps.SetSearchVariablesInContext.Init,
+                supportSPAMode: true // Ensured virtual master page dom elements are present before executing
+            },
+```
+
 
 ## Troubleshooting
 
