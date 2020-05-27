@@ -103,6 +103,22 @@ You can think of the single page application spkg as the replacement to the env.
 ![](https://akuminadownloads.blob.core.windows.net/wiki/AkuminaDev/GlobalSettings-UniqueId.PNG)
 
 
+### Widget Scope
+
+
+Using the central site model, widgets can be either global or local. Where the widget is deployed dictates how broadly it can be used and the degree of local control over the widget instance that can be exercised.
+A site collection will use its own widgets or else the central site widget instances; the instance IDs can be the same for both. In both cases the widget instances are in the Akumina Assets central site collection; the site id and web id values are different to denote where the widget applies.
+A widget deployed to the Akumina Assets central site can be used within any site collection that uses the central site.	A widget deployed to a specific site collection can be used only in that site collection, as shown below.
+ 
+![](https://akuminadownloads.blob.core.windows.net/wiki/AkuminaDev/WidgetScope-Central.png)
+![](https://akuminadownloads.blob.core.windows.net/wiki/AkuminaDev/WidgetScope-SiteCollection.png)
+
+Delivery site 2 will use the same instance as delivery site 1 – any change made will affect the widget on all sites.	Delivery site 2 can use an instance with the same ID as delivery site 1, however, it is its own instance, needing to be deployed and managed independently. A change to the properties of the delivery site 1 instance will affect only delivery site 1, likewise a change to the properties of the delivery site 2 instance will affect only delivery site 2, etc.
+
+**NOTE**: The widget instances can be overridden when used within a virtual page as well, giving further local control under either model.
+
+
+
 ### Widget Support for Cross site collection data retrieval
 
 There are many widgets which support a hidden property called 'sitecollectionurl' - the code of the widgets are written to understand this property.  If you donot see the property in your installation, you can simply add a new text property to the widget definition.

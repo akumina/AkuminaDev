@@ -110,3 +110,19 @@ Due to differences in how Modern works vs Classic, some steps in the site creato
 | `spusersearch` | Yes | Yes |  |
 | `virtuallayout` | Yes | Yes |  |
 | `updatepagecache` | Yes| Yes |  |
+
+## Nuances
+
+There is a known issue with the Site Deployer wherein the envdir, and other subsequent directory locations, do not function properly with the site deployer. The reason for this is because the directory location is passed as an arg to the SiteDeployer as a string and split based on space characters. This causes the directory location to be cut in half and the SiteDeployer to output an error.
+
+This is a known issue, a work-around is provided below:
+
+```javascript
+const envParams = Object.entries(process.env).filter(([key, value]) =>
+    siteDeployerConfig.Args.includes(key) && value != '').map(o => 
+        o[0] === 'envdir' 
+            ? `${o[0]} ${'"' + o[1] + '"'}`
+            : `${o[0]} ${o[1]}`).join(' ')
+```
+
+This snippet, when placed in the root/tools/deploy.js file, will filter out that one param and allow it to be passed to the SiteDeployer with a string and wrapped in quotes to be parsed as a string literal.
