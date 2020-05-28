@@ -124,6 +124,14 @@ It's important to note that Sharepoint Modern *does not* support the Master Page
 </div>
 ```
 
+**Note**: If you plan to have a global widget across all pages, you can add a widget div to the Virtual Master Page in the following manner. Please ensure any widgets included in the Virtual Master Page are wrapped in the appropriate div container:
+
+```html
+<div class="ak-foundation-main-nav-wrapper ak-widget-wrapper">
+    <div rel="Top Navigation" class="ak-widget" id="b3190df7-e6f8-4f0b-83c7-192e6500563e"></div>
+</div>
+```
+
 This page must be configured in the Central Site in order to be read and used on the Delivery Site. The **DigispaceConfigurationIDS_AK** list must have a key named [VirtualMasterTemplate] with the name of the Virtual Master Page Template file. The SPA will look in the above location for the file. For more information, please visit the [Configuration Context Overview](/docs/AK-Configuration-Context) page.
 
 ![](https://akuminadownloads.blob.core.windows.net/wiki/AkuminaDev/modern_spavmp.png)
