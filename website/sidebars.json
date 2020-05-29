@@ -12,7 +12,8 @@
       "Akumina-Widget-Scoping",
       "Ak-Lazy-Load-View-Binding",
       "AK-Personas-Code-Examples",
-      "AK-Headless"
+      "AK-Headless",
+      "Akumina-CKEditor-Update"
     ],
     "Modern": [
       "Modern-Overview",
@@ -40,6 +41,7 @@
     ],
     "Akumina Widgets": [
       "Akumina-Widgets-Overview",
+      "Akumina-Widgets-Build-New",
       "Akumina-React-Widgets",
       "Akumina-Widget-Callbacks",
       "Akumina-Widget-RenderChildWidgets"
