@@ -20,9 +20,11 @@ By default this value is "0.0"
 
 Every request to 'getwidgetjs' bundle passes this value in querystring.  This means if you change this value during a deployment it will cause a refetch for all browsers automatically
 
-Use this code to set your ImplementationVersion
+In the **digitalworkplace.env.js** file, use this code to set your ImplementationVersion:
 
 ```js
+var LoaderConfiguration = LoaderConfiguration || {};
+
 if ((typeof AdditionalSteps.EnvSteps) === 'undefined') {
     AdditionalSteps.ImplementationVerionStep = {
         Init: function () {
@@ -38,7 +40,24 @@ if ((typeof AdditionalSteps.EnvSteps) === 'undefined') {
 }
 ```
 
+To implement the changed version value, you'll need to force a cache refresh. While clearing a single, or even a couple, user's cache is a fairly simple matter, this is a very handy way to force a cache refresh for every user on the site. This is useful to push a change to all affected users:
+
+In your Master Page html file, you should see the env.js import similar to the following:
+
+```html
+<!--MS:<SharePoint:ScriptLink ID="ScriptLink10943" Name="~sitecollection/Style Library/DigitalWorkPlace/js/digitalworkplace.env.js" runat="server">-->
+<!--ME:</SharePoint:ScriptLink>-->
+```
+
+Change the file name to append the implementation version to the end of it. Following the example above, we just set the implementation version to 1.0, so we would change the "Name" property to:
+
+```html
+digitalworkplace.env.js?v=1.0
+```
+
+Save the Master Page and deploy it if needed. Once the master page is loaded, it will detect a new file is being requested and proceed to download it. This works because the env.js file is naturally cached in your browser while the master page isn't, so when the page requests a file, it first checks the cache to see if it already exists to avoid making a network call. This change causes the cache check on the browsers of all users to force a re-fetch.
 
 
+## Modern Changes
 
-
+It's important to make the distinction that the previous **env.js** changes are only required for Classic Sharepoint. Sharepoint Modern uses a different implementation. The SPA's Settings Page has a field for Implementation Version that can be set and changed without having to edit a Javascript file. More information can be found on the [Akumina Modern SPA](/docs/Modern-SPA) page.
