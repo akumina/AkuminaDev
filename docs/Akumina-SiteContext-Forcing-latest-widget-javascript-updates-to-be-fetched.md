@@ -23,7 +23,7 @@ Every request to 'getwidgetjs' bundle passes this value in querystring.  This me
 In the **digitalworkplace.env.js** file, use this code to set your ImplementationVersion:
 
 ```js
-var LoaderConfiguration = LoaderConfiguration || {};
+var AdditionalSteps = AdditionalSteps || {};
 
 if ((typeof AdditionalSteps.EnvSteps) === 'undefined') {
     AdditionalSteps.ImplementationVerionStep = {
