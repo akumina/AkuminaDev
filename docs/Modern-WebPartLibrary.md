@@ -144,15 +144,15 @@ The [Weather web part](https://support.office.com/en-us/article/show-the-weather
 
 With many news widgets at your disposal, Akumina&#39;s News Experience gives you the tools to surface the right content at the right time, that&#39;s customized to your audience.
 
-- **Recent News Widget -** [https://community.akumina.com/knowledge-base/recent-news-widget/](https://community.akumina.com/knowledge-base/recent-news-widget/)
-- **Breaking News Widget -** [https://community.akumina.com/knowledge-base/breaking-news-widget/](https://community.akumina.com/knowledge-base/breaking-news-widget/)
-- **News Card Widget -** [https://community.akumina.com/knowledge-base/news-card-widget/](https://community.akumina.com/knowledge-base/news-card-widget/)
-- **Company News Hero Widget -** [https://community.akumina.com/knowledge-base/companynewsherowidget/](https://community.akumina.com/knowledge-base/companynewsherowidget/)
-- **Company News Item Widget -** [https://community.akumina.com/knowledge-base/companynewsitemwidget/](https://community.akumina.com/knowledge-base/companynewsitemwidget/)
-- **Company News List Widget -** [https://community.akumina.com/knowledge-base/companynewslistwidget/](https://community.akumina.com/knowledge-base/companynewslistwidget/)
-- **Department News Widget -** [https://community.akumina.com/knowledge-base/departmentnewswidget/](https://community.akumina.com/knowledge-base/departmentnewswidget/)
-- **RSS News Widget -** [https://community.akumina.com/knowledge-base/rssnewswidget/](https://community.akumina.com/knowledge-base/rssnewswidget/)
-- **Blogs Widget -** [https://community.akumina.com/knowledge-base/blogs-widget/](https://community.akumina.com/knowledge-base/blogs-widget/)
+- **Recent News Widget -** [https://community.akumina.com/knowledge-base/recentnewswidget/]()
+- **Breaking News Widget -** [https://community.akumina.com/knowledge-base/breakingnewswidget/]()
+- **News Card Widget -** [https://community.akumina.com/knowledge-base/newscardswidget/]()
+- **Company News Hero Widget -** [https://community.akumina.com/knowledge-base/companynewsherowidget/]()
+- **Company News Item Widget -** [https://community.akumina.com/knowledge-base/companynewsitemwidget/]()
+- **Company News List Widget -** [https://community.akumina.com/knowledge-base/companynewslistwidget/]()
+- **Department News Widget -** [https://community.akumina.com/knowledge-base/departmentnewswidget/]()
+- **RSS News Widget -** [https://community.akumina.com/knowledge-base/rssnewswidget/]()
+- **Blogs Widget -** [https://community.akumina.com/knowledge-base/blogswidget/]()
 
 ## Akumina Document Experience
 
