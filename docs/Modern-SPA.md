@@ -106,7 +106,7 @@ Akumina.Digispace.ConfigurationContext.UseFrameworkCDN = true;
 
 It's important to note that Sharepoint Modern *does not* support the Master Page templating feature of Sharepoint Classic. In its stead, Akumina deigned it prudent to provide this functionality. The **Akumina Virtual Master** Page is a JSON file stored on the Central Site that defines the Master Page of the Delivery Site. Within this master page, the contents of each page are then injected:
 
-/Style Library/DigitalWorkPlace/Content/Templates/Core/VirtualMasterPage.html
+/Style Library/DigitalWorkPlace/Content/Templates/MasterPages/VirtualMasterPage.html
 ```html
 <div id="ak-master">
     <div class="ak-main-nav-wrapper" id="ak-header">
