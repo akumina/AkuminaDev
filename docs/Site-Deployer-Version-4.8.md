@@ -84,12 +84,12 @@ Due to differences in how Modern works vs Classic, some steps in the site creato
 
 | **Site Deployer Steps** | **Classic** | **Modern** | **Comments** |
 | --- | --- | --- | --- |
-| `masterpage` | Yes | **No** |   |
+| `masterpage` | Yes | **No** | Deploys classic publishing master page; In modern, master page is located in content/templates |
 | `js` | Yes | Yes |   |
 | `css` | Yes | Yes |   |
 | `lists` | Yes | Yes |   |
-| `layouts` | Yes | **No** |   |
-| `pages` | Yes | **No** |   |
+| `layouts` | Yes | **No** | Deploys classic publishing layouts; In modern, virtual pages and layouts is used |
+| `pages` | Yes | **No** | Deploys classic publishing pages; In modern, virtual pages and layouts is used |
 | `virtualpages` | Yes | Yes | |
 | `controls` | Yes | **No** |   |
 | `widgets` | Yes | Yes | **Central - Widget Data, Delivery - Content and Instance Data** |
