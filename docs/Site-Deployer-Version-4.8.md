@@ -91,7 +91,7 @@ Due to differences in how Modern works vs Classic, some steps in the site creato
 | `layouts` | Yes | **No** | Deploys classic publishing layouts; In modern, virtual pages and layouts is used |
 | `pages` | Yes | **No** | Deploys classic publishing pages; In modern, virtual pages and layouts is used |
 | `virtualpages` | Yes | Yes | |
-| `controls` | Yes | **No** |   |
+| `controls` | Yes | **No** | Deploys classic publishing pages; In modern, virtual pages and layouts is used |
 | `widgets` | Yes | Yes | **Central - Widget Data, Delivery - Content and Instance Data** |
 | `contentfiles` | Yes | Yes |   |
 | `imagefiles` | Yes | Yes |   |
