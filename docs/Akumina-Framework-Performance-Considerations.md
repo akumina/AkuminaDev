@@ -468,15 +468,13 @@ You should see the following:
 Get-SPOTenantCdnOrigins -CdnType Public
 */MASTERPAGE
 */STYLE LIBRARY
-*/AKUMINA LIBRARY
 ```
+
+*Note: For Modern sites, this should also be done for `Akumina Library`. We would run the same command for any other library, examples:
+
+ * Add-SPOTenantCdnOrigin -CdnType Public -OriginUrl "sites/{SiteCollectionName}/Akumina Library"
+ * Add-SPOTenantCdnOrigin -CdnType Public -OriginUrl "sites/{SiteCollectionName}/MyCustomLibrary"
 
 To Disable: run the following command
 
 * Set-SPOTenantCdnEnabled -CdnType Public -Enable $false
-
-If you want to support more libraries, run the following command:
-
-* Add-SPOTenantCdnOrigin -CdnType Public -OriginUrl "sites/{SiteCollectionName}/MyCustomLibrary"
-
-
