@@ -452,7 +452,7 @@ Add the following lines just before the closing >body< tag:
 ***
 # CDN
 
-> In Modern sites, we recommend enabled the CDN as this is where the client assets (js, css, etc) come from for the Single Page Application
+> In Modern sites, we recommend enabling the CDN as this is where the client assets (js, css, etc) come from for the Single Page Application
 
 The Akumina team has experienced various latency throughout the day trying to access resources coming out of the Style Library.  This includes requests to images / javascript and css files.  We have found that off loading these requests to a CDN has increased performance across the board. Not to mention, there is a browser restriction on how many requests can go out to the same TLD (Top Level Domain) at the same time.  This restriction can range anywhere from 6-20 depending on the browser and can be attributed too "Stalled" requests.  Making the requests come from a CDN URL allows this request limit to be avoided, ie,  10 requests go out to tenanturl.sharepoint.com and another 10 requests can go out to publiccdn.sharepointonline.com/tenanturl
 
