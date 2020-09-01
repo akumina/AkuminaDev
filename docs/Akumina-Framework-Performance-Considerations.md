@@ -459,7 +459,7 @@ The Akumina team has experienced various latency throughout the day trying to ac
 You can find all the information on public and private CDN's on the [MS website](https://support.office.com/en-us/article/Use-the-Office-365-content-delivery-network-with-SharePoint-Online-bebb285f-1d54-4f79-90a5-94985afc6af8)
 
 We have done this work often, so here is a quick step by step on how to enable the public CDN on your tenant 
-*Note: This enable the CDN across all your site collections and apply the the "Style Library", "Akumina Library" and "MasterPages" library automatically
+*Note: This enable the CDN across all your site collections and apply the the "Style Library" and "MasterPages" library automatically
 
 * Set-SPOTenantCdnEnabled -CdnType Public -Enable $true 
 * Get-SPOTenantCdnOrigins -CdnType Public
