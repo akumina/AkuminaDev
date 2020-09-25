@@ -24,9 +24,11 @@ The Stream Card Builder is similar to the Widget Builder and Virtual Page Builde
 
 First, let's define the idea of a Stream Card:
 
-![](picture)
+![](https://akuminadownloads.blob.core.windows.net/wiki/AkuminaDev/Stream%20Card%20Builder/cardoverview.PNG)
 
-As we can see in the diagram above, the Activity Stream is capable of exposing a variety of data from 3rd parties, Sharepoint, Outlook, and more. The Activity Stream exposes this data through the use of various Stream Cards. Many cards come bundled with the Akumina Installation. However, Akumina also provides end users with the ability to design, create, inject, and connect their own custom cards into the Activity Stream experience.
+As we can see in the diagram above, the Activity Stream is capable of exposing a variety of data from 3rd parties, Sharepoint, Outlook, and more. The Activity Stream exposes this data through the use of various Stream Cards. Many cards come bundled with the Akumina Installation. However, Akumina also provides end users with the ability to design, create, inject, and connect their own custom cards into the Activity Stream experience. 
+
+For more information on Custom Cards, please visit the [Custom Card Tutorial](/docs/AK-Custom-Card-Tutorial) page.
 
 ## Commands 
 
@@ -57,7 +59,7 @@ The following prompts are included in the process:
 
 The process is similar to the following:
 
-![](picture)
+![](https://akuminadownloads.blob.core.windows.net/wiki/AkuminaDev/Stream%20Card%20Builder/cardstubquestions.PNG)
 
 The output structure will be similar to the following:
 
@@ -76,6 +78,8 @@ root
                         └CustomCard.tsx
 ```
 
+![](https://akuminadownloads.blob.core.windows.net/wiki/AkuminaDev/Stream%20Card%20Builder/cardstuboutput.PNG)
+
 ```node
 npm run cardpkg <name>
 ```
@@ -88,3 +92,5 @@ root
             └assetdirectory (Defined in your .env file)
                     └streamcardpackages
 ```
+
+![](https://akuminadownloads.blob.core.windows.net/wiki/AkuminaDev/Stream%20Card%20Builder/cardpkgoutput.PNG)

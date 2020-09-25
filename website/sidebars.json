@@ -1,6 +1,7 @@
 {
   "docs": {
     "Akumina": [
+      "Akumina-Framework-5.0.0.0-Overview",
       "Akumina-Framework-4.8.0.0-Overview",
       "Akumina-Framework-4-5-0-0-Overview",
       "Akumina-Framework-Performance-Considerations",
@@ -34,6 +35,7 @@
       "AK-Virtual-Page-Layout-Builder"
     ],
     "Stream Card Builder": [
+      "AK-Stream-Card-Builder"
     ],
     "Yo Akumina": [
       "Yo-Akumina",

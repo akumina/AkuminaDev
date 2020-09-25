@@ -3,14 +3,10 @@ title: Akumina Framework 5.0.0.0 Overview
 id: Akumina-Framework-5.0.0.0-Overview
 ---
 
-**Akumina Framework Version**:  5.0.xxxx.xxxx
-
-**AppManager Product Version**: 5.0.xxxx.xxxx
-
 ## Akumina Framework Functionality
 
 *	**Anchor Items**:
-    * Intelligent Activity Streams provides a multi-lingual feed experience with O365 and 3rd party providers, with the ability to share and promote content, communicate critical and time sensitive messages and ties comments and notifications to user personalized collaborative activity stream 
+    * Intelligent Activity Streams provides a multi-lingual feed experience with M365 and 3rd party providers, with the ability to share and promote content, communicate critical and time sensitive messages and ties comments and notifications to user personalized collaborative activity stream 
 ![](https://akuminadownloads.blob.core.windows.net/wiki/AkuminaDev/Release5.0/mainstream.png)
  
     * Ability to send stream praise posts to team members ![](https://akuminadownloads.blob.core.windows.net/wiki/AkuminaDev/Release5.0/streampraise1.png) ![](https://akuminadownloads.blob.core.windows.net/wiki/AkuminaDev/Release5.0/streampraise2.png)
@@ -67,13 +63,21 @@ id: Akumina-Framework-5.0.0.0-Overview
 ![](https://akuminadownloads.blob.core.windows.net/wiki/AkuminaDev/Release5.0/branding1.png)
 
 *	Added several new Management Apps to support the new Activity Streams and Socialization Experience:
-    *	Activity Streams Manager provides functionality to establish customized feed subscriptions with O365 and 3rd party providers
-    *	Comment Manager provides clients with a customizable repository to track and report comment concerns, establish comment concern thresholds, review flagged concerns, and generate historical reporting
-    *	Cosmos DB Manager provides clients with a mechanism to view and query their Activity Stream data, troubleshoot data concerns, and identify areas for data cleanup
-    *	Message Notification Manager provides clients the ability to send multi-lingual notifications to an activity stream for a group, persona or specific user, and identify important messages for the stream
-    *	Notification Manager provides the ability to configure multi-lingual notification guidelines for the site by subscription type, and define email digest templates
-    *	Reaction Manager provides a customizable reaction repository for users to engage with posts on Activity Streams and Commenting system
-*	Added a new Activity Stream User Manager content app to define the widgets to display, the order of the widgets and if they are expanded on the Activity Stream
+    *	Activity Streams Manager provides functionality to establish customized feed subscriptions with M365 and 3rd party providers 
+![](https://akuminadownloads.blob.core.windows.net/wiki/AkuminaDev/Release5.0/appmgr1.jpg)
+    *	Comment Manager provides clients with a customizable repository to track and report comment concerns, establish comment concern thresholds, review flagged concerns, and generate historical reporting 
+![](https://akuminadownloads.blob.core.windows.net/wiki/AkuminaDev/Release5.0/appmgr2.jpg)
+    *	Cosmos DB Manager provides clients with a mechanism to view and query their Activity Stream data, troubleshoot data concerns, and identify areas for data cleanup 
+![](https://akuminadownloads.blob.core.windows.net/wiki/AkuminaDev/Release5.0/appmgr3.png)
+    *	Message Notification Manager provides clients the ability to send multi-lingual notifications to an activity stream for a group, persona or specific user, and identify important messages for the stream 
+![](https://akuminadownloads.blob.core.windows.net/wiki/AkuminaDev/Release5.0/appmgr4.jpg)
+
+    *	Notification Manager provides the ability to configure multi-lingual notification guidelines for the site by subscription type, and define email digest templates 
+![](https://akuminadownloads.blob.core.windows.net/wiki/AkuminaDev/Release5.0/appmgr5.jpg)
+    *	Reaction Manager provides a customizable reaction repository for users to engage with posts on Activity Streams and Commenting system 
+![](https://akuminadownloads.blob.core.windows.net/wiki/AkuminaDev/Release5.0/appmgr6.jpg)
+*	Added a new Activity Stream User Manager content app to define the widgets to display, the order of the widgets and if they are expanded on the Activity Stream 
+![](https://akuminadownloads.blob.core.windows.net/wiki/AkuminaDev/Release5.0/appmgr7.jpg)
 *	Added a new Step Planner Management App to establish and maintain customizable checklist functionality for monitoring and driving a completion of tasks
 *	Added a new Social tab to enable the content app comment and reaction rules used for displaying content in the Activity Stream and Commenting system 
 ![](https://akuminadownloads.blob.core.windows.net/wiki/AkuminaDev/Release5.0/socialtab1.png)
@@ -102,12 +106,11 @@ id: Akumina-Framework-5.0.0.0-Overview
 *	Modify PeopleSync to persist the data to Cosmos DB (SQL API)
 
 ## Developer Functionality
-*	Lots of nice bells and whistles added for developers 
-*	Provide dashboard analytics using Synapse with CosmosDB
-*	Upgraded frontend framework to Jquery version 3.x
+*	Lots of nice bells and whistles added for developers
+*	Provide dashboard analytics using AppInsights with CosmosDB
+*	Upgraded frontend framework to Jquery version 3.5
 *	Remove the Verb from the REST API’s
 *	Build Akumina 3rd Party connectors for use with Activity Stream
 *	Multi-tenancy CORS support
 *	Remove and refactor the Session State Variables – author, forms, actionresults
-*	Additional https://akumina.github.io items:
-* *	TBD
+*	Additional developer information can be found on https://akumina.github.io
