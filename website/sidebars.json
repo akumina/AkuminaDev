@@ -34,12 +34,10 @@
       "AK-Virtual-Page-Builder",
       "AK-Virtual-Page-Layout-Builder"
     ],
-     "Activity Stream PUSH Subscription": [
+    "Stream Card Builder": [
+      "AK-Stream-Card-Builder",
       "AK-ActivityStream-PUSHSubscription-PowerAutomate-snow",
       "AK-ActivityStream-PUSHSubscription-PowerAutomate-d365"
-    ],
-    "Stream Card Builder": [
-      "AK-Stream-Card-Builder"
     ],
     "Yo Akumina": [
       "Yo-Akumina",
