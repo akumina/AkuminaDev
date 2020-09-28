@@ -29,7 +29,7 @@ To use/configure the CDS current environment Dynamic 365 connector follow these 
 3.	In the trigger condition select the “create or update” for the “Leads” entity.
 4.	To get the details of users, we need to add an additional step of CDS to get record for an entity, configure it as below.
 5.	Now we need to send each record as an http request to the push subscription with specific user filter.
-6.	In the apply to each loop add the http task, and make a PUT request to the app manager end point, example - https://cloud.onakumina.com/api/activitystream/push/useractivity 
+6.	In the apply to each loop add the http task, and make a PUT request to the app manager end point, example - {AppManagerUrl}/api/activitystream/push/useractivity 
 The headers need to content type setting with value application/json
 In the body, you need to pass the authorization code, event subscription id in the PushStreamActivity object. (you will get the auth code and id in the steps on app manager configuration)
 7.	The flow would look as below - 

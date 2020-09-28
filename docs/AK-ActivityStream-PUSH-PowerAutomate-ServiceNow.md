@@ -26,7 +26,7 @@ The following assumptions are made in this document:
 4.	Select the list records action, you can configure the record type, in this sample incident and build the query based on what data you want to pull in from ServiceNow.
 5.	This task will return us list of incidents from ServiceNow, hence we need to add a Apply to each task, use output from previous step.
 6.	Now we need to send each record as an http request to the push subscription
-7.	In the apply to each loop add the http task, and make a PUT request to the app manager end point, example - https://cloud.onakumina.com/api/activitystream/push 
+7.	In the apply to each loop add the http task, and make a PUT request to the app manager end point, example - {AppManagerUrl}/api/activitystream/push 
 The headers need to content type setting with value application/json
 In the body, you need to pass the authorization code, event subscription id in the PushStreamActivity object. (you will get the auth code and id in the steps on app manager configuration)
 8.	The flow would look as below - 
