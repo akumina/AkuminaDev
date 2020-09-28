@@ -41,22 +41,54 @@ The Application Extension is a fairly lightweight package. First, ensure that th
 ```javascript
 if ((typeof AkuminaModernConfiguration) === 'undefined') {
 	AkuminaModernConfiguration = {
-		CentralSiteCollectionUrl: "https://akuminadev02.sharepoint.com/sites/1209-1213-DEV", // Central Site from which assets are provisioned
+		CentralSiteCollectionUrl: "{1}", // Central Site from which assets are provisioned
+		FrameworkVersion: "{2}", // The framework version; should match Central Site
 		WidgetPicker: { // Akumina Widget Picker Settings
 			ExtraJSFiles: "", // Comma delimited list of JS files to download from the central site
 			ExtraCSSFiles: "", // Comma delimited list of CSS files to download from the central site
-			AssetLibraryName: "" // Name of the local asset library
+			AssetLibraryName: "Akumina Library" // Name of the local asset library
 		},
 		ApplicationExtension: { // Application Extension Settings
 			ExtraCSSFiles: "", // Comma delimited list of CSS files to download from the central site
 			HideSiteHeader: false, // Boolean value determining whether the modern header should be hidden
 			HideCommandBar: false, // Boolean value determining whether the modern command bar should be hidden
 			ShowOnlyOnSitePages: true, // Boolean value determining whether only SitePage navigation should be enabled
-			AssetLibraryName: "" // Name of the local asset library
+			AssetLibraryName: "Akumina Library" // Name of the local asset library
 		}
 	}
 } 
+var LoaderConfiguration = LoaderConfiguration || {};
+if ((typeof LoaderConfiguration.Custom) === 'undefined') {
+    //Add shipped steps to loader
+    LoaderConfiguration.Custom = {
+        Init: function (config) {
+            Akumina.Digispace.ConfigurationContext.InterchangeURL = "{3}";
+            Akumina.Digispace.ConfigurationContext.InterchangeQueryKey = "{4}";
+         }
+    };
+}
 ```
+Within the file, we would update the following variables:
+* Central or Standalone Site URL: {1} = https://akuminadev02.sharepoint.com/sites/spfx-developersite-032720
+* Akumina Framework Version from CDN: {2} = 4.8.2004.1501
+* App Manager Url: {3} = https://monday.onakumina.com
+* App Manager QueryKey: {4} = acf67d91-435e-42c8-8f8f-d66ec732305a
+
+> CONNECTING STAND ALONE SITE STEPS ONLY START (NOT REQUIRED FOR CENTRAL SITE)
+
+If this is a standalone site, a manual step is required (You do not need to do in Central site or for additional delivery sites and this needs to be done only once)
+
+ * Add to DigispaceConfigurationIDS_AK the Key **CentralPipedSiteIdWebId**
+ * The value of that key will be *SiteId*_*WebId*, which can be found by taking the values from
+   * {StandAloneSiteUrl}/_api/site/id = 9627f52f-5645-4267-aef2-9836a6be41bb
+   * {StandAloneSiteUrl}/_api/web/id = 1115da82-3dfc-4993-b736-4fbcbe4a5e02
+ * This gives us the combined value of: 9627f52f-5645-4267-aef2-9836a6be41bb_1115da82-3dfc-4993-b736-4fbcbe4a5e02
+
+After the value has been added, refresh Configuration Cache in 'Update Configuration Settings' option from the Site Creator in Stand Alone site. Then in the Site using the Widget Picker functionality you can verify that your setting matches by typing into console
+
+    Akumina.Digispace.ConfigurationContext.CentralPipedSiteIdWebId
+
+It should show the value in the DigispaceConfigurationIDS_AK
 
 After the Application Extension SPKG has been added to the site and your env.js settings have been configured, you've finished the installation for the Delivery Site.
 

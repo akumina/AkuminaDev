@@ -1,6 +1,7 @@
 {
   "docs": {
     "Akumina": [
+      "Akumina-Framework-5.0.0.0-Overview",
       "Akumina-Framework-4.8.0.0-Overview",
       "Akumina-Framework-4-5-0-0-Overview",
       "Akumina-Framework-Performance-Considerations",
@@ -12,7 +13,8 @@
       "Akumina-Widget-Scoping",
       "Ak-Lazy-Load-View-Binding",
       "AK-Personas-Code-Examples",
-      "AK-Headless"
+      "AK-Headless",
+      "Akumina-CKEditor-Update"
     ],
     "Modern": [
       "Modern-Overview",
@@ -32,9 +34,12 @@
       "AK-Virtual-Page-Builder",
       "AK-Virtual-Page-Layout-Builder"
     ],
-      "Activity Stream PUSH Subscription": [
+     "Activity Stream PUSH Subscription": [
       "AK-ActivityStream-PUSHSubscription-PowerAutomate-snow",
       "AK-ActivityStream-PUSHSubscription-PowerAutomate-d365"
+    ],
+    "Stream Card Builder": [
+      "AK-Stream-Card-Builder"
     ],
     "Yo Akumina": [
       "Yo-Akumina",
@@ -44,6 +49,7 @@
     ],
     "Akumina Widgets": [
       "Akumina-Widgets-Overview",
+      "Akumina-Widgets-Build-New",
       "Akumina-React-Widgets",
       "Akumina-Widget-Callbacks",
       "Akumina-Widget-RenderChildWidgets"
@@ -53,6 +59,7 @@
       "Site-Deployer-Version-4-1",
       "Site-Deployer-Version-4-5",
       "Site-Deployer-Version-4-8",
+      "Site-Deployer-Version-5-0",
       "Site-Deployer-List-Attributes",
       "Akumina-Npm-Commands",
       "Site-Deployer-AppOnly"

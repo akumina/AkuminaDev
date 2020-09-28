@@ -4,7 +4,7 @@ id: Akumina-Framework-4.8.0.0-Overview
 ---
 
 
-A new major release, Release 4.8, with features, enhancements and bug fixes of the Akumina Framework, Akumina AppManager and Akumina Foundation Site Two is released and available for use.  
+A new major release, Release 4.8, with features, enhancements and bug fixes of the Akumina Framework, Akumina AppManager and Akumina Foundation Site (FS'19) is released and available for use.  
  
 The Version is **4.8.xxxx.xxxx-Core-4.8.xxxx.xxxx-SiteCreator-4.8.xxxx.xxxx-InterChange.zip**.
 
@@ -92,20 +92,20 @@ o	Added ability to select SharePoint Image Renditions upload dimension images an
 ![](https://akuminadownloads.blob.core.windows.net/wiki/AkuminaDev/48releaseappmgrimagepicker2.png)
 ![](https://akuminadownloads.blob.core.windows.net/wiki/AkuminaDev/48releaseappmgrimagepicker3.png)
     
-o	Added improved Friendly URLs feature to allow content authors to create their own vanity URL
-o	Added Additional Support for Headless:
-	ON Premise
-	Headless Infrastructure of only sub-sites (Headless/sub-site Architecture)
-•	Now allow the Service Hub and App Manager to be separated.   This removes a single point of failure, makes it easier to scale and provides the ability to upgrade without any downtime.
-•	Site Creator Step Performance Improvements to expedite the deployment process. Lowered the number of files being uploaded and reduced API calls  
-•	Implemented ‘Throttling decoration’ best practices to help reduce interruption of service due to high volumes of requests
-•	Added a new Management App for managing Page Cache to provide the ability to cache all pages, or a specific page object for sites with many pages 
+*	Added improved Friendly URLs feature to allow content authors to create their own vanity URL
+*	Added Additional Support for Headless:
+* *	ON Premise
+* *	Headless Infrastructure of only sub-sites (Headless/sub-site Architecture)
+*	Now allow the Service Hub and App Manager to be separated.   This removes a single point of failure, makes it easier to scale and provides the ability to upgrade without any downtime.
+*	Site Creator Step Performance Improvements to expedite the deployment process. Lowered the number of files being uploaded and reduced API calls  
+*	Implemented ‘Throttling decoration’ best practices to help reduce interruption of service due to high volumes of requests
+*	Added a new Management App for managing Page Cache to provide the ability to cache all pages, or a specific page object for sites with many pages 
 
 ![](https://akuminadownloads.blob.core.windows.net/wiki/AkuminaDev/48releaseappmgrpagecache.png)
  
 •	Added upgrade compatibility to ensure all content apps and configurations are enabled from any previous 4.5 version
 
-## Akumina Foundation Two Site Functionality
+## Akumina Foundation Site (FS'19) Functionality
 
 •	Added a new Mega Menu view feature to FoundationTopNavigation widget to provide a structured and visible relationship to all site options that is easily viewable at a glance
 

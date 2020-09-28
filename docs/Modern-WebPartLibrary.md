@@ -25,7 +25,7 @@ The [Button web part](https://support.office.com/en-us/article/use-the-button-we
 **Note:**  The Button web part is not available in SharePoint Server 2019.
 
 > Many Akumina widgets have custom button functionality. The HTML Content Widget could be a workaround to getting a single button on a page though.
-> **HTML Content Widget** - [https://community.akumina.com/knowledge-base/html-content-widget/](https://community.akumina.com/knowledge-base/html-content-widget/)
+> **HTML Content Widget** - [https://community.akumina.com/knowledge-base/htmlcontentwidget/](https://community.akumina.com/knowledge-base/htmlcontentwidget/)
 
 ## Document library
 
@@ -119,13 +119,13 @@ The [Recent documents web part](https://support.office.com/en-us/article/use-the
 
 The [Stream web part](https://support.office.com/en-us/article/use-the-stream-web-part-b97fa87c-1337-4271-a059-17f0d2b26e8b) displays a video right on your page from your organization&#39;s Microsoft Stream video portal.
 
->**Stream Channel Widget -** [https://community.akumina.com/knowledge-base/stream-channel-widget/](https://community.akumina.com/knowledge-base/stream-channel-widget/)
+>**Stream Channel Widget -** [https://community.akumina.com/knowledge-base/streamchannelwidget/](https://community.akumina.com/knowledge-base/streamchannelwidget/)
 
 ## **Text**
 
 The [Text web part](https://support.office.com/en-us/article/add-text-and-tables-to-your-page-with-the-text-web-part-729c0aa1-bc0d-41e3-9cde-c60533f2c801) adds paragraphs and tables to your page. Formatting options like styles, bullets, indentations, highlighting, and links are available.
 
->**HTML Content Widget -** [https://community.akumina.com/knowledge-base/html-content-widget/](https://community.akumina.com/knowledge-base/html-content-widget/)
+>**HTML Content Widget -** [https://community.akumina.com/knowledge-base/htmlcontentwidget/](https://community.akumina.com/knowledge-base/htmlcontentwidget/)
 
 
 ## **Weather**
@@ -135,7 +135,7 @@ The [Weather web part](https://support.office.com/en-us/article/show-the-weather
 **Note:**  The Weather web part is not available in SharePoint Server 2019.
 
 > Akumina&#39;s Weather Widget displays weather and can be targeted to a user
-> **Weather Widget -** [https://community.akumina.com/knowledge-base/weatherwidget-4-1/](https://community.akumina.com/knowledge-base/weatherwidget-4-1/)
+> **Weather Widget -** [https://community.akumina.com/knowledge-base/weatherwidget/](https://community.akumina.com/knowledge-base/weatherwidget/)
 
 
 # Akumina Experiences
@@ -144,21 +144,21 @@ The [Weather web part](https://support.office.com/en-us/article/show-the-weather
 
 With many news widgets at your disposal, Akumina&#39;s News Experience gives you the tools to surface the right content at the right time, that&#39;s customized to your audience.
 
-- **Recent News Widget -** [https://community.akumina.com/knowledge-base/recent-news-widget/](https://community.akumina.com/knowledge-base/recent-news-widget/)
-- **Breaking News Widget -** [https://community.akumina.com/knowledge-base/breaking-news-widget/](https://community.akumina.com/knowledge-base/breaking-news-widget/)
-- **News Card Widget -** [https://community.akumina.com/knowledge-base/news-card-widget/](https://community.akumina.com/knowledge-base/news-card-widget/)
+- **Recent News Widget -** [https://community.akumina.com/knowledge-base/recentnewswidget/](https://community.akumina.com/knowledge-base/recentnewswidget/)
+- **Breaking News Widget -** [https://community.akumina.com/knowledge-base/breakingnewswidget/](https://community.akumina.com/knowledge-base/breakingnewswidget/)
+- **News Card Widget -** [https://community.akumina.com/knowledge-base/newscardswidget/](https://community.akumina.com/knowledge-base/newscardswidget/)
 - **Company News Hero Widget -** [https://community.akumina.com/knowledge-base/companynewsherowidget/](https://community.akumina.com/knowledge-base/companynewsherowidget/)
 - **Company News Item Widget -** [https://community.akumina.com/knowledge-base/companynewsitemwidget/](https://community.akumina.com/knowledge-base/companynewsitemwidget/)
 - **Company News List Widget -** [https://community.akumina.com/knowledge-base/companynewslistwidget/](https://community.akumina.com/knowledge-base/companynewslistwidget/)
 - **Department News Widget -** [https://community.akumina.com/knowledge-base/departmentnewswidget/](https://community.akumina.com/knowledge-base/departmentnewswidget/)
 - **RSS News Widget -** [https://community.akumina.com/knowledge-base/rssnewswidget/](https://community.akumina.com/knowledge-base/rssnewswidget/)
-- **Blogs Widget -** [https://community.akumina.com/knowledge-base/blogs-widget/](https://community.akumina.com/knowledge-base/blogs-widget/)
+- **Blogs Widget -** [https://community.akumina.com/knowledge-base/blogswidget/](https://community.akumina.com/knowledge-base/blogswidget/)
 
 ## Akumina Document Experience
 
 A couple of widgets make up Akumina&#39;s Document Experience. That gives you access to a searchable document list, has a folder tree structure, allows you to upload, edit, and share documents. Summarized lists also displays documents from all libraries and surfaces them to the end user via tabs, I.E. Newest, My Recent, Popular, Recommended
 
-- **Document Viewer Widget** - [https://community.akumina.com/knowledge-base/document-viewer/](https://community.akumina.com/knowledge-base/document-viewer/)
+- **Document Viewer Widget** - [https://community.akumina.com/knowledge-base/documentviewer/](https://community.akumina.com/knowledge-base/documentviewer/)
 - **Documents Summary List Widget** - [https://community.akumina.com/knowledge-base/documentssummarylistwidget/](https://community.akumina.com/knowledge-base/documentssummarylistwidget/)
 
 ## Akumina Hero Experience
@@ -172,8 +172,8 @@ Bring focus to content, products, and more with the Akumina Hero Experience! Wit
 
 Highlight your employees, surface your company directory, and provide individual employee data with Akumina&#39;s People Experience.
 
-- **Foundation Employee Spotlight Widget -** [https://community.akumina.com/knowledge-base/foundation-employee-spotlight-widget/](https://community.akumina.com/knowledge-base/foundation-employee-spotlight-widget/)
-- **People Directory Widget** - [https://community.akumina.com/knowledge-base/people-directory-widget-2/](https://community.akumina.com/knowledge-base/people-directory-widget-2/)
+- **Foundation Employee Spotlight Widget -** [https://community.akumina.com/knowledge-base/foundationemployeespotlightwidget/](https://community.akumina.com/knowledge-base/foundationemployeespotlightwidget/)
+- **People Directory Widget** - [https://community.akumina.com/knowledge-base/peopledirectorywidget/](https://community.akumina.com/knowledge-base/peopledirectorywidget/)
 - **Employee Detail Widget** - [https://community.akumina.com/knowledge-base/employeedetailwidget/](https://community.akumina.com/knowledge-base/employeedetailwidget/)
 
 ## Akumina Menu Experience
@@ -188,7 +188,7 @@ The Akumina Image Experience allows you to display images and video in several d
 
 - **Latest Media Widget** - [https://community.akumina.com/knowledge-base/latestmediawidget/](https://community.akumina.com/knowledge-base/latestmediawidget/)
 
-- **HTML Content Widget** - https://community.akumina.com/knowledge-base/html-content-widget/
+- **HTML Content Widget** - https://community.akumina.com/knowledge-base/htmlcontentwidget/
 - **Content Block Widget -** [https://community.akumina.com/knowledge-base/contentblock/](https://community.akumina.com/knowledge-base/contentblock/)
 
 ## Akumina Calendar/Event Experience

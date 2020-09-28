@@ -106,7 +106,7 @@ Akumina.Digispace.ConfigurationContext.UseFrameworkCDN = true;
 
 It's important to note that Sharepoint Modern *does not* support the Master Page templating feature of Sharepoint Classic. In its stead, Akumina deigned it prudent to provide this functionality. The **Akumina Virtual Master** Page is a JSON file stored on the Central Site that defines the Master Page of the Delivery Site. Within this master page, the contents of each page are then injected:
 
-/Style Library/DigitalWorkPlace/Content/Templates/Core/VirtualMasterPage.html
+/Style Library/DigitalWorkPlace/Content/Templates/MasterPages/VirtualMasterPage.html
 ```html
 <div id="ak-master">
     <div class="ak-main-nav-wrapper" id="ak-header">
@@ -121,6 +121,14 @@ It's important to note that Sharepoint Modern *does not* support the Master Page
     <div class="ak-page-wrapper" style={{'margin':'150px','background-color':"#FFAA00"}}>
     {pageComponent}
     </div> 
+</div>
+```
+
+**Note**: If you plan to have a global widget across all pages, you can add a widget div to the Virtual Master Page in the following manner. Please ensure any widgets included in the Virtual Master Page are wrapped in the appropriate div container:
+
+```html
+<div class="ak-foundation-main-nav-wrapper ak-widget-wrapper">
+    <div rel="Top Navigation" class="ak-widget" id="b3190df7-e6f8-4f0b-83c7-192e6500563e"></div>
 </div>
 ```
 
@@ -180,6 +188,23 @@ An explanation of these settings follows:
 
 
 Once your options are set, click Save to persist your changes. If you have a Virtual Page deployed with a PageUrl set to home.aspx and have generated the Page Cache (please regenerate the cache if you have not done so), you should see your page load with the defined Virtual Master Page and the contents of the home.aspx Virtual Page within it.
+
+# Env.JS Configuration
+
+The following options are available in the env.js file for you to enable and configure as you please:
+
+* supportSPAMode
+
+The steps detailed in the env.js file will, by default, run as they are loaded and executed. By adding the supportSPAMode property, example below, you are indicating that the steps should only run after the markup in the VirtualMasterPage.html file are loaded onto the page. This ensures that whatever DOM manipulation you need to perform on the page will execute successfully with the necessary DOM elements loaded onto the page.
+
+example
+```javascript
+stepName: "Event Subscription", additionalSteps: [{
+                name: "SetSearchVariablesInContext",
+                callback: window.FoundationSteps.SetSearchVariablesInContext.Init,
+                supportSPAMode: true // Ensured virtual master page dom elements are present before executing
+            },
+```
 
 
 ## Troubleshooting

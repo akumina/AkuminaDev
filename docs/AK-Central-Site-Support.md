@@ -19,9 +19,9 @@ The following configuration allows for rapid re-use of Akumina tooling across ma
 Your enterprise environment can also contain MULTIPLE Central Site's - Possibly 1 site collection for where Akumina widgets are installed and 1 site collection where shared lists can reside.  
 
 For example:
-* **Central Site** (Akumina) - /sites/akuminarepo
+* **Central Site** (Akumina) - /sites/akumina-assets
     * Code / Widget deployment  
-* **Central Site** (Client Specific) /sites/sharedassets
+* **Central Site** (Client Specific) /sites/customer-shared-assets
     * Specific lists / libraries / data
 
 > It is up to your information archecture on how many 'Central Sites' you want to use. Akumina recommends at least 1 central site for the Akumina bits as denoted above.
@@ -103,6 +103,22 @@ You can think of the single page application spkg as the replacement to the env.
 ![](https://akuminadownloads.blob.core.windows.net/wiki/AkuminaDev/GlobalSettings-UniqueId.PNG)
 
 
+### Widget Scope
+
+
+Using the central site model, widgets can be either global or local. Where the widget is deployed dictates how broadly it can be used and the degree of local control over the widget instance that can be exercised.
+A site collection will use its own widgets or else the central site widget instances; the instance IDs can be the same for both. In both cases the widget instances are in the Akumina Assets central site collection; the site id and web id values are different to denote where the widget applies.
+A widget deployed to the Akumina Assets central site can be used within any site collection that uses the central site.	A widget deployed to a specific site collection can be used only in that site collection, as shown below.
+ 
+![](https://akuminadownloads.blob.core.windows.net/wiki/AkuminaDev/WidgetScope-Central.png)
+![](https://akuminadownloads.blob.core.windows.net/wiki/AkuminaDev/WidgetScope-SiteCollection.png)
+
+Delivery site 2 will use the same instance as delivery site 1 – any change made will affect the widget on all sites.	Delivery site 2 can use an instance with the same ID as delivery site 1, however, it is its own instance, needing to be deployed and managed independently. A change to the properties of the delivery site 1 instance will affect only delivery site 1, likewise a change to the properties of the delivery site 2 instance will affect only delivery site 2, etc.
+
+**NOTE**: The widget instances can be overridden when used within a virtual page as well, giving further local control under either model.
+
+
+
 ### Widget Support for Cross site collection data retrieval
 
 There are many widgets which support a hidden property called 'sitecollectionurl' - the code of the widgets are written to understand this property.  If you donot see the property in your installation, you can simply add a new text property to the widget definition.
@@ -175,16 +191,49 @@ Example to query Central Site:
     
 ````
 
-### Deployment scenarios and Packge setup
+### Deployment scenarios and Package setup
 With the additional site collections in use, your deployment methodology will change slightly as the information architecture has changed
 Here is an example project setup
 
-* Project for Widgets -  This project will deploy to /sites/akuminarepo
-* Project for Global Lists / Assets - this project will deploy to /sites/sharedassets
+* Project for Widgets -  This project will deploy to /sites/akumina-assets
+* Project for Global Lists / Assets - this project will deploy to /sites/customer-shared-assets
 * Project for a Particular Site - this project will deploy to /sites/foundationsite
 
 This allows for different deployment configurations and minimal impact depending on the scenario - IE, I have to deploy a widget change, I only deploy the Widget Project.  If I need to deploy a global update for an asset or list, I dont interfere with the other sites directly or mess around with Akumina bits.
 
+|  | **akumina-assets** | **customer-shared-assets** | **delivery** |
+| --- | --- | --- | --- |
+| `Prerequisite`     | Core install | Core Content Types | Core Content Types or Foundation Delivery |
+|  |  |  |  |
+| **Site Deployer Steps** | **akumina-assets** | **customer-shared-assets** | **delivery** |
+| `masterpage`      |  |  | x |
+| `js`              | x |  |  |
+| `css`             | x |  |  |
+| `lists`           |  | x | x |
+| `layouts`         |  |  | x |
+| `pages`           |  |  | x |
+| `virtualpages`    |  |  | x |
+| `controls`        |  |  | x |
+| `widgets`         | x |  |  |
+| `contentfiles`    | \* |  |  |
+| `imagefiles`      | x |  |  |
+| `homepage`        |  |  | x |
+| `fonts`           | \* |  |  |
+| `updatelists`     |  | x | x |
+| `addtermsets`     |  | \* | x |
+| `cdnassets`       |  |  |  |
+| `sleep`           |  |  |  |
+| `exportlists`     |  |  |  |
+| `uploadfiles`     |  | \* | x |
+| `spusersearch`    |  |  |  |
+| `webpartgallery`  |  |  | \* |
+| `groups`          | \* | \* | \* |
+| `siteproperties`  |  |  | x |
+| `spusersearch`    |  |  |  |
+| `virtuallayout`   |  |  | x |
+| `updatepagecache` |  |  |  |
+
+\* optional 
 
 ### Sample Site Packages for use with Site Deployer
 We can easily share site deployer packages for use with rolling up minimal delivery environments for both classic and modern - the goal is to eventually have these as an option in the Site Creator Management App within App Manager which allows business users to deploy Akumina functionality to any site they wish..  Look for those in upcoming point releases.

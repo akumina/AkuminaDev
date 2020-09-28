@@ -1,6 +1,6 @@
 ---
-title: Version 4.8
-id: Site-Deployer-Version-4-8
+title: Version 5.0
+id: Site-Deployer-Version-5-0
 ---
 
 
@@ -76,6 +76,7 @@ Set options to true/false in akumina.sitedeployer.config.json:
 | `webpartgallery` | Adds .dwp files to the web part gallery |
 | `virtuallayout` | Add Virtual Page Layouts |
 | `updatepagecache` | Updated the page cache for the site |
+| `exportcomments` | Exports comments from NewsComments_AK list into the Akumina 5.0 Comment format.  Places exported comments in **{EnvironmentalPath}\SiteDefinitions\{AssetDirectory}\**Export** directory.  A separate file will be created for each set of 3000 comments (e.g. Comments1.json, Comments2.json). <br/><br/> To import these comments into the Comment 5.0 engine, go to App Manager / Management Apps / Comments App and click on the "Import" button.  Select one of the exported files and the import process will begin.  You can monitor the status of the import process from this page. |
 
 ### Nuances
 
@@ -84,14 +85,14 @@ Due to differences in how Modern works vs Classic, some steps in the site creato
 
 | **Site Deployer Steps** | **Classic** | **Modern** | **Comments** |
 | --- | --- | --- | --- |
-| `masterpage` | Yes | **No** | Deploys classic publishing master page; In modern, master page is located in content/templates |
+| `masterpage` | Yes | **No** |   |
 | `js` | Yes | Yes |   |
 | `css` | Yes | Yes |   |
 | `lists` | Yes | Yes |   |
-| `layouts` | Yes | **No** | Deploys classic publishing layouts; In modern, virtual pages and layouts is used |
-| `pages` | Yes | **No** | Deploys classic publishing pages; In modern, virtual pages and layouts is used |
+| `layouts` | Yes | **No** |   |
+| `pages` | Yes | **No** |   |
 | `virtualpages` | Yes | Yes | |
-| `controls` | Yes | **No** | Deploys classic publishing pages; In modern, virtual pages and layouts is used |
+| `controls` | Yes | **No** |   |
 | `widgets` | Yes | Yes | **Central - Widget Data, Delivery - Content and Instance Data** |
 | `contentfiles` | Yes | Yes |   |
 | `imagefiles` | Yes | Yes |   |
