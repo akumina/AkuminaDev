@@ -32,6 +32,10 @@
       "AK-Virtual-Page-Builder",
       "AK-Virtual-Page-Layout-Builder"
     ],
+      "Activity Stream PUSH Subscription": [
+      "AK-ActivityStream-PUSHSubscription-PowerAutomate-snow",
+      "AK-ActivityStream-PUSHSubscription-PowerAutomate-d365"
+    ],
     "Yo Akumina": [
       "Yo-Akumina",
       "getting-started-yeoman",
