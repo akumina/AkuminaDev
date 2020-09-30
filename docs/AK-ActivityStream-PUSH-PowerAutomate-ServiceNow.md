@@ -31,6 +31,7 @@ The headers need to content type setting with value application/json
 In the body, you need to pass the authorization code, event subscription id in the PushStreamActivity object. (you will get the auth code and id in the steps on app manager configuration)
 8.	The flow would look as below - 
 
+![](https://akuminadownloads.blob.core.windows.net/wiki/AkuminaDev/Stream%20Card%20Builder/flowsnow.PNG)
 
 
 ## Akumina AppManager Activity Stream Subscription Configurations
