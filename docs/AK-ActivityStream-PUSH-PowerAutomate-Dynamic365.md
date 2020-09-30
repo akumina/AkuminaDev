@@ -33,7 +33,7 @@ To use/configure the CDS current environment Dynamic 365 connector follow these 
 The headers need to content type setting with value application/json
 In the body, you need to pass the authorization code, event subscription id in the PushStreamActivity object. (you will get the auth code and id in the steps on app manager configuration)
 7.	The flow would look as below - 
-
+![](https://akuminadownloads.blob.core.windows.net/wiki/AkuminaDev/Stream%20Card%20Builder/flowd365.PNG)
 
 
 ## Akumina AppManager Activity Stream Subscription Configurations
