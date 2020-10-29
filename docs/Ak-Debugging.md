@@ -11,7 +11,7 @@ All versions of Akumina
 The purpose of this page will be to document and demonstrate the various ways of debugging common problems one might run into while using the Akumina Framework. We will be covering already implemented features as well as error and exception messages observed in the console.
 
 
-## {{Debug}} in the View
+## {{debug}} in the View
 
 Akumina Widgets are, in a basic sense, comprised of three different elements:
 
@@ -25,11 +25,11 @@ Focusing on the view, all Akumina widgets use the Handlebars library to dynamica
 <h1>{{Title}}</h1>
 ```
 
-Will have the value of the Title property inserted into the {{Title}} placeholder when the view is bound with a viewmodel. With that said, debugging the view is sometimes necessary and, thankfully, Handlebars supports this by use of the {{Debug}} syntax.
+Will have the value of the Title property inserted into the {{Title}} placeholder when the view is bound with a viewmodel. With that said, debugging the view is sometimes necessary and, thankfully, Handlebars supports this by use of the {{debug}} syntax.
 
-The {{Debug}} command will output the widget definition into the console when the page is rendered. This is very handy to check that the appropriate data is being bound to the view as well as being able to inspect the data for errors, inconsistencies, or just to verify values are correctly inserted. The output also includes the available views, html output, properties, and more.
+The {{debug}} command will output the widget definition into the console when the page is rendered. This is very handy to check that the appropriate data is being bound to the view as well as being able to inspect the data for errors, inconsistencies, or just to verify values are correctly inserted. The output also includes the available views, html output, properties, and more.
 
-An example of the Foundation Site's Calendar Widget {{Debug}} output is displayed below:
+An example of the Foundation Site's Calendar Widget {{debug}} output is displayed below:
 
 ![](https://akuminadownloads.blob.core.windows.net/wiki/AkuminaDev/viewdebugcalendarsnapshot.PNG)
 
