@@ -255,6 +255,205 @@ Run the build and package npm commands from earlier, upload to your test site, a
 ![](https://akuminadownloads.blob.core.windows.net/wiki/AkuminaDev/widget%20view%20with%20image.PNG)
 
 
+## Becoming more Akumina-ive
+
+One of the main draws of React, and many SPA-style Javascript Frameworks, is the natively supported templating engine to render views. React returns its markup directly from the Javascript whereas Frameworks like Angular use a separate file. Akumina, as well, uses the Handlebars Framework to support the view templating functionality. However, what if you wanted to use the Akumina/Handlebars approach to rendering your views with React widgets? This may be easier than you think!
+
+For proper organization and code encapsulation, create a new folder under your widget directory. Name it "*data*" and create a file underneath this folder: "*GenericHelper.ts*". This Generic Helper class will contain commonly used functionality used in the widget. For instance, we will be using a function as the return value for our component render calls. Should we add more subcomponents to this widget that also output markup, they will make use of this function too. Placing this functionality in a commonly accessible location is a good idea to promote maintanable code.
+
+GenericHelper.ts
+```javascript
+export class GenericHelper {
+    static GetViewTemplate(viewName: string): Promise<any> {
+        return new Promise((resolve) => {
+            var templateUrl = new Akumina.Digispace.AppPart.Data().Templates.GetFullViewPrefix()
+                + '/' + GlobalNames.WidgetName + '/' + viewName;
+            var templateManager = new Akumina.Digispace.AppPart.Data().Templates;
+            var templateRequest = templateManager.RequestTemplateFromServer(templateUrl);
+
+            $.when(templateRequest).then((response) => {
+                resolve(response);
+            });
+        });
+    }
+
+    static JSXClient(tpl: any, options: any) {
+        options = options || {};
+        return this.JSXTransform(tpl, {
+            filename: options.filename,
+            sourceMaps: !!options.debug,
+            presets: ['react'],
+        }, {
+            render: options.render || (options.raw ? 'renderToStaticMarkup' : 'renderToString')
+        });
+    }
+
+    private static JSXTransform(tpl: any, config: any, options: any) {
+
+        var transformed = (window as any).Babel.transform(tpl, config);
+        var rdom = transformed.code;
+        var start = rdom.indexOf('React.createElement');
+
+        return new Function('data', 'config', [
+            'data = data || {};',
+
+            'var nodes = (function jsx() {',
+            rdom.slice(0, start),
+            'with (data) return ' + rdom.slice(start),
+            '}).call(this.props ? this : data),',
+            'options = ' + JSON.stringify(options || {}) + ';',
+
+            'if ("DOM" === options.render || !(config || {}).html) return nodes;',
+            'return ReactDOM[options.render](nodes);'
+        ].join('\n'));
+    }
+}
+```
+
+For completeness, create another class under the *data* folder named *TemplateManager.ts*:
+
+```javascript
+export class TemplateManager {
+    private static _templateLibrary: { [key: string]: string; } = {};
+    private constructor() { }
+
+    public static GetViewContents(viewName: string): string {
+        return this._templateLibrary[viewName];
+    }
+
+    public static RetrieveViewFromServer(viewName: string) {
+        GenericHelper.GetViewTemplate(viewName).then((templateHtml: string) => {
+            this._templateLibrary[viewName] = templateHtml;
+        });
+    }
+
+    public static RetrieveViewsFromServer(viewList: string[]): Promise<boolean> {
+        return new Promise((resolve, reject) => {
+            var viewPromises = viewList.map((s: string) => {
+                return GenericHelper.GetViewTemplate(s).then((templateHtml: string) => {
+                    this._templateLibrary[s] = templateHtml;
+                });
+            });
+            Promise.all(viewPromises).then((results) => {
+                resolve(true);
+            });
+        });
+    }
+}
+```
+
+Let's review these functions:
+
+* GetViewTemplate
+
+This function will be used to retrieve our html files from Sharepoint. Supply it with a view name and it will search for the view under the proper directory structure. 
+**NOTE**: In the code sample above, you will notice a reference to *GlobalNames.WidgetName*. This is another custom class that I, personally, use to hold string literals for even more encapsulation. If this is not an approach you want to take, simply replace that reference with either a hard-coded or parameter supplied Widget Name.
+**NOTE**: This function is not directly called from code.
+
+* JSXClient & JSXTransform
+
+These functions are the meat of how we'll be using our external html views as React markup. The functions will take the external markup, process it as JSX, and, using the supplied view bag, replace variable placeholders with their proper values and perform any inline logic.
+
+* RetrieveView(s)FromServer
+
+These functions will use the GenericHelper implementation to retrieve the view from the server. Think of this as a higher level abstraction of the aforementioned logic. This is split into two functions for retrieving one or many views. 
+
+* GetViewContents
+
+When the React Lifecycle kicks off and this code is run, the retrieved views are then cached in memory. We retrieve views before we need them for two reasons:
+
+1) So they are available when we need them, on initial render and consequent renders in the future (Example: StreamCardA does not currently exist in the stream as there are no events for it. 5 minutes later, an event that utilizes StreamCardA comes into the stream. The view is already retrieved so there is no need to query for it.)
+
+2) This allows the promises/network calls to resolve while we perform client-side processing
+
+The retrieved views are stored in an internal array in memory and can be accessed by name.
+
+
+### Using Remote Views
+
+With the majority of the scaffolding already set up, using this is incredibly easy. For the sake of the example, we'll keep this simple. Create a test view:
+
+CustomView.html
+```html
+<div>
+    <span>Hello, {this.templateModel.userName}!</span>
+</div>
+```
+
+In our test component, we'll need to touch a few different pieces of code. First, let's have our component fetch its own view as soon as it mounts:
+
+```javascript
+    componentDidMount() {
+        TemplateManager.RetrieveViewsFromServer(GlobalNames.WidgetViews).then((success: boolean) => {
+            if (success) {
+                this.setState({ pageLifeCycleComplete: true })
+            } else {
+                console.log('CRITICAL ERROR => There was a problem retrieving the views associated with [' + GlobalNames.WidgetName + ']');
+            }
+        });
+    }
+```
+
+Let's review this one as well. React's componentDidMount function is called immediately after the component is first loaded onto the page. We use the state property *pageLifeCycleComplete* to determine whether we're ready to output our final markup. What we're doing is allowing the component to be rendered on the page and then initiate local functionality while other components on the page load and perform their own logic. Remember, the output of our render function is wrapped in a conditional of whether *pageLifeCycleComplete* is set to true or not.
+we immediately retrieve the views, using a string array defined in *GlobalNames*. If you do not prefer this approach, feel free to make your array class-level or even an array in the function itself. Once the views are retrieved, we flip the *pageLifeCycleComplete* flag to trigger the React lifecycle again and allow our conditional to pass in the render function.
+
+Speaking of, let's update the render function with the external view logic:
+
+```javascript
+// NOTE: Irrelevant code omitted
+private _viewName: string = 'CustomView.html';
+
+constructor(props: IWidgetNameProps) {
+    super(props);
+
+    this.state = {
+        userName: 'EvilDave'
+    };
+}
+
+render() {
+    if (this.state.pageLifeCycleComplete) {
+        var templateModel: any = {
+            userName: this.state.userName
+        };
+
+        var renderTemplate = GenericHelper.JSXClient(TemplateManager.GetViewContents(this._viewName), this.templateModel);
+        return renderTemplate(this);
+    }
+}
+```
+
+Finally, let's review this final implementation as well.
+
+First, at class level, we declare a new variable - *_viewName*. This works off the idea that each component will be responsible for one view. Should you choose to have a component manage multiple views, you could create multiple variables or find a more eloquent implementation. Secondly, in the constructor, we initialize our test data by setting the state property *userName* to "EvilDave". Because GoodDave isn't as exciting.
+
+Next, in the render function, we have our normal pageLifeCycleComplete conditional to not render our final markup before we're ready. We then create a *templateModel* object. In standard React, the local contents of *this* would serve as the property bag. This is because the output is returned from the render function - straight in code. Therefore, whatever is encapsulated in *this* can be used in the markup output. However, because our view is located in an external file, we create an object - *renderTemplate* - to hold these properties for us. Don't worry, there's some magic to this later.
+
+*GenericHelper.JSXClient* is called first, supplied with the view contents (courtesy of our helper function in *TemplateManager*), and the property bag for the model. Finally, we call and return the return value of *GenericHelper.JSXClient* supplied with *this* as a parameter.
+
+As you can see in our example view above, we can treat the html file as as pure JSX and implement placeholders in typical React fashion. The nuance here, is that by calling *GenericHelper.JSXClient*'s return value with *this* as a parameter, the scope of the logic now includes *this*. So, if we wanted to, we could circumvent the *templateModel* approach entirely and simply use the scope of *this* instead:
+
+```javascript
+render() {
+    ...
+    var renderTemplate = GenericHelper.JSXClient(TemplateManager.GetViewContents(this._viewName), {});
+    return renderTemplate(this);
+}
+```
+
+```html
+<div>
+    <span>Hello, {this.state.userName}</span>
+    <span>This was rendered from the {this._viewName} view!</span>
+</div>
+```
+
+
+### Conclusion
+
+React, by itself, offers many powerful and widely useful utilities. However, to leverage the benefits of the Akumina Framework, mainly the ability for users and developers to create and customize their own views, the above implementation is lightweight and simple enough to use to confidently make the move to React Widgets while also keeping familiar Akumina functionality intact.
+
+
 ## Components
 
 Normally in Vanilla Javascript/Typescript widget implementations, widgets are self-contained. Although it is possible to inject a widget into another widget, the React implementation makes this much easier and intuitive while offering a parent-child relationship between components. In this section, we'll build out a simple footer section to our test component by retrieving the data from a Sharepoint list. We'll also round out some of our Akumina-native functions as well as define our widget instance some more.
