@@ -30,7 +30,7 @@ npm run cardstub name
 
 Where '*name*' is the optional name of the custom card you'd like to create. For more information on this process, please see [Stream Card Builder](/docs/AK-Stream-Card-Builder). For the purpose of this article, we will be creating a new Custom Stream Card named *CustomCard*. Once you finish the process, you should see a directory structure similar to the following:
 
-![](img)
+![](https://akuminadownloads.blob.core.windows.net/wiki/AkuminaDev/Custom%20Card%20Tutorial/baseoutputstructure.PNG)
 
 In its current state, the card component is ready to be compiled and deployed. Albeit, the component will provide little to no worth to the business nor the end users in its current state. However, this does illustrate Akumina's continued goal of delivering the most painless, easy to use functionality to support our Framework.
 
@@ -49,6 +49,8 @@ The Activity Stream's Stream Event data is displayed to the user via Cards rende
 As part of the Activity Streams product, the App Manager now hosts several Management Apps specific to Activity Streams. For the sake of this explanation, we will only focus on the main Management App - The Activity Streams Management App. From this app, one can configure, activate, disable, or delete Activity Subscriptions to Sharepoint or third-party sources. Likewise, one can also configure Activity Types from this app.
 
 ### Subscriptions
+
+![](https://akuminadownloads.blob.core.windows.net/wiki/AkuminaDev/Custom%20Card%20Tutorial/activitystream_managementapp.PNG)
 
 The definition of a Subscription in the context of the Activity Streams Experience is defined as a contract between the host (The Activity Stream background processor) and the target (Sharepoint or a third-party source) to monitor change events, as configured, and store the associated data to surface to the user at a later date.
 
@@ -70,7 +72,7 @@ The Activity Stream package ships with a Sharepoint List: StreamCards_AK. This l
 
 Consider the following Sharepoint List:
 
-![](img)
+![](https://akuminadownloads.blob.core.windows.net/wiki/AkuminaDev/Custom%20Card%20Tutorial/streamcardsaklist.PNG)
 
 * Activity Type
 
@@ -95,7 +97,7 @@ These values are EnableComments, EnableReactions, and EnableHeader, respectively
 
 To cover some of the more in-depth topics, we'll lead with an example. We'll use this example to demonstrate how to achieve the selected goal from scaffolding to deployment and then review some of the more nuanced concepts that come with Custom Stream Card development.
 
-**Premise**: I want each of my Subscriptions to tell me who they are so I can display it in a footer on my stream cards.
+**Premise**: I want to display Stream Event Data in my Activity Stream
 
 ### Subscription & Activity Type Setup
 
@@ -118,6 +120,8 @@ So, let's do the following:
 * Name the new type whatever you'd like. For the sake of the article, I will name mine *NewNote*
 
 Scroll to the bottom and you will notice a *Custom Properties* section. Click on the button next to it to begin adding your first Extend property. You'll see four fields:
+
+![](https://akuminadownloads.blob.core.windows.net/wiki/AkuminaDev/Custom%20Card%20Tutorial/extendprop.PNG)
 
 * Name
 
@@ -145,7 +149,13 @@ Default Value = "Default"
 ```
 **NOTE:** String literals must be wrapped in double quotes for the *DefaultValue* property.
 
-Once finished, well, you're finished! The entry will be saved whenever an update to a property field is made so there is no Save button. Exit back to the main landing page for the Activity Stream Management App and create a new Sharepoint subscription. Set the polling interval, priority, etc to whatever you'd like. However, change the Activity Type from *Note* to *NewNote*. Scroll to the bottom and you will see our new *Object.Extend.FooterTitle* property appear in the list with the default value of "Default" that we defined earlier. Neat!
+Once finished, well, you're finished! The entry will be saved whenever an update to a property field is made so there is no Save button. Exit back to the main landing page for the Activity Stream Management App and create a new Sharepoint subscription. Set the polling interval, priority, etc to whatever you'd like. However, change the Activity Type from *Note* to *NewNote* and be sure to set the *content* property to something we can easily change, such as the *Title* field of the Sharepoint list:
+
+![](https://akuminadownloads.blob.core.windows.net/wiki/AkuminaDev/Custom%20Card%20Tutorial/subscription_activitytype.PNG)
+
+Scroll to the bottom and you will see our new *Object.Extend.FooterTitle* property appear in the list with the default value of "Default" that we defined earlier. Neat!
+
+![](https://akuminadownloads.blob.core.windows.net/wiki/AkuminaDev/Custom%20Card%20Tutorial/subscription_content.PNG)
 
 Save your subscription and activate it. Feel free to make an update to the target list to allow the process to pick up on the change while we divert our attention back to our code.
 
@@ -154,62 +164,12 @@ Save your subscription and activate it. Feel free to make an update to the targe
 
 Now that we have our Subscription and Activity Type setup, we'll need to go back to our scaffolded code and make a few additions to make use of it. We'll accomplish the following:
 
-* Create a Footer component
-* Inject the Footer component into the main component
+* Create the Footer implementation
+* Map our API Data to the UI Model
 * Review what we've learned
 
 
-Let's get started, shall we? The first thing we'll want to do is take organization and cleanliness into account. Create a new folder under the main StreamCard folder (root\src\js\streamcards\CustomCard) and name it *"components"*. We will use this folder for extra components that our main stream card may use. In this case, the footer component! Create a new file under that folder named *FooterComponent.tsx*.
-
-Stub out the component similarly to how the main component was stubbed:
-
-FooterComponent.tsx
-```javascript
-import * as Akumina from 'akumina-core';
-import * as React from 'react';
-
-interface IFooterComponentState {
-    pageLifeCycleComplete: boolean;
-}
-
-interface IFooterComponentProps {
-
-}
-
-export class FooterComponent extends React.Component<IFooterComponentProps, IFooterComponentState> {
-    constructor(props: IFooterComponentProps) {
-        super(props);
-
-        this.state = {
-            pageLifeCycleComplete: false
-        };
-    }
-
-    componentDidUpdate(oldProps: IFooterComponentProps, oldState: IFooterComponentState) {
-
-    }
-
-    componentDidMount() {
-        this.setState({
-            pageLifeCycleComplete: true
-        });
-    }
-
-    render() {
-        if (this.state.pageLifeCycleComplete) {
-            return (
-                <div>Hello World!</div>
-            );
-        } else {
-            return (
-                <div>Loading...</div>
-            );
-        }
-    }
-}
-```
-
-Pretty basic stuff. Now that we have the skeleton for our component set up, let's think about how we're going to approach this by thinking about what we know so far:
+Let's get started, shall we? The first thing we'll want to do is think about how we're going to approach this by thinking about what we know so far:
 
 ```
 Our Subscription is set up to watch a Sharepoint List for change events. 
@@ -225,68 +185,15 @@ The Activity Stream widget will process each line item and pass the data to the 
 
 We can see that the base implementation is doing the heavy lifting for us. We *know* we will receive the object we care about. Now our only job is to make sure we're mapping the data correctly. So, let's start writing code!
 
-The first thing we'll need to do is add a property to our *IFooterComponentProps* interface. This will be the value of the FooterTitle object:
+The first thing we'll need to do is create a function, and a helper function, to help transform our API Response Model into the UI Model. After that is finished, we'll return to the render function to bring it all together and display the data. The full contents of each of the files are shown below:
 
+*CustomCard.tsx*
 ```javascript
-interface IFooterComponentProps {
-    FooterTitle: string;
-}
-```
+import * as React from 'react';
+import * as Akumina from 'akumina-core';
 
-Next, let's update our render function to display the value. Although, there is no point in displaying an empty string in the footer. So, we'll add some value checking and logic to determine how to handle this:
-
-```javascript
-export class FooterComponent extends React.Component<IFooterComponentProps, IFooterComponentState> {
-    private readonly _defaultOverrideValue: string = 'Default';
-
-    constructor(props: IFooterComponentProps) {
-        ...
-    }
-
-    ...
-
-    render() {
-        if (this.state.pageLifeCycleComplete) {
-            // Validate our property
-            var titleProp: string = this.ValidateTitleProperty(this.props.FooterTitle);
-            
-            return (
-                <footer className='ia-footer-container'>
-                    <div className='ia-provider-nameof'>
-                        This Change Event brought to you by: {titleProp}!
-                    </div>
-                </footer>
-            );
-        } else {
-            return (
-                <div>Loading...</div>
-            );
-        }
-    }
-
-    // PRIVATE FUNCTIONS
-    private ValidateTitleProperty(titleIn: string): string {
-        if (titleIn == null) return this._defaultOverrideValue;
-
-        if (titleIn.trim() == '') return this._defaultOverrideValue;
-
-        return titleIn;
-    }
-}
-```
-
-What did we do? First, we added a readonly, class-level property to hold our default value. You might remember that the Subscription had a property for this. However, what if we were to overwrite the "Default" value with just ""? We'd receive an empty string, and that doesn't help anybody. So we account for this use-case in code!
-
-Next, we add a private helper function: *ValidateTitleProperty*. This function does basic validation on the passed property, ensuring that if it is null or an empty string, that we use the default instead. 
-
-Lastly, we alter our render JSX Output to display the data.
-
-Wonderful! If you were to build and deploy this, you'd notice a very noticeable lack of a footer. The reason for this is because this is simply a sub-component. So we need to add this subcomponent to our main component. Back to *CustomCard.tsx*, we'll make a few modifications to make this work:
-
-CustomCard.tsx
-```javascript
 import { CustomModel } from '../models/CustomModel';
-import { FooterComponent } from '../../components/FooterComponent';
+import { IActivity, ISubscriptionProps } from '../../../../externals';
 
 interface ICustomCardState {
     viewReady: boolean;
@@ -296,29 +203,47 @@ interface ICustomCardState {
 interface ICustomCardProps {
     ActivityProps: IActivity;
     SubscriptionProps: ISubscriptionProps;
+    FooterTitle: string;
 }
 
 export default class CustomCard extends React.Component<ICustomCardProps, ICustomCardState> {
+    private viewName: string;
+    private templateModel: any;
+
+    private readonly _defaultOverrideValue: string = 'Default';
+
     constructor(props: ICustomCardProps) {
-        ...
+        super(props);
+
+        this.state = {
+            viewReady: false,
+            viewHtml: ''
+        };
+
+        this.viewName = 'CustomCard'
+        this.templateModel = {};
+    }
+
+    componentDidUpdate(oldProps: ICustomCardProps, oldState: ICustomCardState) {
+
+    }
+
+    componentDidMount() {
+        Akumina.Digispace.ActivityStreams.GenericHelper.GetCardView(this.viewName).then((templateHtml: string) => {
+            this.setState({
+                viewReady: true,
+                viewHtml: templateHtml
+            });
+        });
     }
 
     render() {
         if (this.state.viewReady) {
             var modelProps: CustomModel = this.ToCustomCardModel(this.props.ActivityProps);
 
-            var titleMarkup: JSX.Element[] = this.state.listData.map((item: string) => {
-                return (
-                    <React.Fragment>
-                        <div className='ia-example-lineitem'>{item}</div>
-                    </React.Fragment>
-                );
-            });
-
-            var footerMarkup = <FooterComponent FooterTitle={modelProps.FooterTitle} />
             this.templateModel = {
-                titles: titleMarkup,
-                footer: footerMarkup
+                footer: modelProps.FooterTitle,
+                contents: modelProps.Contents
             };
 
             var renderTemplate = Akumina.Digispace.ActivityStreams.GenericHelper.JSXClient(this.state.viewHtml, this.templateModel);
@@ -336,35 +261,49 @@ export default class CustomCard extends React.Component<ICustomCardProps, ICusto
         var model: CustomModel = new CustomModel();
         var footerObj: any = activity.Object.Extend['FooterTitle'];
 
+        model.Contents = activity.Object.Content;
+
         if (typeof footerObj !== 'undefined') {
-            model.FooterTitle = footerObj;
+            model.FooterTitle = this.ValidateTitleProperty(footerObj);
         }
 
         return model;
     }
+
+    private ValidateTitleProperty(titleIn: string): string {
+        if (titleIn == null) return this._defaultOverrideValue;
+
+        if (titleIn.trim() == '') return this._defaultOverrideValue;
+
+        return titleIn;
+    }
 }
 ```
 
-CustomModel.ts
+*CustomModel.ts*
 ```javascript
 export class CustomModel {
     public FooterTitle: string;
+    public Contents: string;
 
-    constructor(footerTitle: string = '') {
+    constructor(footerTitle: string = '', contents: string = '') {
+        this.Contents = contents;
         this.FooterTitle = footerTitle;
     }
 }
 ```
 
-Example Markup
+*Example Markup*
 ```html
 <div className='ia-example-container'>
     <label>Titles:</label>
     <div className='ia-example-lineitem-container'>
-        {this.templateModel.titles}
+        {this.templateModel.contents}
     </div>
     <div className='ia-footer-container'>
-        {this.templateModel.footer}
+        <div className='ia-provider-nameof'>
+            This Change Event brought to you by: {this.templateModel.footer}!
+        </div>
     </div>
 </div>
 ```
@@ -375,7 +314,7 @@ This may be a lot to take in so let's take this one step at a time. Starting wit
 
 ### CustomModel.ts
 
-We've simply defined our Model to hold a string for our FooterTitle property. We explicitly define a model class for type assurance. Not much to say about this one.
+We've defined our model to hold two properties: *Contents* and *FooterTitle*. The Contents property will be mapped to the Contents of the API Response Model. The FooterTitle property will be mapped to the key "FooterTitle" in the Extend property of the Response API Model. We've defaulted both of these values in the constructor so as not to force us to provide values when we create a new instance of this object. Optionally, you can just use object initialization notation for this if you'd prefer.
 
 ### CustomCard.tsx
 
@@ -388,6 +327,8 @@ The IActivity object holds the details of the Activity of the Change Event. The 
 * **IActivity.Object**
 
 The IActivity.Object property holds data relevant to the Change Event being surfaced to the user. This includes:
+
+![](https://akuminadownloads.blob.core.windows.net/wiki/AkuminaDev/Custom%20Card%20Tutorial/apiresponse_object.PNG)
 
 * Type
 
@@ -434,6 +375,8 @@ The final part of the response object is the Actor. The author of the change eve
 
 * **IActivity.Actor**
 
+![](https://akuminadownloads.blob.core.windows.net/wiki/AkuminaDev/Custom%20Card%20Tutorial/apiresponse_actor.PNG)
+
 * Type
 
 This defines the Author's type, whether the Author is a person, system process, etc.
@@ -464,8 +407,12 @@ Now that we have our guaranteed properties defined, we can continue with the exp
 
 ### ToCustomCardModel
 
-This is a function you will become very familiar with. As we just reviewed, the Activity Stream Widget will provide every Custom Stream Card with the two above properties. Using these properties, we can use a function, like *ToCustomCardModel*, to translate the API models into our own UI models. We're only interested in the value of our custom Extend property so that's the only transformation we're doing on our own models.
+This is a function you will become very familiar with. As we just reviewed, the Activity Stream Widget will provide every Custom Stream Card with the two above properties. Using these properties, we can use a function, like *ToCustomCardModel*, to translate the API models into our own UI models. 
+
+The API Response Model contains a wide array of data meant to be useful to a wide array of Stream Cards. It's up to us, however, as developers, to pick and choose the properties we do use. That is why we define a Model shape and use this function to transform the API Model into a UI Model.
 
 ### render
 
-We immediately switch our render output based on whether the custom card is ready to display data. In the above sample, this is determined by the custom card having retrieved its external HTML. Once we're ready to display our data, the first thing we do is make a call to *ToCustomCardModel* to transform the API data into UI Models. We then create a React Fragment for our output and return the result of our external HTML rendering logic.
+We immediately switch our render output based on whether the custom card is ready to display data. In the above sample, this is determined by the custom card having retrieved its external HTML. Once we're ready to display our data, the first thing we do is make a call to *ToCustomCardModel* to transform the API data into UI Models. Next, we populate our template model for our external HTML file and call the render process.
+
+If you use local JSX Output, remember to remove the JSXClient call and subsequent return statement and, instead, construct and return your JSX Markup instead.
