@@ -317,6 +317,10 @@ The immediate benefit of external markup is that the code and output are disjoin
 
 The cons of external markup is that, yes, this is another file to keep up with in Sharepoint and your repository, should you have one. Likewise, because the markup isn't bundled with the JS, this is another network call for the markup. Keep in mind, however, that this is only a network call on initial page load and, in the future, may be cached to further reduce network traffic. Lastly, the con of external HTML files is that no IDE, without a plugin that I am not aware of existing, will correctly parse the file contents for errors. The file will always have a .HTML extension and will be interpreted as HTML but is written and parsed as JSX markup.
 
+Should you go the route of external markup, the deployment process will deposit your Custom Card's HTML into a centralized location: Under the DigitalWorkplace/Content/Templates/ActivityStreamWidget directory:
+
+![](https://akuminadownloads.blob.core.windows.net/wiki/AkuminaDev/Custom%20Card%20Tutorial/newview.PNG)
+
 **JSX Output**
 
 The immediate, and obvious, benefit of pure JSX Output is the IDE support for error checking before and during compilation. Because the React framework is installed and the file has the appropriate file extension, Visual Studio Code will accurately display errors. Secondly, the ease of use becomes a factor. One might leverage this by writing the code first in JSX and then moving it over to the external file. However, that does introduce another layer of possible human error or subtle nuance. Whether that nuance is scoping or timing, it may still exist and should be noted as a possible concern. Lastly, having your UI Markup bundled with the JS Code means you're only maintaining one file.

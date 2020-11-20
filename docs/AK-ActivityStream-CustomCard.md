@@ -139,7 +139,13 @@ A friendly, human readable explanation of what this property is
 
 Self explanatory. What value should this field default to when not provided?
 
-We'll create a new property with the following values:
+To the right of the Extend field, you'll notice a button. Click on it and you'll be able to map a Sharepoint Column to the value of the Extend property. For instance, Subscriptions are only so dynamic and can only support so many properties being mapped. However, if you have a property you want mapped that doesn't fit into one of the provided fields for the Sharepoint Subscription, you can also use the Extend object to ensure the mapping is secured:
+
+![](https://akuminadownloads.blob.core.windows.net/wiki/AkuminaDev/Custom%20Card%20Tutorial/extend_mapping.PNG)
+
+You can create as many Extend properties as you wish. However, remember that the size of the Extend object will impact network performance, so try to be concise!
+
+For the sake of our example, we'll create a new property with the following values:
 
 ```
 Name = "FooterTitle"
