@@ -508,10 +508,15 @@ The ones we are interested are defined below:
 
 ***
 # SharePoint CSS theming
-For CSS files, SharePoint will download the contents of the CSS file and append it as a **style** tag under the **link** tag. This has performance mplications and can break styles if the CSS file is very large. For the CSS link, add this attribute to the link to prevent this: 
+For CSS files, SharePoint will download the contents of the CSS file and append it as a **style** tag under the **link** tag. This has performance implications and can break styles if the CSS file is very large. For the CSS link, add this attribute to the link to prevent this: 
 
     ms-design-css-conversion="no" 
 
-Example:
+For example, in a classic master page, the *SharePoint:CssRegistration* tag shown below:
+
+    <!--MS:<SharePoint:CssRegistration ID="CssRegistration1" Name="&#60;% $SPUrl:{{SiteUrl}}/Style Library/DigitalWorkPlace/css/digitalworkplace.css %&#62;" runat="server">-->
+    <!--ME:</SharePoint:CssRegistration>-->
+
+Becomes a standard *link* tag:
 
     <link ms-design-css-conversion="no" rel="stylesheet" type="text/css" href="{{SiteUrl}}/Style Library/DigitalWorkPlace/css/digitalworkplace.css"/>
