@@ -527,3 +527,19 @@ For example, in a classic master page, the *SharePoint:CssRegistration* tag show
 Becomes a standard *link* tag:
 
     <link ms-design-css-conversion="no" rel="stylesheet" type="text/css" href="{{SiteUrl}}/Style Library/DigitalWorkPlace/css/digitalworkplace.css"/>
+
+***
+
+# Measuring Azure App Service Latency
+When looking at performance, it is important to measure the network latency from a given user location to where the Akumina App Manager is located. We can then correlate this value with what we see in the site.
+There are online services that can assist with this – a few are listed below.
+
+## Samples
+
+A sample report from http://www.azurespeed.com/Azure/Latency, measuring the latency from the user location to the East US 2 data center:
+
+![azure latency](https://akumina.azureedge.net/wiki/training/images/performance/azure-latency.png)
+ 
+A sample report from https://azurespeedtest.azurewebsites.net/
+
+![azure speed](https://akumina.azureedge.net/wiki/training/images/performance/azure-speed.png)
