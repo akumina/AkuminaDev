@@ -11,6 +11,13 @@ We have taken the time to outline every list that gets queried in the page life 
 
 ***
 
+# Performance concepts
+There are 2 types of page loads:
+* A **cold load** is when the page is loaded without any data or files being in cache, coming in cold with the browser and Akumina cache both cleared. This is the least performant load where all data calls are made and the times for file loads can be properly seen.
+* A **warm load** is another load after the page and site have been accessed. The widget caches will have data in them, so limited data calls will be made. In addition, any CSS and JS files will have been cached in the browser, so file load times are limited.
+
+***
+
 # Debugging the current performance of the framework
 In order to determine which direction to go in terms of tweaking the page lifecycle, you first must determine which steps may be acting up, or not as performant as expected.  These timings can vary based on tenant, site collection, time of day, o365 performance, internet connection, etc..
 
