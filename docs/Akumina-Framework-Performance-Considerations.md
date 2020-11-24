@@ -530,6 +530,13 @@ Becomes a standard *link* tag:
 
 ***
 
+# Measuring API calls
+In the Akumina Debugger panel, the number of times the Akumina API is called is recorded in the Cache tab. You can see two values **SP Call Count** and **Connector Call Count**. These are influenced by the number of widgets and other calls to SharePoint, and will change based on a warm or cold load. It is recommended to get these numbers as low as possible.
+
+![debugger cache](https://akumina.azureedge.net/wiki/training/images/performance/debugger-cache.png)
+
+***
+
 # Measuring Azure App Service Latency
 When looking at performance, it is important to measure the network latency from a given user location to where the Akumina App Manager is located. We can then correlate this value with what we see in the site.
 There are online services that can assist with this – a few are listed below.
