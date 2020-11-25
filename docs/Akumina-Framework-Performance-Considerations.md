@@ -530,6 +530,51 @@ Becomes a standard *link* tag:
 
 ***
 
+# Performance Data Template
+The following represents a template for collecting information related to performance in your Akumina site. This will help identify areas of improvement.
+
+## Global Data template
+
+| Property | Value |
+| -- | -- |
+| SharePoint version: | *Office365 / On Premise* |
+| SharePoint experience: | *Classic / Modern* |
+| App Manager environment: | *VM / App Service / Other* |
+| Azure App/VM location: | *Specify Region* |
+| Tenant location: | *Specify Region* |
+| CDN: | *Yes / No* |
+| JS file location in master | *Top / Bottom / NA* |
+| Framework version:  | |
+| App Manager Version: | |
+| Azure AD enabled? | *Yes / No* |
+
+## Page Data template
+
+> Repeat this as needed
+
+| Property | Value | |
+| -- | -------------- | -------------- | 
+| Page URL: | | 
+| Date time accessed: | | |
+| Client location: | *East US* | |
+| Latency to Azure data center: | | |
+|  | Cold load | Warm load |
+| Resources transmitted | | |
+| Resources total | | |
+| Time in network panel | | |
+| SPRequestDuration (in network panel) | | |	
+| Process Query calls | | |
+| 'Items' calls | | |
+| SP Call Count | | |
+| Connector Call Count | | |
+| Framework load time | | |
+| Total Browser | | |
+| Time spent connecting | | |
+| Total Render | | |
+| Yellow or red steps | | |
+
+***
+
 # Measuring resources
 The browser's **Network** panel in the developer tools is  great resource for measuring performance. From here, we can see things such as:
 * Items that are large in file size
