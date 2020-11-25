@@ -550,6 +550,8 @@ Below is an example of the network panel with callouts for important values:
 | 4 | The time to finish loading the page |
 | 5 | Allows a filter of the items in the network panel grid |
 
+In addition to recorrding the values for 1 - 4, we want to filter for **ProcessQuery** and **Items** and record the numer for each. These represent API calls to SharePoint.
+
 ***
 
 # Measuring API calls
