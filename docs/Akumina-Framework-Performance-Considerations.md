@@ -530,6 +530,28 @@ Becomes a standard *link* tag:
 
 ***
 
+# Measuring resources
+The browser's **Network** panel in the developer tools is  great resource for measuring performance. From here, we can see things such as:
+* Items that are large in file size
+* Items that are slow
+* Total requests for the page
+* Total size for the page
+* API calls to SharePoint
+
+Below is an example of the network panel with callouts for important values:
+
+![network panel](https://akumina.azureedge.net/wiki/training/images/performance/network-panel.png)
+
+| Footnote | Description |
+| -- | -- |
+| 1 | The total number of requests made for the page |
+| 2 | The size of resources transferred |
+| 3 | The total size of resources on the page |
+| 4 | The time to finish loading the page |
+| 5 | Allows a filter of the items in the network panel grid |
+
+***
+
 # Measuring API calls
 In the Akumina Debugger panel, the number of times the Akumina API is called is recorded in the Cache tab. You can see two values **SP Call Count** and **Connector Call Count**. These are influenced by the number of widgets and other calls to SharePoint, and will change based on a warm or cold load. It is recommended to get these numbers as low as possible.
 
