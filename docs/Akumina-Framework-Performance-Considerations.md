@@ -597,12 +597,28 @@ Below is an example of the network panel with callouts for important values:
 
 In addition to recorrding the values for 1 - 4, we want to filter for **ProcessQuery** and **Items** and record the numer for each. These represent API calls to SharePoint.
 
+The following table lists common issues and corrective actions:
+
+| Item | Action |
+| -- | -- |
+| Large image sizes (> 250kb) | Optimize or otherwise reduce the size of the images |
+| 301 or 302 status | Check the path to the resource and correct if possible. Is it the correct view URL for the item (it could be the internal SharePoint URL such as /:u:/r/sites/etc) |
+| 401 status | No access to the item - Is the item checked in or published? |
+| 404 status | Missing item - is the item present, and if so, is it published, as users with lower permissions may not be able to view it in an unpublished state |
+
 ***
 
 # Measuring API calls
 In the Akumina Debugger panel, the number of times the Akumina API is called is recorded in the Cache tab. You can see two values **SP Call Count** and **Connector Call Count**. These are influenced by the number of widgets and other calls to SharePoint, and will change based on a warm or cold load. It is recommended to get these numbers as low as possible.
 
 ![debugger cache](https://akumina.azureedge.net/wiki/training/images/performance/debugger-cache.png)
+
+The following table lists common issues and corrective actions:
+
+| Item | Action |
+| -- | -- |
+| Large **SP Call Count** and **Connector Call Count** value  | Remove some widgets, or make them lazy load as needed. Example - Load a typeahead search only when the user clicks into the search box |
+| No or small difference in **SP Call Count** and **Connector Call Count** values between cold and warm load | Check the widgets on the page have cache values |
 
 ***
 
