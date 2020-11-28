@@ -575,6 +575,17 @@ The following represents a template for collecting information related to perfor
 
 ***
 
+# Measuring a baseline
+When measuring the performance of a site, it is important to gather a baseline of the site. Using the above template, capture the page metrics using a blank Akumina page wihout and interior content (essentially, the header and footer only). Any changes or optimizations to the resources and widgets will impact all pages in the site.
+
+The following table lists common issues and corrective actions:
+
+| Item | Action |
+| -- | -- |
+| Inefficient baseline | See "Measuring" sections - it is recommended to optimize the baseline as much as possible |
+
+***
+
 # Measuring resources
 The browser's **Network** panel in the developer tools is  great resource for measuring performance. From here, we can see things such as:
 * Items that are large in file size
@@ -595,7 +606,7 @@ Below is an example of the network panel with callouts for important values:
 | 4 | The time to finish loading the page |
 | 5 | Allows a filter of the items in the network panel grid |
 
-In addition to recorrding the values for 1 - 4, we want to filter for **ProcessQuery** and **Items** and record the numer for each. These represent API calls to SharePoint.
+In addition to recorrding the values for 1 - 4, we want to filter for **ProcessQuery** and **Items** and record the number for each. These represent API calls to SharePoint.
 
 The following table lists common issues and corrective actions:
 
@@ -605,6 +616,8 @@ The following table lists common issues and corrective actions:
 | 301 or 302 status | Check the path to the resource and correct if possible. Is it the correct view URL for the item (it could be the internal SharePoint URL such as /:u:/r/sites/etc) |
 | 401 status | No access to the item - Is the item checked in or published? |
 | 404 status | Missing item - is the item present, and if so, is it published, as users with lower permissions may not be able to view it in an unpublished state |
+| High number of ProcessQuery calls |  |
+| High number of **Items** calls |  |
 
 ***
 
@@ -635,3 +648,11 @@ A sample report from http://www.azurespeed.com/Azure/Latency, measuring the late
 A sample report from https://azurespeedtest.azurewebsites.net/
 
 ![azure speed](https://akumina.azureedge.net/wiki/training/images/performance/azure-speed.png)
+
+The following table lists common issues and corrective actions:
+
+| Item | Action |
+| -- | -- |
+| Slow latency | Check the speed of the internet connection the client is using. Also, is the physical distance between the client and the Azure region great, ie Accessing a site in Europe from North America. Depending on the site traffic, additional regions may be an option - see "Deployment using Multi Region" at https://community.akumina.com/knowledge-base/appmanager-deployment-options/ 
+
+
