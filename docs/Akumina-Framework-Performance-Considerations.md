@@ -547,6 +547,16 @@ The following represents a template for collecting information related to perfor
 | Framework version:  | |
 | App Manager Version: | |
 | Azure AD enabled? | *Yes / No* |
+| CSS references | *SharePoint / link tag* |
+
+The following table lists common issues and corrective actions:
+
+| Item | Action |
+| -- | -- |
+| Azure App/VM location and tenant location different | Where possible, this should be the same to reduce latency |
+| No CDN usage | Recommend the use of a CDN - See "CDN" section in this article |
+| JS file location at top | Alter for optimal loading - See section "Script file ordering in the Master Page" section in this article |
+| CSS file contents loaded in style tags | Alter for optimal loading - See section "SharePoint CSS theming" section in this article |
 
 ## Page Data template
 
@@ -572,6 +582,8 @@ The following represents a template for collecting information related to perfor
 | Time spent connecting | | |
 | Total Render | | |
 | Yellow or red steps | | |
+
+See the following sections for more information on common issues and corrective actions.
 
 ***
 
@@ -612,6 +624,9 @@ The following table lists common issues and corrective actions:
 
 | Item | Action |
 | -- | -- |
+| Large Resources transmitted / total | Reduce the overal page size by eliminating widgets. Also, you can reduce the amount loaded at one time by lazy loading widgets |
+| Large number of JS files | Consolidate by combining if possible, or can some be lazy loaded |
+| Large number of CSS files | Consolidate by combining if possible |
 | Large image sizes (> 250kb) | Optimize or otherwise reduce the size of the images |
 | 301 or 302 status | Check the path to the resource and correct if possible. Is it the correct view URL for the item (it could be the internal SharePoint URL such as /:u:/r/sites/etc) |
 | 401 status | No access to the item - Is the item checked in or published? |
@@ -653,6 +668,4 @@ The following table lists common issues and corrective actions:
 
 | Item | Action |
 | -- | -- |
-| Slow latency | Check the speed of the internet connection the client is using. Also, is the physical distance between the client and the Azure region great, ie Accessing a site in Europe from North America. Depending on the site traffic, additional regions may be an option - see "Deployment using Multi Region" at https://community.akumina.com/knowledge-base/appmanager-deployment-options/ 
-
-
+| Slow latency | Check the speed of the internet connection the client is using. Also, is the physical distance between the client and the Azure region great, ie Accessing a site in Europe from North America. Depending on the site traffic, additional regions may be an option - see "Deployment using Multi Region" at https://community.akumina.com/knowledge-base/appmanager-deployment-options/ |
