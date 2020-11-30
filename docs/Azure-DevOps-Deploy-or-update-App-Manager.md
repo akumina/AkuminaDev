@@ -1,5 +1,3 @@
-# Azure-DevOps: Deploy or update App Manager
-
 ## Applies to
 All versions of Akumina
 
