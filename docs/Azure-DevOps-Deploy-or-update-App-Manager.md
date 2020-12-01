@@ -93,3 +93,4 @@ Once we have the App Manager files in a build artifact, our next step is to upda
 References:
 * [Site Deployer: Continuous Site Package Deployment via a console app](https://github.com/akumina/AkuminaTraining/wiki/Site-Deployer:-Continuous-Site-Package-Deployment-via-a-console-app)
 * [Site Deployer Overview](https://akumina.github.io/docs/Site-Deployer-Overview)
+* [Copy Files task](https://docs.microsoft.com/en-us/azure/devops/pipelines/tasks/utility/copy-files)
