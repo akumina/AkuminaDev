@@ -37,8 +37,6 @@ Select TFVC as the source, and then enter in the TFS path:
 
 In the Build definition, click the plus icon (**+**) to add under **Agent job 1**. Then search for  and add **Copy files** from the list. Add 3 **Copy files** in total. Also, add one **Publish build artifacts** task at the end.
 
-TBD - image
-
 ## AppManager Version files
 Our first **Copy files** task copies the AppManager version files. In this task we use the following settings:
 
@@ -93,4 +91,5 @@ Once we have the App Manager files in a build artifact, our next step is to upda
 References:
 * [Site Deployer: Continuous Site Package Deployment via a console app](https://github.com/akumina/AkuminaTraining/wiki/Site-Deployer:-Continuous-Site-Package-Deployment-via-a-console-app)
 * [Site Deployer Overview](https://akumina.github.io/docs/Site-Deployer-Overview)
-* [Copy Files task](https://docs.microsoft.com/en-us/azure/devops/pipelines/tasks/utility/copy-files)
+* [Azure DevOps - Copy Files task](https://docs.microsoft.com/en-us/azure/devops/pipelines/tasks/utility/copy-files)
+* [Azure DevOps - Artifacts in Azure Pipelines](https://docs.microsoft.com/en-us/azure/devops/pipelines/artifacts/build-artifacts)
