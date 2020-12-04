@@ -53,9 +53,8 @@ id: Akumina-Framework-5.0.0.0-Overview
 
 ## AppManager Functionality
 *	Anchor Items:
-    *	Added a new AppManager Dashboard Manager management app to enable a site-specific dashboard that provides user defined statistical and analytics reporting with updated links to personalized information for enhanced usability
-![](https://akuminadownloads.blob.core.windows.net/wiki/AkuminaDev/Release5.0/dashboard1.png)
- 
+    *   A new AppManager Dashboard page allows AppManager users the ability to create a personalized user defined reporting and analytics dashboard specific to each AppManager site
+
     *	Locale formatting allows for a personalized user experience providing the ability for the user to select their AppManager color preference for theme setting, and control the date and time format display in AppManager (Date Format – EU date format DD/MM/YYYY; US MM/DD/YYYY and Time – 12 hour time (12:00 am to 11:00 pm); military time (0000 to 2300))
 ![](https://akuminadownloads.blob.core.windows.net/wiki/AkuminaDev/Release5.0/locale1.png)
   
@@ -79,6 +78,9 @@ id: Akumina-Framework-5.0.0.0-Overview
 *	Added a new Activity Stream User Manager content app to define the widgets to display, the order of the widgets and if they are expanded on the Activity Stream 
 ![](https://akuminadownloads.blob.core.windows.net/wiki/AkuminaDev/Release5.0/appmgr7.jpg)
 *	Added a new Step Planner Management App to establish and maintain customizable checklist functionality for monitoring and driving a completion of tasks
+    *	Added a new AppManager Dashboard Manager management app to enable a site-specific dashboard that provides user defined statistical and analytics reporting with updated links to personalized information for enhanced usability
+![](https://akuminadownloads.blob.core.windows.net/wiki/AkuminaDev/Release5.0/dashboard1.png)
+
 *	Added a new Social tab to enable the content app comment and reaction rules used for displaying content in the Activity Stream and Commenting system 
 ![](https://akuminadownloads.blob.core.windows.net/wiki/AkuminaDev/Release5.0/socialtab1.png)
  
@@ -112,5 +114,6 @@ id: Akumina-Framework-5.0.0.0-Overview
 *	Remove the Verb from the REST API’s
 *	Build Akumina 3rd Party connectors for use with Activity Stream
 *	Multi-tenancy CORS support
+*   Supporting new Safari Flow ITP
 *	Remove and refactor the Session State Variables – author, forms, actionresults
 *	Additional developer information can be found on https://akumina.github.io
