@@ -422,3 +422,88 @@ The API Response Model contains a wide array of data meant to be useful to a wid
 We immediately switch our render output based on whether the custom card is ready to display data. In the above sample, this is determined by the custom card having retrieved its external HTML. Once we're ready to display our data, the first thing we do is make a call to *ToCustomCardModel* to transform the API data into UI Models. Next, we populate our template model for our external HTML file and call the render process.
 
 If you use local JSX Output, remember to remove the JSXClient call and subsequent return statement and, instead, construct and return your JSX Markup instead.
+
+
+## Rollup Functionality
+
+You might've noticed there's a checkbox available on the Event Subscription page mentioning rollups that we haven't touched yet. This option notifies the backend system that this Event Subscription will watch an entire Sharepoint List for change events instead of individual line items in the list.
+
+Consider the following scenario: I have an Event Subscription pointed towards the Tutorial1_AK list. The Rollup option is not checked. I have another Event Subscription pointed towards the Tutorial2_AK list. The Rollup option for this one has been checked.
+When I make a change in Tutorial1_AK, a change event is listed for the line item in the list that changed. Each line item changed will generate a new change event in the Activity Stream. Conversely, any change on any line item in Tutorial2_AK will generate a single change event in the Activity Stream.
+
+Because this change event can cover 1 to n items, where n is a ridiculously large number, we need to alter our approach to creating the Stream Card.
+
+
+### Starting Out
+
+Picking up where we left off, we'll set out to accomplish the following:
+
+* Understand the Rollup Activity Type
+
+* Understand the stock Activity Types that come with the 5.0 Activity Stream experience
+
+* Explore our options
+
+Navigate to App Manager, then to your Activity Stream Management App, and begin creating a new Sharepoint Event Subscription. This time, check the box asking if you'd like Rollups. Scroll farther down the page to the column mapping section and take note of the Activity Type select field. It should've changed to **Rollup**. Towards the bottom of the column mapping section of the page, you'll notice two extend properties: **widgetinstanceid** and **listname**. The listname value should be pre-populated with the target list of the Subscription itself.
+
+**NOTE**: It is strongly advised not to set the Event Subscription as Multi-Lingual.
+
+The stock Rollup Activity Type has an extend property named **widgetinstanceid** because of the nature of the Rollup functionality. The entire Sharepoint List is being watched for change events, however, the individual change events that occurred in the list are not captured in the Rollup implementation. The Change Event from the Rollup implementation is simply a notification that a change has occurred on one or more line items in the list.
+For this reason, Akumina also launches the 5.0 Activity Stream experience with three widgets available to demonstrate the functionality as well as a stock card. The Widgets are:
+
+* BannerWidget
+
+* FAQWidget
+
+* CuratedWidget
+
+Each of these widgets are responsible for showing multiple sets of data at once. This is the kind of implementation that would be used for a Rollup experience: To show the updated contents of the list - many items readily available at once.
+
+To start this off, we'll create a new Banner List. In App Manager, go to the Management Tab, then go to Widget Manager. Find the **Banner Widget** in the list and click on the Instances button. Click on Create New Instance to be navigated to the next screen. A modal should appear asking you to point to your desired list. Click on the option to create a new list with the appropriate content type. Name the List whatever you'd like. For this example, we'll refer to it as simply Banner_AK.
+In the upper-right corner, hover over your profile picture and select "Settings". Click on the "Content Settings" button. On this page, create a new Content App for the Banner_AK list we just created. Enter your name, select your icon, change the Type to "Slider", and make sure you chose your correct list. Click create and we're finished for this part of the configuration.
+
+### Widgets, Widgets, Widgets
+
+In App Manager, go to the Management Tab, then go to Widget Manager. Find the **Banner Widget** in the list and click on the Instances button. If one doesn't already exist, create a new instance of the Banner Widget. The name and description can be set to whatever you desire and the properties can be left as default. Don't forget to select your view! When finished, create the instance to be sent back to the instance display screen. Copy the Widget Instance ID of your desired instance.
+
+Back to the Activity Stream Management App, in our new Event Subscription checked as a Rollup using the Rollup Activity Type, scroll down to the extend properties and enter your widget instance ID into the text field. This value **must be wrapped in double quotes**". Create your Subscription and wait for the deployment process to finish.
+
+Once fully deployed, navigate to the Content App you created previously. Add a few entries into the Banner_AK list, then make a few edits. These changes will propagate up to the backend system and create a change event. Navigate back to the Activity Stream page. If you did not make your Subscription required, be sure to activate the Subscription through the Subscription Configuration menu in the MeBar Widget.
+
+Once the designated polling time has passed, you might be shocked to see that the Rollup event has already appeared in the Stream. The reason for this is the **RollupCard** stream card that ships with the Activity Stream Experience.
+
+
+### Back to the Code: Part 2
+
+Surprisingly, the implementation of the RollupCard is very similar to a normal Custom Stream Card. The difference, however, is in the model mapping:
+
+```javascript
+    ToRollupItem(activity: IActivity): RollupModel {
+        var rollupItem: RollupModel = new RollupModel();
+        rollupItem.WidgetInstanceId = activity.Object.Extend['widgetinstanceid'];
+        rollupItem.ListName = activity.Object.Extend['listname'];
+
+        // Register a timeout to render child widget
+        if (this.subWidgetDebounce !== null) clearTimeout(this.subWidgetDebounce);
+        this.subWidgetDebounce = setTimeout(() => {
+            var widgetProps = {
+                listname: rollupItem.ListName
+            };
+            var props = [{
+                widgetId: rollupItem.WidgetInstanceId,
+                widgetProps: JSON.stringify(widgetProps)
+            }];
+            var widgetManager = new Akumina.Digispace.Data.WidgetManager();
+            widgetManager.InitializeChildWidgetsWithOverride([rollupItem.WidgetInstanceId], null, props, 'view');
+        }, 2000);
+
+
+        return rollupItem;
+    }
+```
+
+Let's review the code. First, we begin by reading in the extend properties. Next, we implement a debounce timeout just in case we run into timing issues and multiple concurrent renders. In the timeout, all we do is create the necessary properties to override the chosen widget's properties and then create a new instance of the widget on the page. It's as simple as that.
+
+The Rollup Card in this scenario is simply a mediator between the Activity Stream front-end implementation and the specific widget tasked with surfacing the data to the user. Much in the same way StreamCards_AK can be seen as a mediator or a mapping model. The Banner Widget is instantiated pointing to the List defined on the Event Subscription. The Banner Widget's sole purpose is to display data from a chosen list with the appropriate Content Type.
+
+For this reason, a custom Rollup Card may also require the use of another widget tasked with surfacing that specific data, or data in general. For more information on creating traditional Akumina Widgets, check out the [Akumina Widgets](/docs/Akumina-Widgets-Overview) page. If React if more your style, the [React Widgets](/docs/Akumina-React-Widgets) page is where you should be.

@@ -49,6 +49,7 @@
     "Akumina Widgets": [
       "Akumina-Widgets-Overview",
       "Akumina-Widgets-Build-New",
+      "AK-WidgetViews-ConfigProps",
       "Akumina-React-Widgets",
       "Akumina-Widget-Callbacks",
       "Akumina-Widget-RenderChildWidgets"

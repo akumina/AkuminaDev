@@ -128,7 +128,33 @@ The format of the file is listed below with default naming convention:
                     }
                 ]
             }
-        ]
+        ],
+        "RailModel": { // See below for details
+            "RailType": "3",
+            "RailConfig": {
+                "leftRailWidth": "3",
+                "rightRailWidth": "3",
+                "centerZoneWidth": "6"
+            },
+            "Widgets": [
+                {
+                    "rail": "left",
+                    "id": "c7269a1c-4782-48b2-d95c-b006101268de"
+                },
+                {
+                    "rail": "right",
+                    "id": "fae7328c-b701-179c-f00e-40fb977182af"
+                }
+            ],
+            "cssClasses": [
+                {
+                    "rail": "centerfocus", 
+                    "leftcolumn" : "columns medium-12 large-3 left-column",
+                    "rightcolumn": "columns medium-12 large-3 right-column",
+                    "centercolumn": "columns medium-12 large-6 center-column"
+                }
+            ]
+        }
     },
     "IsLegacyMode": false //Denotes whether site is 4.1 or 4.5, more information below
 }
@@ -138,7 +164,7 @@ The format of the file is listed below with default naming convention:
 
 There are certain properties that must conform to a standard. Below lists these properties and a definition of their properties as well as a list of possible values:
 
-* LayoutID - Possible values:
+* **LayoutID - Possible values**:
 ```json
 [1] { "1 Column" },
 [2] { "2 Column" },
@@ -168,6 +194,59 @@ It's important to pay special attention to the terminology being used for the vi
 ![](https://akuminadownloads.blob.core.windows.net/wiki/AkuminaDev/containerzoneexample.PNG)
 
 The widgets are all contained in the same Container/Row. The Container/Row has 2 Zones/Columns. In the above example, Important Dates and Quick Links Widgets are contained in the only Container/Row and in the 2nd Zone/Column. The News Widget is contained in the only ContainerRow and in the 1st Zone/Column
+
+* **Rail Layout**
+
+The Rail Layout properties are a recent addition to the Virtual Page Experience. By setting the Rail Layout Properties, one is able to more specifically control the layout of the page, the style of the page, and what widgets can be placed in which areas of the page. Let's review the Rail Layout object:
+
+```json
+"RailModel": {
+            "RailType": "3",
+            "RailConfig": {
+                "leftRailWidth": "3",
+                "rightRailWidth": "3",
+                "centerZoneWidth": "6"
+            },
+            "Widgets": [
+                {
+                    "rail": "left",
+                    "id": "c7269a1c-4782-48b2-d95c-b006101268de"
+                },
+                {
+                    "rail": "right",
+                    "id": "fae7328c-b701-179c-f00e-40fb977182af"
+                }
+            ],
+            "cssClasses": [
+                {
+                    "rail": "centerfocus", 
+                    "leftcolumn" : "columns medium-12 large-3 activity-stream-left-column",
+                    "rightcolumn": "columns medium-12 large-3 activity-stream-right-column",
+                    "centercolumn": "columns medium-12 large-6 activity-stream-center-column"
+                }
+            ]
+        }
+```
+
+* Rail Type
+
+This enum value controls the Rail Layout type associated with the page.
+
+1 = left focus
+2 = right focus
+3 = center focus
+
+* Rail Config
+
+Similar to the Bootstrap 12 column page layout, setting the properties within this object will allow you to control the width of each of the 3 columns
+
+* Widgets
+
+This array of objects contains the widgets which can be placed into each designated column.
+
+* CSS Classes
+
+This array contains the css classes to be applied to each of the column containers. 
 
 ## Generator Process
 
