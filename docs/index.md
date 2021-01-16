@@ -3,20 +3,12 @@ id: "index"
 title: "Akumina Types"
 sidebar_label: "Globals"
 ---
-### Akumina types version 4.5.0 hosted at [DefinitelyTyped: The repository for high quality TypeScript type definitions](https://github.com/DefinitelyTyped/DefinitelyTyped)
+### Akumina Types hosted at [DefinitelyTyped: The repository for high quality TypeScript type definitions](https://github.com/DefinitelyTyped/DefinitelyTyped)
 
-### Modules
+### Version 5.0
 
-* [Akumina](modules/akumina.md)
+[Akumina Framework Version 5.0 Javascript API Documentation](api/5-0-0/index.md)
 
-### Classes
+### Version 4.5
 
-* [Templates](classes/templates.md)
-
-### Interfaces
-
-* [IConstants](interfaces/iconstants.md)
-* [IGetListRequest](interfaces/igetlistrequest.md)
-* [ILanguageRequest](interfaces/ilanguagerequest.md)
-* [IPageWidget](interfaces/ipagewidget.md)
-* [ISavePageWidgetRequest](interfaces/isavepagewidgetrequest.md)
+[Akumina Framework Version 4.5 Javascript API Documentation](api/4-5-0/index.md)
