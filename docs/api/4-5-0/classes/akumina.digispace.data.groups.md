@@ -48,7 +48,10 @@ Name | Type |
                     var todayEnd = today.endOf('day').toISOString();
                     var GraphURL = "https://graph.microsoft.com/v1.0/me/calendarview";
                     var todayGraphApiBaseUrl = GraphURL + "?startdatetime=" + todayStart + "&enddatetime=" + todayEnd + "&$top=" + _cur.properties.MaxItems + "&$select=subject,start,end";
-                    new Akumina.Digispace.Data.Groups().GetGraphDataWithFullUrl(todayGraphApiBaseUrl).done(function(response) {
+                    var cacheKey = "/users/" + username + "/" + prop;
+                    cacheKeyObject = { key: cacheKey, dependencies: [] };
+
+                    new Akumina.Digispace.Data.Groups().GetGraphDataWithFullUrl(todayGraphApiBaseUrl, cacheKeyObject).done(function(response) {
                         data.Title = _cur.properties.Title;
                         var maxCount = _cur.properties.maxitems;
                         if (response.value.length > 0) {
