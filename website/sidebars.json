@@ -52,7 +52,8 @@
       "AK-WidgetViews-ConfigProps",
       "Akumina-React-Widgets",
       "Akumina-Widget-Callbacks",
-      "Akumina-Widget-RenderChildWidgets"
+      "Akumina-Widget-RenderChildWidgets",
+      "AK-WIdgets-VendorPackages"
     ],
     "Site Deployer": [
       "Site-Deployer-Overview", 
