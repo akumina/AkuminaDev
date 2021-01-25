@@ -7,7 +7,7 @@ title: Akumina Framework Version 5-0 FAQ & Nuances
 
 The purpose of this article is to provide expanded information, nuances, one-offs, gotcha's, etc, into the various functional components of the Akumina Version 5.0 Front-end and Back-end Framework. This is a general purpose article containing information for the 5.0 Version of the framework. 
 
-### Akumina.Digispace.ConfigurationContext.UseEncryption
+### [Akumina.Digispace.ConfigurationContext.UseEncryption](/docs/api/5-0-0/classes/akumina.digispace.configurationcontext#static-useencryption)
 
 The EncryptData / DecryptData functions call the /api/connector endpoints only when **Akumina.Digispace.ConfigurationContext.UseEncryption** is set to true.
 
