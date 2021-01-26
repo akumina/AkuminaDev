@@ -17,6 +17,7 @@ The ConfigurationContext object is cached in App Manager. The cache is only upda
 *	PageTypes_AK
 *	PageLayouts_AK
 *	ContainerLayouts_AK
+* TaxonomyPageRoutes_AK
 *	Contents of en-us.js (from Style Library)
 *	AppId of the Akumina app from the app catalog (used in InterchangeLoginURL)
 
