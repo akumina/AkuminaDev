@@ -92,6 +92,8 @@ Your new Virtual Page, and its contents, should now be displayed on your Sharepo
 
 ## JSON File Format
 
+**NOTE**: For information regarding Page Versions, please click [here](/docs/AK-Virtual-Page-Builder.html#page-versions).
+
 The structure of the JSON File is clearly defined and all properties are mandatory. It is possible to generate custom mapping between the JSON File Model and the Sharepoint Model. Please contact an Akumina representative for assistance in custom aliasing.
 The format of the file is listed below with default naming convention:
 
@@ -313,6 +315,123 @@ With the current implementation, certain properties have to be entered in manual
     * IsLegacyMode denotes that you are deploying to an Akumina Sharepoint site of version 4.5.0.0 or earlier. There are certain List Columns that are not present in earlier versions that will break the deploy process if an attempt is made to populate non-existant columns.
     * In the user experience, there is no prompt to choose whether the flag is set or not. The user must manually make this change.
     * The default value for this property is false.
+
+## Page Versions
+
+Virtual Pages now support Page Versions. What are Page Versions? Thankfully, the name is quite self-explanatory: A Page Version is a version of the Virtual Page meant to be visible under certain criteria. A single Virtual Page can have multiple Page Versions declared. However, only **one** Page Version can be set to Active per PageVersionPriorityGroup. Additionally, this new change to the Virtual Page JSON Format is backwards compatible; so there is no need to upgrade all of your previous Virtual Page implementations. If the older version of the Virtual Page JSON is detected, the system will create a default Page Version for the page.
+
+Below is an example of a Virtual Page definition that has Page Versions defined:
+
+**VirtualPage.json**
+```json
+{
+"Name": "VersionTest",
+"Id": "0de513a1-db3e-4a8a-91b0-800c66f643rs",
+"Type": "VersionTest",
+"List": "GenericPages_AK",
+"AdditionalSelectColumns": "",
+"Url": "VersionTest.aspx",
+"Personas": [
+  "All"
+],
+"IsLegacyMode": false,
+"PageVersions": [
+  {
+    "Title": "Default Version for VersionTest", // Title of page
+    "PageVersionId": "0de513a1-db3e-4a8a-91b0-800c66f643rs", // ID of Page Version, must be unique!
+    "PageVersionName": "Default Version for VersionTest", // Name of Page Version
+    "PageVersionDescription": "",
+    "PageVersionPriorityGroup": "All", // The group in which this Page Version exists, defaults to "All"
+    "IsActive": "true",
+    "VersionProperties": "",
+    "PageDefinition": {
+      "Containers": [
+        {
+          "id": "container1",
+          "layoutid": "1 Column",
+          "zones": [
+            {
+              "id": "zone1",
+              "widgets": [
+                {
+                  "Title": "News-Blogs",
+                  "WidgetInstanceId": "34978771-5974-45ba-97fb-5fea05e3bbb5",
+                  "DisplayOrder": "0",
+                  "Properties": [],
+                  "Name": "BlogsWidget",
+                  "Icon": "fa fa-list-ul",
+                  "Description": "BlogsWidget Desc",
+                  "Options": "",
+                  "Grid": ""
+                },
+                {
+                  "Title": "HTML Content Widget - Logout",
+                  "WidgetInstanceId": "{NewGuid}",
+                  "DisplayOrder": "0",
+                  "Properties": [
+                    {
+                      "name": "contentitemid",
+                      "value": "1"
+                    },
+                    {
+                      "name": "listname",
+                      "value": "GenericHTML_AK"
+                    },
+                    {
+                      "name": "isroot",
+                      "value": true
+                    },
+                    {
+                      "name": "sitecollectionurl",
+                      "value": ""
+                    },
+                    {
+                      "name": "imagegallerysitecollectionurl",
+                      "value": ""
+                    },
+                    {
+                      "name": "enablelanguagefallback",
+                      "value": false
+                    },
+                    {
+                      "name": "contentitemakid",
+                      "value": "1"
+                    },
+                    {
+                      "name": "displaytemplateurl",
+                      "value": "/{AssetLibraryName}/DigitalWorkPlace/Content/Templates/HTMLContentWidget/default.html"
+                    },
+                    {
+                      "name": "widgetdescription",
+                      "value": "Displays content editing capabilities from the GenericHTML_AK list"
+                    }
+                  ],
+                  "PageSpecific": true,
+                  "Name": "HTMLContentWidget",
+                  "Icon": "fa fa-list-ul",
+                  "Description": "Provides ability for content editing capabilities (inline  editing, add links and images, etc.)",
+                  "Options": "",
+                  "Grid": ""
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+]
+}
+```
+
+As you can see from the JSON model above, we simply wrapped the normal PageDefinitions object in an array. This way, you can have multiple definitions under one Version, and multiple Versions under one page.
+
+Please note the following when creating a new Virtual Page featuring Page Versions:
+
+* **PageVersionName** is required.
+* **PageVersionId** is required and must be unique.
+* **IsActive** is required with a boolean value of true/false.
+* **NOTE**: No two Page Versions can both be Active and belong to the same Priority Group.
 
 ## Other Features
 
