@@ -1,20 +1,7 @@
 {
   "docs": {
     "Akumina": [
-      "Akumina-Framework-5.0.0.0-Overview",
-      "Akumina-Framework-4.8.0.0-Overview",
-      "Akumina-Framework-4-5-0-0-Overview",
-      "Akumina-Framework-Performance-Considerations",
-      "Akumina-SiteContext-Forcing-latest-widget-javascript-updates-to-be-fetched",
-      "Akumina-AddIn-Logger",
-      "Measuring-Performance-With-Mark-and-Measure",
-      "Wrapping-GenericListControl-with-Custom-ViewModel-Functionality",
-      "Production-Settings-Disabling-debug-mode",
-      "Akumina-Widget-Scoping",
-      "Ak-Lazy-Load-View-Binding",
-      "AK-Personas-Code-Examples",
-      "AK-Headless",
-      "Akumina-CKEditor-Update"
+      "Akumina-Quickstart"
     ],
     "Modern": [
       "Modern-Overview",
