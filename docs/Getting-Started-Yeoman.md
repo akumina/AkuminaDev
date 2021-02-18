@@ -51,10 +51,41 @@ We have created an easy script that will get all of the infrastructure set up fo
     ? Project name: my-project //your solution folder
     ? Client namespace: MyCompany //namespace where your widgets live
     ? Akumina version: 4.5.0.0 //Should match your version of Akumina product
+    ? Is this a stream card project?: no // Denotes whether this is a stream card project or a normal widget project
     ? Use React?: no
     ? Widget source path: src/js/widgets //probably just leave this
     ? Use Typescript?: yes
     ```
+
+    * Project Name
+
+    This will be the name of your project. This does not affect widget output.
+
+    * Client Namespace
+
+    This will be the firstmost namespace that your widgets will live in. For example, if i work at Company ABC and I enter my Client Namespace as CompanyABC, my default widget namespace would be similar to **CompanyABC.AddIn.WidgetName**.
+
+    * Akumina Version
+
+    This denotes the version of Akumina you are currently running. Valid versions, as of writing, are 5.0, 4.8, 4.5, and 4.0.
+
+    * Stream Card Project
+
+    There are two different kinds of Akumina projects: Widgets and Stream Cards. If you answer yes to the above question regarding Stream Card projects, the logic will cut off here, and create an empty Stream Card Project. If you answer no, the normal Widget Project process will continue and a dummy widget will be provisioned.
+
+    For more information on Stream Cards, see our [Stream Cards Article](/docs/AK-Stream-Card-Builder)
+
+    * Use React
+
+    Denotes whether you would prefer to use React/Typescript or vanilla Javascript to develop your widgets. You can implement React/Typescript into your project at a later time. For assistance with doing so, feel free to reach out to your Akumina representative.
+
+    * Widget Source Path
+
+    This is the directory path under which widgets will live. It is advised to not share directory space with non-widget directories. It is also advised to leave this as default.
+
+    * Use Typescript
+
+    Similar to the above question regarding React, however, without React. This will simply install the dependencies for Typescript without React.
 
     > Run akumina-widget-builder:
 

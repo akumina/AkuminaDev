@@ -203,7 +203,6 @@ import { IActivity, ISubscriptionProps } from '../../../../externals';
 
 interface ICustomCardState {
     viewReady: boolean;
-    viewHtml: string;
 }
 
 interface ICustomCardProps {
@@ -213,9 +212,6 @@ interface ICustomCardProps {
 }
 
 export default class CustomCard extends React.Component<ICustomCardProps, ICustomCardState> {
-    private viewName: string;
-    private templateModel: any;
-
     private readonly _defaultOverrideValue: string = 'Default';
 
     constructor(props: ICustomCardProps) {
@@ -223,11 +219,7 @@ export default class CustomCard extends React.Component<ICustomCardProps, ICusto
 
         this.state = {
             viewReady: false,
-            viewHtml: ''
         };
-
-        this.viewName = 'CustomCard'
-        this.templateModel = {};
     }
 
     componentDidUpdate(oldProps: ICustomCardProps, oldState: ICustomCardState) {
@@ -235,11 +227,8 @@ export default class CustomCard extends React.Component<ICustomCardProps, ICusto
     }
 
     componentDidMount() {
-        Akumina.Digispace.ActivityStreams.GenericHelper.GetCardView(this.viewName).then((templateHtml: string) => {
-            this.setState({
-                viewReady: true,
-                viewHtml: templateHtml
-            });
+        this.setState({
+            viewReady: true
         });
     }
 
@@ -247,13 +236,19 @@ export default class CustomCard extends React.Component<ICustomCardProps, ICusto
         if (this.state.viewReady) {
             var modelProps: CustomModel = this.ToCustomCardModel(this.props.ActivityProps);
 
-            this.templateModel = {
-                footer: modelProps.FooterTitle,
-                contents: modelProps.Contents
-            };
-
-            var renderTemplate = Akumina.Digispace.ActivityStreams.GenericHelper.JSXClient(this.state.viewHtml, this.templateModel);
-            return renderTemplate(this);
+            return (
+                <div className='ia-example-container'>
+                    <label>Titles:</label>
+                    <div className='ia-example-lineitem-container'>
+                        {modelProps.Contents}
+                    </div>
+                    <div className='ia-footer-container'>
+                        <div className='ia-provider-nameof'>
+                            This Change Event brought to you by: {modelProps.FooterTitle}!
+                        </div>
+                    </div>
+                </div>
+            )
         }
         else return (
             <div>
@@ -297,21 +292,6 @@ export class CustomModel {
         this.FooterTitle = footerTitle;
     }
 }
-```
-
-*Example Markup*
-```html
-<div className='ia-example-container'>
-    <label>Titles:</label>
-    <div className='ia-example-lineitem-container'>
-        {this.templateModel.contents}
-    </div>
-    <div className='ia-footer-container'>
-        <div className='ia-provider-nameof'>
-            This Change Event brought to you by: {this.templateModel.footer}!
-        </div>
-    </div>
-</div>
 ```
 
 ## Code Review
@@ -419,9 +399,7 @@ The API Response Model contains a wide array of data meant to be useful to a wid
 
 ### render
 
-We immediately switch our render output based on whether the custom card is ready to display data. In the above sample, this is determined by the custom card having retrieved its external HTML. Once we're ready to display our data, the first thing we do is make a call to *ToCustomCardModel* to transform the API data into UI Models. Next, we populate our template model for our external HTML file and call the render process.
-
-If you use local JSX Output, remember to remove the JSXClient call and subsequent return statement and, instead, construct and return your JSX Markup instead.
+We immediately switch our render output based on whether the custom card is ready to display data. In the above sample, the implementation is a bit basic. However, any pre-processing you may need to perform, including network calls to external resources, would happen in the **componentDidMount** phase of the lifecycle and would flip our render flag once finished. Once we're ready to display our data, the first thing we do is make a call to *ToCustomCardModel* to transform the API data into UI Models. Next, we populate our template model for our external HTML file and call the render process.
 
 
 ## Rollup Functionality

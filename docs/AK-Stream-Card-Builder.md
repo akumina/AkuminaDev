@@ -1,5 +1,5 @@
 ---
-title: Akumina Stream Card Builder
+title: Stream Card Builder
 id: AK-Stream-Card-Builder
 ---
 
@@ -197,7 +197,6 @@ import { CustomModel } from '../models/CustomModel';
 
 interface ICustomCardState {
     viewReady: boolean;
-    viewHtml: string;
 }
 
 interface ICustomCardProps {
@@ -206,19 +205,13 @@ interface ICustomCardProps {
 }
 
 export default class CustomCard extends React.Component<ICustomCardProps, ICustomCardState> {
-    private viewName: string;
-    private templateModel: any;
 
     constructor(props: ICustomCardProps) {
         super(props);
 
         this.state = {
-            viewReady: false,
-            viewHtml: ''
+            viewReady: false
         };
-
-        this.viewName = 'CustomCard'
-        this.templateModel = {};
     }
 
     componentDidUpdate(oldProps: ICustomCardProps, oldState: ICustomCardState) {
@@ -226,22 +219,18 @@ export default class CustomCard extends React.Component<ICustomCardProps, ICusto
     }
 
     componentDidMount() {
-        Akumina.Digispace.ActivityStreams.GenericHelper.GetCardView(this.viewName).then((templateHtml: string) => {
-            this.setState({
-                viewReady: true,
-                viewHtml: templateHtml
-            });
+        this.setState({
+            viewReady: true
         });
     }
 
     render() {
         if (this.state.viewReady) {
-            this.templateModel = {
-
-            };
-
-            var renderTemplate = Akumina.Digispace.ActivityStreams.GenericHelper.JSXClient(this.state.viewHtml, this.templateModel);
-            return renderTemplate(this);
+            return (
+                <div>
+                    My React Widget!
+                </div>
+            );
         }
         else return (
             <div>
@@ -257,14 +246,6 @@ There is a lot to unpack in this. So, let's take this function by function:
 * Interfaces
 
 We define two interfaces in our React component: IState and IProps. These are used as the structure of the React Component's State and Property properties. These are used in the definition of the React Component during the class declaration.
-
-* private viewName
-
-This private, class-level property is used to hold the full name and extension of the view associated with this component. This follows the Activity Stream design standard of each component following a single-responsibility approach: The card only cares about what's relevant to it and will fetch its own resources.
-
-* private templateModel
-
-This private, class-level property is used to hold, and optionally to define the structure of, the viewbag passed to the dynamic external HTML rendering process. Should you choose to not use an external html file and simply return all of your markup from the card code, you can completely ignore this. Please see [React Widgets](/docs/Akumina-React-Widgets) for more information on external HTML rendering.
 
 * constructor
 
@@ -282,13 +263,11 @@ An Activity Stream holds 3 Stream Events, all of type Note. A few minutes pass a
 
 * componentDidMount
 
-This function is part of the native React Lifecycle. componentDidMount is called after the component is rendered to the page, and mounted, **for the first time**. By default, the scaffolding generates this function with the logic to retrieve the views associated with this component. Once again, if you do not use external HTML views, this can be ignored and removed.
-
-The view retrieval functionality is placed here as part of the design process: Land on the page, establish our foothold, then, using the single-responsibility approach, allow each component on the page to asynchronously perform its own processing.
+This function is part of the native React Lifecycle. componentDidMount is called after the component is rendered to the page, and mounted, **for the first time**. 
 
 * render
 
-This function is part of the native React Lifecycle. render contains the output of the html for this component. As you can see in the above code, the scaffolding will create this function with the default pageLifeCycleComplete conditional and support for external HTML files. Again, if you do not use external HTML files, you can ignore this and remove the renderTemplate lines.
+This function is part of the native React Lifecycle. render contains the output of the html for this component. 
 
 Akumina uses the pageLifeCycleComplete boolean approach to ensure the component is on the page but does not display its contents until it is ready. Instead, displaying transparency to the user that the component is alive and visible but processing in the background to deliver the rich Activity Streams Experience.
 
@@ -298,31 +277,4 @@ There are many more React Lifecycle functions left out of the default scaffoldin
 
 ### The... view?
 
-As you might've noticed, there is no generated html file. The reason for this is three-fold:
-
-1) There is no particular nuances to the external html file. You write it just as you would write the TSX output in your component files
-2) Akumina supports the end-user's choice to opt in or opt out of external html file use
-3) External html files aren't handled in the stream card package anyway!
-
-Should you choose to go the route of external html file functionality %%FINISHTHIS%%
-
-
-#### Views - External vs JSX Output
-
-It's important to note the pros and cons of which approach you choose to take in your Akumina installation. So, let's jump right in!
-
-**External Markup**
-
-The immediate benefit of external markup is that the code and output are disjointed. Following the standard internet philosophy of having your page structure contained in a HTML file and your page logic contained in a JS file, this approach keeps that standard intact. Likewise, because the two files are disjointed, they appropriately support the single-responsibility rule. The HTML file is only concerned with markup and the JS file is only concerned with logic. The slight nuance to this is that the HTML file is still going to be written in JSX Markup. Lastly, the benefit of external HTML files is that you will not need to recompile and deploy your code to make simple/quick UI changes.
-
-The cons of external markup is that, yes, this is another file to keep up with in Sharepoint and your repository, should you have one. Likewise, because the markup isn't bundled with the JS, this is another network call for the markup. Keep in mind, however, that this is only a network call on initial page load and, in the future, may be cached to further reduce network traffic. Lastly, the con of external HTML files is that no IDE, without a plugin that I am not aware of existing, will correctly parse the file contents for errors. The file will always have a .HTML extension and will be interpreted as HTML but is written and parsed as JSX markup.
-
-Should you go the route of external markup, the deployment process will deposit your Custom Card's HTML into a centralized location: Under the DigitalWorkplace/Content/Templates/ActivityStreamWidget directory:
-
-![](https://akuminadownloads.blob.core.windows.net/wiki/AkuminaDev/Custom%20Card%20Tutorial/newview.PNG)
-
-**JSX Output**
-
-The immediate, and obvious, benefit of pure JSX Output is the IDE support for error checking before and during compilation. Because the React framework is installed and the file has the appropriate file extension, Visual Studio Code will accurately display errors. Secondly, the ease of use becomes a factor. One might leverage this by writing the code first in JSX and then moving it over to the external file. However, that does introduce another layer of possible human error or subtle nuance. Whether that nuance is scoping or timing, it may still exist and should be noted as a possible concern. Lastly, having your UI Markup bundled with the JS Code means you're only maintaining one file.
-
-The cons, however, do exist. The first con is the cleanliness of your code. The amount of logic required in the rendering of your view could range from "Trivially easy" to "I just added 500 lines of code to display a button". UI Logic can be very long and verbose and could bloat the size of your codebase surprisingly fast. Lastly, the obvious con of using pure JSX Output from code is that any change, alteration, edit, or addition to the UI will require the entire code to be recompiled and redeployed.
+As you might've noticed, there is no generated html file. The reason for this is simple: React is capable of producing its own output via code. As you might have noticed from the code above, there is no HTML retrieval or processing, simply markup returned as its output which the React Framework will render onto the page.
