@@ -1,5 +1,5 @@
 ---
-title: Stream Card Project Builder
+title: Installation
 id: AK-StreamCardProject-Builder
 ---
 
