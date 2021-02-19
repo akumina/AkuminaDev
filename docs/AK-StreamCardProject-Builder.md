@@ -27,7 +27,7 @@ Follow the above article until you end up with a folder with Yeoman and the Akum
 
 3) npm install generator-akumina
 
-You should be left with a folder containing node_modules and a package-lock.json file. Next, start the generator-akumina process by running "yo akumina".
+4) yo akumina
 
 Select Version 5 of the Framework and select "YES" when prompted whether this is a Stream Card Project. The below diagram shows a summary of what the process should've looked like:
 
