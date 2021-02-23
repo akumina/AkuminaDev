@@ -35,10 +35,10 @@ For more information on Custom Cards, please visit the [Custom Card Tutorial](/d
 The Stream Card Builder is available via the following NPM Packages:
 
 ```node
-npm run cardstub <name>
+npm run stub <name>
 ```
 
-The ***cardstub*** command starts the process of creating a new Stream Card. The ***<name>*** parameter is optional. If supplied, the name parameter will be used as the name of the Stream Card. If not supplied, you will be prompted to enter a name for the Stream Card.
+The ***stub*** command starts the process of creating a new Stream Card. The ***<name>*** parameter is optional. If supplied, the name parameter will be used as the name of the Stream Card. If not supplied, you will be prompted to enter a name for the Stream Card.
 
 The following prompts are included in the process:
 
@@ -81,10 +81,10 @@ root
 ![](https://akuminadownloads.blob.core.windows.net/wiki/AkuminaDev/Stream%20Card%20Builder/cardstuboutput.PNG)
 
 ```node
-npm run cardpkg <name>
+npm run package <name>
 ```
 
-The ***cardpkg*** command starts the process of packaging your Stream Card(s) for deploy using the Deploy Tool. The ***<name>*** parameter is optional. If supplied, the process will only package the specified Card if it exists. If not supplied, the process will process all folders underneath the *streamcards* directory. The output directory is similar to the normal **Widget Builder Package Command**:
+The ***package*** command starts the process of packaging your Stream Card(s) for deploy using the Deploy Tool. The ***<name>*** parameter is optional. If supplied, the process will only package the specified Card if it exists. If not supplied, the process will process all folders underneath the *streamcards* directory. The output directory is similar to the normal **Widget Builder Package Command**:
 
 ```
 root

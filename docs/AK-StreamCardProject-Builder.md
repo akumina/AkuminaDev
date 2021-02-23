@@ -68,10 +68,10 @@ The most immediate change in this file is the WidgetsSourcePath and WidgetPackag
         "test": "echo \"Error: no test specified\" && exit 1",
         "build": "webpack --env.mode=development --display-error-details --progress --config webpack.config.js --env.specificwidget",
         "prod-build": "webpack --env.mode=production --display-error-details --progress --config webpack.config.js",
-        "cardstub": "akumina-streamcard-builder stub",
+        "stub": "akumina-streamcard-builder stub",
+        "package": "akumina-streamcard-builder package",
         "deploy": "node ./tools/deploy.js",
-        "all": "npm run clean & npm run build & npm run package & npm run deploy",
-        "vpstub": "akumina-virtualpage-builder stub"
+        "all": "npm run build & npm run package & npm run deploy"
     },
     ...
 }
