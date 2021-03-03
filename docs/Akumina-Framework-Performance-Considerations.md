@@ -550,6 +550,8 @@ if ((typeof LoaderConfiguration.Custom) === 'undefined') {
 }
 ```
 ## Modern sites - using the CDN
+> This needs to be done for each site where there is an SPA present.
+
 Using the Modern SPA (see https://akumina.github.io/docs/Modern-SPA) then the configuration option for the template must be changed:
 
 * **Path to prefix infront of the .html view requests for widgets. Set this when using a CDN (https://publiccdn.sharepointonline.com/{tenant}.sharepoint.com/sites/{sitecollection})**
