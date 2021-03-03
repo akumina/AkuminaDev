@@ -467,11 +467,14 @@ The Akumina team has experienced various latency throughout the day trying to ac
 
 You can find all the information on public and private CDN's on the [MS website](https://support.office.com/en-us/article/Use-the-Office-365-content-delivery-network-with-SharePoint-Online-bebb285f-1d54-4f79-90a5-94985afc6af8)
 
+## Enabling the Office 365 CDN
 We have done this work often, so here is a quick step by step on how to enable the public CDN on your tenant 
-*Note: This enable the CDN across all your site collections and apply the the "Style Library" and "MasterPages" library automatically
-
+>Note: This enable the CDN across all your site collections and apply the the "Style Library" and "MasterPages" library automatically
+```
 * Set-SPOTenantCdnEnabled -CdnType Public -Enable $true 
 * Get-SPOTenantCdnOrigins -CdnType Public
+```
+
 You should see the following:
 ```
 Get-SPOTenantCdnOrigins -CdnType Public
@@ -479,19 +482,79 @@ Get-SPOTenantCdnOrigins -CdnType Public
 */STYLE LIBRARY
 ```
 
-*Note: For Modern sites, this should also be done for `Akumina Library`. We would run the same command for any other library, examples:
+If you have Akumina driven Modern sites, this should also be done for `Akumina Library`. Execute the following command for those either central or standalone sites that have the `Akumina Library` library in them:
 ```
 Add-SPOTenantCdnOrigin -CdnType Public -OriginUrl "sites/{SiteCollectionName}/Akumina Library"
+```
+If you have artifacts in other libraries, we would run the same command for any other library, example:
+```
 Add-SPOTenantCdnOrigin -CdnType Public -OriginUrl "sites/{SiteCollectionName}/MyCustomLibrary"
 ```
-To Disable: run the following command
-```
-Set-SPOTenantCdnEnabled -CdnType Public -Enable $false
-```
-Note that in order to make use of the CDN for font or html files, additional configuration is needed for those extensions:
+Do this for any libraries in sites where you want the contents to be in the CDN.
+
+## Configuring file types for the Office 365 CDN
+Note that in order to make use of the CDN for font or html files, additional configuration is needed for those extensions. We require the following extensions:
+* CSS
+* EOT
+* GIF
+* ICO
+* JPEG
+* JPG
+* JS
+* MAP
+* PNG
+* SVG
+* TTF
+* WOFF
+* WOFF2
+* HTML
+> Note your CDN may be configured with existing file extensions; if so, then add our required extensions to the already existing list. 
+
+To enable the extensions, run the following:
 ```
 Set-SPOTenantCdnPolicy -CdnType Public -PolicyType IncludeFileExtensions -PolicyValue "CSS,EOT,GIF,ICO,JPEG,JPG,JS,MAP,PNG,SVG,TTF,WOFF,WOFF2,HTML" 
 ```
+## Classic sites - using the Office 365 CDN
+A classic site master page will automatically use the CDN enabled files, if using the SharePoint syntax:
+```
+<!--MS:<SharePoint:ScriptLink ID="ScriptLink10942" Name="~sitecollection/Style Library/DigitalWorkPlace/js/digitalworkplace.min.js" runat="server">-->
+```
+However, if you are directly referencing files, then the file path must be prefixed with the CDN, example:
+
+```
+<link 
+  ms-design-css-conversion="no" 
+  rel="stylesheet"
+  href="https://publiccdn.sharepointonline.com/{tenant}.sharepoint.com/sites/{sitecollection}/Style%20Library/DigitalWorkPlace/CSS/digitalworkplace.css"
+/>
+```
+This can be done via the site deployer, look for **cdnprefix** at https://akumina.github.io/docs/Site-Deployer-Version-5-0
+
+Also, it is necessary to change the configuration to use the CDN as the location for template files. To do so, 
+```
+Akumina.Digispace.ConfigurationContext.TemplateURLPrefix = _spPageContextInfo.siteAbsoluteUrl.replace("https://", "https://publiccdn.sharepointonline.com/");
+```
+This is placed in the digitalworkplace.env.js file, in the **LoaderConfiguration.Custom.Init** method, as shown below:
+```
+if ((typeof LoaderConfiguration.Custom) === 'undefined') {
+    //Add shipped steps to loader
+    LoaderConfiguration.Custom = {
+        Init: function (config) {
+            ...
+            ...
+            Akumina.Digispace.ConfigurationContext.TemplateURLPrefix = _spPageContextInfo.siteAbsoluteUrl.replace("https://", "https://publiccdn.sharepointonline.com/");
+            ...
+            ...
+        }
+    };
+}
+```
+## Modern sites - using the CDN
+Using the Modern SPA (see https://akumina.github.io/docs/Modern-SPA) then the configuration option for the template must be changed:
+
+* **Path to prefix infront of the .html view requests for widgets. Set this when using a CDN (https://publiccdn.sharepointonline.com/{tenant}.sharepoint.com/sites/{sitecollection})**
+
+Set this value to **https://publiccdn.sharepointonline.com/{tenant}.sharepoint.com/sites/{sitecollection}** (with your values replaced) to enable CDN usage.
 ***
 # Troubleshooting SharePoint Page Performance
 Most modern browsers have a form of developer tools where you can see the network calls that are made. Here we can see the performance of the SharePoint pages. Perform the following tasks in the browser to get the output:
