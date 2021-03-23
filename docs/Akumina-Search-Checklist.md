@@ -1,10 +1,5 @@
 ## Search Optimization Checklist
 
-| Exclude | Action |
-| -- | -- |
-| CDN for JS,CSS
-
-
 | Item | Action |
 | -- | -- |
 | Page exclusion | Determine which pages to exclude from the search. See "Search Page Exclusion List (Part of Core Site)" at https://community.akumina.com/knowledge-base/foundation-site-installation/|
