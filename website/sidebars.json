@@ -25,6 +25,7 @@
       "AK-StreamCardProject-Builder",
       "AK-Stream-Card-Builder",
       "AK-ActivityStream-CustomCard",
+      "AK-ActivityComments-Configuration",
       "AK-ActivityStream-PUSHSubscription-PowerAutomate-snow",
       "AK-ActivityStream-PUSHSubscription-PowerAutomate-d365"
     ],
