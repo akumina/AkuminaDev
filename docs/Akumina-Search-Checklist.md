@@ -4,7 +4,7 @@
 | -- | -- |
 | Page exclusion | Determine which pages to exclude from the search. See "Search Page Exclusion List (Part of Core Site)" at https://community.akumina.com/knowledge-base/foundation-site-installation/|
 | Content Exclusion | Determine which sections of the site to exclude, for example the header and footer. See "Excluding Certain Content from Search" at https://community.akumina.com/knowledge-base/configuring-search-for-akumina-widget-content/ |
-| Tagging | Determine if and how additional keywords should be added to improve the ability to find search results. See [Tagging](#tagging) |
+| Tagging | Determine if and how additional keywords should be added to improve search result findability. See [Tagging](#tagging) |
 
 ### Tagging
 With items inside SharePoint, keywords can be added in various ways:
