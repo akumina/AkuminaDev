@@ -4,7 +4,22 @@
 | -- | -- |
 | Page exclusion | Determine which pages to exclude from the search. See "Search Page Exclusion List (Part of Core Site)" at https://community.akumina.com/knowledge-base/foundation-site-installation/|
 | Content Exclusion | Determine which sections of the site to exclude, for example the header and footer. See "Excluding Certain Content from Search" at https://community.akumina.com/knowledge-base/configuring-search-for-akumina-widget-content/ |
+| Scope | Determine the scope of what search results you want. See [Scope](#scope) |
 | Tagging | Determine if and how additional keywords should be added to improve search result findability. See [Tagging](#tagging) |
+
+
+### Scope
+The scope of the search is controlled by the KQL query that is executed, similar to the way it works in SharePoint. The query is executed by the GenericSearchListWidget, and by default is similar to the below.
+```
+{searchboxquery}* {QueryString.scope} (SPSiteURL:{SiteCollection} (((FileExtension:zip OR FileExtension:txt OR FileExtension:doc OR FileExtension:docx OR FileExtension:xls OR FileExtension:xlsx OR FileExtension:ppt OR FileExtension:pptx OR FileExtension:pdf)(IsDocument:"True")) OR (contentclass:"STS_ListItem" Path:"{SiteCollection}/Lists/PageData_AK/*" {AkLanguageId:{Site.LanguageId}})))
+```
+The clause **SPSiteURL:{SiteCollection}** requires the items to be in the current site collection. To search other locations, you can modify the query:
+* Remove the clause to search all site collections.
+* Add another clause to search other site collection(s)
+  * **(SPSiteURL:{SiteCollection} OR SPSiteURL:http://tenant.sharepoint.com/sites/central)**
+* or Add another KQL clause to search other data
+  * **(SPSiteURL:{SiteCollection} OR ContentType:CustomArticle)**
+* Or a combination of the above
 
 ### Tagging
 With items inside SharePoint, keywords can be added in various ways:
