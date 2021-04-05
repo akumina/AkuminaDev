@@ -4,7 +4,7 @@ title: Wrapping GenericListControl with Custom ViewModel Functionality
 ---
 
 # Overview
-As of {Version}, the **fallbackCallback** property allows a derived widget to funnel logic through the parent widget while also retaining the ability to modify ViewModel data before rendering the Handlebars template. This technique is mainly used if you do no wish to have a callback in the global namespace as you'd need some access to the widget specifically to transform the viewmodel in some way. An example of this is shown below
+As of **4.5.0.0**, the **fallbackCallback** property allows a derived widget to funnel logic through the parent widget while also retaining the ability to modify ViewModel data before rendering the Handlebars template. This technique is mainly used if you do no wish to have a callback in the global namespace as you'd need some access to the widget specifically to transform the viewmodel in some way. An example of this is shown below
 
 # How?
 
