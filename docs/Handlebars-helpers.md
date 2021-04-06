@@ -16,22 +16,21 @@
 | SearchResultIcon | |
 | WorldClockLowerCase | Only present in the foundation site |
 | WorldClockPlaceHolderImage | Only present in the foundation site |
-| akdateformat | |
+| akdateformat(date,format) | Outputs the date based on the format provided |
 | blockHelperMissing | |
-| configurationcontext | Allows access to the |
+| configurationcontext(param) | Allows access to the Akumina.Digispace.PageContext object, example: Akumina.Digispace.PageContext[param] |
 | debug | See https://akumina.github.io/docs/Ak-Debugging#debug-in-the-view |
 | each | |
 | formatTimeRelative | |
 | getInitials | |
 | getThumb | |
 | helperMissing | |
-| if | An if statment|
-| ifEqual | Equivalency comparison|
+| ifEqual(first,second) | Equivalency comparison |
 | log | |
 | lookup | |
 | pagecontext | |
 | startnewrow | |
-| translate | |
+| translate(token) | Allows access to the Akumina.Digispace.Language.GetText function, example: Akumina.Digispace.Language.GetText(token) |
 | unless | |
 | with | |
 | workspacecontext | |
