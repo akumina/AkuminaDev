@@ -18,7 +18,7 @@
 | WorldClockPlaceHolderImage | Only present in the foundation site |
 | akdateformat(date,format) | Outputs the date based on the format provided |
 | blockHelperMissing | |
-| configurationcontext(param) | Allows access to the Akumina.Digispace.PageContext object, example: Akumina.Digispace.PageContext[param] |
+| configurationcontext(param) | Allows access to the Akumina.Digispace.ConfigurationContext object, example: Akumina.Digispace.ConfigurationContext[param] |
 | debug | See https://akumina.github.io/docs/Ak-Debugging#debug-in-the-view |
 | each | |
 | formatTimeRelative | |
@@ -28,7 +28,7 @@
 | ifEqual(first,second) | Equivalency comparison |
 | log | |
 | lookup | |
-| pagecontext | |
+| pagecontext | Allows access to the Akumina.Digispace.PageContext object, example: Akumina.Digispace.PageContext[param] |
 | startnewrow | |
 | translate(token) | Allows access to the Akumina.Digispace.Language.GetText function, example: Akumina.Digispace.Language.GetText(token) |
 | unless | |
