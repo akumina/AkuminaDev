@@ -1,6 +1,6 @@
 ---
+id: Modern--Deploying-a-virtual-master-page
 title: Modern: Deploying a virtual master page
-id: modern--deploying-a-virtual-master-page
 ---
 
 # Overview
