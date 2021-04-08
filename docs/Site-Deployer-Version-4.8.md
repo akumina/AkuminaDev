@@ -85,7 +85,7 @@ Due to differences in how Modern works vs Classic, some steps in the site creato
 
 | **Site Deployer Steps** | **Classic** | **Modern** | **Comments** |
 | --- | --- | --- | --- |
-| `masterpage` | Yes | **No** | Deploys classic publishing master page; In modern, master page is located in content/templates |
+| `masterpage` | Yes | **No** | Deploys classic publishing master page; In modern, master page is located in content/templates, see https://akumina.github.io/docs/Modern--Deploying-a-virtual-master-page |
 | `js` | Yes | Yes |   |
 | `css` | Yes | Yes |   |
 | `lists` | Yes | Yes |   |
