@@ -75,7 +75,7 @@ Set options to true/false in akumina.sitedeployer.config.json:
 | `spusersearch` | Gets the count of users in the search |
 | `webpartgallery` | Adds .dwp files to the web part gallery |
 | `virtuallayout` | Add Virtual Page Layouts |
-| `updatepagecache` | Updated the page cache for the site |
+| `updatepagecache` | Updated the page cache for the site; see https://akumina.github.io/docs/Site-Deployer-updatepagecache-option |
 | `listsettings` | Updates list settings from **envdir**/sitedefinitions/**assetdirectory**/ListSettings/Update.xml see https://akumina.github.io/docs/Site-Package--ListSettings |
 
 ### Nuances
