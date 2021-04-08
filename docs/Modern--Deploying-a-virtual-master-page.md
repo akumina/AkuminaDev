@@ -19,4 +19,4 @@ To deploy the file, you must use the options value
 
     contentfiles
 
-Use the central site (if applicble) as the *spurl*.
+Use the central site (if applicable) as the *spurl*.
