@@ -86,7 +86,7 @@ Due to differences in how Modern works vs Classic, some steps in the site creato
 
 | **Site Deployer Steps** | **Classic** | **Modern** | **Comments** |
 | --- | --- | --- | --- |
-| `masterpage` | Yes | **No** |   |
+| `masterpage` | Yes | **No** | See https://akumina.github.io/docs/Modern--Deploying-a-virtual-master-page  |
 | `js` | Yes | Yes |   |
 | `css` | Yes | Yes |   |
 | `lists` | Yes | Yes |   |
