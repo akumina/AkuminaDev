@@ -8,7 +8,7 @@ The site deployer step that uses this is **listsettings**
 
     options listsettings
 
-See: https://github.com/akumina/AkuminaDev/wiki/Site-Package-Overview
+See: https://akumina.github.io/docs/Site-Package-Overview
 
 # Capabilities
 There are several things you can do while updating the list settings, a
