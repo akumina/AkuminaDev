@@ -75,7 +75,7 @@ Set options to true/false in akumina.sitedeployer.config.json:
 | `spusersearch` | Gets the count of users in the search |
 | `webpartgallery` | Adds .dwp files to the web part gallery |
 | `virtuallayout` | Add Virtual Page Layouts |
-| `updatepagecache` | Updated the page cache for the site |
+| `updatepagecache` | Updated the page cache for the site; see https://akumina.github.io/docs/Site-Deployer-updatepagecache-option |
 | `exportcomments` | Exports comments from NewsComments_AK list into the Akumina 5.0 Comment format.  Places exported comments in **{EnvironmentalPath}\SiteDefinitions\{AssetDirectory}\**Export** directory.  A separate file will be created for each set of 3000 comments (e.g. Comments1.json, Comments2.json). <br/><br/> To import these comments into the Comment 5.0 engine, go to App Manager / Management Apps / Comments App and click on the "Import" button.  Select one of the exported files and the import process will begin.  You can monitor the status of the import process from this page. |
 | `listsettings` | Updates list settings from **envdir**/sitedefinitions/**assetdirectory**/ListSettings/Update.xml see https://akumina.github.io/docs/Site-Package--ListSettings |
 
