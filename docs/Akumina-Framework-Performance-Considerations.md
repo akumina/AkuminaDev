@@ -508,11 +508,13 @@ Note that in order to make use of the CDN for font or html files, additional con
 * WOFF
 * WOFF2
 * HTML
+* TXT
+
 > Note your CDN may be configured with existing file extensions; if so, then add our required extensions to the already existing list. 
 
 To enable the extensions, run the following:
 ```
-Set-SPOTenantCdnPolicy -CdnType Public -PolicyType IncludeFileExtensions -PolicyValue "CSS,EOT,GIF,ICO,JPEG,JPG,JS,MAP,PNG,SVG,TTF,WOFF,WOFF2,HTML" 
+Set-SPOTenantCdnPolicy -CdnType Public -PolicyType IncludeFileExtensions -PolicyValue "CSS,EOT,GIF,ICO,JPEG,JPG,JS,MAP,PNG,SVG,TTF,WOFF,WOFF2,HTML,TXT" 
 ```
 ## Classic sites - using the Office 365 CDN
 A classic site master page will automatically use the CDN enabled files, if using the SharePoint syntax:
