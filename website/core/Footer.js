@@ -37,8 +37,8 @@ class Footer extends React.Component {
           </a>
           <div>
             <h5>Docs</h5>
-            <a href={this.docUrl('Akumina-Framework-4-5-0-0-Overview.html', this.props.language)}>
-              Akumina Framework 4.5
+            <a href={this.docUrl('Akumina-Framework-5.0.0.0-Overview', this.props.language)}>
+              Akumina Framework 5.0
             </a>
             <a href={this.docUrl('Akumina-Widget-Builder.html', this.props.language)}>
               Akumina Widget Builder
