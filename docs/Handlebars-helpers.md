@@ -30,7 +30,7 @@
 | lookup | |
 | pagecontext | Allows access to the Akumina.Digispace.PageContext object, example: Akumina.Digispace.PageContext[param] |
 | startnewrow | |
-| translate(token) | Allows access to the Akumina.Digispace.Language.GetText function, example: Akumina.Digispace.Language.GetText(token) |
+| translate(token) | Allows access to the Akumina.Digispace.Language.GetText function, example: Akumina.Digispace.Language.GetText(token). See https://github.com/akumina/AkuminaTraining/wiki/Multilingual-tokens#tokens-in-views |
 | unless | |
 | with | |
 | workspacecontext | |
