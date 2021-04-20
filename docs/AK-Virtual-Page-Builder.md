@@ -11,17 +11,19 @@ The Akumina Virtual Page Builder is integrated into the project and is available
 
 ## Virtual Page Deployment
 
-There are three steps required to successfully deploy a Virtual Page to your Sharepoint Classic Site. This section assumes a fully configured Akumina Sharepoint Site is already set up. These steps include:
+There are three steps required to successfully deploy a Virtual Page to your Sharepoint Classic Site. Only the first 2 are required for a Modern site. This section assumes a fully configured Akumina Sharepoint Site is already set up. These steps include:
 
 1. Generation of the Virtual Page File (explained in below sections)
 2. Deployment of Virtual Page File
-3. Deployment of Sharepoint ASPX Page
+3. Deployment of Sharepoint ASPX Page (not needed for Modern)
 
 In your Akumina Project Directory, ensure your Virtual Page JSON file is located in the appropriate location. The file should be in the [/SiteDefinitions/<client namespace>/VirtualPages] directory. This file is deployed to the Sharepoint Site using the "virtualpages" deployment option in your akumina.sitedeployer.config.json file. Simply set the "virtualpages" option to true and run the following command to deploy the Virtual Page file:
 
 ```bash
 npm run deploy
 ```
+
+> NOTE: this is only for Sharepoint Classic
 
 A physical ASPX page is also required to hold your Virtual Page. The reason for this is because the Virtual Page JSON file is simply the definition of the page and its contents. However, in Sharepoint Classic, there is no way to display this definition without a container. The Virtual Page Definition is read and displayed via the Virtual Page Widget. As one might expect, a widget must be housed on a page in order to be displayed. This dependency-chain illustrates the necessity for this extra step.
 
@@ -89,6 +91,8 @@ npm run deploy
 Once the page has successfully deployed, navigate to your Sharepoint Classic Site and expand the Site Tray, then jump into App Manager. Once App Manager has loaded, click on "Management Apps" at the top, then "Widget Manager". After the page loads, click on the "Cache Page Objects" button. Lastly, go back to your Sharepoint Classic Site, open Site Contents, open the Pages folder, and click on your newly created page to navigate to it.
 
 Your new Virtual Page, and its contents, should now be displayed on your Sharepoint Classic Site!
+
+> NOTE: End of Sharepoint Classic only instructions
 
 ## JSON File Format
 
