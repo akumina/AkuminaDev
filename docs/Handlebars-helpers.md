@@ -36,7 +36,11 @@
 | workspacecontext | |
 
 ## akdateformat
-The **akdateformat**  function uses the options present at **Akumina.Digispace.SiteContext.DateFormat**
+The **akdateformat** helper is used to format dates within a view:
+
+    {{akdateformat PublishDate "date"}}
+    
+The helper's third parameter uses the options present at **Akumina.Digispace.SiteContext.DateFormat**:
 * 12hourformat: "MMM D h:mm A"
 * 24hourformat: "D MMM HH:mm"
 * date: "DD"
