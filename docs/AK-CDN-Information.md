@@ -24,12 +24,19 @@ The out of the box Akumina installation will require the artifacts in the defaul
 The artifacts are html, CSS, JavaScript, font, and image files, and are shown in the following images:
 **Style library/DigitalWorkPlace/JS**
  
+![JS folder](https://akumina.azureedge.net/wiki/training/images/cdn/js-folder.png)
+ 
 **Style library/DigitalWorkPlace/CSS**
- 
+
+![CSS folder](https://akumina.azureedge.net/wiki/training/images/cdn/css-folder.png)
+
 **Style library/DigitalWorkPlace/fonts**
- 
+
+![fonts folder](https://akumina.azureedge.net/wiki/training/images/cdn/fonts-folder.png) 
+
 **Style library/DigitalWorkPlace/icons**
- 
+
+![icons folder](https://akumina.azureedge.net/wiki/training/images/cdn/icons-folder.png) 
 
 ### General Guidance for CDN
 The SharePoint library with the Akumina assets in it should be CDN enabled, this would mean either:
