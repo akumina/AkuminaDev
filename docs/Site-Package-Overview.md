@@ -42,3 +42,4 @@ The Site Package instructions are located in **_AppManager path_/SiteDefinitions
 | Taxonomy| SharePoint Taxonomy term store definitions that are deployed. |
 | UploadFiles| Each top level folder represents a document library (or equivalent); inside the folders represents the files and folders to deploy to that location. |
 | Workflow| Workflow definitions. |
+| ContentApps| App Manager content apps to be deployed. |
