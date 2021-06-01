@@ -10,6 +10,8 @@ The site deployer step that uses this is **listsettings**
 
 See: https://akumina.github.io/docs/Site-Package-Overview
 
+Related: https://akumina.github.io/docs/Site-Package-ContentApps-Folder
+
 # Capabilities
 There are several things you can do while updating the list settings, a
 
