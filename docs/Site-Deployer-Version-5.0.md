@@ -27,8 +27,8 @@ Command line parameters are set in .env
 | `spUrl` | Sharepoint site collection | https://tenant.sharepoint.com/sites/mysitecollection |
 | `spUser` | Sharepoint username | myusername@tenant.onmicrosoft.com |
 | `spPassword` | Sharepoint password | 12345 |
-| `clientid` | Sharepoint app client id | guid |
-| `clientsecret` | Sharepoint app client secret |  | 
+| `clientid` | Sharepoint app client id | guid - ClientId and ClientSecret are used when accounts have MFA and cannot use a username/password. See https://akumina.github.io/docs/Site-Deployer-AppOnly |
+| `clientsecret` | Sharepoint app client secret | ClientId and ClientSecret are used when accounts have MFA and cannot use a username/password. See https://akumina.github.io/docs/Site-Deployer-AppOnly | 
 | `azurestorageaccountname ` | Azure Storage account name  |  | 
 | `azurestoragecontainer` | Azure Storage blob container name  |  | 
 | `azurestorageaccountkey` | Azure Storage account key  |  | 
