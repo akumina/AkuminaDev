@@ -55,7 +55,7 @@ To update an SPA property, you must first identify it. The following is a table 
 | ShowLoadingState": true or false |
 | LoadLegacySPJSFromAkumina": true or false |
 
-    If there is another property you want to update, then inspect the view source for a page with the SPA on it, and look for "Akumina Single Page Application". Note the values int he table above, and locate the property you want to update. Copy the property name.
+    If there is another property you want to update, then inspect the view source for a page with the SPA on it, and look for "Akumina Single Page Application". Note the values in the table above, and locate the property you want to update. Copy the property name, and set its value.
 
 
 # CICD/Batch
