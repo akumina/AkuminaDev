@@ -33,7 +33,7 @@ Command line parameters are set in .env
 | `azurestoragecontainer` | Azure Storage blob container name  |  | 
 | `azurestorageaccountkey` | Azure Storage account key  |  | 
 | `cdnprefix ` | replaces {{CDNPrefix}} token in Master page with this value  |  | 
-| `multideployment` | Deploys the currently selected option to each site defined in inventory.sites.json | |
+| `multideployment` | Deploys the currently selected option to each site defined in inventory.sites.json | true or false |
 | `centralspurl` | Central site url for widget deployment | |
 
 #### Minimum usage with username|password
