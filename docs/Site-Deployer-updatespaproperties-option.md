@@ -1,6 +1,6 @@
 ---
-id: Site-Deployer-updatespaproperties-option
 title: updatespaproperties option
+id: Site-Deployer-updatespaproperties-option
 ---
 
 # Applies to
