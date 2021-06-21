@@ -114,7 +114,7 @@ Due to differences in how Modern works vs Classic, some steps in the site creato
 | `spusersearch` | Yes | Yes |  |
 | `virtuallayout` | Yes | Yes |  |
 | `updatepagecache` | Yes| Yes |  |
-| `updatespaproperties` | No | Yes | The Single Page Application is only in Modern |
+| `updatespaproperties` | **No** | Yes | The Single Page Application is only in Modern |
 
 ## Nuances
 
