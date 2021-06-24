@@ -7,6 +7,7 @@
 | Content Exclusion | Determine which sections of the site to exclude, for example the header and footer. See "Excluding Certain Content from Search" at https://community.akumina.com/knowledge-base/configuring-search-for-akumina-widget-content/ |
 | Scope | Determine the scope of what search results you want. See [Scope](#scope) |
 | Tagging | Determine if and how additional keywords should be added to improve search result findability. See [Tagging](#tagging) |
+| Modern Search | Setup Office 365 Modern search to properly display results from an Akumina site; see https://community.akumina.com/knowledge-base/modern-search/ |
 
 
 ### Scope
