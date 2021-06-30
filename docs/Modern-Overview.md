@@ -8,7 +8,7 @@ id: Modern-Overview
 
 SharePoint Online (SPO) offers two models for building sites: Classic SPO and Modern SPO leveraging the SPFx framework. Presently, there are still significant differences in capability between Classic and Modern – specifically in the arena of brand-ability, customization, third party integration and design output, however, the demand for Modern SPO sites is increasing as some customers want to be able to leverage the ‘*latest and greatest*’. 
 
-Akumina, in version 4.8 and above, will fully support both models. Customers will be able to leverage one approach or the other – or in certain circumstances, both at the same time. 
+Akumina fully supports both models. Akumina version 4.8 supports classic and modern, while version 5.0 supports modern only. 
 
 Akumina separates Content from Function and Presentation. This abstracted approach is what allows for: 
 * Easy integration with 3rd party systems outside of the Microsoft ecosystem 
