@@ -1,5 +1,5 @@
 ---
-id: AK-Row Editing-Custom Layout
+id: AK-Row-Editing-Custom-Layout
 title: Creating a custom layout when editing row on a virtual page
 ---
 
