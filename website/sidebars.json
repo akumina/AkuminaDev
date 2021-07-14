@@ -9,7 +9,8 @@
       "Modern-SPA",
       "Modern-AWP",
       "Modern-App-Extension",
-      "Modern-WebPartLibrary"
+      "Modern-WebPartLibrary",
+      "Modern-Google-Analytics"
     ],
     "Widget Builder": [
       "Akumina-Widget-Structure",
@@ -75,7 +76,7 @@
       "Configuration-Using-a-key-vault-for-the-client-id-and-client-secret"
     ],
     "Debugging": ["Ak-Debugging"],
-    "Advanced": ["AK-Central-Site-Support", "AK-Page-Indexing", "Modern-Google-Analytics"],
+    "Advanced": ["AK-Central-Site-Support", "AK-Page-Indexing"],
     "Service Hub": ["AK-Service-Hub"]
   },
   "api": {
