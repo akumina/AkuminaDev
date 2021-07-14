@@ -45,3 +45,15 @@ An example of quick edit for a single item:
 List
 An example of quick edit for a list of items; each item has its own separate trigger for editing. Note the class ak-item:
 ![](https://akuminadownloads.blob.core.windows.net/wiki/AkuminaDev/Widget%20Views/quickcontent-listitem.png)
+
+## Quick Edit for a Quicklinks or Slider app.
+
+A quicklinks and/or slider app is a combined editing experience, where there is only one page to edit all items. Due to this, all that is required is to add the class **ak-widget-item** to the outermost element in the view:
+
+```html
+<div class="menu ak-widget-item">
+    ...
+</div>
+```html
+
+**NOTE**: There should be no **ak-item** classes in your quiclinks or slider view, as they are unnecessary.
