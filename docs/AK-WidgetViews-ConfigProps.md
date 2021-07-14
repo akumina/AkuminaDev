@@ -54,6 +54,6 @@ A quicklinks and/or slider app is a combined editing experience, where there is 
 <div class="menu ak-widget-item">
     ...
 </div>
-```html
+```
 
 **NOTE**: There should be no **ak-item** classes in your quiclinks or slider view, as they are unnecessary.
