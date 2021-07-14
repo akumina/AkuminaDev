@@ -125,11 +125,34 @@ PageLayoutId    |   File Name
 PageLayoutTitle |   File Name
 PageLayout      |   File Contents
 SPPageLayoutId  |   2210
+Icon            |   File Name (optional)    
 
 Lastly, to test your new layout, simply create a new page and click the [Saved Layouts] tab to select your new layout:
 
 ![](https://akuminadownloads.blob.core.windows.net/wiki/AkuminaDev/akvplayout-uselayout.PNG)
 
+## Adding an Icon
+    
+Virtual Page Layout icons can optionally be added. Icons need to be stored in a folder called Images_AK, which must be a child of the VirtualPageLayouts folder:
+    
+```bash
+   Project
+      ├───build
+            └───sitedefinitions
+                      └───ClientNamespace
+                                 └───VirtualPageLayouts
+                                            └───Images_AK
+                                                    ├───layout1Icon.png
+                                                    ├───layout2Icon.png
+```
+
+Two steps are required to upload Virtual Page Layout icons:
+    
+1. Add the icon file name to the Virtual Page Layout JSON file (see optional JSON field in the table above)
+2. Add the icon file to the Images_AK folder  
+
+The Virtual Page Layout deployment will automatically upload images that are stored in the Images_AK folder to the Images_AK SharePoint list, and the reference to the icon will be stored in the Virtual Page Layout definition.
+    
 ## Features
 
 Similar to the Akumina Virtual Page Builder, the Akumina Virtual Page Layout Generator also features the ability to update the saved layout entries in Sharepoint. Following the example in this article, if one were to add additional widget restrictions to the Akumina-Layout.json file and redeploy the file, it would update the entry in the list with the new values.
