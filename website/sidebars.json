@@ -75,7 +75,7 @@
       "Configuration-Using-a-key-vault-for-the-client-id-and-client-secret"
     ],
     "Debugging": ["Ak-Debugging"],
-    "Advanced": ["AK-Central-Site-Support", "AK-Page-Indexing"],
+    "Advanced": ["AK-Central-Site-Support", "AK-Page-Indexing", "Modern-Google-Analytics"],
     "Service Hub": ["AK-Service-Hub"]
   },
   "api": {
