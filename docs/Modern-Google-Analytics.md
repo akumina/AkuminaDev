@@ -56,7 +56,7 @@ window.SendGoogleAnalytics = function() {
     var trackingId = window.location.href.startsWith('https://clientsite.sharepoint.com/sites/sitename') ? 'UA-000000000-1' : 'UA-111111111-1';
     gtag('config', trackingId, {
         'page_title': document.title,
-        'page_path': location.hash.replace('#','sites/ap')
+        'page_path': location.hash.replace('#','sites/sitename')
     });
 }
 
@@ -67,7 +67,7 @@ Akumina.Digispace.AppPart.Eventing.Subscribe('/page/changed/', function () {
         var trackingId = window.location.href.startsWith('https://clientsite.sharepoint.com/sites/sitename') ? 'UA-000000000-1' : 'UA-111111111-1';
         gtag('config', trackingId, {
             'page_title': document.title,
-            'page_path': location.hash.replace('#','sites/ap')
+            'page_path': location.hash.replace('#','sites/sitename')
         });
     }, 5000);
 });
