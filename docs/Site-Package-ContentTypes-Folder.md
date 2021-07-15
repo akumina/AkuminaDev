@@ -7,7 +7,7 @@ We define the Content Types we want added to our site in the ContentTypes.xml fi
 
 ```xml
 <lists>
-	<ContentType ID="0x01200200C25A08D46BE4487A86080142FBFED933" Name="AkuminaDiscussionBoardContentType" Group="Akumina Content Types" Description="Akumina Discussion Board Content Type" Inherits="TRUE" Version="0">
+	<ContentType ID="0x01200200C25A08D46BE4487A86080142FBFED933" Name="AkuminaDiscussionBoardContentType" Group="Akumina Content Types" Description="Akumina Discussion Board Content Type" Inherits="TRUE">
 		<FieldRefs >
 			<Field ID="{A6828C7D-6754-449A-AB5F-07105080D991}" Name="AttachmentLinks" Type="Note" DisplayName="AttachmentLinks" Group="Akumina Content Types" Required="FALSE" ShowInEditForm="TRUE" ShowInNewForm="TRUE" />
 			<Field ID="{2D33BCF0-F6B2-453D-97CD-BD3268967983}" Name="ConfirmArchive" Type="Boolean" DisplayName="ConfirmArchive" Group="Akumina Content Types" Required="FALSE" ShowInEditForm="TRUE" ShowInNewForm="TRUE" />      
