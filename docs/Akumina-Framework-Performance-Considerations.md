@@ -213,6 +213,7 @@ Akumina.Digispace.ConfigurationContext.CONSTANTS.LOADER_STEPS_ENABLE_GETLOADINGT
 ### Download the Core/AdditionalMasterMarkup.html template step
 (this dynamically downloads the template and throws it and the end of the >body< tag, there is no need for this step if post launch, as it will be rarely changed)
   * Take the contents of this file and put in the master page right before the end of the closing >body< tag
+  * Note - if you have language strings in the file, you will need to replace them, ie {{translate "common.save"}} becomes "Save"
 
 ````Javascript
 Akumina.Digispace.ConfigurationContext.CONSTANTS.LOADER_STEPS_ENABLE_GETADDITIONALMARKUP = false;
