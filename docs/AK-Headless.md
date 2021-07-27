@@ -123,6 +123,28 @@ Headless can be hosted in virtual machines (IaaS), web applications (PaaS) or co
 3.	Install .NET Core hosting bundle https://docs.microsoft.com/en-us/aspnet/core/host-and-deploy/iis/?view=aspnetcore-3.1#install-the-net-core-hosting-bundle
 4.	Create website and deploy your files, for complete details refer https://docs.microsoft.com/en-us/aspnet/core/host-and-deploy/iis/index?view=aspnetcore-3.1#sub-applications
 
+***Configuring the headless application***
+1. extract drop-headlesscore files into the application directory (e.g.{headlessappdir})
+2. extract drop-headlesscore-wwwroot into {headlessappdir}/wwwroot (this is assuming that all the builds are pointing to 5.0.2107.2601) [!!! THIS NEEDS BUILD FIX !!!] 
+3. download the DigitalWorkplace folder from site that headless points to and replace missing files as shown below [!!! THIS NEEDS BUILD FIX !!!]    
+    a. add missing folders
+        - {headlessappdir}/wwwroot/Akumina Library/JS/widgets
+        - {headlessappdir}/wwwroot/Akumina Library/img
+        - {headlessappdir}/wwwroot/Akumina Library/images/icons 
+        - {headlessappdir}/wwwroot/Akumina Library/icons 
+        - {headlessappdir}/wwwroot/Akumina Library/css/themetemplates
+                                                                
+    b. {headlessappdir}/wwwroot/Akumina Library/JS/vendor 
+        - platform_embed.js
+        - slickslider.min.js
+        - spacetime.min.js
+                    
+    c. add files to {headlessappdir}/wwwroot/Akumina Library/images    
+
+4. configure {headlessappdir}/wwwroot/Akumina Library/JS/env.js
+5. configure {headlessappdir}/appsettings.json
+6. configure the app manager CORS settings to allow requests from headless app url
+
 **Hosting in Azure Web App (PaaS)**
 1.	Create WebApp using .NET core
 2.	Deploy from Visual Studio or FTP all the published files
