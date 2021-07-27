@@ -37,9 +37,12 @@ Akumina’s front-end frameworks and widgets are delivered through a headless AS
 
 ## Prerequisites
 
-**System Requirement**: VS2019 or greater with .NET CORE 3.1
-Infrastructure Requirement: An Akumina site must be already setup in SharePoint, using Azure Active Directory. For best results with a quickstart, a foundation site should be used.
+**System Requirements**: VS2019 or greater with .NET CORE 3.1
+
+**Infrastructure Requirements**: An Akumina site must be already setup in SharePoint, using Azure Active Directory. For best results with a quickstart, a foundation site should be used.
 For more information please see Installation Guides at https://community.akumina.com/kbtopic/installation-guides/
+
+**Sharepoint Requirements** Sharepoint must be a standalone site (Headless does not support central/delivery architecture)
 
 ## Setting up a headless Dev environment
 
@@ -49,14 +52,21 @@ To download the project solution and source code, please contact your account ad
 **Getting started with headless project**
 
 1.	Open the solution as administrator mode
-2.	In the root of the project, open appsettings.json 
-![](https://akuminadownloads.blob.core.windows.net/wiki/AkuminaDev/headless_3.png)
-3.  Install the latest NuGet Akumina.FrontEnd.Core
-![](https://akuminadownloads.blob.core.windows.net/wiki/AkuminaDev/headless_10.png)
-4.	Edit the following properties
-![](https://akuminadownloads.blob.core.windows.net/wiki/AkuminaDev/headless_4.png)
+2.	In the root of the project, open appsettings.json
+
+    ![](https://akuminadownloads.blob.core.windows.net/wiki/AkuminaDev/headless_3.png)
+
+3.	Edit the following properties
+
+    ![](https://akuminadownloads.blob.core.windows.net/wiki/AkuminaDev/headless_4.png)
+
+4.  Install the latest NuGet Akumina.FrontEnd.Core on project Akumina.FrontEnd.Web 
+
+    ![](https://akuminadownloads.blob.core.windows.net/wiki/AkuminaDev/headless_10.png)
+
 5.	In the folder Akumina.Frontend.Web\wwwroot\Style Library\DigitalWorkplace\js\ open DIgitalworkplace.env.js and edit the following keys
-![](https://akuminadownloads.blob.core.windows.net/wiki/AkuminaDev/headless_5.png)
+
+    ![](https://akuminadownloads.blob.core.windows.net/wiki/AkuminaDev/headless_5.png)
  
 •	Set Akumina.Digispace.ConfigurationContext.InterchangeURL to interchange URL
 
@@ -70,27 +80,29 @@ To download the project solution and source code, please contact your account ad
 
 •	In setConfig function
 
-•	Set Akumina.Digispace.ConfigurationContext.TemplateURLPrefix to current URL
+•	Set Akumina.Digispace.ConfigurationContext.TemplateURLPrefix to headless URL
 
-•	Set Akumina.Digispace.SiteContext.UniqueId to unique IdNOTE: To obtain the Unique Id, go to the App Manager Global Settings for the site (/Admin/Settings) and locate the value:
+•	Set Akumina.Digispace.SiteContext.UniqueId to unique Id
+
+**Note**: To obtain the Unique Id, go to the App Manager Global Settings for the site (/Admin/Settings) and locate the value
+
 ![](https://akuminadownloads.blob.core.windows.net/wiki/AkuminaDev/headless_6.png)
-
 
 ## Enable CORS in AppManager
 1.	To enable CORS in AppManager: Go to AppManager, open interchange.settings.config update the value for “akumina:EnableCorsOrigin”, you can provide one or more URLs in this case Headless URL and SharePoint URL
 
 ```
-•	<add key=”akumina:EnableCorsOrigin” value=”<HEADLESSURL>,<SHAREPOINTURL>”/>
-•	<add key=”akumina:EnableCorsHeaders” value=”Origin,X-Requested-With,Content-Type,Accept,X-Akumina-Querykey”/>
-•	<add key=”akumina:EnableCorsMethods” value=”GET,OPTIONS”/>
-•	<add key=”akumina:EnableCorsPreflightMaxAge” value=”7400″/>
-•	<add key=”akumina:EnableCorsSupportsCredentials” value=”true”/>
+•	<add key="akumina:EnableCorsOrigin" value="<HEADLESSURL>,<SHAREPOINTURL>"/>
+•	<add key="akumina:EnableCorsHeaders" value="Origin,X-Requested-With,Content-Type,Accept,X-Akumina-Querykey"/>
+•	<add key="akumina:EnableCorsMethods" value="GET,OPTIONS"/>
+•	<add key="akumina:EnableCorsPreflightMaxAge" value="7400"/>
+•	<add key="akumina:EnableCorsSupportsCredentials" value="true"/>
 ```
 2.	Open Web.config under <System.webServer>
 
 ```
 •	Comment <customHeaders>
-•	Replace <modules> to <modules runAllManagedModulesForAllRequests=”true”>
+•	Replace <modules> to <modules runAllManagedModulesForAllRequests="true">
 ```
 
 ## How to run the solution locally
@@ -121,29 +133,8 @@ Headless can be hosted in virtual machines (IaaS), web applications (PaaS) or co
 1.	Create a Windows VM 2019
 2.	Install Web Server (IIS) with HTTP Activation
 3.	Install .NET Core hosting bundle https://docs.microsoft.com/en-us/aspnet/core/host-and-deploy/iis/?view=aspnetcore-3.1#install-the-net-core-hosting-bundle
-4.	Create website and deploy your files, for complete details refer https://docs.microsoft.com/en-us/aspnet/core/host-and-deploy/iis/index?view=aspnetcore-3.1#sub-applications
-
-***Configuring the headless application***
-1. extract drop-headlesscore files into the application directory (e.g.{headlessappdir})
-2. extract drop-headlesscore-wwwroot into {headlessappdir}/wwwroot (this is assuming that all the builds are pointing to 5.0.2107.2601) [!!! THIS NEEDS BUILD FIX !!!] 
-3. download the DigitalWorkplace folder from site that headless points to and replace missing files as shown below [!!! THIS NEEDS BUILD FIX !!!]    
-    a. add missing folders
-        - {headlessappdir}/wwwroot/Akumina Library/JS/widgets
-        - {headlessappdir}/wwwroot/Akumina Library/img
-        - {headlessappdir}/wwwroot/Akumina Library/images/icons 
-        - {headlessappdir}/wwwroot/Akumina Library/icons 
-        - {headlessappdir}/wwwroot/Akumina Library/css/themetemplates
-                                                                
-    b. {headlessappdir}/wwwroot/Akumina Library/JS/vendor 
-        - platform_embed.js
-        - slickslider.min.js
-        - spacetime.min.js
-                    
-    c. add files to {headlessappdir}/wwwroot/Akumina Library/images    
-
-4. configure {headlessappdir}/wwwroot/Akumina Library/JS/env.js
-5. configure {headlessappdir}/appsettings.json
-6. configure the app manager CORS settings to allow requests from headless app url
+4.	Create website 
+5.  Deploy the Akumina.FrontEnd.Web project. For complete details refer https://docs.microsoft.com/en-us/aspnet/core/host-and-deploy/iis/index?view=aspnetcore-3.1#sub-applications
 
 **Hosting in Azure Web App (PaaS)**
 1.	Create WebApp using .NET core
@@ -154,6 +145,29 @@ Headless can be hosted in virtual machines (IaaS), web applications (PaaS) or co
 2.	Create a Docker container image
 3.	Upload container image to Azure Container Registry
 4.	Deploy a web app using the ACR image
+
+**Configuring the Headless application**
+1. Extract drop-headlesscore files into the application directory ({headlessappdir} below)
+2. Extract drop-headlesscore-wwwroot into {headlessappdir}/wwwroot (this is assuming that all the builds are pointing to 5.0.2107.2601) [!!! THIS NEEDS BUILD FIX !!!] 
+3. Download the DigitalWorkplace folder from site that headless points to and replace missing files as shown below [!!! THIS NEEDS BUILD FIX !!!]    
+    a. Add missing folders
+        - {headlessappdir}/wwwroot/Akumina Library/DigitalWorkplace/js/widgets
+        - {headlessappdir}/wwwroot/Akumina Library/DigitalWorkplace/img
+        - {headlessappdir}/wwwroot/Akumina Library/DigitalWorkplace/images/icons 
+        - {headlessappdir}/wwwroot/Akumina Library/DigitalWorkplace/icons 
+        - {headlessappdir}/wwwroot/Akumina Library/DigitalWorkplace/css/themetemplates
+        - {headlessappdir}/wwwroot/Akumina Library/DigitalWorkplace/css/fonts
+                                                                
+    b. {headlessappdir}/wwwroot/Akumina Library/DigitalWorkplace/js/vendor 
+        - platform_embed.js
+        - slickslider.min.js
+        - spacetime.min.js
+                    
+    c. Add files to {headlessappdir}/wwwroot/Akumina Library/images    
+
+4. Configure {headlessappdir}/wwwroot/Akumina Library/DigitalWorkplace/JS/digitalworkplace.env.js
+5. Configure {headlessappdir}/appsettings.json
+6. Configure the app manager CORS settings to allow requests from headless app url
 
 ## Things to know
 
