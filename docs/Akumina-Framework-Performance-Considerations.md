@@ -618,6 +618,7 @@ The following represents a template for collecting information related to perfor
 | JS file location in master | *Top / Bottom / NA* |
 | Framework version:  | |
 | App Manager Version: | |
+| SPA Version | |
 | Azure AD enabled? | *Yes / No* |
 | CSS references | *SharePoint / link tag* |
 
@@ -636,20 +637,27 @@ The following table lists common issues and corrective actions:
 
 | Property | Value | |
 | -- | -------------- | -------------- | 
-| Page URL: | | 
+| Page URL: | | |
 | Date time accessed: | | |
 | Client location: | *East US* | |
 | Latency to Azure data center: | | |
 |  | Cold load | Warm load |
+| Requests | | |
 | Resources transmitted | | |
 | Resources total | | |
 | Time in network panel | | |
 | SPRequestDuration (in network panel) | | |	
+| X-SharePointHealthScore | | |	
 | Process Query calls | | |
 | 'Items' calls | | |
 | SP Call Count | | |
 | Connector Call Count | | |
 | Framework load time | | |
+| Framework file download time | | |
+| Time Spent Waiting on Dependecies | | |
+| Modern - headStart | | |
+| Modern - bodyEnd | | |
+| Modern - Total Time | | |
 | Total Browser | | |
 | Time spent connecting | | |
 | Total Render | | |
