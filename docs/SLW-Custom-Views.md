@@ -143,7 +143,7 @@ The following are the important points to understand when creating a custom view
 
  5. It is mandatory to have "ak-slw-group" class on you group element and "ak-slw-item" class on your item element to allow for editing them in the Edit Page mode
 
- 6. Comments will not work in SLW views. The widget will fail to render if any comments are added in the view (html comments <!--->)
+ 6. Comments will not work in SLW views. The widget will fail to render if any comments are added in the view (html comment <!--->)
 
 ### Deploying custom views to your site
 
@@ -169,5 +169,5 @@ To customize the thumbnail image for your custom view,
 
     It is derived by replacing all spaces in the view name with "-" and prepending with "ia-slw-" to ensure uniqueness.
 
-For e.g., if you registered your view with the name "Carousel View", the class name would be "ia-slw-Carousel-View"
+For e.g., if you registered your view with the name "Carousel View", the class name would be "ia-slw-Carousel-View" 
     
