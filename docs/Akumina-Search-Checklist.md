@@ -13,6 +13,7 @@ title: Search Checklist
 | Scope | Determine the scope of what search results you want. See [Scope](#scope) |
 | Tagging | Determine if and how additional keywords should be added to improve search result findability. See [Tagging](#tagging) |
 | Modern Search | Setup Office 365 Modern search to properly display results from an Akumina site; see https://community.akumina.com/knowledge-base/modern-search/ |
+| Ranking | Boost the rank of items based on certain conditions. See [Ranking](#ranking) |
 
 
 ### Scope
@@ -39,5 +40,26 @@ The **Enterprise Keywords** field is already mapped to a managed property (Keywo
 
 A managed property with the searchable attribute checked will allow its content to be searched in a normal text search, without having to use a specific field clause in your search query.
 
+### Ranking
+Through the usage of the **XRANK** operator, it is possible to have dynamic control over ranking. This can easily be added to any query by wrapping it with one or more XRANK operators. 
+
+**( [original query] XRANK(cb=100) SPSiteURL:{SiteCollection})**
+
+An example full query
+```
+({searchboxquery}* {QueryString.scope} (SPSiteURL:{SiteCollection} (((FileExtension:zip OR FileExtension:txt OR FileExtension:doc OR FileExtension:docx OR FileExtension:xls OR FileExtension:xlsx OR FileExtension:ppt OR FileExtension:pptx OR FileExtension:pdf)(IsDocument:"True")) OR (contentclass:"STS_ListItem" Path:"{SiteCollection}/Lists/PageData_AK/*" {AkLanguageId:{Site.LanguageId}}))) XRANK(cb=100) ContentType=Item)
+```
+
+Examples:
+* This example will boost items in the current site collection
+* **( [original query] XRANK(cb=100) SPSiteURL:{SiteCollection})**
+* This example will boost PDF files with a filename matching the search term
+* **( [original query] XRANK(cb=100) (?filename:{searchboxquery} and ?filetype:pdf))**
+* This example will boost items whose site title matches the search term
+* **( [original query] ?SiteTitle:{searchboxquery})**
+* You can also reduce the rank of items - This example will decrease items with the keyword "Something"
+* **( [original query] XRANK(cb=-10000) keywords:Something)**
+
 ### References
 * https://docs.microsoft.com/en-us/sharepoint/search/search-schema-overview#managed-property-settings-overview
+* https://docs.microsoft.com/en-us/openspecs/sharepoint_protocols/ms-kql/36b3c22e-2f24-4096-99df-919f40d16864
