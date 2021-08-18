@@ -135,7 +135,7 @@ The following are the important points to understand when creating a custom view
     </div>
     #group#
     #item#
-    <div class="slw-customview-title">
+    <div class="ak-slw-item slw-customview-title">
          {model.Title}
     </div> 
     ```
@@ -156,14 +156,32 @@ The following are the important points to understand when creating a custom view
     </div>
     #group#
     #item#
-    <div class="slw-customview-title">
+    <div class="ak-slw-item slw-customview-title">
          {model.Title}
     </div> 
     ```
 
  6. It is mandatory to have "ak-slw-group" class on you group element and "ak-slw-item" class on your item element to allow for editing them in the Edit Page mode
 
- 7. Comments will not work in SLW views. The widget will fail to render if any comments are added in the view (html comment <!--->)
+ 7. HTML comments will not work in SLW views. The widget will fail to render if any HTML comments (<!-- -->) are added in the view. You can instead use comments like you would in a JSX component:
+    ```html
+    #root#
+    <div className="interAction foundation-widget">
+	{/*This is a comment*/}
+        <div className="ia-header ia-header__modern">
+            <i className="fa fa-newspaper-o" aria-hidden="true"></i>
+            <h3 className="ia-header--title">{model.CollectionName}</h3>
+        </div>
+        <section>
+            {Children}
+        </section>
+    </div>
+    #group#
+    #item#
+    <div class="ak-slw-item slw-customview-title">
+         {model.Title}
+    </div> 
+    ```
 
 ### Deploying custom views to your site
 
