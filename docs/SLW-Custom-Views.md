@@ -141,9 +141,29 @@ The following are the important points to understand when creating a custom view
     ```
  4. The views for SLW are written in React instead of handlebars. So, use "className" instead of "class" and single curly braces ({ }) for variables instead of double curly braces({{ }})
 
- 5. It is mandatory to have "ak-slw-group" class on you group element and "ak-slw-item" class on your item element to allow for editing them in the Edit Page mode
+ 5. To output the model in console, use plain JavaScript within curly braces ({console.log(model)}) like you would do in React. For example:
+    ```html
+    #root#
+    <div className="interAction foundation-widget">
+	{console.log(model)}
+        <div className="ia-header ia-header__modern">
+            <i className="fa fa-newspaper-o" aria-hidden="true"></i>
+            <h3 className="ia-header--title">{model.CollectionName}</h3>
+        </div>
+        <section>
+            {Children}
+        </section>
+    </div>
+    #group#
+    #item#
+    <div class="slw-customview-title">
+         {model.Title}
+    </div> 
+    ```
 
- 6. Comments will not work in SLW views. The widget will fail to render if any comments are added in the view (html comment <!--->)
+ 6. It is mandatory to have "ak-slw-group" class on you group element and "ak-slw-item" class on your item element to allow for editing them in the Edit Page mode
+
+ 7. Comments will not work in SLW views. The widget will fail to render if any comments are added in the view (html comment <!--->)
 
 ### Deploying custom views to your site
 
