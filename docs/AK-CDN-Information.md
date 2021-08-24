@@ -70,5 +70,15 @@ For any images that are not internal to the organization, the library they are i
 Since nearly all CDNs use the HTTP/2 protocol for improved compression and HTTP pipelining, having multiple smaller files is preferred, for example for downloading the widget JS files.
 
 See the configuration documentation at:
-•	https://akumina.github.io/docs/Akumina-Framework-Performance-Considerations#classic-sites-using-the-office-365-cdn
-•	https://akumina.github.io/docs/Akumina-Framework-Performance-Considerations#modern-sites-using-the-cdn
+*	https://akumina.github.io/docs/Akumina-Framework-Performance-Considerations#classic-sites-using-the-office-365-cdn
+* https://akumina.github.io/docs/Akumina-Framework-Performance-Considerations#modern-sites-using-the-cdn
+
+### Resource governance
+The Microsoft Office 365 public CDN automatically brings over published files from the **Akumina Library** in the central site. Note, there is **no** ability to upload or modify files directly in the CDN path. Since the files are present in SharePoint, we can use SharePoint governance to control changes to what goes into the CDN.
+
+The following are common ways to apply governance to the files that go into the CDN:
+*	Permissions on the site collection - particularly if using a central/delivery site model, restrict whom has access to edit in the central site collection. It is recommended that the least restrictive permissions be used. This is still subject to the guidance here https://community.akumina.com/knowledge-base/setting-permissions-on-core-supporting-lists/
+*	Permissions on the Akumina Library - Similar to permissions on the site collection, assign least restrictive permissions to the Akumina Library so that unauthorized users are not able to add or edit files.
+*	Approvals on the Akumina Library - Since only published files are transferred to the Microsoft CDN, then seperating out the ability to add/edit and the ability to approve files provides an additional check against unauthorized use.
+*	Versioning on the Akumina Library - Enable to provide an audit trail on whom and when changes were made.
+*	Alerts for add, edit and delete actions in the library - This provides a more proactive ability to be notified of various actions occuring in the Akumina Library - and can be setup to notify either ad hoc or in a summary.
