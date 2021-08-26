@@ -54,15 +54,13 @@ Sharepoint must be a standalone site (Headless does not support central/delivery
 _{headlessappdir} refers to the root folder of the Headless website on your web server_
 
 ### Website Creation
-1. Create a directory for your Headless website in your IIS root directory (usually C:\inetpub)  
-   This directory will now be referred to as {headlessappdir}
+1. Create a directory for your Headless website in your IIS root directory (usually C:\inetpub). This directory will now be referred to as {headlessappdir}
 2. Create a new website in IIS and point to {headlessappdir}
+3. Bind your SSL certificate to your new Headless website
 
 ### Deployment
 1. Extract drop-headlesscore files into {headlessappdir}
 2. Extract drop-headlesscore-wwwroot into {headlessappdir}/wwwroot
-
-At this point you are ready to configure the Headless website.
 
 ### Configuration
 
@@ -73,21 +71,11 @@ Three steps are required to configure the Headless website:
 
 **Edit** {headlessappdir}/wwwroot/Akumina Library/DigitalWorkplace/JS/**digitalworkplace.env.js**
 
-_All versions_
-
 * Set Akumina.Digispace.ConfigurationContext.InterchangeURL to App Manager URL
-
-_Version 4.8 only_
 
 * Set Akumina.Digispace.ConfigurationContext.InterchangeQueryKey to query key
 
 * Set Akumina.Digispace.ConfigurationContext.ConfigurationSiteUrl to SiteCollectionUrl
-
-_Version 4.5 or lower only_
-
-* The VALUE is interchange URL
-
-* In setConfig function
 
 * Set Akumina.Digispace.ConfigurationContext.TemplateURLPrefix to headless URL
 
@@ -108,6 +96,7 @@ Set the following properties:
 * AkSpUrl
 * AkQueryKey
 * akumina:RedisCachePartitionKey
+* AkModernSite
 
 **Set permissions on** {headlessappdir}/**logs**
 
