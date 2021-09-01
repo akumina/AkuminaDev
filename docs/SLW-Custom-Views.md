@@ -27,7 +27,7 @@ The views for SLW are written in React JS. See below an example view:
 #root#
 <div  className="interAction foundation-widget">
 	<div  className="ia-header ia-header__modern">
-		<i  className="fa fa-newspaper-o"  aria-hidden="true"></i>
+		<i  className="fa fa-newspaper-o" aria-hidden="true"></i>
 		<h3  className="ia-header--title">{model.CollectionName}</h3>
 	</div>
 	<section>
@@ -43,10 +43,10 @@ The views for SLW are written in React JS. See below an example view:
 </div>
 #item#
 <a  href={model.Link} target={model.LinkTarget} className={Akumina.Digispace.ConfigurationContext.IsSPAMode ? "ak-spalink ak-slw-item" : "ak-slw-item" } title={model.Tooltip}>
-	<div  class="slw-customview-img">
-		<img  className="ia-feature-box-image"  src={model.ImageUrl}></img>
+	<div  className="slw-customview-img">
+		<img  className="ia-feature-box-image" src={model.ImageUrl}></img>
 	</div>
-	<div  class="slw-customview-title">
+	<div  className="slw-customview-title">
 {model.Title}
 	</div>
 </a>
@@ -108,10 +108,10 @@ The following are the important points to understand when creating a custom view
 		```html
 	    #item#
 		<a href={model.Link} target={model.LinkTarget} className={Akumina.Digispace.ConfigurationContext.IsSPAMode ? "ak-spalink ak-slw-item" : "ak-slw-item" } title={model.Tooltip}>
-		    <div class="slw-customview-img">
+		    <div className="slw-customview-img">
 		        <img className="ia-feature-box-image" src={model.ImageUrl}></img>
 		    </div>
-		    <div class="slw-customview-title">
+		    <div className="slw-customview-title">
 		        {model.Title}
 		    </div>
 		</a>
@@ -135,7 +135,7 @@ The following are the important points to understand when creating a custom view
     </div>
     #group#
     #item#
-    <div class="ak-slw-item slw-customview-title">
+    <div className="ak-slw-item slw-customview-title">
          {model.Title}
     </div> 
     ```
@@ -156,14 +156,14 @@ The following are the important points to understand when creating a custom view
     </div>
     #group#
     #item#
-    <div class="ak-slw-item slw-customview-title">
+    <div className="ak-slw-item slw-customview-title">
          {model.Title}
     </div> 
     ```
 
  6. It is mandatory to have "ak-slw-group" class on you group element and "ak-slw-item" class on your item element to allow for editing them in the Edit Page mode
 
- 7. HTML comments will not work in SLW views. The widget will fail to render if any HTML comments (<!-- -->) are added in the view. You can instead use comments like you would in a JSX component:
+ 7. HTML comments will not work in SLW views. The widget will fail to render if any HTML comments (```<!-- -->```) are added in the view. You can instead use comments like you would in a JSX component:
     ```html
     #root#
     <div className="interAction foundation-widget">
@@ -178,7 +178,7 @@ The following are the important points to understand when creating a custom view
     </div>
     #group#
     #item#
-    <div class="ak-slw-item slw-customview-title">
+    <div className="ak-slw-item slw-customview-title">
          {model.Title}
     </div> 
     ```
