@@ -3,11 +3,9 @@ id: AK-Headless
 title: Headless
 ---
 
-
-### Overview
+## Overview
 
 The purpose of this article will be to provide the reader with a general, high-level overview of the Headless implementation as well as offer detailed installation instructions and details to infrastructure changes when compared to a normal App Manager installation.
-
 
 ## What is Headless?
 
@@ -18,110 +16,120 @@ Akumina’s front-end technology is able to run within and outside of SharePoint
 
 ![](https://akuminadownloads.blob.core.windows.net/wiki/AkuminaDev/headless_1.png)
  
-## Benefits of a headless approach
+## What are the benefits of Headless?
 
-![](https://akuminadownloads.blob.core.windows.net/wiki/AkuminaDev/headless_2.png)
- 
 Get all the best of SharePoint and Office 365 without any restriction on the front end in Akumina’s framework. Headless design principles can drastically improve your site visitor experience. Headless can be easier to scale, perform better and faster, easier to develop and test, and is fully compatible with Akumina’s AppManager and Service Hub.
 Akumina’s front-end frameworks and widgets are delivered through a headless ASP.Net-based runtime. Content and information is delivered through the Akumina Service Hub, which provides the necessary caching, API connectivity and the abstraction to drive the end-user experience. Akumina’s architecture allows for all pre-built widgets to be reused in Akumina’s headless offering.
 
-•	SharePoint (modern or classic) becomes a data container instead of a user interface.
+* SharePoint (modern or classic) becomes a data container instead of a user interface.
 
-•	Any identity provider (such as AAD, Okta, Ping) that SharePoint supports will work with headless.
+* Any identity provider (such as AAD, Okta, Ping) that SharePoint supports will work with headless.
 
-•	Akumina headless development supports infrastructure as a service (IaaS) and platform as a service (PaaS) containers.
+* Akumina headless development supports infrastructure as a service (IaaS) and platform as a service (PaaS) containers.
 
-•	You can use the same development platform for SharePoint or headless. You can apply your widgets to any canvas, making it up to 100 times faster.
+* You can use the same development platform for SharePoint or headless. You can apply your widgets to any canvas, making it up to 100 times faster.
 
-•	A headless site can easily be converted to a mobile app.
+* A headless site can easily be converted to a mobile app.
+
+![](https://akuminadownloads.blob.core.windows.net/wiki/AkuminaDev/headless_2.png)
 
 ## Prerequisites
 
-**System Requirement**: VS2019 or greater with .NET CORE 3.1
-Infrastructure Requirement: An Akumina site must be already setup in SharePoint, using Azure Active Directory. For best results with a quickstart, a foundation site should be used.
-For more information please see Installation Guides at https://community.akumina.com/kbtopic/installation-guides/
+**System Requirements**
 
-## Setting up a headless Dev environment
+Install IIS ASP.NET Core Module: https://docs.microsoft.com/en-us/aspnet/core/host-and-deploy/aspnet-core-module?view=aspnetcore-5.0
 
-**Download**
-To download the project solution and source code, please contact your account administrator.
+**Infrastructure Requirements**
 
-**Getting started with headless project**
+An Akumina site must be already setup in SharePoint, using Azure Active Directory. For best results with a quickstart, a foundation site should be used. 
 
-1.	Open the solution as administrator mode
-2.	In the root of the project, open appsettings.json 
-![](https://akuminadownloads.blob.core.windows.net/wiki/AkuminaDev/headless_3.png)
-3.  Install the latest NuGet Akumina.FrontEnd.Core
-![](https://akuminadownloads.blob.core.windows.net/wiki/AkuminaDev/headless_10.png)
-4.	Edit the following properties
-![](https://akuminadownloads.blob.core.windows.net/wiki/AkuminaDev/headless_4.png)
-5.	In the folder Akumina.Frontend.Web\wwwroot\Style Library\DigitalWorkplace\js\ open DIgitalworkplace.env.js and edit the following keys
-![](https://akuminadownloads.blob.core.windows.net/wiki/AkuminaDev/headless_5.png)
- 
-•	Set Akumina.Digispace.ConfigurationContext.InterchangeURL to interchange URL
+For more information please see Installation Guides: https://community.akumina.com/kbtopic/installation-guides/
 
-**Note**: ^ This is only for Version 4.8 of the Akumina Framework.
+**Sharepoint Requirements** 
 
-•	Set Akumina.Digispace.ConfigurationContext.InterchangeQueryKey to query key
+Sharepoint must be a standalone site (Headless does not support central/delivery architecture).
 
-•	Set Akumina.Digispace.ConfigurationContext.ConfigurationSiteUrl to SiteCollectionUrl
+## Setting up a local Headless website
 
-**Note**: For Version 4.5 (or lower) of the Akumina Framework, the VALUE is interchange URL
+_{headlessappdir} refers to the root folder of the Headless website on your web server_
 
-•	In setConfig function
+### Website Creation
+1. Create a directory for your Headless website in your IIS root directory (usually C:\inetpub). This directory will now be referred to as {headlessappdir}
+2. Create a new website in IIS and point to {headlessappdir}
+3. Bind your SSL certificate to your new Headless website
 
-•	Set Akumina.Digispace.ConfigurationContext.TemplateURLPrefix to current URL
+### Deployment
+1. Extract drop-headlesscore files into {headlessappdir}
+2. Extract drop-headlesscore-wwwroot into {headlessappdir}/wwwroot
 
-•	Set Akumina.Digispace.SiteContext.UniqueId to unique IdNOTE: To obtain the Unique Id, go to the App Manager Global Settings for the site (/Admin/Settings) and locate the value:
-![](https://akuminadownloads.blob.core.windows.net/wiki/AkuminaDev/headless_6.png)
+### Configuration
 
+Three steps are required to configure the Headless website:
+1. Edit {headlessappdir}/wwwroot/Akumina Library/DigitalWorkplace/JS/**digitalworkplace.env.js**
+2. Edit {headlessappdir}/**appsettings.json**
+3. Set permissions on {headlessappdir}/**logs** folder
 
-## Enable CORS in AppManager
-1.	To enable CORS in AppManager: Go to AppManager, open interchange.settings.config update the value for “akumina:EnableCorsOrigin”, you can provide one or more URLs in this case Headless URL and SharePoint URL
+**Edit** {headlessappdir}/wwwroot/Akumina Library/DigitalWorkplace/JS/**digitalworkplace.env.js**
 
-```
-•	<add key=”akumina:EnableCorsOrigin” value=”<HEADLESSURL>,<SHAREPOINTURL>”/>
-•	<add key=”akumina:EnableCorsHeaders” value=”Origin,X-Requested-With,Content-Type,Accept,X-Akumina-Querykey”/>
-•	<add key=”akumina:EnableCorsMethods” value=”GET,OPTIONS”/>
-•	<add key=”akumina:EnableCorsPreflightMaxAge” value=”7400″/>
-•	<add key=”akumina:EnableCorsSupportsCredentials” value=”true”/>
-```
-2.	Open Web.config under <System.webServer>
+* Set Akumina.Digispace.ConfigurationContext.InterchangeURL to App Manager URL
 
-```
-•	Comment <customHeaders>
-•	Replace <modules> to <modules runAllManagedModulesForAllRequests=”true”>
-```
+* Set Akumina.Digispace.ConfigurationContext.InterchangeQueryKey to query key
 
-## How to run the solution locally
-1.	Run the solution in debug mode
-2.	Browse to https://localhost:44306
+* Set Akumina.Digispace.ConfigurationContext.ConfigurationSiteUrl to SiteCollectionUrl
 
-## Adding widgets to MVC view (CSHTML)
+* Set Akumina.Digispace.ConfigurationContext.TemplateURLPrefix to headless URL
 
-To insert widget into view, please follow the following steps.
-**Pre-Requisites:**
-1.	A page/view should exist under /Src/Akumina.Frontend.Web/Views
-2.	The route to the view setup in Src/Akumina.Frontend.Web/routeconfig.json
+* Set Akumina.Digispace.SiteContext.UniqueId to Unique Id
 
-**Steps to add a widget:**
-1.	Open the page / view cshtml
-2.	Identify the widget type and specific widget instance from the App Manager > Management Apps > Widget Manager that you would like to place on the page/view
-3.	Copy the widget snippet 
-4.	Identify the section (corresponds to webpart on SP page) where you would like to place the widget and paste the snippet onto the page
-![](https://akuminadownloads.blob.core.windows.net/wiki/AkuminaDev/headless_7.png)
-5.	For Department Site, the widgets are added with rel only and without instance id (since the instance ids are dynamically generated at deployment time). The instance is resolved via rel, which maps to title field In widgetproperties_ak (hence avoid having multiple entries with the same title in widgetproperties_ak) 
-![](https://akuminadownloads.blob.core.windows.net/wiki/AkuminaDev/headless_8.png)
+    To obtain the Unique Id, go to the App Manager Global Settings for the site (/Admin/Settings) and locate the value
 
-## Setting up a headless production environment
+    ![](https://akuminadownloads.blob.core.windows.net/wiki/AkuminaDev/headless_12.png)
 
-Headless can be hosted in virtual machines (IaaS), web applications (PaaS) or containers.  In this section,we’ll explore all different deployment options.
+**Edit** {headlessappdir}/**appsettings.json**
+
+Set the following properties:
+
+* AkQueryAs
+* AkAuthMode
+* AkDataHubUri
+* AkTenantId
+* AkSpUrl
+* AkQueryKey
+* akumina:RedisCachePartitionKey
+* AkModernSite
+
+**Set permissions on** {headlessappdir}/**logs**
+
+Grant Modify permissions to IIS_IUSRS group (or IIS user) for logs folder at {headlessappdir}/logs
+
+### App Manager Configuration
+
+Two steps are required to configure App Manager to allow traffic from the Headless website:
+1. Configure CORS
+2. Update web.config
+
+**Configure CORS**
+
+Configure the app manager CORS settings to allow requests from the Headless website.
+
+**Update web.config**
+
+On the App Manager web server
+
+1. Open web.config
+2. Under \<System.webServer>  
+   a. Comment out \<customHeaders>  
+   b. Change \<modules> to \<modules runAllManagedModulesForAllRequests="true">
+
+## Setting up a production Headless website
+
+Headless can be hosted in virtual machines (IaaS), web applications (PaaS) or containers.
 
 **Hosting in VM (IaaS)**
 1.	Create a Windows VM 2019
 2.	Install Web Server (IIS) with HTTP Activation
-3.	Install .NET Core hosting bundle https://docs.microsoft.com/en-us/aspnet/core/host-and-deploy/iis/?view=aspnetcore-3.1#install-the-net-core-hosting-bundle
-4.	Create website and deploy your files, for complete details refer https://docs.microsoft.com/en-us/aspnet/core/host-and-deploy/iis/index?view=aspnetcore-3.1#sub-applications
+3.	Install .NET Core hosting bundle https://docs.microsoft.com/en-us/aspnet/core/host-and-deploy/iis/?view=aspnetcore-3.#install-the-net-core-hosting-bundle
+4.	Create website 
 
 **Hosting in Azure Web App (PaaS)**
 1.	Create WebApp using .NET core
@@ -138,3 +146,13 @@ Headless can be hosted in virtual machines (IaaS), web applications (PaaS) or co
 1.	Enable HTTPS only, and enable TLS 1.2 for web app over port 443
 2.	If you host in Microsoft Azure, they will open additional ports such as 454, 455, 21, 10001-10020, 4016,4018, and 4020. Please note these ports are not required for Akumina Application. If you need to block any of these ports please refer this Microsoft documentation from https://azure.microsoft.com/en-us/documentation/articles/app-service-app-service-environment-control-inbound-traffic/ (in case App Service Environment you can actually block some of them at the VNET level)
 3.	Always update to latest .NET core
+
+## Using a custom View (.cshtml)
+
+Headless has the ability to handle custom Views, should you wish to serve static pages.
+
+To configure routing for your custom View:
+1. Copy your .cshtml to a folder in {headlessappdir}/Views  
+   a. You can create a new folder under {headlessappdir}/Views if you wish
+2. Add an entry for your View to {headlessappdir}/routconfig.json
+   a. Format is "/customRoute": "~/Views/Path/To/Your/view.cshtml"
