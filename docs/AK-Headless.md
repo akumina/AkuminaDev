@@ -149,7 +149,7 @@ Headless can be hosted in virtual machines (IaaS), web applications (PaaS) or co
 
 ## Using a custom View (.cshtml)
 
-Headless has the ability to handle custom Views, should you wish to serve static pages.
+Headless has the ability to handle custom Views for serving static pages.
 
 To configure routing for your custom View:
 1. Copy your .cshtml to a folder in {headlessappdir}/Views  
