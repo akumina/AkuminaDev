@@ -123,7 +123,7 @@ On the App Manager web server
 
 ## Setting up a production Headless website
 
-Headless can be hosted in virtual machines (IaaS), web applications (PaaS) or containers.
+Headless can be hosted in virtual machines (IaaS), web applications (PaaS), or containers.
 
 **Hosting in VM (IaaS)**
 1.	Create a Windows VM 2019
