@@ -102,24 +102,9 @@ Set the following properties:
 
 Grant Modify permissions to IIS_IUSRS group (or IIS user) for logs folder at {headlessappdir}/logs
 
-### App Manager Configuration
+### Configure CORS
 
-Two steps are required to configure App Manager to allow traffic from the Headless website:
-1. Configure CORS
-2. Update web.config
-
-**Configure CORS**
-
-Configure the app manager CORS settings to allow requests from the Headless website.
-
-**Update web.config**
-
-On the App Manager web server
-
-1. Open web.config
-2. Under \<System.webServer>  
-   a. Comment out \<customHeaders>  
-   b. Change \<modules> to \<modules runAllManagedModulesForAllRequests="true">
+Configure the App Manager CORS settings to allow requests from the Headless website.
 
 ## Setting up a production Headless website
 
