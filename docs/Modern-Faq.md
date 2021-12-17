@@ -13,11 +13,9 @@ Any Modern site can be used. For a single page application (SPA), the Sharepoint
 
 When using the Akumina page editing experience in the **Single Page Application** (SPA), SPFx/Modern web parts cannot be added to pages, only Akumina widgets. 
 
-When using the SharePoint page editing experience with the **Akumina Widget Picker** and/or the **Application Extension**, both Modern Web Parts and Akumina widgets can be used.
-
 ## Where are the Assets stored?
 
-Since Modern restricts the use of the **Style Library**, the asset files are stored in another library, named **Akumina Library** by default. In addition, the assets can be also be in a central site collection - see [More](https://akumina.github.io/docs/AK-Central-Site-Support.html). The **digitalworkplace.env.js** file, when used, is placed in the Akumina Private Library; see [More](https://akumina.github.io/docs/Modern-AWP#setup-installation).
+Since Modern restricts the use of the **Style Library**, the asset files are stored in another library, named **Akumina Library** by default. In addition, the assets can be also be in a central site collection - see [More](https://akumina.github.io/docs/AK-Central-Site-Support.html). The **digitalworkplace.env.js** file, when used, is placed in the Akumina Private Library.
 
 ## How do I update my widget packages to use a different library name?
 
@@ -56,26 +54,14 @@ See [Central Site Collection Support - Widget Support for Cross site collection 
 
 The downloads are available in the Akumina Developer site, on the respective pages for the package type: 
 * [Single Page Application](/docs/Modern-SPA#downloads)
-* [Widget Picker](/docs/Modern-AWP#downloads)
-* [Application Extension](/docs/Modern-App-Extension#downloads)
 
 ## In what version did it become available? 
 The Modern support is available in Akumina version 4.8 and above. 
 
-## How can I utilize features such as shared navigation or footers for a common look and feel?
-
-The **Application Extension** is a simple client side solution aimed towards offering customization to the Header and Footer portions of Sharepoint Modern pages. Sharepoint Modern natively supports customization of the header/footer sections of Modern pages but doesn't quite offer an easy way to go about this. To solve this problem, Akumina provides the Application Extension that can be freely customized by use of a Central Site Collection using the Akumina Framework.
-It is also worth noting that this Application Extension cannot be used with the **[Akumina SPA](/docs/Modern-SPA)**. However, it can be used with the **[Akumina Widget Picker](/docs/Modern-AWP)**. Use of the Application Extension with the AWP can provide the flexibility of Sharepoint Modern Web Parts with the functionality of the Akumina Framework bundled with some design choices for certain aspects of the page.
-
-Pictured: Sharepoint Modern Page with the AWP and Application Extension (Header/Footer areas marked in green)
-
-![](https://akuminadownloads.blob.core.windows.net/wiki/AkuminaDev/modern_appext_homepage.PNG)
-
 ## How can a developer add additional CSS and JS files to the site?
 
-While Modern does allow you to add additonal CSS and JS files, the process to do so requires effort in steps and configuration. With Akumina, this can be done easily using either SPA or the Application Extension/Widget Picker, see:
+While Modern does allow you to add additonal CSS and JS files, the process to do so requires effort in steps and configuration. With Akumina, this can be done easily using the SPA:
 * [SPA](/docs/Modern-SPA#spa-configuration)
-* [Application Extension/Widget Picker](/docs/Modern-AWP#setup-installation)
 
 ## Do the app permissions required for the three different SP apps (SPA, SP Extension, Widget Selector) differ from the App Manager app? 
 
