@@ -37,7 +37,7 @@ In this model, Akumina widgets are delivered in the page and the Modern editing 
 
 ## Deployment Options
 
-Modern is deployed via 3 components,
+Modern is deployed via 3 components:
 ![](https://akuminadownloads.blob.core.windows.net/wiki/AkuminaDev/modern_deploymentoptions.png)
 
 ## Single Page Application (SPA)
