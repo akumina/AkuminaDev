@@ -25,7 +25,7 @@ We have introduced a new token {AssetLibraryName} in the **config.json** file in
     "Views": [
     {
         "Name": "default",
-        Path": "/{AssetLibraryName}/DigitalWorkPlace/Content/Templates/CompanyNewsItemWidget/NewsItem.html", 
+        "Path": "/{AssetLibraryName}/DigitalWorkPlace/Content/Templates/CompanyNewsItemWidget/NewsItem.html", 
         "Id": "fd4d32ac-a205-4d76-b43f-6dc534b7daf1"
     }
 ```
