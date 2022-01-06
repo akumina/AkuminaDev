@@ -10,4 +10,5 @@
 | JS file minification | Ensure all JS files are minified. This is normally done via the webpack build process. |
 | CSS file compression | Ensure all CSS files are compressed. This is normally done via the webpack build process. |
 | HTTP 2.0 | Ensure the SharePoint site and AppManager are using the HTTP 2.0 protocol. |
+| App Manager | Ensure the following settings:<br /> * CacheDefaultInterval - 28800 <br /> * DwpCookieDuration - 20160 |
 
