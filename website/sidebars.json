@@ -39,13 +39,14 @@
       "Akumina-Widgets-Build-New",
       "AK-WidgetViews-ConfigProps",
       "AK-Widgets-PropertiesOverview",
+      "Widgets-GlobalVsLocal",
       "Akumina-React-Widgets",
       "Akumina-Widget-Callbacks",
       "Akumina-Widget-RenderChildWidgets",
       "AK-WIdgets-VendorPackages"
     ],
     "Site Deployer": [
-      "Site-Deployer-Overview", 
+      "Site-Deployer-Overview",
       "Site-Deployer-Version-4-1",
       "Site-Deployer-Version-4-5",
       "Site-Deployer-Version-4-8",
@@ -73,9 +74,17 @@
       "Configuration-Edit-the-Redis-cache-timeout",
       "Configuration-Using-a-key-vault-for-the-client-id-and-client-secret"
     ],
-    "Debugging": ["Ak-Debugging"],
-    "Advanced": ["AK-Central-Site-Support", "AK-Page-Indexing"],
-    "Service Hub": ["AK-Service-Hub"]
+    "Debugging": [
+      "Ak-Debugging"
+    ],
+    "Advanced": [
+      "AK-Central-Site-Support",
+      "AK-Page-Indexing",
+      "ReactViews-JSX-Compiler"
+    ],
+    "Service Hub": [
+      "AK-Service-Hub"
+    ]
   },
   "api": {
     "Modules": [
