@@ -1,5 +1,5 @@
 ---
-title: updatespaproperties option
+title: SPA Updates and Deploying to multiple sites
 id: Site-Deployer-updatespaproperties-option
 ---
 
