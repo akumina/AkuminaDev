@@ -34,12 +34,6 @@ In this model, Akumina widgets are delivered in the page and the Modern editing 
 
 ![](https://akuminadownloads.blob.core.windows.net/wiki/AkuminaDev/modern_sharepoint_experience.png)
 
-
-## Deployment Options
-
-Modern is deployed via 3 components:
-![](https://akuminadownloads.blob.core.windows.net/wiki/AkuminaDev/modern_deploymentoptions.png)
-
 ## Single Page Application (SPA)
 
 Layered on top of the SharePoint Modern interface, the Akumina Page Experience utilizes SPA application, that’s Packed full, with design freedom, enhanced performance, and automatic page routing which creates an intuitive experience for page creators.  
