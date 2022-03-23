@@ -10,6 +10,7 @@ id: Akumina-Framework-5.5.0.0-Overview
     * New Search Bar features includes advanced type ahead search functionality, intelligent search suggestions, search result counts and vertical tabs for selection/refinement. 
 
         ![](https://akuminadownloads.blob.core.windows.net/wiki/AkuminaDev/Release5.5/Search%20Bar.png)
+
         ![](https://akuminadownloads.blob.core.windows.net/wiki/AkuminaDev/Release5.5/Search%20Bar%20full.png)
 
     * New Search Results Page includes advanced search features to provide the ability to search for relevant documents, pages, or people; search for promoted results; search using metadata tags; search across sites or within a specific department site; provides additional sort by options, call-to-action buttons, and additional configurable refiners on the search results page. 
@@ -23,6 +24,7 @@ id: Akumina-Framework-5.5.0.0-Overview
     * Akumina Flow provides customizable multi-tiered checklist functionality for driving and collaborating a completion of tasks across a team. Great for onboarding, workflow surveys, and other tasks with the ability to integrate with 3rd party workload actions and provides reporting analytics.
 
         ![](https://akuminadownloads.blob.core.windows.net/wiki/AkuminaDev/Release5.5/Akumina%20Flow%20form.png)
+
         ![](https://akuminadownloads.blob.core.windows.net/wiki/AkuminaDev/Release5.5/Akumina%20Form%20Feedback.png)
 
   * HTML Content Widget Enhancements   
