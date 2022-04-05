@@ -43,7 +43,7 @@ Our first **Copy files** task copies the Headless version files. In this task we
 | ------------- |---------------------|
 | Display name | Headless Version files |
 | Source Folder | \$/BPS/Example/software/Headless/\$(HeadlessVersion) |
-| Contents | **<br/>!web.config<br/>!interchange.settings.config<br/>!unity.config |
+| Contents | **<br/>!web.config<br/>!routeconfig.json<br/>!bundleconfig.json<br/>!appsettings.json |
 | Target Folder | \$(Build.ArtifactStagingDirectory)/\$(Environment)/\$(Build.DefinitionVersion) |
 
 ## Headless customization files
