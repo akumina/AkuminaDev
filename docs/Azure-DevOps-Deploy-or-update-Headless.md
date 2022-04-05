@@ -5,7 +5,7 @@ All versions of Akumina
 This article describes how to create a build pipeline to deploy or update an Akumina Headless site that is hosted in an app service. For this task, we use files located in source control.
 
 ## Source Paths
-We maintain all file required for this task in source control, as this allows us to exactly control the process of  and application deployment at all stages. For this, we need a source path that will help us support the deployment of the files, configurations and customizations for the application.
+We maintain all files required for this task in source control, as this allows us to exactly control the process of  and application deployment at all stages. For this, we need a source path that will help us support the deployment of the files, configurations and customizations for the application.
 
 For example source control paths, See the document Source Control Example - Source Locations.
 
