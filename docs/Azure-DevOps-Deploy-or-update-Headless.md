@@ -54,9 +54,9 @@ Our last **Copy files** task copies the Headless customization files. In this ta
 | Display name | Headless customization files |
 | Source Folder | \$/BPS/Example/environment/\$(Environment)/headless |
 | Contents | ** |
-| Target Folder | \$(Build.ArtifactStagingDirectory)/\$(Environment)/\$(Build.DefinitionVersion) |
+| Target Folder | \$(Build.ArtifactStagingDirectory)/\$(Environment)/\$(Build.DefinitionVersion)/\wwwroot |
 
-In addition, in the **Advanced** tab, we enable the **Overwrite** and **Preserve file paths** checkboxes.
+In addition, in the **Advanced** tab, we enable the **Overwrite** checkbox.
 
 ## Variables
 We need to add variables that are referenced by the previous commands; these will allow us to easily change (if needed) where we look for files.
