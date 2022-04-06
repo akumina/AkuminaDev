@@ -37,7 +37,7 @@ Select TFVC as the source, and then enter in the TFS path:
 In the Build definition, click the plus icon (**+**) to add under **Agent job 1**. Then search for  and add **Copy files** from the list. Add 3 **Copy files** in total. Also, add one **Publish build artifacts** task at the end.
 
 ## Headless Version files
-Our first **Copy files** task copies the Headless version files. In this task we use the following settings:
+Our first **Copy files** task copies the Headless version files, excluding the config files. In this task we use the following settings:
 
 | Property | Value |
 | ------------- |---------------------|
@@ -56,7 +56,15 @@ Our last **Copy files** task copies the Headless customization files. In this ta
 | Contents | ** |
 | Target Folder | \$(Build.ArtifactStagingDirectory)/\$(Environment)/\$(Build.DefinitionVersion) |
 
-In addition, in the **Advanced** tab, we enable the **Overwrite** checkbox.
+In addition, in the **Advanced** tab, we enable the **Overwrite** and **Preserve file paths** checkboxes.
+
+## Variables
+We need to add variables that are referenced by the previous commands; these will allow us to easily change (if needed) where we look for files.
+
+| Variable | Value |
+| -- | -- |
+| Environment | DEV |
+| HeadlessVersion | 5.5.2203.2902 |
 
 ## Publish build artifacts
 The final task in our pipeline is a **Publish build artifacts** task, that will take the files compiled from the previous steps and put them in a location that we can reference for further use. In this task we use the following settings:
