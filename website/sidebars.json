@@ -54,6 +54,9 @@
       "Site-Deployer-updatespaproperties-option",
       "Site-Deployer-AppOnly"
     ],
+    "Headless":[
+      "AK-Headless-Project"
+    ],
     "Site Creator": [
       "Deployment-Manager-Overview",
       "Deployment-Manager-Adding-A-Custom-Site-Definition",
