@@ -7,19 +7,18 @@ id: AK-Headless-Project
 
 ## Overview
 
-This article provides a quick start with how to setup a project for headless artifacts. This is similar to the process for a headed site, with the exception thaty 
+This article provides a quick start with how to setup a project for headless artifacts. This is similar to the process for a headed site, with the exception that the headless site pulls artifacts from a storage account (or CDN).
+
+In this quick start we will update the files in the storage account to make changes to the headless site.
 
 ## Prerequisites
 
 For this example, you will need the following:
 
-- Visual Studio
-  - Note, you need .Net Framework version 4.7.1 or above
-- The Service Hub example currently located at: [https://github.com/akumina/AkuminaSamples/tree/master/Sample.Web.Api](https://github.com/akumina/AkuminaSamples/tree/master/Sample.Web.Api)
-- A working App Manager, 4.5 and above
-- FTP or other access to that App Manager so that you can download and upload files
-
-You will need the Akumina widget Yeoman generator - see [Yo Akumina](https://akumina.github.io/docs/Yo-Akumina)
+- A terminal or command prompt
+- Visual Studio Code
+- A headless site, using a storage account and configured to use the same as the source of files.
+- You will need the Akumina widget Yeoman generator - see [Yo Akumina](https://akumina.github.io/docs/Yo-Akumina)
 
 ## Setting up the project.
 
