@@ -9,7 +9,7 @@ id: AK-Headless-Project
 
 This article provides a quick start with how to setup a project for headless artifacts. This is similar to the process for a headed site, with the exception that the headless site pulls artifacts from a storage account (or CDN).
 
-In this quick start we will update the files in the storage account to make changes to the headless site.
+In this quick start we will update the files in the storage account to make changes to the headless site. Once the Headless site is configured to point at the blob storage account using the **TemplateUrlPrefix** setting, then we can just simply publish assets to the storage container.
 
 ## Prerequisites
 
