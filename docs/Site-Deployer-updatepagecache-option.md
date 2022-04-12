@@ -20,9 +20,7 @@ The step uses data in the envdir/sitedefinitions/assetdirectory/VirtualPages fol
 # Visual Studio code
 If using Visual Studio Code, you need to adjust the configuration. In the .env file
 
-```
-appmanagerurl=https://appmanager.onakumina.com
-```
+    appmanagerurl=https://appmanager.onakumina.com
 
 In the akumina.sitedeployer.config.json file, set the *Options* and add *appmanagerurl* to the *Args*.
 
@@ -44,6 +42,6 @@ If using a CICD pipeline, the *appmanagerurl* argument needs to be added to the 
 
 | Property | Value |
 | ------------- |---------------------|
-| Arguments | options lists envdir "" assetdirectory DigitalWorkplaceCore spcontextretrycount 3 spdirectory DigitalWorkplace spurl $(siteCollectionUrl) spuser $(siteCollectionUser) sppassword $(siteCollectionPassword) **appmanagerurl $(appManagerUrl)** |
+| Arguments | options updatepagecache envdir "" assetdirectory DigitalWorkplaceCore spcontextretrycount 3 spdirectory DigitalWorkplace spurl $(siteCollectionUrl) spuser $(siteCollectionUser) sppassword $(siteCollectionPassword) **appmanagerurl $(appManagerUrl)** |
 
 See https://github.com/akumina/AkuminaDev/wiki/Azure-DevOps:-Setting-up-a-build-to-deploy-a-site-package
