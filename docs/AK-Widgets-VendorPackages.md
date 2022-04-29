@@ -85,14 +85,6 @@ Version Included: 0.1.0
 
 Documentation is provided on the NPM Page listed above.
 
-### Lodash
-
-Version Included: 3.5.0
-
-[NPM Package](https://www.npmjs.com/package/lodash)
-
-[Documentation](https://lodash.com/docs/3.10.1)
-
 ### Gridstack
 
 Version Included: 1.0.0-dev
