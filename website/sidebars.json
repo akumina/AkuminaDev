@@ -55,7 +55,8 @@
       "Site-Deployer-AppOnly"
     ],
     "Headless":[
-      "AK-Headless-Project"
+      "AK-Headless-Project",
+      "AK-Headless-Troubleshooting"
     ],
     "Site Creator": [
       "Deployment-Manager-Overview",
