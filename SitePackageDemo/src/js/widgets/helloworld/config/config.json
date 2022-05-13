@@ -1,0 +1,50 @@
+{
+    "Definition": {
+        "Name": "helloworld",
+        "Description": "",
+        "Class": "ak.helloworld",
+        "ContentTypes": [],
+        "Version": "",
+        "Dependencies": [],
+        "Properties": [
+            {
+                "name": "myproperty",
+                "friendlyname": "Tool Tip Property",
+                "value": "",
+                "type": "string"
+            }
+        ],
+        "Views": [
+            {
+                "Name": "default",
+                "Path": "/{AssetLibraryName}/DigitalWorkPlace/Content/Templates/helloworld/default.html",
+                "Id": "2e1c1fa5-73a2-e0e5-3cc8-8a21faace2ab"
+            }
+        ],
+        "JS": {
+            "Default": "/{AssetLibraryName}/DigitalWorkPlace/JS/widgets/helloworld.js"
+        }
+    },
+    "Instances": [
+        {
+            "Name": "hello-world stub instance",
+            "Description": "hello-world instance description",
+            "Icon": "fa fa-cog",
+            "Id": "1788bb6b-252d-21ba-36c3-0d7c7fb91563",
+            "Properties": [
+                {
+                    "name": "myproperty",
+                    "value": "myfirstvalue"
+                }
+            ],
+            "SelectedView": "default",
+            "AvailableViews": [],
+            "HiddenFields": []
+        }
+    ],
+    "Options": {
+        "IsPartialDefinition": false,
+        "IsDashboardWidget": false,
+        "IsAppManagerWidget": false
+    }
+}

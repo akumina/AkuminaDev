@@ -1,0 +1,41 @@
+{
+  "Options": {
+    "masterpage": false,
+    "js": false,
+    "css": false,
+    "lists": false,
+    "layouts": false,
+    "pages": false,
+    "controls": false,
+    "widgets": false,
+    "groups": false,
+    "contentfiles": false,
+    "imagefiles": false,
+    "updatelists": false,
+    "homepage": false,
+    "fonts": false,
+    "virtualpages": false,
+    "cdnassets": true
+  },
+  "Args": [
+    "version",
+    "envdir",
+    "assetdirectory",
+    "options",
+    "ml",
+    "langid",
+    "spdirectory",
+    "spurl",
+    "spuser",
+    "sppassword",
+    "clientid",
+    "clientsecret",
+    "tenantid",
+    "aadclientid",
+    "appmanagerurl",
+    "cdnprefix",
+    "multideployment",
+    "centralspurl",
+    "devopsdeployment"
+  ]
+}

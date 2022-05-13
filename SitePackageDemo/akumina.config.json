@@ -1,0 +1,12 @@
+{
+    "WidgetsSourcePath": "src/js/widgets",
+    "WidgetPackageDestinationPath": "build/sitedefinitions/ak/widgetpackages",
+    "WidgetPackageVersion": "5.5.0.0",
+	"CDNAssetsPath": "build/sitedefinitions/ak/cdnassets",
+	"Environments": [{
+		"Name": "dev",
+		"AppManagerUrl": "https://[appmanagerurl]",
+		"AppManagerQueryKey": "[appmanagerquerykey]",
+		"SharepointUrl": "https://[tenant].sharepoint.com/sites/dev"
+	}]
+}
