@@ -82,8 +82,9 @@
     ],
     "Advanced": [
       "AK-Central-Site-Support",
-      "AK-Page-Indexing",
-      "ReactViews-JSX-Compiler"
+      "Eventing-OOB-Digital-Workplace-Events",
+      "ReactViews-JSX-Compiler",
+      "AK-Page-Indexing"
     ],
     "Service Hub": [
       "AK-Service-Hub"
