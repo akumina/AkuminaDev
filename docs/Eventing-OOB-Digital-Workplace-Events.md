@@ -1,6 +1,6 @@
 ---
 title: Eventing OOB Digital Workplace Events
-id: Eventing:-OOB-Digital-Workplace-Events
+id: Eventing-OOB-Digital-Workplace-Events
 ---
 
 # OOB Digital Workplace Events
