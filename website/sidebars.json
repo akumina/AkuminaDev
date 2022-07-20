@@ -71,6 +71,7 @@
       "Deployment-Manager-Supported-Tokens"
     ],
     "Azure DevOps": [
+      "Azure-DevOps-CI-CD",
       "Azure-DevOps-Setting-up-a-build-to-deploy-a-site-package",
       "Azure-DevOps-Setting-up-a-build-to-deploy-file-to-App-Manager-hosted-in-an-app-service"
     ],
