@@ -1,8 +1,6 @@
 {
   "docs": {
-    "Akumina": [
-      "Akumina-Quickstart"
-    ],
+    "Akumina": ["Akumina-Quickstart"],
     "Modern": [
       "Modern-Overview",
       "Modern-Faq",
@@ -15,6 +13,13 @@
       "Akumina-Widget-Builder",
       "Akumina-Widget-Builder-Skipping-instances",
       "Akumina-Widget-Builder-Token-replacement-for-widget-properties"
+    ],
+    "Widget Development Quickstart": [
+      "Widget-Development-Project-Setup",
+      "Widget-Development-Configuring-env",
+      "Widget-Development-Configuring-akumina-sitedeployer-config",
+      "Widget-Development-Configuring-akumina-config",
+      "Widget-Development-Extras"
     ],
     "Virtual Page Builder": [
       "AK-Virtual-Page-Builder",
@@ -34,7 +39,7 @@
       "Yo-Akumina-React",
       "Yo-Akumina-Simple-template"
     ],
-    "Akumina Widgets": [
+    "Widget Info": [
       "Akumina-Widgets-Overview",
       "Akumina-Widgets-Build-New",
       "AK-WidgetViews-ConfigProps",
@@ -54,10 +59,7 @@
       "Site-Deployer-updatespaproperties-option",
       "Site-Deployer-AppOnly"
     ],
-    "Headless":[
-      "AK-Headless-Project",
-      "AK-Headless-Troubleshooting"
-    ],
+    "Headless": ["AK-Headless-Project", "AK-Headless-Troubleshooting"],
     "Site Creator": [
       "Deployment-Manager-Overview",
       "Deployment-Manager-Adding-A-Custom-Site-Definition",
@@ -77,18 +79,14 @@
       "Configuration-Edit-the-Redis-cache-timeout",
       "Configuration-Using-a-key-vault-for-the-client-id-and-client-secret"
     ],
-    "Debugging": [
-      "Ak-Debugging"
-    ],
+    "Debugging": ["Ak-Debugging"],
     "Advanced": [
       "AK-Central-Site-Support",
       "Eventing-OOB-Digital-Workplace-Events",
       "ReactViews-JSX-Compiler",
       "AK-Page-Indexing"
     ],
-    "Service Hub": [
-      "AK-Service-Hub"
-    ]
+    "Service Hub": ["AK-Service-Hub"]
   },
   "api": {
     "Modules": [
