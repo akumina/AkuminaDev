@@ -12,4 +12,5 @@
 | HTTP 2.0 | Ensure the SharePoint site and AppManager are using the HTTP 2.0 protocol. |
 | App Manager | Ensure the following settings:<br /> * CacheDefaultInterval - 28800 <br /> * DwpCookieDuration - 20160 |
 | Add Indexed fields | Are there any lists that are expected to get over 5000 items? If so, ensure that there are proper indexes on those lists to avoid the 5000 item threshold error. |
+| Identify heavy chatter features of Akumina | Share the following with Akumina launch team: <br />* Are you using the Comments Feature?<br />* Are you using the Reactions Feature? <br />* Are you using the Activity Streams feature? <br />* Are any of these features used on the Home page?
 
