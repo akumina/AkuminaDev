@@ -87,13 +87,13 @@ This article will detail the Akumina Widget structure and the default templating
 ## The "Definition" property
 This property will create the corrosponding widget definition within the Akumina implementation. Remember the widget definition is used as the 'configuration' for your widget. It is not inserted into any page, but rather sets the blue print for the instances of the widgets created.  Think of the defintion as the 'class' and an instance as the 'object' - You cannot create instances without the defintion.  The instances are what ends up being insert into the page.  Anytime you create a new instance, think of your instance as 'passing through' the definition.  Some of the properties, such as 'views' control which views are available when creating the instance, this helps enforce rules for your business users.
 
-```javascript
+```json
 "Definition": {
         "Name": "YourWidget", //Unique name for your widget
         "Class": "CustomerName.Widgets.YourWidget", // Akumina will create a new instance of this class and call the Init() method
         "ContentTypes": [], //array of content types to be imported into sharepoint - found in /contenttypes directory
         "Version": "", 
-        "Dependencies": [], //array of other widgetnames to be loaded by getwidgetjs bundle, this allows for other module code to be used - IE you want to use the GenericListWidget code - the only way to inject the JS code is to set this value.  The framework will handle getting this module code from the getwidgetjs bundle.
+        "Dependencies": [], //array of other widgetnames to be loaded by getwidgetjs bundle, this allows for other module code to be used - IE you want to use the GenericListWidget code - the only way to inject the JS code is to set this value.  The framework will handle getting this module code from the getwidgetjs bundle. - see sample section below for more detail
         "Properties": [
             {
                 "name": "propertyname",
@@ -126,7 +126,35 @@ This property will create the corrosponding widget definition within the Akumina
 }
 ```
 
-#### Available Property Types for Widget Defintions
+### Dependencies Array for Definition
+
+If you have a custom widget that requires the use of another widget.
+A widget is just a class, the class is not available unless that class has been "injected" into the page - in the event you have a widget that is doing something like:
+
+```javascript
+
+   var control = new Akumina.AddIn.GenericListControlWidget();
+   control.Init(this.listRequest);
+
+
+```
+
+You would add 'GenericListWidget' to the 'Dependencies' this so that Akumina.AddIn.GenericListControlWidget is defined automatically:
+
+```json
+{
+  "Definition": {
+    "Name": "CustomWidget",
+    "Description": "CustomWidget",
+    "Class": "Customer.Widgets.CustomWidget",
+    "Dependencies": ["GenericListWidget"],
+
+```
+
+Without this feature the developer would be resonsible for making a call to the digitalworkplace.core.genericlistcontrolwidget.min.js on their own so that is defined prior to new'ing up that class.
+
+
+### Available Property Types for Widget Defintions
 This values can be used in the "type" field value  
 
 | type |
@@ -148,7 +176,7 @@ Figure 2 (itemselector)
 
 
 ## The "Instance" property
-```javascript
+```json
 "Instances": [
         {
             "Name": "Your widget instance",
