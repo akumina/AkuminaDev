@@ -95,7 +95,24 @@ An example List definition is displayed below:
     </Field>
   </list>
 ```
-Take note of each Field type and the attributes required on each of them:
+
+The attributes on the **list** tag define the properties of the list.
+* noCrawl - Corresponds to the List's *Allow items from this list to appear in search results?* option, ex:
+  * noCrawl="TRUE" 
+* contentType - Sets the list's content types, with the last one being the default, ex:
+  * contentType="AkuminaLanguage,ArticleComments"
+* templateID - the SharePoint list template ID, which allows a Calendar or Document Library to be created. See also https://docs.microsoft.com/en-us/openspecs/sharepoint_protocols/ms-wssts/8bf797af-288c-4a1d-a14b-cf5394e636cf
+
+To create a picture library (109) with a contentType:
+    
+    <list name="Images_AK" templateID="109" contentType="Picture">
+    
+To create a calendar (106) that is not searchable:
+    
+    <list name="AnotherCalendar" noCrawl="TRUE" templateID="106">
+
+
+For the fields, take note of each Field type and the attributes required on each of them:
 
 ### Global Fields
 Below are attributes that are required on every field defined on the list:
