@@ -147,7 +147,7 @@ You would add 'GenericListWidget' to the 'Dependencies' this so that Akumina.Add
     "Name": "CustomWidget",
     "Description": "CustomWidget",
     "Class": "Customer.Widgets.CustomWidget",
-    "Dependencies": ["GenericListWidget"],
+    "Dependencies": ["GenericListWidget"], //this "value" can be found within the App Manager - Widget Manager under Widget Definitions - simply take a value from the appropriate 'Widget Type' column
 
 ```
 
