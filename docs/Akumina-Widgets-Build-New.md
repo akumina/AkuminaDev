@@ -1,6 +1,6 @@
 ---
 id: Akumina-Widgets-Build-New
-title: Building a New Widget
+title: Building a New Widget Instance
 ---
 
  
