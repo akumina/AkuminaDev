@@ -1,6 +1,6 @@
 ---
 id: Akumina-Widgets-Build-New
-title: Building a New Widget
+title: Building a New Widget Instance
 ---
 
  
@@ -31,7 +31,7 @@ You will start the process of creating your own widget by creating a stub utiliz
 * When prompted for the type of stub to generate, simply select the default Hello World.	 
 * When prompted for the folder place generate files, select the default  (src/js/widgets).	 
 * When asked if you would like this to be a TypeScript stub, enter “y” (for “Yes”).	 
-* When asked if this stub should only be used to generate instances, select the default of “N” (for “No”).	 
+* When asked if this stub should only be used to generate instances, select “Y” (for “Yes”).	
 
  
 # Verify that the widget was created
