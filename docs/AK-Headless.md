@@ -45,10 +45,6 @@ An Akumina site must be already setup in SharePoint, using Azure Active Director
 
 For more information please see Installation Guides: https://community.akumina.com/kbtopic/installation-guides/
 
-**Sharepoint Requirements** 
-
-Sharepoint must be a standalone site (Headless does not support central/delivery architecture).
-
 ## Setting up a local Headless website
 
 _{headlessappdir} refers to the root folder of the Headless website on your web server_
