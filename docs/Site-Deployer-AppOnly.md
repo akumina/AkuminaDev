@@ -28,7 +28,7 @@ The requisite permissions needed are the same as the .app file, with the additio
 
 ## Step by Step
 
-1)	In <span style="color:red">Central</span> site do the following
+1)	In <span style="color:red">Central</span> site go to:
 
 ```
 {centralsiteurl}/_layouts/15/appregnew.aspx
@@ -42,7 +42,10 @@ The requisite permissions needed are the same as the .app file, with the additio
 
 ![image 2](https://akumina.azureedge.net/wiki/AkuminaDev/apponly/2.png)
 
-4)	Go into the <span style="color:red">Central</span> site page {centralsiteurl}/_layouts/15/appinv.aspx
+4)	Go into the <span style="color:red">Central</span> site url:
+```
+ {centralsiteurl}/_layouts/15/appinv.aspx
+```
 5)	on that page, put in the id from step 3 and click 'lookup'
 
 ![image 3](https://akumina.azureedge.net/wiki/AkuminaDev/apponly/3.png)
