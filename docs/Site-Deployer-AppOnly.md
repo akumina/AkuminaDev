@@ -51,8 +51,8 @@ The requisite permissions needed are the same as the .app file, with the additio
 
 ```
 <AppPermissionRequests AllowAppOnlyPolicy="true">
-    <AppPermissionRequest Scope=http://sharepoint/content/sitecollection Right="FullControl" />
-    <AppPermissionRequest Scope=http://sharepoint/content/sitecollection/web Right="FullControl" />
+    <AppPermissionRequest Scope="http://sharepoint/content/sitecollection" Right="FullControl" />
+    <AppPermissionRequest Scope="http://sharepoint/content/sitecollection/web" Right="FullControl" />
 </AppPermissionRequests>
 ```
 EX:
