@@ -730,6 +730,19 @@ The following table lists common issues and corrective actions:
 
 ***
 
+# Performance Tab
+In the Akumina debugger panel, the performance tab can be used to evaluate different data points in regards to performance.  The 'General' tab shows basic information around total Akumina framework load time (how long it takes to get through all the page lifecycle steps, they are executed asyncronsly but we track the completion time), when in Modern runtime, the Modern section indicates how long it took before Akumina code was able to execute as we have to wait for Modern to execute our 3rd party code.  The 'Page lifecycle' tab indicates the total execution time for each step (core or CUSTOM) which can influence the load time.  For instance Akumina allows you to inject your own step that can fetch data from a sharepoint list or some other API call that can HOLD up the page load time (sometimes by design). If you see any yellow or red numbers evaluate if its custom or core. 'Mark and Measure' - see more info here on its usage: https://akumina.github.io/docs/Measuring-Performance-With-Mark-and-Measure. Finally the 'Service Hub' tab will report on the Response Header coming from the App Service (x-akumina-elapsed-ms) - this tells you the SERVER execution time to help narrow down Edge Node problems with the App Manager servers.
+
+
+<img src="https://akuminadownloads.blob.core.windows.net/wiki/AkuminaDev/performance/performance-general.PNG" width="550" />
+
+
+<img src="https://akuminadownloads.blob.core.windows.net/wiki/AkuminaDev/performance/performance-pagelifecycle.PNG" width="550" />
+
+Here is an emulated (by using Throttling in the network tab) POOR CLIENT collection example:
+<img src="https://akuminadownloads.blob.core.windows.net/wiki/AkuminaDev/performance/performance-general-slow-example.PNG" width="550" />
+
+
 # Measuring Azure App Service Latency
 When looking at performance, it is important to measure the network latency from a given user location to where the Akumina App Manager is located. We can then correlate this value with what we see in the site.
 There are online services that can assist with this – a few are listed below.
