@@ -64,7 +64,7 @@ Set options to true/false in akumina.sitedeployer.config.json:
 | `updatelists` |  Deploys list content based on **envdir**/sitedefinitions/**assetdirectory**/ListDefinitions/Update.xml |
 | `homepage` | Sets default home page for the site collection to Pages/home.aspx unless **envdir**/sitedefinitions/**assetdirectory**/homepage/Elements.json exists |
 | `fonts` | Deploys contents of **envdir**/sitedefinitions/**assetdirectory**/branding/fonts |
-| `exportlists` | Reads 'exportLists' key from app.config - will export configured lists  |
+| `exportlists` | Reads 'exportLists' key from app.config - will export configured lists - see https://akumina.github.io/docs/Site-Package-ListDefinitions-Folder#export |
 | `uploadfiles` | Deploys contents of **envdir**/sitedefinitions/**assetdirectory**/UploadFiles |
 | `webpartgallery` |  |
 | `groups` | Deploys Sharepoint Security Groups from **envdir**/sitedefinitions/**assetdirectory**/SecurityGroups/groups.xml |
