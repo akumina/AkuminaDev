@@ -75,3 +75,86 @@ The Update.xml indicates items that need to be updated or provisioned within lis
   </list>
 </lists>
 ```
+	
+	
+### Export
+There is also a facility to EXPORT lists. The **exportlists** option is used for this purpose. In the file tools\Akumina.SiteDeployer.exe.config, we specify the lists we want to export in the **exportLists** key:
+
+```xml
+    <add key="exportLists" value="Apps_AK,FoundationNews_AK" />
+```
+
+This will produce an XML file in the **ListDefinitions** path:
+
+> ListDefinitions\Lists-Export.xml
+
+And inside the file, it will have the output of the list data, example:
+
+
+```xml
+<lists>
+  <list name="Apps_AK" noCrawl="TRUE">
+    <Field Name="AppId" DisplayName="AppId" Type="Text" />
+    <Field Name="AppInstanceId" DisplayName="AppInstanceId" Type="Text" />
+    <Field Name="AppIcon" DisplayName="AppIcon" Type="Text" />
+    <Field Name="AppRedirectUrl" DisplayName="AppRedirectUrl" Type="Text" />
+    <Field Name="AppType" DisplayName="AppType" Type="Text" />
+    <Field Name="Enabled" DisplayName="Enabled" Type="Boolean">
+      <Default>
+      </Default>
+    </Field>
+    <Field Name="AppAuthorization" DisplayName="AppAuthorization" Type="Note" />
+    <Field Name="SiteId" DisplayName="SiteId" Type="Text" />
+    <Field Name="AppProperties" DisplayName="AppProperties" Type="Note" />
+    <Field Name="_CommentFlags" DisplayName="Comment settings" Type="Lookup" />
+    <Field Name="_CommentCount" DisplayName="Comment count" Type="Lookup" />
+    <Data>
+      <Rows>
+        <Row>
+          <Field Name="Title">Language Manager</Field>
+          <Field Name="AppId">LanguageManager</Field>
+          <Field Name="AppInstanceId">4d213ea2-9a80-466b-9661-5bd0006bac11</Field>
+          <Field Name="AppIcon">fa fa-cog</Field>
+          <Field Name="AppRedirectUrl">/LanguageManager</Field>
+          <Field Name="AppType">admin</Field>
+          <Field Name="Enabled">True</Field>
+          <Field Name="AppAuthorization">Install06 Owners</Field>
+          <Field Name="SiteId">1e6d9b75-9dbe-4a74-a096-5eaaa9b36ede</Field>
+          <Field Name="AppProperties" />
+          <Field Name="_CommentFlags">
+          </Field>
+          <Field Name="_CommentCount">
+          </Field>
+        </Row>
+        ...
+      </Rows>
+    </Data>
+  </list>
+  ...
+</lists>
+```
+
+### Tokens
+The following tokens are available for use in the XML:
+
+| Property | Token(s) | Notes |
+| -- | -- | -- |
+| Site Collection ID | {SiteCollectionId} | |
+| Site Collection Title | {SiteCollectionTitle} | |
+| Site Collection URL | {SiteCollectionUrl}	 | |
+| Root web Id | {RootWebId} | The root site of the site collection’s Id |
+| Root Web Title | {RootWebTitle}	 | |
+| Root Web URL | {RootWebUrl}	 | |
+| Web Id | {SiteId} | The current site or web’s Id |
+| Web Title | {SiteTitle} | |
+| Web Url | {SiteUrl} | |
+| List Id | {ListId} | |
+| Random GUID | {NewGuid} |
+| | {NewUniqueGuid} | |
+| | {{NewGuidN}} | |
+| Default language – 1033 | {DefaultLanguageId}	 | |
+| Default language – en-us | {DefaultLanguageCode}	 | |
+| Random Hex | {{Hex:44}}	 | |
+| Now - Datetime | {{DateTime.Now}}	 | |
+| Now - Date | {{DateTime.Now.Date}} | |
+| Now - UTC Date | {{DateTime.UtcNow.Date}}	 | |
