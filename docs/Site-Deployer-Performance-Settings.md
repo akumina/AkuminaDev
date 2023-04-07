@@ -8,8 +8,8 @@ The following properties can be added to the Akumina.SiteDeployer.exe command li
 
 | Item | Action |
 | -- | -- |
-| spcontextretrycount | The number of retries when contacting SharePoint. The default is 1. |
-| spcontextretryinterval | The time in between the retries. The default is 2000 – (2 seconds). |
+| spcontextretrycount | The number of retries when contacting SharePoint. The default is 1. Set to a higher number, such as 5, to get around throttling or transient errors during a deployment. |
+| spcontextretryinterval | The time in between the retries. The default is 2000 – (2 seconds). Set to a higher number, such as 5000, to get around throttling or transient errors during a deployment. |
 
 These properties are added as shown:
 
