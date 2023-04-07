@@ -15,7 +15,7 @@ These properties are added as shown:
 
 _Akumina.SiteDeployer.exe options "js" spUrl "https://tenant.sharepoint.com/sites/mysitecollection" clientid "myclientid" clientsecret "myclientsecret" envdir "C:\TEMP\\\\" assetdirectory "MyClient" spdirectory "DigitalWorkplace" centralspurl "https://tenant.sharepoint.com/sites/centralsitecollection" **spcontextretrycount  5 spcontextretryinterval 5000**_
 
-For our Azure DevOps example (see https://akumina.github.io/docs/Azure-DevOps-Setting-up-a-build-to-deploy-a-site-package), the command line taks will be updated as shown:
+For our Azure DevOps example (see https://akumina.github.io/docs/Azure-DevOps-Setting-up-a-build-to-deploy-a-site-package), the command line task will be updated as shown:
 
 | Property | Value |
 | ------------- |---------------------|
