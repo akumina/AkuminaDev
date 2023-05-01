@@ -1,12 +1,11 @@
 {
   "docs": {
     "Akumina": ["Akumina-Quickstart"],
-    "Modern": [
-      "Modern-Overview",
-      "Modern-Faq",
-      "Modern-SPA",
-      "Modern-WebPartLibrary",
-      "Modern-Google-Analytics"
+    "Yo Akumina": [
+      "Yo-Akumina",
+      "getting-started-yeoman",
+      "Yo-Akumina-React",
+      "Yo-Akumina-Simple-template"
     ],
     "Widget Builder": [
       "Akumina-Widget-Structure",
@@ -21,6 +20,17 @@
       "Widget-Development-Configuring-akumina-config",
       "Widget-Development-Extras"
     ],
+    "Widget Info": [
+      "Akumina-Widgets-Overview",
+      "Akumina-Widgets-Build-New",
+      "AK-WidgetViews-ConfigProps",
+      "AK-Widgets-PropertiesOverview",
+      "Widgets-GlobalVsLocal",
+      "Akumina-React-Widgets",
+      "Akumina-Widget-Callbacks",
+      "Akumina-Widget-RenderChildWidgets",
+      "AK-WIdgets-VendorPackages"
+    ],
     "Virtual Page Builder": [
       "AK-Virtual-Page-Builder",
       "AK-Virtual-Page-Layout-Builder"
@@ -33,23 +43,6 @@
       "AK-ActivityStream-PUSHSubscription-PowerAutomate-snow",
       "AK-ActivityStream-PUSHSubscription-PowerAutomate-d365"
     ],
-    "Yo Akumina": [
-      "Yo-Akumina",
-      "getting-started-yeoman",
-      "Yo-Akumina-React",
-      "Yo-Akumina-Simple-template"
-    ],
-    "Widget Info": [
-      "Akumina-Widgets-Overview",
-      "Akumina-Widgets-Build-New",
-      "AK-WidgetViews-ConfigProps",
-      "AK-Widgets-PropertiesOverview",
-      "Widgets-GlobalVsLocal",
-      "Akumina-React-Widgets",
-      "Akumina-Widget-Callbacks",
-      "Akumina-Widget-RenderChildWidgets",
-      "AK-WIdgets-VendorPackages"
-    ],
     "Site Deployer": [
       "Site-Deployer-Overview",
       "Site-Deployer-Version-4-8",
@@ -60,6 +53,13 @@
       "Site-Deployer-AppOnly"
     ],
     "Headless": ["AK-Headless-Project", "AK-Headless-Troubleshooting"],
+    "Modern": [
+      "Modern-Overview",
+      "Modern-Faq",
+      "Modern-SPA",
+      "Modern-WebPartLibrary",
+      "Modern-Google-Analytics"
+    ],
     "Site Creator": [
       "Deployment-Manager-Overview",
       "Deployment-Manager-Adding-A-Custom-Site-Definition",
