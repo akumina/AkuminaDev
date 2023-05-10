@@ -45,7 +45,7 @@ The following are the prerequisites
 
 ## Configuring a new AAD Client App for SharePoint Token
 
-To make a secure user-based connection between Site Deployer and App Manager AAD Client App, make sure that the existing App Manager AAD Client App has the following configuration.
+To make a secure user-based connection between Site Deployer and AAD Client App, make sure that the AAD Client App has the following configuration:
 
 Create a new App seperate
 
@@ -54,9 +54,22 @@ Create a new App seperate
  3. Create App
  4. Edit App
  5. Goto Manager --> Authentication --> Add a platform
+
+![](https://akuminadownloads.blob.core.windows.net/wiki/AkuminaDev/SiteDeployer/addplatform.png)
+
+
  6. Choose Mobile and desktop applications
+
+![](https://akuminadownloads.blob.core.windows.net/wiki/AkuminaDev/SiteDeployer/mobileanddesktop.png)
+
  7. Add Uri - http://localhost (dont add http(s))
+
+![](https://akuminadownloads.blob.core.windows.net/wiki/AkuminaDev/SiteDeployer/replyurllocalhost.png)
+
  8. Under Allow public client flows - choose Yes
+
+![](https://akuminadownloads.blob.core.windows.net/wiki/AkuminaDev/SiteDeployer/allowpublicflow.png)
+
  9. Save
 
 Configure App Permissions to be able to deploy to Sharepoint properly
@@ -152,7 +165,7 @@ AADSTS650057: Invalid resource. The client has requested access to a resource wh
 
 
 
-#### Helpful links
+## Helpful links
 Site Package overview:  
 https://github.com/akumina/AkuminaTraining/wiki/Site-Package-Overview 
 
@@ -160,7 +173,7 @@ Continuous Intergration flow:
 https://github.com/akumina/AkuminaTraining/wiki/Site-Deployer:-Continuous-Site-Package-Deployment-via-a-console-app
 
 
-### Older Versions / Links / Info
+## Older Versions / Links / Info
 
 Version 4.8
 https://akumina.github.io/docs/Site-Deployer-Version-4-8
