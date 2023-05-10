@@ -41,7 +41,7 @@ Command line parameters are set in .env
 
 ### Deprecated arguments
 
-It is **recommended** to use the [new auth flow options from microsoft](https://akumina.github.io/docs/Site-Deployer-Auth)
+It is **recommended** to use the [new auth flow options from microsoft](https://akumina.github.io/docs/Site-Deployer-Overview)
 
 You should no longer use these:
 
