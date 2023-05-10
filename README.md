@@ -2,6 +2,10 @@
 
 #### ChangeList
 
+
+### 05.10.23
+- Site Deployer 6.0 available - new Auth flow + more
+
 ### 01.13.20
 - Site Deployer 4.5 and all future versions have been moved to https://github.com/akumina/SiteDeployer
 

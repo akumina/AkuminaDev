@@ -45,12 +45,10 @@
     ],
     "Site Deployer": [
       "Site-Deployer-Overview",
-      "Site-Deployer-Version-4-8",
-      "Site-Deployer-Version-5-0",
+      "Site-Deployer-Version-6-0",
       "Site-Deployer-List-Attributes",
       "Akumina-Npm-Commands",
-      "Site-Deployer-updatespaproperties-option",
-      "Site-Deployer-AppOnly"
+      "Site-Deployer-updatespaproperties-option"
     ],
     "Headless": ["AK-Headless-Project", "AK-Headless-Troubleshooting"],
     "Modern": [

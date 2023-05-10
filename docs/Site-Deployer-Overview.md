@@ -17,3 +17,15 @@ https://github.com/akumina/AkuminaTraining/wiki/Site-Package-Overview
 
 Continuous Intergration flow:  
 https://github.com/akumina/AkuminaTraining/wiki/Site-Deployer:-Continuous-Site-Package-Deployment-via-a-console-app
+
+
+### Older Versions / Links / Info
+
+Version 4.8
+https://akumina.github.io/docs/Site-Deployer-Version-4-8
+
+Version 5.0/5.5
+https://akumina.github.io/docs/Site-Deployer-Version-5-0
+
+Using site deployer with MFA
+https://akumina.github.io/docs/Site-Deployer-AppOnly
