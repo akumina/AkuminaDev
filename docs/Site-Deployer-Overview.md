@@ -98,7 +98,7 @@ Refer to the below table and update the App Manger ADD Client Permissions If req
 
 ## Build, Package and Deploy for local DEVELOPER environment
 
-For local development, there is no configuration for passwords/secrets etc.  The npm run deploy command will PROMPT for your credentials.  For automated deployments via devops, see CICD
+For local development, there is no configuration for passwords/secrets etc.  The `npm run deploy` command will PROMPT for your credentials.  For automated deployments via devops, see CICD
 
 **configuring .env file**
 
@@ -144,9 +144,41 @@ You will get the **prompt** to authenticate yourself.
 
 ![](https://akuminadownloads.blob.core.windows.net/wiki/AkuminaDev/SiteDeployer/authprompt.png)
 
-## Configuring App Manager AAD Client App for Storage SAS Uri
+## Deploy for Azure Dev Ops (CICD) environment
 
-Documentation available soon
+For CI/CD you are unable to authenticate using the prompt (obviously) so we have introduced an `aadclientsecret` option that can be passed in during the Azure Devops pipeline/release.  `aadclientsecret` should be marked as a hidden/private variable and should not be given to developers.  Technically you could use this option for local development but it is not recommended.
+
+The following arguments will be used within your pipeline
+
+`envdir`,`assetdirectory`,`spurl`,`tenantId`,`aadclientid`,`aadclientsecret`,`appmanagerurl`
+
+
+**Setup a Pipeline using aadclientid and aadclientsecret**
+
+1.	Navigate to Pipeline and then click New pipeline
+2.	Select Code as Azure Repos Git
+3.	Select your repository
+4.	Select Configure Pipeline as Node.js or starter pipeline
+5.	In the YAML window copy paste the following content
+
+```json
+trigger:
+- main
+
+pool:
+  vmImage: windows-2022
+
+steps:
+- task: CmdLine@1
+  displayName: 'Create list and list-items'
+  inputs:
+    filename: '$(Build.SourcesDirectory)\tools\Akumina.SiteDeployer.exe'
+    arguments: 'options lists envdir $(Build.SourcesDirectory)\build\ assetdirectory $(assetDirectory) spurl $(spUrl) tenantId $(tenantId) aadclientid $(addClientId) aadclientsecret $(aadClientSecret) appmanagerurl $(appManagerUrl)'
+```
+
+6.	From the right corner, Click Variable and then add all variables from the variable listed in the beginning of the session, refer the following screen for completed view
+
+![](https://akuminadownloads.blob.core.windows.net/wiki/AkuminaDev/SiteDeployer/authdevopsvariables.png)
 
 
 ## Troubleshooting
