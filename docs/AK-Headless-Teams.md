@@ -8,7 +8,7 @@ id: AK-Headless-Teams
 ## Overview
 
 This article provides steps to add an Akumina headless website to teams
-* Personal app - Akumina utilizes the "website tab" option - requires app to be configured using the `manfiest.json` below
+* Personal app - Akumina utilizes the "website tab" option - requires app to be configured using the `manifest.json` below
 * Channel tab - You can add the headless url directly using the Add Website option (no setup required)
 
 ## Variables to be replaced
@@ -54,9 +54,9 @@ Example `teams.html`
 ```
 
 
-## Manfiest
+## Manifest
 
-The following is an example `manfiest.json` of a Personal App with 3 tabs:  Home, News, Streams
+The following is an example `manifest.json` of a Personal App with 3 tabs:  Home, News, Streams
 
 ```json
 {
