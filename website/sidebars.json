@@ -50,7 +50,11 @@
       "Akumina-Npm-Commands",
       "Site-Deployer-updatespaproperties-option"
     ],
-    "Headless": ["AK-Headless-Project", "AK-Headless-Troubleshooting"],
+    "Headless": [
+      "AK-Headless-Project",
+      "AK-Headless-Teams",
+      "AK-Headless-Troubleshooting"
+    ],
     "Modern": [
       "Modern-Overview",
       "Modern-Faq",
