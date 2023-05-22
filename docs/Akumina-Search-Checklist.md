@@ -25,8 +25,12 @@ The clause **SPSiteURL:{SiteCollection}** requires the items to be in the curren
 * Remove the clause to search all site collections.
 * Add another clause to search other site collection(s)
   * **(SPSiteURL:{SiteCollection} OR SPSiteURL:http://tenant.sharepoint.com/sites/central)**
-* or Add another KQL clause to search other data
+* Add a KQL clause to search other data
   * **(SPSiteURL:{SiteCollection} OR ContentType:CustomArticle)**
+* Add a KQL clause to search a specific library:
+  * **Path:"https://tenant.sharepoint.com/sites/delivery/Videos_AK/*"**
+* Add a KQL clause to search a specific folder:
+  * **ParentLink="https://tenant.sharepoint.com/sites/delivery/Shared Documents/sub1"**
 * Or a combination of the above
 
 ### Tagging
