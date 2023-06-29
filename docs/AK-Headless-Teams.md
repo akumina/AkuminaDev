@@ -11,6 +11,13 @@ This article provides steps to add an Akumina headless website to teams
 * Personal app - Akumina utilizes the "website tab" option - requires app to be configured using the `manifest.json` below
 * Channel tab - You can add the headless url directly using the Add Website option (no setup required)
 
+## Cookie requirements for Headless application
+
+```json
+ ====> "CookieSameSiteMode": "None", <==== "MinWorkerThreads": "50",  
+```
+
+
 ## Variables to be replaced
 
 

@@ -86,6 +86,7 @@ Refer to the below table and update the App Manger ADD Client Permissions If req
 | 1	 |addtermsets	| TermStore.ReadWrite.All|	Delegated |
 | 2	| lists, groups, siteproperties, sitepermissions, modernprovisionapp, masterpage, layouts, webpartgallery | AllSites.FullControl |	Delegated |
 | 3 |	js, css, pages, controls, widgets, contentfiles, imagefiles, fonts, updatelists, homepage, exportlists, uploadfiles, virtualpages, spusersearch, virtuallayout, exportcomments, updatespaproperties, streamcards, virtualtomodern	| AllSites.Manage |	Delegated |
+| 4 | cdnassets | user_impersonation | Delegated |
 
 **Appliation Permissions required for CICD flow** (same as above, but use Application instead of Delegated)
 
@@ -94,7 +95,7 @@ Refer to the below table and update the App Manger ADD Client Permissions If req
 |1 |addtermsets |	TermStore.ReadWrite.All |	Application|
 |2|	lists, groups, siteproperties, sitepermissions, modernprovisionapp, masterpage, layouts, webpartgallery |	Sites.FullControl.All	| Application|
 |3|js, css, pages, controls, widgets, contentfiles, imagefiles, fonts, updatelists, homepage, exportlists, uploadfiles, virtualpages, spusersearch, virtuallayout, exportcomments, updatespaproperties, streamcards, virtualtomodern | Sites.Manage.All |	Application |
-
+| 4 | cdnassets | user_impersonation | Delegated |
 
 ## Build, Package and Deploy for local DEVELOPER environment
 
