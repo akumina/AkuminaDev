@@ -4,7 +4,7 @@ title: Field Event Integration
 ---
 
 # Applies to
-All versions of Akumina
+6.0+
 
 # Overview
 

@@ -53,7 +53,8 @@
     "Authoring": [
       "Authoring-Content-Action-Event",
       "Authoring-Publish-Validation-Integration",
-      "Authoring-Field-Event-Integration"
+      "Authoring-Field-Event-Integration",
+      "Authoring-CKEditor-Customization"
     ],
     "Headless": [
       "AK-Headless-Project",
