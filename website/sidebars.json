@@ -50,6 +50,11 @@
       "Akumina-Npm-Commands",
       "Site-Deployer-updatespaproperties-option"
     ],
+    "Authoring": [
+      "Authoring-Content-Action-Event",
+      "Authoring-Publish-Validation-Integration",
+      "Authoring-Field-Event-Integration"
+    ],
     "Headless": [
       "AK-Headless-Project",
       "AK-Headless-Teams",
