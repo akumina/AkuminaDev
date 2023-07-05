@@ -35,6 +35,7 @@ Command line parameters are set in .env
 | `aadclientid` | AAD graph app client id | |
 | `aadclientsecret` | AAD graph client secret for use with CI\CD only (dont use for local development) | |
 | `appmanagerurl` | App Manager URL for use with new Auth flow | |
+| `akquerykey` | AppManager Query key - for use with contentapp option | |
 | `spcontextretrycount` | For use with 429 errors, defaults to 1 we recommend 5 if getting throttled| |
 | `spcontextretryinterval` | For use with 429 errors, defaults to 500ms we recommend 2000 if getting throttled | | 
 
