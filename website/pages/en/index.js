@@ -77,7 +77,7 @@ class HomeSplash extends React.Component {
             <Button href={docUrl('Akumina-Widget-Builder.html')}>Widget Builder</Button>
             <Button href={docUrl('AK-Virtual-Page-Builder.html')}>Virtual Page Builder</Button>
             <Button href={docUrl('AK-Stream-Card-Builder.html')}>Stream Card Builder</Button>
-            <Button href={docUrl('yo-akumina.html')}>Yo Akumina</Button>
+            <Button href={docUrl('Yo-Akumina')}>Yo Akumina</Button>
             <Button href={docUrl('Site-Deployer-Overview.html')}>Site Deployer</Button>
           </PromoSection>
           <PromoSection>
