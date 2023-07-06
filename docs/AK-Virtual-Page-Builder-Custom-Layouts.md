@@ -9,7 +9,7 @@ Akumina Framework 5.5+
 
 ## Overview
 
-In the event you want to load custom layouts in the page builder to provide different html,css.. (see ContainerLayouts_AK)
+In the event you want to load custom layouts in the page builder to provide different html,css.. (see ContainerLayouts_AK) [Making a Custom Layout](https://akumina.github.io/docs/AK-Row-Editing-Custom-Layout)
 
 With the performance improvements introduced in 5.5 the use of seperate container view layouts (.html) have been deprecated with inline pre-compiled views
 
