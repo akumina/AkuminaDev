@@ -33,7 +33,8 @@
     ],
     "Virtual Page Builder": [
       "AK-Virtual-Page-Builder",
-      "AK-Virtual-Page-Layout-Builder"
+      "AK-Virtual-Page-Layout-Builder",
+      "AK-Virtual-Page-Builder-Custom-Layouts"
     ],
     "Stream Card Builder": [
       "AK-StreamCardProject-Builder",
