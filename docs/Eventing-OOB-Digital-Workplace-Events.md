@@ -80,6 +80,14 @@ Fires when the search is completed within the People List Widget
 ### /practiceareapeople/error/
 Fires when there is an error in searching within the People List Widget
 
+## Authoring
+
+### /authoring/rail/close/
+Fires when the authoring rail (in the front end) fully closes. NOTE - requires 6.0.2301.1506 and above.
+
+### /authoring/rail/open/
+Fires when the authoring rail (in the front end) fully opens. NOTE - requires 6.0.2301.1506 and above.
+
 ## References
 See the article below for the overview of Eventing
 * [Overview](https://github.com/akumina/AkuminaTraining/wiki/Eventing:-Overview)
