@@ -46,7 +46,7 @@ Example `teams.html`
     <script>
         var headlessPageUrl = "https://{headlessurl}"; //you can add the page you want to load as well, ie #/sitepages/mypage.aspx
         var appManagerUrl = "https://{appmanagerurl}";
-        var deliverySiteUrl = "{spdeliverysiteurl}"
+        var deliverySiteUrl = "{spdeliverysiteurl}";
         var siteIdWebIdPiped = "{piped_webid_siteid}";
     </script>
 
