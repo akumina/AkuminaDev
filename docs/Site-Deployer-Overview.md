@@ -19,7 +19,6 @@ Please see the [release section](https://github.com/akumina/SiteDeployer/release
 * Runtime
 * Prerequisites
 * Configuring App Manager AAD Client App for SharePoint Token
-* Configuring App Manager AAD Client App for Storage SAS Uri
 * Build, Package and Deploy for local DEVELOPER environment
   * SitePackage Configuring .env file
   * Configuring - akumina.sitedeployer.config.json file
