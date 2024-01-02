@@ -11,7 +11,9 @@ This yeoman template enables developers to get up and running with a vanilla or 
 
 ## Install
 
-Make sure to have NODE 8.9.1++ or the LTS version: [Download Node](https://nodejs.org/en/download/) - Choose the LTS version
+Make sure to have NODE 8.9.1++ (8.15.1) or the LTS version: [Download Node](https://nodejs.org/en/download/) - Choose the LTS version
+
+Akumina recommends developers install 'nvm' as its a powerful tool for managing different versions of node with little effort. [Download and Install NVM](https://github.com/coreybutler/nvm-windows#installation--upgrades)
 
 ### Install Locally
 
