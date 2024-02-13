@@ -4,7 +4,7 @@ title: Akumina Search AkSearchExclusionCallback
 ---
 
 ### Overview
-While the Office 365 CDN is the most used, any CDN can be used with the Akumina platform. Any such CDN must have certain data and configurations to be used successfully.
+It is possible via a callback to modify or add in additional fields to the search indexer. For example, you have another field, PageCategory, in the PageData_AK list, where you want to capture additional data for the search. Using the function *AkSearchExclusionCallback* you can modify the data that gets entered into the list.
 
 ### AkSearchExclusionCallback example
 The following is an example of the *AkSearchExclusionCallback* function, which adds new fields:
