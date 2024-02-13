@@ -7,7 +7,7 @@ title: Akumina Search AkSearchExclusionCallback
 It is possible via a callback to modify or add in additional fields to the search indexer. For example, you have another field, PageCategory, in the PageData_AK list, where you want to capture additional data for the search. Using the function *AkSearchExclusionCallback* you can modify the data that gets entered into the list.
 
 ### AkSearchExclusionCallback example
-The following is an example of the *AkSearchExclusionCallback* function, which adds new fields:
+The following is an example of the **AkSearchExclusionCallback** function, which adds new fields:
 
     window.AkSearchExclusionCallback = function(model, currentPage){
         // find a value in the page
@@ -32,7 +32,7 @@ The following is an example of the *AkSearchExclusionCallback* function, which a
     }
 
 ### Suppressing indexing of the item
-Inside the callback, you can direct the system to not index the item. To do so, set the value for *NoIndex* as shown:
+Inside the callback, you can direct the system to not index the item. To do so, set the value for **NoIndex** as shown:
  
     data.NoIndex = true
 
