@@ -34,7 +34,9 @@ The following is an example of the **AkSearchExclusionCallback** function, which
 ### Suppressing indexing of the item
 Inside the callback, you can direct the system to not index the item. To do so, set the value for **NoIndex** as shown:
  
-    data.NoIndex = true
+    model.NoIndex = true
+
+> The model does not have the property by default; just add it as needed.
 
 ### References
 * https://community.akumina.com/knowledge-base/configuring-search-for-akumina-widget-content/
