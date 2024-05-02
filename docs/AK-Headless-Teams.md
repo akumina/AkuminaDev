@@ -24,6 +24,7 @@ This article provides steps to add an Akumina headless website to teams
 | token | value |
 | --- | --- |
 | {sptenant} | sharepoint tenant {this}.sharepoint.com |
+| {templateurlprefix} | configuration of your blob container |
 | {headlessurl} | intranet headless url |
 | {appmanagerurl} | app manager url |
 | {newguid} | generate a new guid https://guidgenerator.com/online-guid-generator.aspx |
@@ -31,6 +32,10 @@ This article provides steps to add an Akumina headless website to teams
 | {spdeliverysiteurl} | https://{sptenant}.sharepoint.com/sites/deliveryurl | 
 | {piped_webid_siteid} | You can find this in the debugger after navigating to the delivery site and opening the debugger, configurationcontext tab - look for 'RootPipedSiteIdWebId' | 
 
+
+## Update App Manager CORS Origin
+
+Add the domain of {templateurlprefix} to your App Manager App Settings 'Origin' Setting - dont put the full path, just the top level domain, ie, https://example.blob.core.windows.net
 
 ## Auth file creation
 
@@ -48,10 +53,15 @@ Example `teams.html`
         var appManagerUrl = "https://{appmanagerurl}";
         var deliverySiteUrl = "{spdeliverysiteurl}";
         var siteIdWebIdPiped = "{piped_webid_siteid}";
+
+        var s = document.createElement('script');
+        s.setAttribute('src', 'https://akuminafiles.azureedge.net/products/6.1.0.0/fe/teams/teams.auth.min.js?v=' + Math.floor(Math.random() * 100) + 1);
+        document.head.appendChild(s);
+
     </script>
 
-    <script src="https://akuminafiles.azureedge.net/products/6.0.0.0/fe/teams/teams.auth.min.js"></script>
-    <title>Page Title</title>
+  
+    <title>Teams</title>
 </head>
 <body>
 </body>
@@ -96,7 +106,7 @@ The following is an example `manifest.json` of a Personal App with 3 tabs:  Home
     {
       "entityId": "{newguid}",
       "name": "Home",
-      "contentUrl": "https://{headlessurl}/staticfiles/teams.html",
+      "contentUrl": "https://{templateurlprefix}/staticfiles/teams.html",
       "websiteUrl": "https://{headlessurl}",
       "scopes": [
         "personal"
@@ -105,7 +115,7 @@ The following is an example `manifest.json` of a Personal App with 3 tabs:  Home
     {
       "entityId": "{newguid}",
       "name": "News",
-      "contentUrl": "https://{headlessurl}/staticfiles/teams-news.html",
+      "contentUrl": "https://{templateurlprefix}/staticfiles/teams-news.html",
       "websiteUrl": "https://{headlessurl}",
       "scopes": [
         "personal"
@@ -114,7 +124,7 @@ The following is an example `manifest.json` of a Personal App with 3 tabs:  Home
     {
       "entityId": "{newguid}",
       "name": "Streams",
-      "contentUrl": "https://{headlessurl}/staticfiles/teams-streams.html",
+      "contentUrl": "https://{templateurlprefix}/staticfiles/teams-streams.html",
       "websiteUrl": "https://{headlessurl}",
       "scopes": [
         "personal"
