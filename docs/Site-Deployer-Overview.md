@@ -78,7 +78,6 @@ Configure App Permissions to be able to deploy to Sharepoint properly
  1.	Goto Azure Active Directory --> App Registration--> Pick App created above
  2. Click API Permissions
 
-
 Refer to the below table and update the App Manger ADD Client Permissions If required. 
 
 **Delegated Permissions required for use by local DEVELOPER environment**
@@ -89,14 +88,72 @@ Refer to the below table and update the App Manger ADD Client Permissions If req
 | 3 |	js, css, pages, controls, widgets, contentfiles, imagefiles, fonts, updatelists, homepage, exportlists, uploadfiles, virtualpages, spusersearch, virtuallayout, exportcomments, updatespaproperties, streamcards, virtualtomodern	| AllSites.Manage |	Delegated |
 | 4 | cdnassets | user_impersonation | Delegated |
 
-**Appliation Permissions required for CICD flow** (same as above, but use Application instead of Delegated)
+**Application ID URI and App Role required for CICD flow**
+Configure Application ID URI
 
+1.  Goto Azure Active Directory \--\> App Registration\--\> Pick App
+    created above
+
+2.  Click Expose an API \--\> Add
+
+3.  Save
+
+4.  Save this Application ID URI in App Manager \> Settings \> Tenant
+    Config \> Advanced Settings \> CICD Application ID URl. (optional
+    but recommeded for enhanced security, App Manager uses this setting
+    to validate the CICD request)
+    
+![](https://akuminadownloads.blob.core.windows.net/wiki/AkuminaDev/SiteDeployer/addapplicationiduri.png)
+
+Configure App Role
+
+1.  App Roles \--\> Create App Role
+
+2.  Fill in below details in Create App Role section (you must not
+    change the values in **bold**)
+
+    1.  Disaply Name: You can enter according to your preference.
+
+    2.  Allowed member types: **Applications**
+
+    3.  Value: **AppManager.SpAppToken**
+
+    4.  Description: You can enter according to your preference.
+
+    5.  Do you want to enable this role?: **Yes**
+
+3.  Apply
+
+![](https://akuminadownloads.blob.core.windows.net/wiki/AkuminaDev/SiteDeployer/addapprole.png)
+
+4.  Click API Permissions \--\> Add a permission \--\> APIs my
+    organisation uses
+
+5.  Search for AAD app name that you created above and click on it
+
+![](https://akuminadownloads.blob.core.windows.net/wiki/AkuminaDev/SiteDeployer/searchaadappid.png)
+
+6.  Select Application permission and check **AppManager.SpAppToken**
+
+![](https://akuminadownloads.blob.core.windows.net/wiki/AkuminaDev/SiteDeployer/addapproletoperms.png)
+
+7.  Click App permission and Grant admin content to complete the
+    permission configuration
+
+![](https://akuminadownloads.blob.core.windows.net/wiki/AkuminaDev/SiteDeployer/finalperms.png)
+
+
+## Configuring App Manager AAD Client App Permissions
+
+ 1.	Goto Azure Active Directory \--\> App Registration \--\> Open App Manager AAD Client App
+ 2.	Goto Manage \--\> API Permissions \--\> Refer to the below table and add/update the Permissions.
+
+**Appliation Permissions required for CICD flow** (uses Application instead of Delegated)
 |# |Site Deployer Options |	Permissions Needed |	Permission Scope/Type
 |--|-------|-------|--------|
 |1 |addtermsets |	TermStore.ReadWrite.All |	Application|
 |2|	lists, groups, siteproperties, sitepermissions, modernprovisionapp, masterpage, layouts, webpartgallery |	Sites.FullControl.All	| Application|
 |3|js, css, pages, controls, widgets, contentfiles, imagefiles, fonts, updatelists, homepage, exportlists, uploadfiles, virtualpages, spusersearch, virtuallayout, exportcomments, updatespaproperties, streamcards, virtualtomodern | Sites.Manage.All |	Application |
-| 4 | cdnassets | user_impersonation | Delegated |
 
 ## Build, Package and Deploy for local DEVELOPER environment
 
@@ -148,11 +205,11 @@ You will get the **prompt** to authenticate yourself.
 
 ## Deploy for Azure Dev Ops (CICD) environment
 
-For CI/CD you are unable to authenticate using the prompt (obviously) so we have introduced an `aadclientsecret` option that can be passed in during the Azure Devops pipeline/release.  `aadclientsecret` should be marked as a hidden/private variable and should not be given to developers.  Technically you could use this option for local development but it is not recommended.
+For CI/CD, since authentication via prompt isn't possible, we've added the `aadclientsecret` and `addcustomscope` options that can be used in the Azure DevOps pipeline/release process. The `aadclientsecret` should be set as a hidden/private variable and should not be accessible to developers. The `addcustomscope` should be the `Application ID URI` that was created above. Technically you could use this option for local development but it is not recommended.
 
 The following arguments will be used within your pipeline
 
-`envdir`,`assetdirectory`,`spurl`,`tenantId`,`aadclientid`,`aadclientsecret`,`appmanagerurl`
+`envdir`,`assetdirectory`,`spurl`,`tenantId`,`aadclientid`,`aadclientsecret`,`appmanagerurl`,`addcustomscope`
 
 
 **Setup a Pipeline using aadclientid and aadclientsecret**
@@ -175,7 +232,7 @@ steps:
   displayName: 'Create list and list-items'
   inputs:
     filename: '$(Build.SourcesDirectory)\tools\Akumina.SiteDeployer.exe'
-    arguments: 'options lists envdir $(Build.SourcesDirectory)\build\ assetdirectory $(assetDirectory) spurl $(spUrl) tenantId $(tenantId) aadclientid $(addClientId) aadclientsecret $(aadClientSecret) appmanagerurl $(appManagerUrl)'
+    arguments: 'options lists envdir $(Build.SourcesDirectory)\build\ assetdirectory $(assetDirectory) spurl $(spUrl) tenantId $(tenantId) aadclientid $(addClientId) aadclientsecret $(aadClientSecret) appmanagerurl $(appManagerUrl) aadcustomscope $(addCustomScope)'
 ```
 
 6.	From the right corner, Click Variable and then add all variables from the variable listed in the beginning of the session, refer the following screen for completed view
