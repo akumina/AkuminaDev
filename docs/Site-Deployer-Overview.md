@@ -18,10 +18,12 @@ Please see the [release section](https://github.com/akumina/SiteDeployer/release
   * Azure Dev Ops (CI/CD)
 * Runtime
 * Prerequisites
-* Configuring App Manager AAD Client App for SharePoint Token
+* Configuring a new Site Deployer AAD Client App
+* Configuring App Manager AAD Client App Permissions
 * Build, Package and Deploy for local DEVELOPER environment
   * SitePackage Configuring .env file
   * Configuring - akumina.sitedeployer.config.json file
+* Deploy for Azure Dev Ops (CICD) environment
 
 ## Overview
 Use this document as a base to configure, development and deployment of Akumina SharePoint Site Artifacts and Configurations. 
