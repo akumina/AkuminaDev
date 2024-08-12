@@ -89,6 +89,7 @@ Refer to the below table and update the App Manger ADD Client Permissions If req
 | 4 | cdnassets | user_impersonation | Delegated |
 
 **Application ID URI and App Role required for CICD flow**
+
 Configure Application ID URI
 
 1.  Goto Azure Active Directory \--\> App Registration\--\> Pick App
