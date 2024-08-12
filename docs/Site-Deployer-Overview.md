@@ -238,7 +238,7 @@ steps:
 
 6.	From the right corner, Click Variable and then add all variables from the variable listed in the beginning of the session, refer the following screen for completed view
 
-![](https://akuminadownloads.blob.core.windows.net/wiki/AkuminaDev/SiteDeployer/authdevopsvariables.png?v=1)
+![](https://akuminadownloads.blob.core.windows.net/wiki/AkuminaDev/SiteDeployer/authdevopsvariables.png)
 
 
 ## Troubleshooting
