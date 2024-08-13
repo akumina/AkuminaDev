@@ -37,7 +37,7 @@ Use this document as a reference for configuring, developing, and deploying Akum
 ## Prerequisites
 
 The following are the prerequisites
-1.	Fully configured Latest 6.0 AppManager (6.0.2301.1541+)
+1.	Fully configured Latest 6.2 AppManager (6.2.2405.1301+)
 2.	Fully deployed Site Environment using Standard or Central/Delivery
 3.	Install Yeoman - Refer to [Yo Akumina](https://akumina.github.io/docs/Yo-Akumina)
 4.	Yo brings latest windows platform based Akumina SiteDeployer.exe
