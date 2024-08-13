@@ -26,7 +26,7 @@ Please see the [release section](https://github.com/akumina/SiteDeployer/release
 * Deploy for Azure Dev Ops (CICD) environment
 
 ## Overview
-Use this document as a base to configure, development and deployment of Akumina SharePoint Site Artifacts and Configurations. 
+Use this document as a reference for configuring, developing, and deploying Akumina SharePoint Site Artifacts and Configurations. It will guide you through the process of setting up a new Azure AD (AAD) app (if this is your first time) or updating an existing AAD app for Site Deployer. Additionally, you'll learn how to leverage the Application ID URI as a custom scope for the CI/CD flow.
 
 
 ## Runtime
@@ -48,7 +48,7 @@ The following are the prerequisites
 
 To make a secure user-based connection between Site Deployer and AAD Client App, make sure that the AAD Client App has the following configuration:
 
-Create a new App seperate
+Follow the steps below to create a new Azure AD (AAD) app:
 
  1.	Goto Azure Active Directory --> App Registration--> New Registration
  2. Choose Accounts in this organizational directory only (Single tenant)
