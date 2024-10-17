@@ -7,7 +7,7 @@ id: AK-Patch-Notes
 
 ## Overview
 
-This article provides a clear and organized view of the differences between software versions, allowing developers to quickly identify updates, bug fixes, and new features.
+This article provides a clear and organized view of the differences between front end versions, allowing developers to quickly identify updates, bug fixes, and new features.
 
 ## Documents
 
