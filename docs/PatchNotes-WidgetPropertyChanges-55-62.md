@@ -1,6 +1,6 @@
 ---
-id: Widget Property Changes for 6.2 (from 5.5)
-title: Page Indexing
+title: Widget Property Changes for 6.2 (from 5.5)
+id: PatchNotes-WidgetPropertyChanges-55-62
 ---
 
 As of 10.17.24
