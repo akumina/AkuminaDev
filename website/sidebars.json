@@ -96,7 +96,8 @@
       "ReactViews-JSX-Compiler",
       "AK-Page-Indexing"
     ],
-    "Service Hub": ["AK-Service-Hub"]
+    "Service Hub": ["AK-Service-Hub"],
+    "Patch Notes": ["AK-Patch-Notes"]
   },
   "api": {
     "Modules": [
