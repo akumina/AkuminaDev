@@ -1,5 +1,14 @@
 /* your custom css */
 
+:root {
+    --primary: #d417b6;
+    --dark-primary: #29163c;
+    --text-color: #29163c;
+    --accent: #13b2b4;
+    --white: #ffffff;
+    --border-color: #d3d5df;
+}
+
 @media only screen and (min-device-width: 360px) and (max-device-width: 736px) {
 }
 
@@ -15,9 +24,76 @@
 @media only screen and (min-width: 1500px) {
 }
 
+body {
+    color: var(--text-color);
+}
+
 .button {
-    background-color: #78bc1f;
-    color: #40395f;
+    font-weight: 500;
+    background: var(--white);
+    border: 1px solid var(--primary);
+    color: var(--primary);
+}
+
+.button:hover {
+    background: var(--primary);
+    color: var(--white);
+}
+
+
+.fixedHeaderContainer {
+    background: var(--white);
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.34);
+}
+
+
+.fixedHeaderContainer a {
+    color: var(--text-color);
+}
+
+.promoSection .promoRow .pluginWrapper {
+    display: flex;
+    gap: 12px;
+}
+
+.navSearchWrapper:before {
+    border: 3px solid var(--text-color);
+}
+
+.navSearchWrapper:after {
+    background: var(--text-color);
+}
+
+input#search_input_react {
+    background-color: var(--white);
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+    color: var(--text-color);
+}
+
+input#search_input_react:active,
+input#search_input_react:focus {
+    color: var(--text-color);
+}
+
+input::-webkit-input-placeholder {
+    color: var(--text-color);
+}
+
+input::-moz-placeholder {
+    color: var(--text-color);
+}
+
+input:-ms-input-placeholder {
+    color: var(--text-color);
+}
+
+input::-ms-input-placeholder {
+    color: var(--text-color);
+}
+
+input::placeholder {
+    color: var(--text-color);
 }
 
 a {
@@ -64,4 +140,25 @@ a.navItem:hover {
 
 .projectLogo img {
     padding-left: 10px;
+}
+
+.navigationSlider .slidingNav ul li a {
+    color: var(--text-color);
+}
+
+.nav-footer {
+    background: var(--dark-primary);
+    color: var(--white);
+}
+
+.nav-footer .sitemap a {
+    color: var(--white);
+}
+
+.nav-footer .sitemap h5, .nav-footer .sitemap h5 > a, .nav-footer .sitemap h6, .nav-footer .sitemap h6 > a {
+    color: var(--white)
+}
+
+.nav-footer .copyright {
+    color: var(--white);
 }
