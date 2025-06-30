@@ -1,3 +1,10 @@
+---
+id: Authoring-Custom-components-for-fields
+title: Custom Components for Fields
+---
+
+# Applies to
+6.0+
 # Overview
 
 Content apps in Voice support custom components for fields of type Text and Hyperlink. This allows clients to customize the look and feel of the fields.
