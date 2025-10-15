@@ -38,7 +38,7 @@ window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
 
 // If you have multiple environments (such as a DEV and Prod), you can use the following example to add the correct tracking ID to the URL, otherwise just set trackingId to the single correct value
-var trackingId = window.location.href.startsWith('https://clientsite.sharepoint.com/sites/sitename') ? 'UA-000000000-1' : 'UA-111111111-1';
+var trackingId = window.location.href.startsWith('https://clientsite.sharepoint.com/sites/sitename') ? 'GTM-ABC123DE' : 'GTM-DEF456GH';
 
 // This inserts the Google Tag Manager script link into the DOM
 var script = document.createElement('script');
@@ -46,14 +46,13 @@ script.setAttribute('async', 'async');
 script.setAttribute('src', 'https://www.googletagmanager.com/gtag/js?id=' + trackingId);
 script.onload = function() {
     gtag('js', new Date());
-    gtag('config', trackingId);
 };
 document.head.prepend(script);
 
 // Push page request to Google Analytics
 // This captures GA data for page redirects and direct URL loading
 window.SendGoogleAnalytics = function() {
-    var trackingId = window.location.href.startsWith('https://clientsite.sharepoint.com/sites/sitename') ? 'UA-000000000-1' : 'UA-111111111-1';
+    var trackingId = window.location.href.startsWith('https://clientsite.sharepoint.com/sites/sitename') ? 'GTM-ABC123DE' : 'GTM-DEF456GH';
     gtag('config', trackingId, {
         'page_title': document.title,
         'page_path': location.hash.replace('#','sites/sitename')
@@ -64,11 +63,7 @@ window.SendGoogleAnalytics = function() {
 // This captures GA data for SPA navigation
 Akumina.Digispace.AppPart.Eventing.Subscribe('/page/changed/', function () {
     setTimeout(function(){
-        var trackingId = window.location.href.startsWith('https://clientsite.sharepoint.com/sites/sitename') ? 'UA-000000000-1' : 'UA-111111111-1';
-        gtag('config', trackingId, {
-            'page_title': document.title,
-            'page_path': location.hash.replace('#','sites/sitename')
-        });
+        window.SendGoogleAnalytics();
     }, 5000);
 });
 
