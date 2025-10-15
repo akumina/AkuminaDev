@@ -49,7 +49,8 @@
       "Site-Deployer-Version-6-0",
       "Site-Deployer-List-Attributes",
       "Akumina-Npm-Commands",
-      "Site-Deployer-updatespaproperties-option"
+      "Site-Deployer-updatespaproperties-option",
+      "Site-Deployer-Translate"
     ],
     "Authoring": [
       "Authoring-Content-Action-Event",
