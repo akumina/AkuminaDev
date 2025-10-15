@@ -101,6 +101,7 @@ Set options to true/false in akumina.sitedeployer.config.json:
 | `listsettings` | Updates list settings from **envdir**/sitedefinitions/**assetdirectory**/ListSettings/Update.xml see https://akumina.github.io/docs/Site-Package--ListSettings |
 | `contentapps` | Deploys App Manager Content Apps from **envdir**/sitedefinitions/**assetdirectory**/ContentApps/Author.json see https://akumina.github.io/docs/Site-Package-ContentApps-Folder |
 | `updatespaproperties` | Updates the properties for the Single Page App; see https://akumina.github.io/docs/Site-Deployer-updatespaproperties-option |
+| `translate` | Translates tokens into other languages; see https://akumina.github.io/docs/Site-Deployer-Translate |
 
 
 ## Modern deployment
