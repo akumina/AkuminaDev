@@ -10,7 +10,7 @@
     "doc-types": "npx typedoc --plugin typedoc-plugin-markdown --theme docusaurus2 --excludeExternals --includeDeclarations --ignoreCompilerErrors --mode file --readme none --tsconfig ./tsconfig.json --exclude **/*tests.ts --out ../docs ."
   },
   "devDependencies": {
-    "docusaurus": "^1.9.0",
+    "docusaurus": "^1.14.7",
     "typedoc": "^0.15.0",
     "typedoc-plugin-markdown": "^2.2.10"
   }
