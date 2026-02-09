@@ -5,7 +5,7 @@ title: Inactivity Tracker
 
 ## Overview
 
-The inactivity tracker will force the user to do a refresh. The assists with any BACK button issues and random 403's caused by invalid SP sessions.
+The inactivity tracker will force the user to do a refresh. This assists with any BACK button issues and random 403's caused by invalid SP sessions.
 
 <img src="https://akuminadownloads.blob.core.windows.net/wiki/AkuminaDev/InactivityTracker.png" width="350">
 
@@ -37,7 +37,7 @@ For use in ListDefinitions ListData.xml
 ```
 
 ### TimeOut setting
-To alter the timeout of the inactivty tracker, you can adjust the *ConfigurationContext.PageInactivityTimeOut* value. Thi can be done in either configuration or javascript.
+To alter the timeout of the inactivity tracker, you can adjust the *ConfigurationContext.PageInactivityTimeOut* value. This can be done in either configuration or JavaScript.
 
 To adjust the configuration, in the central site list *DigispaceConfigurationIDS_AK* add or edit the configuration key *PageInactivityTimeOut*
 
@@ -60,7 +60,7 @@ To adjust the configuration, in the central site list *DigispaceConfigurationIDS
 </lists>
 ```
 
-Javascript:
+JavaScript:
 
 ```json
 ConfigurationContext.PageInactivityTimeOut = 30; //in minutes
@@ -68,7 +68,7 @@ ConfigurationContext.PageInactivityTimeOut = 30; //in minutes
 
 ### Callback
 
-There is a global callback, *InactivityTrackerCallback* that is called whenerver the inactivity callback is fired. This allows a developer to intercept the inactivity trigger, allowing the following use cases:
+There is a global callback, *InactivityTrackerCallback* that is called whenever the inactivity callback is fired. This allows a developer to intercept the inactivity trigger, allowing the following use cases:
 * Check a condition to determine if the message should show
   * Suppress when the editing interface is open.
   * Suppress based on environmental condition (network)
