@@ -37,7 +37,7 @@ For use in ListDefinitions ListData.xml
 ```
 
 ### TimeOut setting
-To alter the timeout of the inactivity tracker, you can adjust the *ConfigurationContext.PageInactivityTimeOut* value. This can be done in either configuration or JavaScript.
+To alter the timeout of the inactivity tracker, you can adjust the *Akumina.Digispace.ConfigurationContext.PageInactivityTimeOut* value. This can be done in either configuration or JavaScript.
 
 To adjust the configuration, in the central site list *DigispaceConfigurationIDS_AK* add or edit the configuration key *PageInactivityTimeOut*
 
@@ -46,10 +46,6 @@ To adjust the configuration, in the central site list *DigispaceConfigurationIDS
 	<list name="DigispaceConfigurationIDS_AK">
 		<Data>
 			<Rows>
-				<Row Update="FALSE">
-					<Field Name="Title" IsSelector="True">LOADER_STEPS_ENABLE_INACTIVITYTRACKER</Field>
-					<Field Name="Value">false</Field>
-				</Row>
 				<Row Update="FALSE">
 					<Field Name="Title" IsSelector="True">PageInactivityTimeOut</Field>
 					<Field Name="Value">30</Field>
