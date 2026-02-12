@@ -70,7 +70,7 @@ There is an inactivity callback that can be set in the page lifecycle:
 window.CoreSteps.InactivityTracker.callback = window.InactivityTrackerCallback;
 ```
 
-The callback specified is called whenever the inactivity callback is fired. This allows a developer to intercept the inactivity trigger, allowing the following use cases:
+The callback is called whenever the timer is reached (ex 60 minutes of inactivity have elapsed). This allows the following use cases:
 
 * Suppress based on environmental condition (network)
 * Suppress based on type of user
