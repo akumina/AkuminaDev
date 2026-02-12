@@ -64,12 +64,17 @@ ConfigurationContext.PageInactivityTimeOut = 30; //in minutes
 
 ### Callback
 
-There is a global callback, *InactivityTrackerCallback* that is called whenever the inactivity callback is fired. This allows a developer to intercept the inactivity trigger, allowing the following use cases:
-* Check a condition to determine if the message should show
-  * Suppress when the editing interface is open.
-  * Suppress based on environmental condition (network)
-  * Suppress based on type of user
-* On timer expiration, send to logout flow instead of showing a message
+There is an inactivity callback that can be set in the page lifecycle:
+
+```
+window.CoreSteps.InactivityTracker.callback = window.InactivityTrackerCallback;
+```
+
+The callback specified is called whenever the inactivity callback is fired. This allows a developer to intercept the inactivity trigger, allowing the following use cases:
+
+* Suppress based on environmental condition (network)
+* Suppress based on type of user
+* Suppress the inactivity message when the editing interface is open.
 
 ```js
 window.InactivityTrackerCallback = function() {
@@ -80,6 +85,19 @@ window.InactivityTrackerCallback = function() {
     }
 };
 ```
+
+* On timer expiration, send to logout flow instead of showing a message
+
+```js
+window.InactivityTrackerCallback = function() {
+    Akumina.Digispace.UserContext.Logout();
+    setTimeout(function() {
+        window.location.href = AkHeadlessUrl + "/logout";
+    }, 1000);
+};
+```
+
+
 
 ### Lengthening the timer
 
