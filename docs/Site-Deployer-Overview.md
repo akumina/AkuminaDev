@@ -156,7 +156,7 @@ Configure App Role
 |2|	lists, groups, siteproperties, sitepermissions, modernprovisionapp, masterpage, layouts, webpartgallery |	Sites.Selected <sup>1</sup>	| Application| SharePoint |
 |3|js, css, pages, controls, widgets, contentfiles, imagefiles, fonts, updatelists, homepage, exportlists, uploadfiles, virtualpages, spusersearch, virtuallayout, exportcomments, updatespaproperties, streamcards, virtualtomodern | Sites.Selected <sup>1</sup>	| Application| SharePoint |
 
-<sup>1</sup> Full Control permission must be granted to the Central and any Delivery sites needed - refer to the Microsoft documentation for *Sites.Selected* at https://learn.microsoft.com/en-us/graph/permissions-selected-overview
+<sup>1</sup> Full Control permission must be granted <b>on the environment's App Manager graph app</b> to the Central and any Delivery sites needed - refer to the Microsoft documentation for *Sites.Selected* at https://learn.microsoft.com/en-us/graph/permissions-selected-overview
 
 ## Build, Package and Deploy for local DEVELOPER environment
 
@@ -277,5 +277,6 @@ https://akumina.github.io/docs/Site-Deployer-Version-5-0
 
 Using site deployer with MFA
 https://akumina.github.io/docs/Site-Deployer-AppOnly
+
 
 
