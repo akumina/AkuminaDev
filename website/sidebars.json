@@ -1,6 +1,8 @@
 {
   "docs": {
-    "Akumina": ["Akumina-Quickstart"],
+    "Akumina": [
+      "Akumina-Quickstart"
+    ],
     "Yo Akumina": [
       "Yo-Akumina",
       "getting-started-yeoman",
@@ -59,6 +61,12 @@
       "Authoring-CKEditor-Customization",
       "Authoring-Custom-Components-For-Fields"
     ],
+    "AI": [
+      "AI",
+      "AI-Knowledge-Buckets",
+      "AI-Response-Cards",
+      "AI-FAQ"
+    ],
     "Headless": [
       "AK-Headless-Project",
       "AK-Headless-Teams",
@@ -91,15 +99,21 @@
       "Configuration-Edit-the-Redis-cache-timeout",
       "Configuration-Using-a-key-vault-for-the-client-id-and-client-secret"
     ],
-    "Debugging": ["Ak-Debugging"],
+    "Debugging": [
+      "Ak-Debugging"
+    ],
     "Advanced": [
       "AK-Central-Site-Support",
       "Eventing-OOB-Digital-Workplace-Events",
       "ReactViews-JSX-Compiler",
       "AK-Page-Indexing"
     ],
-    "Service Hub": ["AK-Service-Hub"],
-    "Patch Notes": ["AK-Patch-Notes"]
+    "Service Hub": [
+      "AK-Service-Hub"
+    ],
+    "Patch Notes": [
+      "AK-Patch-Notes"
+    ]
   },
   "api": {
     "Modules": [
