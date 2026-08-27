@@ -14,6 +14,7 @@ AI can be integrated directly into search or delivered through a dedicated chat 
 - **AI-Powered Search** – Provide direct AI-generated answers alongside traditional search results.
 - **AI Chat** – Give employees a conversational interface for asking questions and accessing enterprise AI.
 - **Knowledge Buckets** – Organize knowledge around specific use cases to provide more relevant and controlled AI responses.
+- **Managed Prompts** – Create curated prompts for common use cases and automatically map employee keywords or requests to more effective AI prompts.
 - **Intent-Based Routing** – Automatically determine the appropriate Knowledge Bucket based on an employee's question.
 - **Agent Integration** – Connect the Akumina experience to AI agents and enterprise knowledge sources.
 - **Branded Experiences** – Configure the AI experience to match your organization's brand and terminology.
