@@ -9,6 +9,12 @@ Knowledge Buckets give organizations greater control over how AI responds to spe
 
 Instead of searching across all available information, Knowledge Buckets allow you to define the knowledge and behavior AI should use for a particular scenario.
 
+Knowledge Buckets provide a **business-friendly implementation of a pattern the AI industry is increasingly adopting**: rather than putting everything into one enormous prompt, instructions, knowledge, tools, and capabilities are organized around specific purposes.
+
+This makes AI behavior easier to manage, govern, test, and improve—without requiring business administrators to manage complex system prompts.
+
+<img src="https://akuminadownloads.blob.core.windows.net/wiki/AkuminaDev/AI/knowledgebucket-aistructure.png" width="800">
+
 ## Key Capabilities
 
 - **Curated Knowledge** – Define the documents and information AI should use.
