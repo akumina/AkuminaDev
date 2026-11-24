@@ -1,6 +1,6 @@
 ---
-id: AK-Headless-Response-Code-Redirect-URLs.md
 title: Response Code Redirect URLs
+id: AK-Headless-Response-Code-Redirect-URLs
 ---
 ## Overview
 
